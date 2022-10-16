@@ -1,0 +1,125 @@
+% ---------- Packages ----------
+% Document Settings
+\documentclass[12pt]{report}
+\usepackage[toc,page]{appendix}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[utf8]{inputenc}
+
+% Images
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+% Headers and Footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% References
+\usepackage[backend=bibtex,style=authoryear,sorting=nyt,maxbibnames=99]{biblatex}
+
+% Algorithms and Pseudocode
+\usepackage{algorithm2e}
+\usepackage{listings}
+\usepackage{color}
+
+
+% ----- Sources -----
+\graphicspath{{images/}}
+\addbibresource{refs/intro}
+
+
+% ----- Headers and Footers
+\fancyhf{}
+\fancyhead[L]{\small\scshape\nouppercase{\leftmark}}
+\fancyhead[R]{Jacob Carse}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\small\scshape\nouppercase{\rightmark}}
+\renewcommand{\footrulewidth}{1pt}
+
+
+% ----- Title -----
+\title{
+	{\includegraphics[scale=0.4]{dundee_logo.png}}\\
+	\vspace{15mm}
+	{Awesome Title}\\
+	\vspace{5mm}
+	{\Large Jacob Carse}\\
+	{\Large 2022}\\
+	\vspace{5mm}
+	{\normalsize A thesis submitted to The University of Dundee in accordance with the requirements for the award of}\\
+	{\large Doctorate of Philosophy}\\
+	\vspace{5mm}
+	{\normalsize Based on research carried out under the supervision of}\\
+	{\large Professor Stephen McKenna}
+}
+\date{\vspace{-5ex}}
+\author{}
+
+
+% ---------- Document ----------
+\begin{document}
+	
+	
+	% ----- Header -----
+	% Title
+	\maketitle
+	
+	% Abstract
+	\chapter*{Abstract}
+	\textit{Abstract will go here.}
+	
+	% Declaration
+	\chapter*{Declaration}
+	I hereby declare that this thesis is my own work and that, to the best of my knowledge and belief, it contains no material previously published or produced by another party in fulfilment, partial or otherwise, of any other degree or diploma at another University or Institute of higher education, except where due acknowledgement is made in the text.
+	
+	\vspace{30pt}
+	\begin{flushright}
+		\begin{figure*}[h]
+			\begin{flushright}
+				\includegraphics[width=0.4\textwidth]{images/signature.png}
+			\end{flushright}
+		\end{figure*}
+	
+		Jacob Carse
+		2022
+	
+	\end{flushright}
+
+	% Acknowledgements
+	\chapter*{Acknowledgements}
+	My extended thanks the following people for aiding in my Doctoral journey and whom without this work would not be possible:
+	
+	\begin{itemize}
+		\item Tasnim!
+	\end{itemize}
+
+	% Contents and Lists
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	
+	% ----- Body -----
+	\chapter{Introduction}
+	\label{ch:introduction}
+	\input{chapters/intoduction}
+	
+	
+	% ----- Footer -----
+	% References
+	\renewcommand{\bibname}{References}
+	\addcontentsline{toc}{chapter}{References}
+	\printbibliography
+	
+	
+	% ----- Appendices -----
+	\begin{appendices}
+		\chapter{Appendix}
+		\label{app:appendix}
+		Thing
+		
+	\end{appendices}
+	
+
+\end{document}
