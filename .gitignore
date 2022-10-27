@@ -1,3 +1,6 @@
 
 *.log
 main.pdf
+main.synctex.gz
+main.run.xml
+main-blx.bib
