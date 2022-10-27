@@ -10,6 +10,17 @@
 \contentsline {subsection}{\numberline {1.3.4}Population Generalisation}{7}{}%
 \contentsline {section}{\numberline {1.4}Chapter Descriptions}{7}{}%
 \contentsline {chapter}{\numberline {2}Background Information}{8}{}%
-\contentsline {chapter}{References}{9}{}%
-\contentsline {chapter}{Appendices}{10}{}%
-\contentsline {chapter}{\numberline {A}Thing}{11}{}%
+\contentsline {section}{\numberline {2.1}Neural Networks for Computer Vision}{8}{}%
+\contentsline {subsection}{\numberline {2.1.1}Neural Network Basics}{8}{}%
+\contentsline {subsubsection}{Neurons}{8}{}%
+\contentsline {subsubsection}{Loss Functions}{8}{}%
+\contentsline {subsubsection}{Backpropagation}{8}{}%
+\contentsline {subsubsection}{Gradient Descent}{8}{}%
+\contentsline {subsection}{\numberline {2.1.2}Convolutional Neural Networks}{9}{}%
+\contentsline {subsection}{\numberline {2.1.3}Visual Transformers}{9}{}%
+\contentsline {section}{\numberline {2.2}Active Learning}{9}{}%
+\contentsline {section}{\numberline {2.3}Unsupervised Representation Learning}{9}{}%
+\contentsline {section}{\numberline {2.4}Selective Classification}{9}{}%
+\contentsline {chapter}{References}{10}{}%
+\contentsline {chapter}{Appendices}{11}{}%
+\contentsline {chapter}{\numberline {A}Thing}{12}{}%
