@@ -2,8 +2,9 @@
 % Document Settings
 \documentclass[12pt]{report}
 \usepackage[toc,page]{appendix}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[a4paper,left=40mm,top=25mm,bottom=25mm,right=40mm]{geometry}
 \usepackage[utf8]{inputenc}
+\linespread{1.25}
 
 % Images
 \usepackage{caption}
@@ -16,7 +17,8 @@
 \pagestyle{fancy}
 
 % References
-\usepackage[backend=bibtex,style=authoryear,sorting=nyt,maxbibnames=99]{biblatex}
+\usepackage{natbib}
+\bibliographystyle{agsm}
 
 % Algorithms and Pseudocode
 \usepackage{algorithm2e}
@@ -27,7 +29,6 @@
 
 % ----- Sources -----
 \graphicspath{{images/}}
-\addbibresource{refs/intro}
 
 
 % ----- Headers and Footers
@@ -66,9 +67,18 @@
 	% Title
 	\maketitle
 	
-	% Abstract
-	\chapter*{Abstract}
-	\textit{Abstract will go here.}
+	% Contents and Lists
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	% Acknowledgements
+	\chapter*{Acknowledgements}
+	My extended thanks the following people for aiding in my Doctoral journey and whom without this work would not be possible:
+	
+	\begin{itemize}
+		\item Tasnim!
+	\end{itemize}
 	
 	% Declaration
 	\chapter*{Declaration}
@@ -87,19 +97,10 @@
 	
 	\end{flushright}
 
-	% Acknowledgements
-	\chapter*{Acknowledgements}
-	My extended thanks the following people for aiding in my Doctoral journey and whom without this work would not be possible:
-	
-	\begin{itemize}
-		\item Tasnim!
-	\end{itemize}
+	% Abstract
+	\chapter*{Abstract}
+	\textit{Abstract will go here.}
 
-	% Contents and Lists
-	\tableofcontents
-	\listoffigures
-	\listoftables
-	
 	
 	% ----- Body -----
 	\chapter{Introduction}
@@ -116,14 +117,14 @@
 	\clearpage
 	\renewcommand{\bibname}{References}
 	\addcontentsline{toc}{chapter}{References}
-	\printbibliography
+	\bibliography{refs/intro}
 	
 	
 	% ----- Appendices -----
 	\begin{appendices}
-		\chapter{Thing}
-		\label{app:appendix}
-		Thing
+		\chapter{List of Publications and Achievements}
+		\label{app:list_of_publications}
+		\input{appendices/publications}
 		
 	\end{appendices}
 	

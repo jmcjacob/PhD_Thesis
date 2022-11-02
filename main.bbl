@@ -1,53 +1,11 @@
-% $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
-% Do not modify the above lines!
-%
-% This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated as
-% required.
-%
-\begingroup
-\makeatletter
-\@ifundefined{ver@biblatex.sty}
-  {\@latex@error
-     {Missing 'biblatex' package}
-     {The bibliography requires the 'biblatex' package.}
-      \aftergroup\endinput}
-  {}
-\endgroup
+\begin{thebibliography}{xx}
 
-\datalist[entry]{nyt/global//global/global}
-  \entry{carse2019active}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=CJ}{%
-         family={Carse},
-         familyi={C\bibinitperiod},
-         given={Jacob},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=MS}{%
-         family={McKenna},
-         familyi={M\bibinitperiod},
-         given={Stephen},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Springer}%
-    }
-    \strng{namehash}{CJMS1}
-    \strng{fullhash}{CJMS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{booktitle}{European Congress on Digital Pathology}
-    \field{pages}{20\bibrangedash 27}
-    \field{title}{Active learning for patch-based digital pathology using
-  convolutional neural networks to reduce annotation costs}
-    \field{year}{2019}
-  \endentry
-\enddatalist
-\endinput
+\harvarditem[Chin et~al.]{Chin, Suveges, Carse, Butt, Muthiah, Morton, Trucco,
+  Proby, McKenna \harvardand\ Fleming}{2022}{chin2022prepare}
+Chin, G.~X., Suveges, T., Carse, J., Butt, S., Muthiah, S., Morton, C., Trucco,
+  E., Proby, C., McKenna, S. \harvardand\ Fleming, C.  \harvardyearleft
+  2022\harvardyearright , `Prepare to succeed: Real-world image datasets for
+  artificial intelligence in skin cancer triage', {\em British Journal of
+  Dermatology} {\bf 187}(Suppl. 1)),~125.
+
+\end{thebibliography}
