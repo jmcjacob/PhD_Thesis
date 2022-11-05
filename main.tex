@@ -61,7 +61,7 @@
 
 % ---------- Document ----------
 \begin{document}
-	
+	\pagenumbering{roman}
 	
 	% ----- Header -----
 	% Title
@@ -72,7 +72,20 @@
 	\listoffigures
 	\listoftables
 	
+	\addcontentsline{toc}{chapter}{List of Terms}
+	\chapter*{List of Terms}
+	\input{appendices/glossary}
+	
+	\addcontentsline{toc}{chapter}{List of Abbreviations}
+	\chapter*{List of Abbreviations}
+	\input{appendices/acronyms}
+	
+	\addcontentsline{toc}{chapter}{List of Symbols}
+	\chapter*{List of Symbols}
+	\input{appendices/symbols}
+	
 	% Acknowledgements
+	\addcontentsline{toc}{chapter}{Acknowledgements}
 	\chapter*{Acknowledgements}
 	My extended thanks the following people for aiding in my Doctoral journey and whom without this work would not be possible:
 	
@@ -81,6 +94,7 @@
 	\end{itemize}
 	
 	% Declaration
+	\addcontentsline{toc}{chapter}{Declaration}
 	\chapter*{Declaration}
 	I hereby declare that this thesis is my own work and that, to the best of my knowledge and belief, it contains no material previously published or produced by another party in fulfilment, partial or otherwise, of any other degree or diploma at another University or Institute of higher education, except where due acknowledgement is made in the text.
 	
@@ -98,11 +112,14 @@
 	\end{flushright}
 
 	% Abstract
+	\addcontentsline{toc}{chapter}{Abstract}
 	\chapter*{Abstract}
 	\textit{Abstract will go here.}
 
 	
 	% ----- Body -----
+	\newpage
+	\pagenumbering{arabic}
 	\chapter{Introduction}
 	\label{ch:introduction}
 	\input{chapters/intoduction}

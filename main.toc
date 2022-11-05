@@ -1,15 +1,21 @@
-\contentsline {chapter}{\numberline {1}Introduction}{7}{}%
-\contentsline {section}{\numberline {1.1}Introduction to Problem}{7}{}%
-\contentsline {section}{\numberline {1.2}Research Contributions}{7}{}%
-\contentsline {section}{\numberline {1.3}Thesis Structure}{8}{}%
-\contentsline {chapter}{\numberline {2}Review of Diagnostic Systems}{9}{}%
-\contentsline {chapter}{\numberline {3}Annotator Efficient Active Learning}{10}{}%
-\contentsline {chapter}{\numberline {4}Unsupervised Representation Learning}{11}{}%
-\contentsline {chapter}{\numberline {5}Selective Classification}{12}{}%
-\contentsline {chapter}{\numberline {6}Asymmetrical Risks}{13}{}%
-\contentsline {chapter}{References}{14}{}%
-\contentsline {chapter}{Appendices}{15}{}%
-\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{16}{}%
-\contentsline {section}{\numberline {A.1}First Authored Publications}{16}{}%
-\contentsline {section}{\numberline {A.2}Contributed Publications}{17}{}%
-\contentsline {section}{\numberline {A.3}Awards}{17}{}%
+\contentsline {chapter}{List of Terms}{iii}{}%
+\contentsline {chapter}{List of Abbreviations}{iv}{}%
+\contentsline {chapter}{List of Symbols}{v}{}%
+\contentsline {chapter}{Acknowledgements}{vi}{}%
+\contentsline {chapter}{Declaration}{vii}{}%
+\contentsline {chapter}{Abstract}{viii}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {section}{\numberline {1.1}Introduction to Problem}{1}{}%
+\contentsline {section}{\numberline {1.2}Research Contributions}{1}{}%
+\contentsline {section}{\numberline {1.3}Thesis Structure}{2}{}%
+\contentsline {chapter}{\numberline {2}Review of Diagnostic Systems}{3}{}%
+\contentsline {chapter}{\numberline {3}Annotator Efficient Active Learning}{4}{}%
+\contentsline {chapter}{\numberline {4}Unsupervised Representation Learning}{5}{}%
+\contentsline {chapter}{\numberline {5}Selective Classification}{6}{}%
+\contentsline {chapter}{\numberline {6}Asymmetrical Risks}{7}{}%
+\contentsline {chapter}{References}{8}{}%
+\contentsline {chapter}{Appendices}{9}{}%
+\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{10}{}%
+\contentsline {section}{\numberline {A.1}First Authored Publications}{10}{}%
+\contentsline {section}{\numberline {A.2}Contributed Publications}{11}{}%
+\contentsline {section}{\numberline {A.3}Awards}{11}{}%
