@@ -50,9 +50,14 @@
 \contentsline {section}{\numberline {5.4}Experiments with Selective Classification with Asymmetrical Risks}{7}{}%
 \contentsline {section}{\numberline {5.5}Conclusions}{7}{}%
 \contentsline {chapter}{\numberline {6}Conclusions and Discussions}{8}{}%
-\contentsline {section}{\numberline {6.1}Conclusions}{8}{}%
-\contentsline {section}{\numberline {6.2}Discussions}{8}{}%
-\contentsline {section}{\numberline {6.3}Future Work}{8}{}%
+\contentsline {section}{\numberline {6.1}Pathway to Complete System}{8}{}%
+\contentsline {section}{\numberline {6.2}Summary of Contributions}{8}{}%
+\contentsline {section}{\numberline {6.3}Limitations}{8}{}%
+\contentsline {section}{\numberline {6.4}Future Work}{8}{}%
+\contentsline {subsection}{\numberline {6.4.1}Active Learning}{8}{}%
+\contentsline {subsection}{\numberline {6.4.2}Unsupervised Learning}{8}{}%
+\contentsline {subsection}{\numberline {6.4.3}Selective Classification}{8}{}%
+\contentsline {subsection}{\numberline {6.4.4}Asymmetrical Risks}{8}{}%
 \contentsline {chapter}{References}{9}{}%
 \contentsline {chapter}{Appendices}{10}{}%
 \contentsline {chapter}{\numberline {A}List of Publications and Achievements}{11}{}%
