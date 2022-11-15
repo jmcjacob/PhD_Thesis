@@ -1,3 +1,17 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Shao et~al.]{Shao, Sun \harvardand\ Zhang}{2018}{shao2018deep}
+Shao, W., Sun, L. \harvardand\ Zhang, D.  \harvardyearleft
+  2018\harvardyearright , Deep active learning for nucleus classification in
+  pathology images, {\em in} `2018 IEEE 15th International Symposium on
+  Biomedical Imaging (ISBI 2018)', IEEE, pp.~199--202.
+
+\harvarditem[Sirinukunwattana et~al.]{Sirinukunwattana, Raza, Tsang, Snead,
+  Cree \harvardand\ Rajpoot}{2016}{sirinukunwattana2016locality}
+Sirinukunwattana, K., Raza, S. E.~A., Tsang, Y.-W., Snead, D.~R., Cree, I.~A.
+  \harvardand\ Rajpoot, N.~M.  \harvardyearleft 2016\harvardyearright ,
+  `Locality sensitive deep learning for detection and classification of nuclei
+  in routine colon cancer histology images', {\em IEEE transactions on medical
+  imaging} {\bf 35}(5),~1196--1206.
+
 \end{thebibliography}
