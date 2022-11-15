@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {2.1}{\ignorespaces The Convolutional Neural Network architecture for nuclei classification used in the region-based active learning experiments.\relax }}{8}{}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces The accuracy and loss for each model trained with different query strategies over 50 iterations resulting in a total of 102 annotated regions.\relax }}{10}{}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Test results for each query strategy after 50 active iterations.\relax }}{10}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

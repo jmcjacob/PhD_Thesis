@@ -1,5 +1,19 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Gal et~al.]{Gal, Islam \harvardand\ Ghahramani}{2017}{gal2017deep}
+Gal, Y., Islam, R. \harvardand\ Ghahramani, Z.  \harvardyearleft
+  2017\harvardyearright , Deep bayesian active learning with image data, {\em
+  in} `International Conference on Machine Learning', PMLR, pp.~1183--1192.
+
+\harvarditem{Prechelt}{1998}{prechelt1998early}
+Prechelt, L.  \harvardyearleft 1998\harvardyearright , Early stopping-but
+  when?, {\em in} `Neural Networks: Tricks of the trade', Springer, pp.~55--69.
+
+\harvarditem{Sener \harvardand\ Savarese}{2017}{sener2017active}
+Sener, O. \harvardand\ Savarese, S.  \harvardyearleft 2017\harvardyearright ,
+  `Active learning for convolutional neural networks: A core-set approach',
+  {\em arXiv preprint arXiv:1708.00489} .
+
 \harvarditem[Shao et~al.]{Shao, Sun \harvardand\ Zhang}{2018}{shao2018deep}
 Shao, W., Sun, L. \harvardand\ Zhang, D.  \harvardyearleft
   2018\harvardyearright , Deep active learning for nucleus classification in
@@ -13,5 +27,16 @@ Sirinukunwattana, K., Raza, S. E.~A., Tsang, Y.-W., Snead, D.~R., Cree, I.~A.
   `Locality sensitive deep learning for detection and classification of nuclei
   in routine colon cancer histology images', {\em IEEE transactions on medical
   imaging} {\bf 35}(5),~1196--1206.
+
+\harvarditem[Srivastava et~al.]{Srivastava, Hinton, Krizhevsky, Sutskever
+  \harvardand\ Salakhutdinov}{2014}{srivastava2014dropout}
+Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. \harvardand\
+  Salakhutdinov, R.  \harvardyearleft 2014\harvardyearright , `Dropout: a
+  simple way to prevent neural networks from overfitting', {\em The journal of
+  machine learning research} {\bf 15}(1),~1929--1958.
+
+\harvarditem{Zeiler}{2012}{zeiler2012adadelta}
+Zeiler, M.~D.  \harvardyearleft 2012\harvardyearright , `Adadelta: an adaptive
+  learning rate method', {\em arXiv preprint arXiv:1212.5701} .
 
 \end{thebibliography}

@@ -12,49 +12,45 @@ Warning--I didn't find a database entry for "geert2017survey"
 Warning--I didn't find a database entry for "settles2012active"
 Warning--I didn't find a database entry for "wang2018ceal"
 Warning--I didn't find a database entry for "sener2018active"
-Warning--I didn't find a database entry for "gal2017deep"
-Warning--I didn't find a database entry for "srivastava2014dropout"
-Warning--I didn't find a database entry for "zeiler2012adadelta"
-Warning--I didn't find a database entry for "prechelt1998early"
-You've used 2 entries,
+You've used 7 entries,
             2909 wiz_defined-function locations,
-            663 strings with 5424 characters,
-and the built_in function-call counts, 14172 in all, are:
-= -- 2334
-> -- 203
+            690 strings with 6152 characters,
+and the built_in function-call counts, 35354 in all, are:
+= -- 5776
+> -- 480
 < -- 0
-+ -- 1149
-- -- 63
-* -- 1267
-:= -- 2749
-add.period$ -- 2
-call.type$ -- 2
-change.case$ -- 28
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 41
-empty$ -- 85
-format.name$ -- 69
-if$ -- 2564
++ -- 2775
+- -- 147
+* -- 3080
+:= -- 6980
+add.period$ -- 7
+call.type$ -- 7
+change.case$ -- 98
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 138
+empty$ -- 269
+format.name$ -- 169
+if$ -- 6391
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 2
-newline$ -- 9
-num.names$ -- 22
-pop$ -- 8
+missing$ -- 7
+newline$ -- 24
+num.names$ -- 74
+pop$ -- 34
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 105
 quote$ -- 0
-skip$ -- 39
+skip$ -- 126
 stack$ -- 0
-substring$ -- 3369
-swap$ -- 12
-text.length$ -- 28
+substring$ -- 8224
+swap$ -- 37
+text.length$ -- 98
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 28
 warning$ -- 0
-while$ -- 47
+while$ -- 160
 width$ -- 0
-write$ -- 32
-(There were 9 warnings)
+write$ -- 100
+(There were 5 warnings)

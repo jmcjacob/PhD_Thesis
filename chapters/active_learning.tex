@@ -72,7 +72,7 @@ The proposed query strategy makes a simple modification to how an existing query
 		\(U' \leftarrow S(Y,n)\) \hfill select regions to query using the query strategy\\
 		\Return{\(U'\)}
 	}
-	\caption{Alteration to query strategy for region-based active learning}
+	\caption{Region-based active learning}
 	\label{alg:regionbased}
 \end{algorithm}
 
@@ -100,13 +100,14 @@ The publicly available CRCHistoPhenotypes~\citep{sirinukunwattana2016locality} d
 \end{figure}
 
 \subsection{Training Parameters}
-This experiment used a simple CNN inspired by the architecture used in the nuclei classification benchmark for the CRCHistoPhenotypes dataset~\cite{sirinukunwattana2016locality}. It consisted of two convolutional layers, one with 36 filters with a size of 4x4 and the other with 48 filters with a size of 3x3, both of which were followed by max pooling layers with a filter size of 2x2. These layers were followed by two fully connected layers with 1200 neurons and 512 neurons respectively. This architecture is summarised in Table~\ref{tab:cnn}. Each hidden layer used ReLU activation functions and the two fully connected layers used dropout for regularisation~\cite{srivastava2014dropout}. Dropout was also used to adapt the CNN into a Bayesian CNN.
+This experiment used a simple CNN inspired by the architecture used in the nuclei classification benchmark for the CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality}. It consisted of two convolutional layers, one with 36 4x4 filters and the other with 48 3x3 filters, both of which are followed by 2x2 max pooling layers. The convolutional layers were followed by two fully connected layers with 1200 neurons and 512 neurons respectively. This architecture is summarised in Table~\ref{tab:active_learning_cnn}. Each hidden layer used ReLU activation functions, and the two fully connected layers use dropout for regularisation~\citep{srivastava2014dropout} with a drop chance of 0.5. Dropout is used to train the model so the model can be used for Monte Carlo sampling after training.
 
-\begin{table}[b!]
+\begin{table}[h]
+	\caption{The Convolutional Neural Network architecture for nuclei classification used in the region-based active learning experiments.}
+	\label{tab:active_learning_cnn}
 	\centering
 	\begin{tabular}{|c|c|c}
 		\hline
-		\multicolumn{3}{|c|}{\begin{tabular}[c]{@{}c@{}}Convolutional Neural Network Architecture \\ for Nuclei Classification\end{tabular}} \\ \hline
 		Type & \begin{tabular}[c]{@{}c@{}}Filter\\ Dimensions\end{tabular} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Input/Output\\ Dimensions\end{tabular}} \\ \hline
 		I &  & \multicolumn{1}{c|}{30 x 30 x 3} \\ \hline
 		C & 4 x 4 x 1 x 36 & \multicolumn{1}{c|}{26 x 26 x 36} \\ \hline
@@ -117,11 +118,10 @@ This experiment used a simple CNN inspired by the architecture used in the nucle
 		F & 1 x 1 x 512 x 512 & \multicolumn{1}{c|}{1 x 512} \\ \hline
 		F & 1 x 1 x 512 x 4 & \multicolumn{1}{c|}{1 x 4} \\ \hline
 	\end{tabular}
-	\caption{The Convolutional Neural Network architecture for nuclei classification used in the region-based active learning experiments.}
-	\label{tab:cnn}
+
 \end{table}
 
-The training environment is constantly changing between iterations as the  dataset expands. The Adadelta training algorithm for gradient decent was chosen as the CNN’s training optimiser~\cite{zeiler2012adadelta}. Adadelta requires no manual tuning of learning rate as it adapts based on the training gradients, making it ideal for active learning tasks. To ensure that the model has been trained after each active iteration and that overfitting have been avoided, an early stopping method was used. The early stopping method chosen compares the generalisation loss (Equation \ref{eq:generalization_loss}) and training progression (Equation \ref{eq:training_progression}) and will stop training before overfitting~\cite{prechelt1998early}. Generalisation loss is calculated by comparing the validation loss for each epoch \(L_{val}(t)\) against the minimum validation loss across all epochs. The training progression value is calculated by analysing the training losses \(L_{tr}(t)\) over a batch of recent epochs of size \(k\).
+During the active learning process, the training environment is constantly changing as the training data is increased. To keep up with this change the adaptive gradient decent algorithm Adadelta~\citep{zeiler2012adadelta} was chosen as it requires no manual tuning of the learning rate as it adapts to the gradients of the model. As the training environment is constantly changing and may have to deal with small quantities of annotated data models can easily overfit the training data, to avoid this early stopping is used. The method proposed by \cite{prechelt1998early} compares generalisation loss and training progression until it reaches a specified target $\frac{GL(t)}{P_k(t)} > \alpha$. Generalisation loss (Equation \ref{eq:generalization_loss}) is calculated by comparing the validation loss for each epoch \(L_{val}(t)\) against the minimum validation loss across all epochs. The training progression (Equation \ref{eq:generalization_loss}) value is calculated by analysing the training losses \(L_{tr}(t)\) over a batch of recent epochs of size \(k\).
 
 \begin{equation}
 	GL(t) = 100 \cdot \left ( \frac{L_{va}(t)}{\underset{t'\leq t}{min}L_{va}(t')} - 1 \right )
@@ -133,27 +133,27 @@ The training environment is constantly changing between iterations as the  datas
 \end{equation}
 
 \subsection{Experiment Setup}
-Experiments tested the region-based modification combined with a range of query strategies. These query strategies included several more basic methods which will be used specifically to act as baselines for the other query strategies, built specifically for deep learning algorithms. These basic query strategies are random, least confident uncertainty, margin uncertainty and entropy uncertainty sampling. The other query strategies tried were K-Centre sampling (solved using a greedy approximation), Core-Set sampling~\cite{sener2018active} and Bayesian active learning by disagreement (BALD) sampling using Bayesian neural networks~\cite{gal2017deep}. 
+Experiments testing the region-based active learning modification combined with a range of different query strategies. These query strategies included several basic methods used specifically to act as baselines compared to others built specifically for deep learning query algorithms. The baseline strategies chosen were random querying, least confident uncertainty, margin uncertainty and entropy uncertainty sampling. The deep learning-specific query strategies used were K-Centre sampling (using greedy approximation), core-set sampling~\citep{sener2017active} and Bayesian active learning by disagreement (BALD) using Monte Carlo dropout~\citep{gal2017deep}.
 
-In each experiment, all available data were initially treated as unannotated; two randomly selected regions were then used to form the initial annotated training set. After each active iteration, two regions were selected from the unannotated regions to be added to the training set. This was continued for 50 iterations meaning that 102 regions out of 2,500 formed the final training set in each experiment. Each experimental setting was run five times with different random seeds (different weight initialisation and initial annotated patches). 
+In each experiment, all the available data was initially treated as unannotated; two randomly selected regions were used to form the initial annotated training dataset. For each active iteration, two regions were selected from the unannotated pool of regions to be added to the training dataset. This continued for 50 active iterations meaning that 102 regions out of 2,500 were used to form the final training set in each experiment. Each experimental setting was run five times with different seeds used to generate random elements (model weight initialisation and initial annotated patches).
 
 \subsection{Results}
-Table~\ref{tab:query_results} gives the test accuracy and loss (averaged over the five runs) after 50 iterations for each of the query strategies. These results were obtained on a single, unchanging test set. Notably, only K-Centre sampling achieved a higher average accuracy than a random sampling strategy. Core-set sampling accuracy was very similar to that of random sampling. The other query strategies were all worse than simply adopting random sampling. Figs.~\ref{fig:accuracy} and~\ref{fig:loss} show the test accuracy and loss for each strategy after each iteration. 
+The query strategies were evaluated by testing the trained models after each active iteration on a single, unchanging test set. Table~\ref{tab:query_results} gives the test accuracy and cross-entropy loss after 50 iterations (averaged over five runs) for each of the tested query strategies. Notably, only K-Centre sampling achieved a higher average accuracy than a random sampling query strategy. The core-set sampling query strategy accuracy was very similar to that of random sampling. The other query strategies all performed worse than the random sampling baseline. Figures ~\ref{fig:active_accuracy} and \ref{fig:active_loss} show the test accuracy and loss for each strategy after each active iteration.
 
-For comparison, a fully supervised CNN trained on a much larger training set of 2,500 annotated regions achieved an accuracy of 68.53\% and a loss of 1.111. Training using the K-Centre query strategy achieved an accuracy of 61.41\% and a loss of 1.137 using 4\% of the annotations. 
+For comparison, a fully supervised CNN trained on the entire dataset of 2,500 annotated regions achieved an accuracy of 68.53\% and a cross-entropy loss of 1.111. Training using the K-Centre query strategy achieved an accuracy of 61.41\% and a cross-entropy loss of 1.137 using only 4\% of the annotated data.
 
-
-\begin{table}[ht!]
+\begin{table}[h]
 	\centering
-	\begin{tabular}{l|lllllll}
-		\begin{tabular}[c]{@{}l@{}}Query \\ Strategy\end{tabular} & Random & \begin{tabular}[c]{@{}l@{}}Least\\ Confident\end{tabular} & Margin & Entropy & K-Centre & Core-Set & BALD \\ \hline
-		\multicolumn{1}{l|}{Accuracy} & 58.25\% & 48.92\% & 45.84\% & 32.37\% & 61.41\% & 57.33\% & 48.23\% \\
-		\multicolumn{1}{l|}{Loss} & 1.154 & 1.243 & 1.268 & 1.39 & 1.123 & 1.157 & 1.247
-	\end{tabular}
-	\caption{The accuracy and loss for each model trained with different query strategies over 50 iterations resulting in a total of 102 annotated regions.}
+	\caption{Test results for each query strategy after 50 active iterations.}
 	\label{tab:query_results}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{c|ccccccc}
+			\begin{tabular}[c]{@{}c@{}}Query\\ Strategy\end{tabular} & Random & \begin{tabular}[c]{@{}c@{}}Least \\ Confident\end{tabular} & Margin & Entropy & K-Centre & Core-Set & BALD \\ \hline
+			Accuracy & 58.25 & 48.92 & 45.84 & 32.37 & 61.41 & 57.33 & 48.23 \\
+			Loss & 1.154 & 1.243 & 1.268 & 1.39 & 1.123 & 1.157 & 1.247
+		\end{tabular}%
+	}
 \end{table}
-
 
 
 \section{Conclusion}
