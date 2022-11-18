@@ -32,9 +32,12 @@ In this thesis we propose a pathway used to train medical image analysis systems
 Structure
 
 \subsection*{Annotator Efficient Active Learning}
+Methods to reduce the need for costly data annotations become increasingly important as deep learning gains popularity in medical image analysis and digital pathology~\citep{tizhoosh2018artificial}. Active learning is an appealing approach that can reduce the amount of annotated data needed to train machine learning models~\citep{settles2012active}, but traditional active learning strategies do not always work well with deep learning~\citep{wang2016cost}. In patch-based machine learning systems, active learning methods typically request annotations for small individual patches which can be tedious and costly for the annotator who needs to rely on visual context for the patches. We propose an active learning framework that selects regions for annotation that are built up of several patches, which should increase annotation throughput~\citep{carse2019active}. The framework was evaluated with several query strategies on the task of nuclei classification. Convolutional neural networks were trained on small patches, each containing a single nucleus. Traditional query strategies performed worse than random sampling.
 
 \subsection*{Unsupervised Representation Learning}
 
 \subsection*{Selective Classification}
 
 \subsection*{Asymmetric Risks}
+
+\subsection*{Conclusion}

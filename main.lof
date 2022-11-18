@@ -1,10 +1,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Pool-based active learning framework.\relax }}{4}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Three example regions from the CRCHistoPhenotypes dataset\nobreakspace {}\cite {sirinukunwattana2016locality} with multiple nuclei that will be extracted into patches and augmented.\relax }}{8}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Average test accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{11}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Average test mean class accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{12}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Average test loss of trained models with different amounts of annotated regions selected with query strategises.\relax }}{12}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pool-based active learning framework.\relax }}{4}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Three example regions from the CRCHistoPhenotypes dataset\nobreakspace {}\cite {sirinukunwattana2016locality} with multiple nuclei that will be extracted into patches and augmented.\relax }}{8}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Average test accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{11}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Average test mean class accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{12}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Average test loss of trained models with different amounts of annotated regions selected with query strategises.\relax }}{12}{figure.caption.25}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
