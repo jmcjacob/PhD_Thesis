@@ -1,18 +1,26 @@
 \section{Introduction}
+This work was published at the European Congress on Digital Pathology 2019~\citep{carse2019active}.
 
-\subsection{Problem Statement}
-Modern deep learning algorithms have been shown to improve performance for tasks such as classification, segmentation and detection in digital pathology. However, deep learning algorithms require large annotated datasets from which to build high performing models. This requirement for data has been identified as a key challenge for using deep learning algorithms for digital pathology~\cite{tizhoosh2018artificial} and medical image analysis~\cite{geert2017survey}. There are several approaches to tackling this problem which include semi-supervised learning, weakly supervised learning, active learning, and their combinations. This paper focuses on the use of active learning to aid in annotation collection for patch-based digital pathology image analysis.
+\subsection{Active Learning for Medical Image Analysis}
+Modern deep learning algorithms have been shown to improve performance for medical image analysis tasks such as classification, segmentation, and detection for different medical modalities including digital pathology. However, deep learning algorithms require large, annotated datasets to train models as these models learn a deep feature representation as well as a discriminative classifier. This requirement for data has been identified as a key challenge for using deep learning algorithms for digital pathology~\citep{tizhoosh2018artificial} and medical image analysis in general~\citep{litjens2017survey}. There are several approaches to tackling this problem including semi-supervised learning, weakly supervised learning, active learning, and combinations of these approaches. This work focuses on the use of active learning to aid in annotation collection for patch-based digital pathology.
 
-Active learning is a type of machine learning which hypothesises that having a learning algorithm select the data it uses to train itself can reduce the amount of data needed for training. Active learning is used within modern applications to reduce the quantity of annotations needed. Annotating only the data selected by the learning algorithm reduces the overall cost of building an effective model. In a pool-based scenario, the learning algorithm has access to a large pool of unannotated data. Over multiple iterations, the learning algorithm selects data to be annotated and added to the training data ~\cite{settles2012active}.
+Active learning is a type of machine learning that hypothesises that having a learning algorithm select the data that is used during training can reduce the amount of data needed for training~\citep{settles2012active}. Active learning is used within modern applications to reduce the quantity of data that needs to be annotated by selecting unannotated data to be annotated and added to the dataset used to train the model. By limiting the amount of data annotations needed can reduce annotation costs (which can be expensive when dealing with specialised data such as histopathology) and computation costs as the models can be trained with less data. In a pool-based scenario, the learning algorithm has access to a large pool of unannotated data. Over multiple iterations, the learning algorithm selects the most beneficial data from the pool to be annotated and added the training dataset, as shown in figure \ref{fig:pool_based_active_learning}.
 
-Active learning algorithms use query strategies to select the data to be annotated. There are numerous query strategies available with the most popular methods being based on uncertainty. Uncertainty sampling is a simple query strategy that samples data based on a model’s predictions for the unannotated data.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/active_learning.png}
+	\caption{Pool-based active learning framework.}
+	\label{fig:pool_based_active_learning}
+\end{figure}
 
-While these methods have been shown to work well with many  traditional learning algorithms, this is not the case when working with deep learning algorithms. There are several reasons for this. Firstly, deep learning algorithms jointly learn feature representations and classifiers/regressors. Selecting only difficult examples to train the model leads to learnt features that are not representative, decreasing the quality of the model ~\cite{wang2018ceal}. Secondly, traditional query strategies are used to select a single data point. It has been shown that deep learning algorithms work better with batch updates and so require a query strategy to select an optimal batch and not just the top ranked points ~\cite{sener2018active}. Thirdly, the softmax output from a classifier trained using deep learning algorithms does not represent the model’s uncertainty well, which is commonly used to sample unannotated data ~\cite{gal2017deep}.
+Active learning algorithms use query strategies to decide which data is to be selected for annotation. There are numerous query strategies available with the most popular methods being based on model uncertainty. Uncertainty sampling is a query strategy that focuses on selecting unannotated data that the model’s prediction is most uncertain about.
 
-A standard approach for using learning algorithms for digital pathology is to use patches from larger images. This allows the images to be input to learning algorithms such as convolutional neural networks (CNNs) more efficiently and removes the necessity of annotating very large images. When using patch-based methods that use small patches, for tasks such as nuclei detection and classification, using active learning to select patches for annotation can be detrimental for annotation collection. This is due to small patches being time consuming and tedious to annotate. Small patches may also not include enough context for accurate annotation.
+While these methods have been shown to perform well with many traditional learning algorithms, this is not the case when working with deep learning algorithms. There are several reasons for this, firstly, deep learning algorithms jointly learn feature representations and a classifier/regressor. Selecting only the difficult examples to train the model leads to the learnt features are not representative of the entire data distribution, decreasing the quality of the model~\citep{wang2016cost}. Secondly, traditional query strategies usually select a single data point, and it has been shown that deep learning algorithms perform better in an active learning environment with batch updates and so require a query strategy to select an optimal batch and not just a collection of the top-ranked points~\citep{sener2017active}. Thirdly, the softmax output from a classifier trained using deep learning algorithms does not represent the model’s uncertainty well, despite this the softmax output is still commonly used to represent uncertainty~\citep{gal2016dropout}.
 
-\subsection{Summary of Work}
-To address these issues, this paper modifies query strategies so that tasks which rely on small patches can efficiently use active learning and ease the effort needed from expert annotators. Methods were tested using the CRCHistoPhenotypes dataset for nuclei detection and classification~\cite{sirinukunwattana2016locality}. 
+\subsection{Deep Active Learning for Digital Pathology}
+A standard approach for using learning algorithms for digital pathology is to use patches from larger images. This allows the images to be input to learning algorithms such as convolutional neural networks (CNNs) more efficiently and removes the necessity of annotating very large images. When using patch-based methods that use small patches, for tasks such as nuclei detection and classification, using active learning to select patches for annotation can be detrimental to annotation collection. This is due to small patches being time-consuming and tedious to annotate, small patches may also not include enough spatial context for accurate annotation.
+
+To address these issues of using active learning for patch-based digital pathology, this work modifies the standard active learning framework to select regions for annotation that are built up of several patches to increase annotation throughput. This modified framework was evaluated with several active learning query strategies on a nuclei detection and classification task~\citep{sirinukunwattana2016locality}.
 
 
 
@@ -46,54 +54,60 @@ Annotator Efficient Active Learning for Histopathology
 Problem Setting defined by Review
 
 \subsection{Region-Based Active Learning}
-Patch-based methods are common within digital pathology and medical image analysis more generally. However, applying active learning to these methods can be tedious, especially in systems that use small patches. Small patches can be difficult to annotate in isolation. Even if their spatial visual context is provided to the annotator, continually having to reassess the context for each annotation can be inefficient and frustrating.  We propose a region-based alternative that requests annotations over regions containing multiple small patches. Working with larger regions eases the effort needed from the annotator and can lead to an improved annotation collection throughput. This alteration allows for a learning algorithm to be trained with the small patches and only treats the data as regions when querying the unannotated data.
+Patch-based methods are common within digital pathology and medical image analysis more generally. However, applying active learning to these methods can be tedious, especially in systems that use small patches. Small patches can be difficult to annotate in isolation. Even if their spatial visual context is provided to the annotator, continually having to reassess the context for each annotation can be inefficient and frustrating.  We propose a region-based alternative that requests annotations over larger regions containing multiple small patches. Working with larger regions eases the effort needed from the annotator and can lead to an improved annotation collection throughput. This alteration allows for a learning algorithm to be trained with the small patches and only treats the data as regions when querying the unannotated data.
 
-The proposed query strategy makes a simple modification to how an existing query strategy works. An overview of this can be seen in Algorithm \ref{alg:regionbased} where \(S\) is an existing query strategy. This algorithm is called at the end of each active iteration, once a model has been trained on the currently available annotations. It extracts all the patches from each unannotated region and make predictions on each patch. These predictions are then averaged to create a prediction for the overall region. Once all the regions have predictions, these predictions can be used within an active learning query strategy. An example of this would be using entropy uncertainty sampling where an uncertainty value for each region would be calculated and sampled. However, this approach can also be applied to more complex query strategies such as core-set sampling, by solving the K-centre problem for the region predictions rather than feature representations for individual data points.
-
-\begin{algorithm}[h]
+\begin{algorithm}
+	\caption{Region-based active learning}
+	\label{alg:regionbased}
 	\SetKwInOut{Input}{Input}
 	\SetKwInOut{Output}{Output}
 	\SetKwProg{RegionQueryStrategy}{RegionQueryStrategy}{}{}
-	\Input{\(\theta\) are the trained weights for the learning algorithm,\\
-		\(\delta\) is the learning algorithm,\\
-		\(U\) is the set of unannotated data,\\
-		\(n\) is the batch to be selected,\\
-		\(S\) is the query strategy that will be used.
+	\Input{
+		$\theta \gets$ trained model,\\
+		$\delta \gets$ prediction algorithm,\\
+		$S \gets$ active learning query strategy,\\
+		$U \gets$ set of unannotated data,\\
+		$A \gets$ set of annotated data
 	}
-	\Output{\(U'\) which is a sampled set from \(U\)}
-	
-	\RegionQueryStrategy{\(\theta, \delta, U, n, S\)}{
-		\ForEach{region \(r\) in \(U\)}{
-			\(P \leftarrow \textnormal{ExtractPatches}(r)\) \hfill extract patches from region\\
-			\(O \leftarrow \delta(\theta, P)\) \hfill makes predictions on extracted patches\\
-			\(O' \leftarrow \textnormal{Average}(O)\) \hfill average predictions\\
-			\(Y := Y + O'\) \hfill append region average to array of averages\\
+	\Output{
+		$U' \gets$ updated set of unannotated data,\\
+		$A' \gets$ updated set of annotated data
+	}
+	\RegionQueryStrategy{$\theta, \delta, S, U, A$}
+	{
+		\ForEach{region $r$ in $U$}{
+			$P \gets$ ExtractPatches($r$) \hfill extract patches from region\\
+			$O \gets \theta(\delta, P)$ \hfill predictions on extracted patches\\
+			$O' \gets$ Average($O$) \hfill average the patch predictions\\
+			$Y \gets$ Append($Y, O'$) \hfill append region average to array\\
 		}
-		\(U' \leftarrow S(Y,n)\) \hfill select regions to query using the query strategy\\
-		\Return{\(U'\)}
+		$n \gets S(Y)$ \hfill selects region from list\\
+		$U' \gets$ Remove($U, n$) \hfill removes selection from unannotated set\\
+		$A' \gets$ Append($A, n$) \hfill appends the selection to annotated set\\
+		\Return{$U', A'$}
 	}
-	\caption{Region-based active learning}
-	\label{alg:regionbased}
 \end{algorithm}
+
+The proposed query strategy makes a simple modification to how an existing query strategy works. An overview of this can be seen in Algorithm \ref{alg:regionbased} where \(S\) is an existing query strategy. This algorithm is called at the end of each active iteration once a model has been trained on the currently available annotations. It extracts all the patches from each unannotated region and makes predictions on each patch. These predictions are then averaged to create a prediction for the overall region. Once all the regions have predictions, these predictions can be used within an active learning query strategy. An example of this would be using entropy uncertainty sampling where an uncertainty value for each region would be calculated and sampled. However, this approach can also be applied to more complex query strategies such as core-set sampling, by solving the K-centre problem for the region predictions rather than feature representations for individual data points.
 
 
 
 \section{Active Learning Experiments}
-Active Learning Experiments
+This section details the datasets, training parameters, experimental setup, and results for the experiments with region-based active learning on a nuclei classification task from whole slide image patches. The code and full results used within this section can be found on the project GitHub repository\footnote{GitHub Repository: \url{github.com/jmcjacob/Patch-Active-Learning-Pathology}}.
 
 \subsection{Dataset}
-The publicly available CRCHistoPhenotypes~\citep{sirinukunwattana2016locality} dataset was used to evaluate region-based active learning as the dataset contained a large number of annotated nuclei from large patches extracted from whole slide images making it ideal for the use case for region based active learning. The dataset has also been used in several nuclei classification and detection studies and has also been used for active learning experiments~\citep{shao2018deep}. The dataset consists of 22,444 annotated nuclei from 100 500x500 non-overlapping patches from 10 whole slide H\&E images of colorectal adenocarcinomas from 9 different patients. Each nucleus has its coordinates and its corresponding classification (epithelial, inflammatory, fibroblast, and miscellaneous) annotated. 2,500 images were produced by splitting the patches into 100x100 pixel regions. From these regions, each nucleus was extracted into a 30x30 patch that was used to train the CNN model. Augmentation was used during training by randomly applying Gaussian blurring and horizontal and vertical flipping.
+The publicly available CRCHistoPhenotypes~\citep{sirinukunwattana2016locality} dataset was used to evaluate region-based active learning as the dataset contained a large number of annotated nuclei from large patches extracted from whole slide images making it ideal for the use case for region based active learning. The dataset has also been used in several nuclei classification and detection studies and has also been used for active learning experiments~\citep{shao2018deep}. The dataset consists of 22,444 annotated nuclei from 100 500x500 non-overlapping patches from 10 whole slide H\&E images of colorectal adenocarcinomas from 9 different patients. Each nucleus has its coordinates and its corresponding classification (epithelial, inflammatory, fibroblast, and miscellaneous) annotated. There are 7,722 epithelial, 5,712 fibroblast, 6971 inflammatory and 2,039 miscellaneous annotated nuclei in the dataset. 2,500 images were produced by splitting the patches into 100x100 pixel regions. From these regions, each nucleus was extracted into a 30x30 patch that was used to train the CNN model. Augmentation was used during training by randomly applying Gaussian blurring and horizontal and vertical flipping.
 
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=0.9\linewidth]{region1.jpg}
+		\includegraphics[width=\linewidth]{region1.jpg}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=0.9\linewidth]{region2.jpg}
+		\includegraphics[width=\linewidth]{region2.jpg}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=0.9\linewidth]{region3.jpg}
+		\includegraphics[width=\linewidth]{region3.jpg}
 	\end{subfigure}
 	\caption{Three example regions from the CRCHistoPhenotypes dataset~\cite{sirinukunwattana2016locality} with multiple nuclei that will be extracted into patches and augmented.}
 	\label{fig:region_example}
@@ -133,16 +147,14 @@ During the active learning process, the training environment is constantly chang
 \end{equation}
 
 \subsection{Experiment Setup}
-Experiments testing the region-based active learning modification combined with a range of different query strategies. These query strategies included several basic methods used specifically to act as baselines compared to others built specifically for deep learning query algorithms. The baseline strategies chosen were random querying, least confident uncertainty, margin uncertainty and entropy uncertainty sampling. The deep learning-specific query strategies used were K-Centre sampling (using greedy approximation), core-set sampling~\citep{sener2017active} and Bayesian active learning by disagreement (BALD) using Monte Carlo dropout~\citep{gal2017deep}.
+Experiments testing the region-based active learning modification combined with a range of different query strategies. These query strategies included several basic methods used specifically to act as baselines compared to others built specifically for deep learning query algorithms. The baseline strategies chosen were random querying, least confident uncertainty, margin uncertainty and entropy uncertainty sampling. The deep learning-specific query strategies used were K-Centre sampling (using greedy approximation), core-set sampling~\citep{sener2017active} and Bayesian active learning by disagreement (BALD) using Monte Carlo dropout~\citep{gal2017deep}. THESE WERE CHOSEN BECAUSE
 
-In each experiment, all the available data was initially treated as unannotated; two randomly selected regions were used to form the initial annotated training dataset. For each active iteration, two regions were selected from the unannotated pool of regions to be added to the training dataset. This continued for 50 active iterations meaning that 102 regions out of 2,500 were used to form the final training set in each experiment. Each experimental setting was run five times with different seeds used to generate random elements (model weight initialisation and initial annotated patches).
+In each experiment, all the available data was initially treated as unannotated; two randomly selected regions were used to form the initial annotated training dataset. For each active iteration, two regions were selected from the unannotated pool of regions to be added to the training dataset, a randomly initialised model (using uniform Xavier initialisation~\citep{glorot2010understanding}) is then trained using the new dataset. This continued for 50 active iterations meaning that 102 regions out of 2,500 were used to form the final training set in each experiment. Each experimental setting was run five times with different seeds used to generate random elements (model weight initialisation and initial annotated patches).
 
 \subsection{Results}
-The query strategies were evaluated by testing the trained models after each active iteration on a single, unchanging test set. Table~\ref{tab:query_results} gives the test accuracy and cross-entropy loss after 50 iterations (averaged over five runs) for each of the tested query strategies. Notably, only K-Centre sampling achieved a higher average accuracy than a random sampling query strategy. The core-set sampling query strategy accuracy was very similar to that of random sampling. The other query strategies all performed worse than the random sampling baseline. Figures ~\ref{fig:active_accuracy} and \ref{fig:active_loss} show the test accuracy and loss for each strategy after each active iteration.
+The query strategies were evaluated by testing the trained models after each active iteration on a single, unchanging test set. Table~\ref{tab:query_results} gives the test accuracy and cross-entropy loss after 50 iterations (averaged over five runs) for each of the tested query strategies. Notably, only K-Centre sampling achieved a higher average accuracy than a random sampling query strategy. The core-set sampling query strategy accuracy was very similar to that of random sampling. The other query strategies all performed worse than the random sampling baseline. Figures ~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_accuracy} and \ref{fig:active_learning_loss} show the test accuracy, mean class accuracy and cross-entropy loss for the models trained with annotated data selected by each query strategy after each active iteration averaged over 5 runs. The figures also show the results of training a model with all the available regions annotated (1487 annotated training regions). For comparison, a fully supervised CNN trained on the entire dataset of annotated regions achieved an accuracy of 68.53\% and a cross-entropy loss of 1.111. Training using the K-Centre query strategy achieved an accuracy of 61.41\% and a cross-entropy loss of 1.137 using only 7\% of the annotated data.
 
-For comparison, a fully supervised CNN trained on the entire dataset of 2,500 annotated regions achieved an accuracy of 68.53\% and a cross-entropy loss of 1.111. Training using the K-Centre query strategy achieved an accuracy of 61.41\% and a cross-entropy loss of 1.137 using only 4\% of the annotated data.
-
-\begin{table}[h]
+\begin{table}
 	\centering
 	\caption{Test results for each query strategy after 50 active iterations.}
 	\label{tab:query_results}
@@ -150,10 +162,32 @@ For comparison, a fully supervised CNN trained on the entire dataset of 2,500 an
 		\begin{tabular}{c|ccccccc}
 			\begin{tabular}[c]{@{}c@{}}Query\\ Strategy\end{tabular} & Random & \begin{tabular}[c]{@{}c@{}}Least \\ Confident\end{tabular} & Margin & Entropy & K-Centre & Core-Set & BALD \\ \hline
 			Accuracy & 58.25 & 48.92 & 45.84 & 32.37 & 61.41 & 57.33 & 48.23 \\
+			\begin{tabular}[c]{@{}c@{}}Mean Class \\ Accuracy\end{tabular} & 53.50 & 47.36 & 42.40 & 41.07 & 54.39 & 52.50 & 46.14 \\
 			Loss & 1.154 & 1.243 & 1.268 & 1.39 & 1.123 & 1.157 & 1.247
 		\end{tabular}%
 	}
 \end{table}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/active_learning_accuracy.png}
+	\caption{Average test accuracy of trained models with different amounts of annotated regions selected with query strategises.}
+	\label{fig:active_learning_accuracy}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/active_learning_mean_class_accuracy.png}
+	\caption{Average test mean class accuracy of trained models with different amounts of annotated regions selected with query strategises.}
+	\label{fig:active_learning_mean_class_accuracy}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/active_learning_loss.png}
+	\caption{Average test loss of trained models with different amounts of annotated regions selected with query strategises.}
+	\label{fig:active_learning_loss}
+\end{figure}
 
 
 \section{Conclusion}

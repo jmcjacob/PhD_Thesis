@@ -1,9 +1,37 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Carse \harvardand\ McKenna}{2019}{carse2019active}
+Carse, J. \harvardand\ McKenna, S.  \harvardyearleft 2019\harvardyearright ,
+  Active learning for patch-based digital pathology using convolutional neural
+  networks to reduce annotation costs, {\em in} `European Congress on Digital
+  Pathology', Springer, pp.~20--27.
+
+\harvarditem{Gal \harvardand\ Ghahramani}{2016}{gal2016dropout}
+Gal, Y. \harvardand\ Ghahramani, Z.  \harvardyearleft 2016\harvardyearright ,
+  Dropout as a bayesian approximation: Representing model uncertainty in deep
+  learning, {\em in} `international conference on machine learning', PMLR,
+  pp.~1050--1059.
+
 \harvarditem[Gal et~al.]{Gal, Islam \harvardand\ Ghahramani}{2017}{gal2017deep}
 Gal, Y., Islam, R. \harvardand\ Ghahramani, Z.  \harvardyearleft
   2017\harvardyearright , Deep bayesian active learning with image data, {\em
   in} `International Conference on Machine Learning', PMLR, pp.~1183--1192.
+
+\harvarditem{Glorot \harvardand\ Bengio}{2010}{glorot2010understanding}
+Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
+  Understanding the difficulty of training deep feedforward neural networks,
+  {\em in} `Proceedings of the thirteenth international conference on
+  artificial intelligence and statistics', JMLR Workshop and Conference
+  Proceedings, pp.~249--256.
+
+\harvarditem[Litjens et~al.]{Litjens, Kooi, Bejnordi, Setio, Ciompi,
+  Ghafoorian, Van Der~Laak, Van~Ginneken \harvardand\
+  S{\'a}nchez}{2017}{litjens2017survey}
+Litjens, G., Kooi, T., Bejnordi, B.~E., Setio, A. A.~A., Ciompi, F.,
+  Ghafoorian, M., Van Der~Laak, J.~A., Van~Ginneken, B. \harvardand\
+  S{\'a}nchez, C.~I.  \harvardyearleft 2017\harvardyearright , `A survey on
+  deep learning in medical image analysis', {\em Medical image analysis} {\bf
+  42},~60--88.
 
 \harvarditem{Prechelt}{1998}{prechelt1998early}
 Prechelt, L.  \harvardyearleft 1998\harvardyearright , Early stopping-but
@@ -13,6 +41,11 @@ Prechelt, L.  \harvardyearleft 1998\harvardyearright , Early stopping-but
 Sener, O. \harvardand\ Savarese, S.  \harvardyearleft 2017\harvardyearright ,
   `Active learning for convolutional neural networks: A core-set approach',
   {\em arXiv preprint arXiv:1708.00489} .
+
+\harvarditem{Settles}{2012}{settles2012active}
+Settles, B.  \harvardyearleft 2012\harvardyearright , `Active learning', {\em
+  Synthesis lectures on artificial intelligence and machine learning} {\bf
+  6}(1),~1--114.
 
 \harvarditem[Shao et~al.]{Shao, Sun \harvardand\ Zhang}{2018}{shao2018deep}
 Shao, W., Sun, L. \harvardand\ Zhang, D.  \harvardyearleft
@@ -34,6 +67,19 @@ Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. \harvardand\
   Salakhutdinov, R.  \harvardyearleft 2014\harvardyearright , `Dropout: a
   simple way to prevent neural networks from overfitting', {\em The journal of
   machine learning research} {\bf 15}(1),~1929--1958.
+
+\harvarditem{Tizhoosh \harvardand\ Pantanowitz}{2018}{tizhoosh2018artificial}
+Tizhoosh, H.~R. \harvardand\ Pantanowitz, L.  \harvardyearleft
+  2018\harvardyearright , `Artificial intelligence and digital pathology:
+  challenges and opportunities', {\em Journal of pathology informatics} {\bf
+  9}(1),~38.
+
+\harvarditem[Wang et~al.]{Wang, Zhang, Li, Zhang \harvardand\
+  Lin}{2016}{wang2016cost}
+Wang, K., Zhang, D., Li, Y., Zhang, R. \harvardand\ Lin, L.  \harvardyearleft
+  2016\harvardyearright , `Cost-effective active learning for deep image
+  classification', {\em IEEE Transactions on Circuits and Systems for Video
+  Technology} {\bf 27}(12),~2591--2600.
 
 \harvarditem{Zeiler}{2012}{zeiler2012adadelta}
 Zeiler, M.~D.  \harvardyearleft 2012\harvardyearright , `Adadelta: an adaptive

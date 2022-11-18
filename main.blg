@@ -7,50 +7,49 @@ Reallocating 'name_of_file' (item size: 1) to 11 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 Database file #1: refs/intro.bib
 Database file #2: refs/active.bib
-Warning--I didn't find a database entry for "tizhoosh2018artificial"
-Warning--I didn't find a database entry for "geert2017survey"
-Warning--I didn't find a database entry for "settles2012active"
-Warning--I didn't find a database entry for "wang2018ceal"
-Warning--I didn't find a database entry for "sener2018active"
-You've used 7 entries,
+Repeated entry---line 249 of file refs/active.bib
+ : @inproceedings{carse2019active
+ :                               ,
+I'm skipping whatever remains of this entry
+You've used 14 entries,
             2909 wiz_defined-function locations,
-            690 strings with 6152 characters,
-and the built_in function-call counts, 35354 in all, are:
-= -- 5776
-> -- 480
+            730 strings with 7605 characters,
+and the built_in function-call counts, 73203 in all, are:
+= -- 11982
+> -- 1000
 < -- 0
-+ -- 2775
-- -- 147
-* -- 3080
-:= -- 6980
-add.period$ -- 7
-call.type$ -- 7
-change.case$ -- 98
-chr.to.int$ -- 7
-cite$ -- 7
-duplicate$ -- 138
-empty$ -- 269
-format.name$ -- 169
-if$ -- 6391
++ -- 5773
+- -- 308
+* -- 6415
+:= -- 14397
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 196
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 277
+empty$ -- 543
+format.name$ -- 362
+if$ -- 13239
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 7
-newline$ -- 24
-num.names$ -- 74
-pop$ -- 34
+missing$ -- 14
+newline$ -- 45
+num.names$ -- 146
+pop$ -- 65
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 210
 quote$ -- 0
-skip$ -- 126
+skip$ -- 249
 stack$ -- 0
-substring$ -- 8224
-swap$ -- 37
-text.length$ -- 98
+substring$ -- 17075
+swap$ -- 76
+text.length$ -- 196
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
+type$ -- 56
 warning$ -- 0
-while$ -- 160
+while$ -- 323
 width$ -- 0
-write$ -- 100
-(There were 5 warnings)
+write$ -- 194
+(There was 1 error message)
