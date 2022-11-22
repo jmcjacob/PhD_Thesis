@@ -5,51 +5,48 @@ Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: agsm.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
+Reallocating 'name_of_file' (item size: 1) to 18 items.
 Database file #1: refs/intro.bib
 Database file #2: refs/active.bib
-Repeated entry---line 249 of file refs/active.bib
- : @inproceedings{carse2019active
- :                               ,
-I'm skipping whatever remains of this entry
-You've used 14 entries,
+Database file #3: refs/unsupervised.bib
+You've used 25 entries,
             2909 wiz_defined-function locations,
-            730 strings with 7605 characters,
-and the built_in function-call counts, 73203 in all, are:
-= -- 11982
-> -- 1000
-< -- 0
-+ -- 5773
-- -- 308
-* -- 6415
-:= -- 14397
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 196
-chr.to.int$ -- 14
-cite$ -- 14
-duplicate$ -- 277
-empty$ -- 543
-format.name$ -- 362
-if$ -- 13239
+            791 strings with 9981 characters,
+and the built_in function-call counts, 157882 in all, are:
+= -- 25988
+> -- 2249
+< -- 1
++ -- 12758
+- -- 700
+* -- 14031
+:= -- 30734
+add.period$ -- 25
+call.type$ -- 25
+change.case$ -- 350
+chr.to.int$ -- 25
+cite$ -- 25
+duplicate$ -- 500
+empty$ -- 956
+format.name$ -- 793
+if$ -- 28568
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 14
-newline$ -- 45
-num.names$ -- 146
-pop$ -- 65
+missing$ -- 25
+newline$ -- 78
+num.names$ -- 265
+pop$ -- 114
 preamble$ -- 1
-purify$ -- 210
+purify$ -- 375
 quote$ -- 0
-skip$ -- 249
+skip$ -- 462
 stack$ -- 0
-substring$ -- 17075
-swap$ -- 76
-text.length$ -- 196
+substring$ -- 37313
+swap$ -- 143
+text.length$ -- 351
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 100
 warning$ -- 0
-while$ -- 323
+while$ -- 567
 width$ -- 0
-write$ -- 194
-(There was 1 error message)
+write$ -- 355

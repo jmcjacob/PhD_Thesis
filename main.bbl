@@ -1,10 +1,26 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Carse et~al.]{Carse, Carey \harvardand\
+  McKenna}{2021}{carse2021unsupervised}
+Carse, J., Carey, F. \harvardand\ McKenna, S.  \harvardyearleft
+  2021\harvardyearright , Unsupervised representation learning from pathology
+  images with multi-directional contrastive predictive coding, {\em in} `2021
+  IEEE 18th International Symposium on Biomedical Imaging (ISBI)', IEEE,
+  pp.~1254--1258.
+
 \harvarditem{Carse \harvardand\ McKenna}{2019}{carse2019active}
 Carse, J. \harvardand\ McKenna, S.  \harvardyearleft 2019\harvardyearright ,
   Active learning for patch-based digital pathology using convolutional neural
   networks to reduce annotation costs, {\em in} `European Congress on Digital
   Pathology', Springer, pp.~20--27.
+
+\harvarditem[Deng et~al.]{Deng, Dong, Socher, Li, Li \harvardand\
+  Fei-Fei}{2009}{deng2009imagenet}
+Deng, J., Dong, W., Socher, R., Li, L., Li, K. \harvardand\ Fei-Fei, L.
+  \harvardyearleft 2009\harvardyearright , Image{N}et: A large-scale,
+  hierarchical image database, {\em in} `Conference on Computer Vision and
+  Pattern Recognition', Institute of Electrical and Electronics Engineers,
+  pp.~248--255.
 
 \harvarditem{Gal \harvardand\ Ghahramani}{2016}{gal2016dropout}
 Gal, Y. \harvardand\ Ghahramani, Z.  \harvardyearleft 2016\harvardyearright ,
@@ -24,6 +40,29 @@ Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
   artificial intelligence and statistics', JMLR Workshop and Conference
   Proceedings, pp.~249--256.
 
+\harvarditem[H\'enaff et~al.]{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami
+  \harvardand\ van~den Oord}{2019}{henaff2019data}
+H\'enaff, O., Srinivas, A., Fauw, J.~D., Razavi, A., Doersch, C., Eslami, S.~A.
+  \harvardand\ van~den Oord, A.  \harvardyearleft 2019\harvardyearright ,
+  `Data-efficient image recognition with contrastive predictive coding', {\em
+  arXiv preprint arXiv:1905.09272} .
+
+\harvarditem{Kingma \harvardand\ Ba}{2014}{kingma2014adam}
+Kingma, D.~P. \harvardand\ Ba, J.  \harvardyearleft 2014\harvardyearright ,
+  `Adam: A method for stochastic optimization', {\em arXiv preprint
+  arXiv:1412.6980} .
+
+\harvarditem[Litjens et~al.]{Litjens, Bandi, Bejnordi, Geessink, Balkenhol,
+  Bult, Halilovic, Hermsen, van~de Loo, Vogels, Manson, Stathonikos,
+  Baidoshvili, van Diest, Wauters, van Dijk \harvardand\ van~der
+  Laak}{2018}{litjens20181399}
+Litjens, G., Bandi, P., Bejnordi, B.~E., Geessink, O., Balkenhol, M., Bult, P.,
+  Halilovic, A., Hermsen, M., van~de Loo, R., Vogels, R., Manson, Q.~F.,
+  Stathonikos, N., Baidoshvili, A., van Diest, P., Wauters, C., van Dijk, M.
+  \harvardand\ van~der Laak, J.  \harvardyearleft 2018\harvardyearright , `1399
+  {H}\&{E}-stained sentinel lymph node sections of breast cancer patients: the
+  {CAMELYON} dataset', {\em GigaScience} {\bf 7}(6).
+
 \harvarditem[Litjens et~al.]{Litjens, Kooi, Bejnordi, Setio, Ciompi,
   Ghafoorian, Van Der~Laak, Van~Ginneken \harvardand\
   S{\'a}nchez}{2017}{litjens2017survey}
@@ -32,6 +71,11 @@ Litjens, G., Kooi, T., Bejnordi, B.~E., Setio, A. A.~A., Ciompi, F.,
   S{\'a}nchez, C.~I.  \harvardyearleft 2017\harvardyearright , `A survey on
   deep learning in medical image analysis', {\em Medical image analysis} {\bf
   42},~60--88.
+
+\harvarditem{Madabhushi \harvardand\ Lee}{2016}{madabhushi2016image}
+Madabhushi, A. \harvardand\ Lee, G.  \harvardyearleft 2016\harvardyearright ,
+  `Image analysis and machine learning in digital pathology: Challenges and
+  opportunities', {\em Medical Image Analysis} {\bf 100}(33),~170--175.
 
 \harvarditem{Prechelt}{1998}{prechelt1998early}
 Prechelt, L.  \harvardyearleft 1998\harvardyearright , Early stopping-but
@@ -74,12 +118,46 @@ Tizhoosh, H.~R. \harvardand\ Pantanowitz, L.  \harvardyearleft
   challenges and opportunities', {\em Journal of pathology informatics} {\bf
   9}(1),~38.
 
+\harvarditem[van~den Oord et~al.]{van~den Oord, Kalchbrenner \harvardand\
+  Kavukcuoglu}{2016}{oord2016pixel}
+van~den Oord, A., Kalchbrenner, N. \harvardand\ Kavukcuoglu, K.
+  \harvardyearleft 2016\harvardyearright , Pixel recurrent neural networks,
+  {\em in} `Proceedings of the 33rd International Conference on Machine
+  Learning', Vol.~48, Journal of Machine Learning Research, pp.~1747--1756.
+
+\harvarditem[van~den Oord et~al.]{van~den Oord, Li \harvardand\
+  Vinyals}{2018}{oord2018representation}
+van~den Oord, A., Li, Y. \harvardand\ Vinyals, O.  \harvardyearleft
+  2018\harvardyearright , `Representation learning with contrastive predictive
+  coding', {\em arXiv preprint arXiv:1807.03748} .
+
+\harvarditem[Veeling et~al.]{Veeling, Linmans, Winkens, Cohen \harvardand\
+  Welling}{2018}{veeling2018rotation}
+Veeling, B., Linmans, J., Winkens, J., Cohen, T. \harvardand\ Welling, M.
+  \harvardyearleft 2018\harvardyearright , Rotation equivariant {CNN}s for
+  digital pathology, {\em in} `International Conference on Medical Image
+  Computing and Computer-Assisted Intervention', Springer, pp.~210--218.
+
 \harvarditem[Wang et~al.]{Wang, Zhang, Li, Zhang \harvardand\
   Lin}{2016}{wang2016cost}
 Wang, K., Zhang, D., Li, Y., Zhang, R. \harvardand\ Lin, L.  \harvardyearleft
   2016\harvardyearright , `Cost-effective active learning for deep image
   classification', {\em IEEE Transactions on Circuits and Systems for Video
   Technology} {\bf 27}(12),~2591--2600.
+
+\harvarditem[Weiss et~al.]{Weiss, Khoshgoftaar \harvardand\
+  Wang}{2016}{weiss2016survey}
+Weiss, K., Khoshgoftaar, T.~M. \harvardand\ Wang, D.  \harvardyearleft
+  2016\harvardyearright , `A survey of transfer learning', {\em Journal of Big
+  Data} {\bf 3}(1),~1--40.
+
+\harvarditem[Xie et~al.]{Xie, Girshick, Doll{\'a}r, Tu \harvardand\
+  He}{2017}{xie2017aggregated}
+Xie, S., Girshick, R., Doll{\'a}r, P., Tu, Z. \harvardand\ He, K.
+  \harvardyearleft 2017\harvardyearright , Aggregated residual transformations
+  for deep neural networks, {\em in} `Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition', Institute of Electrical and
+  Electronics Engineers, pp.~1492--1500.
 
 \harvarditem{Zeiler}{2012}{zeiler2012adadelta}
 Zeiler, M.~D.  \harvardyearleft 2012\harvardyearright , `Adadelta: an adaptive

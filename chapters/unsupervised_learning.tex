@@ -1,11 +1,44 @@
 \section{Introduction}
-Introduction
+This work was presented at the IEEE International Symposium on Biomedical Imaging 2021 and published as part of its proceedings \citep{carse2021unsupervised}.
 
 \subsection{Problem Statement}
-Problem Statement
+Modern deep learning algorithms have been shown to improve performance for digital pathology tasks such as nuclei detection and disease classification~\cite{litjens2017survey}. They have been able to achieve such results by jointly learning deep representations and discriminative classifiers or regressors. This end-to-end training allows them to learn feature representations tailored to the given task. However, this approach requires more annotated data than traditional machine learning methods to obtain good generalization. This need for large annotated datasets has been identified as a challenge for digital pathology~\cite{madabhushi2016image}, as well as other medical image analysis domains~\cite{litjens2017survey}. This study focuses on the use of unsupervised representation learning for digital pathology images. The learned representations can potentially be used in multiple tasks to improve generalization, decrease data dimensionality, improve computational performance, and initialize deep supervised learning models when access to annotated data is limited. 
+
+\begin{figure}
+	\begin{minipage}[b]{.48\linewidth}
+		\centering
+		\centerline{\includegraphics[width=\textwidth]{images/cat.jpg}}
+		\centerline{(a)}\medskip
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\linewidth}
+		\centering
+		\centerline{\includegraphics[width=\textwidth]{images/cat_grid_v2.png}}
+		\centerline{(b)}\medskip
+	\end{minipage}
+	\\
+	\begin{minipage}[b]{.48\linewidth}
+		\centering
+		\centerline{\includegraphics[width=\textwidth]{images/histo.png}}
+		\centerline{(c)}\medskip
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{.48\linewidth}
+		\centering
+		\centerline{\includegraphics[width=\textwidth]{images/histo_grid.png}}
+		\centerline{(d)}\medskip
+	\end{minipage}
+	\caption{(a) An example image from the ImageNet dataset~\cite{deng2009imagenet}. (b) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted. (c) An example image from the Patch Camelyon dataset~\cite{veeling2018rotation}. (d) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted.}
+	\label{fig:example_cpc_patches}
+\end{figure}
+
+Transfer learning has been performed using the weights of a deep encoder used for generating representations to initialize another model~\cite{weiss2016survey}. Such an approach can reduce the need for large annotated datasets as the model is initialized with weights that can produce domain-representative features, having already been trained on a large pool of unannotated data. 
+Contrastive predictive coding (CPC) is a state-of-the-art method for unsupervised representation learning~\cite{oord2018representation}. It learns data representations using an autoregressor to predict future data representations in a sequence. A CPC model is trained using a loss function made from a combination of noise-contrastive estimation and importance sampling where the density ratio between each sample and their representation can be preserved by classifying a positive sample from multiple negative samples. To apply this method to images, van den Oord et al.~\cite{oord2018representation} split each image into overlapping patches and used an encoder to encode each patch to produce a matrix of feature representations. A mask was then applied to this matrix so that an autoregressor could only 'see' the top few rows of it. The autoregressor was then used to predict the representations of the masked patches from this context available to it. An example of this framework being applied to an image can be seen in Fig.~\ref{fig:example_cpc_patches}(b). 
+
+CPC has been used to achieve data-efficient results for object detection and Imagenet classification tasks after modifying model capacity, introducing layer normalization, modifying prediction directions and adding patch-based augmentations~\cite{henaff2019data}. Although autoregressor predictions were made in multiple directions these were done individually. We argue that a different approach is appropriate when the orientation of the images is arbitrary so does not carry useful information. This is the case for many (though not all) digital pathology tasks, in contrast to images in typical computer vision tasks. 
 
 \subsection{Summary of Work}
-Summary of Work
+In this paper we propose using CPC with an alternative mask for building latent context and a new extension to the autoregressor PixelCNN for multi-directional prediction (Fig.~\ref{fig:example_cpc_patches}(d)). We demonstrate, using the PatchCamelyon dataset~\cite{veeling2018rotation} (derived from the Camelyon16 dataset~\cite{litjens20181399}), that classification can be performed with less annotated data using representations learned in this way.
 
 
 
@@ -27,10 +60,37 @@ Unsupervised Representation Learning for Medical Images
 Multi-Directional Contrastive Predictive Coding
 
 \subsection{Contrastive Predictive Coding for Medical Images}
-Contrastive Predictive Coding for Medical Images
+A CPC model is trained by predicting future representations from past representations, enabling it to learn `slow' features that effectively represent an input data distribution~\cite{henaff2019data,oord2018representation}. This is done by jointly training an encoder, \(g_{en}\), and an autoregressor, \(g_{ar}\). The encoder encodes each element, \(x_t\), of input sequence \(x\) into a latent representation, \(z_t = g_{en}(x_t)\). The autoregressor then summarizes part of the latent representation sequence \(z_{\le t}\) into a latent context representation \(c_t = g_{ar}(z_{\le t})\). A density ratio \(f\) can be modeled that can preserve the mutual information between \(x_{t+k}\) and \(c_t\) (Equation~(\ref{eq:density_ratio})).
+
+\begin{equation}
+	f_k(x_{t+k}, c_t) \propto \frac{p(x_{t+k}|c_t)}{p(x_{t+k})}
+	\label{eq:density_ratio}
+\end{equation}
+
+The InfoNCE loss function used to jointly train the encoder and autoregressor is based on noise-contrastive estimation and importance sampling. There is no way to evaluate \(p(x)\) or \(p(x|c)\) directly so instead a cross entropy loss is used to classify positive samples of \(z\) from random negative samples. Details of the function \(f\) and the InfoNCE loss can be found in~\cite{oord2018representation}.
+
+\begin{equation}
+	L=-\underset{x}{\mathbb{E}}\left[\log\frac{f_k(x_{t+k},c_t)}{\sum_{x_j\in X}f_k(x_j,c_t))}\right]
+	\label{eq:InfoNCE}
+\end{equation} 
+
+This CPC method has been applied to computer vision by taking overlapping patches from each image as in Fig.~\ref{fig:example_cpc_patches}. Each of these patches is then encoded and an autoregressor is used to produce a context vector from the patch representations at the top of the image (as illustrated in Fig.~\ref{fig:example_cpc_patches}(b) where the top 3 rows of patches were used~\cite{oord2018representation}). Each column of the image is then treated as a sequence with the context vector from the top of the image used to predict the remaining patch representations below. CPC has been used to achieve data-efficient results on computer vision datasets such as Imagenet~\cite{deng2009imagenet}.
 
 \subsection{Multi-Directional Contrastive Predictive Coding}
-Multi-Directional Contrastive Predictive Coding
+The treatment of columns of the representation matrix as individual sequences (as in the method described in Section~\ref{sec:cpc}) can negatively impact performance when working with images such as histology patches in which overall image rotation is irrelevant. Although the orientation of certain histology whole slide images can be biologically meaningful, the orientation of image patches such as those used in our experiments (images of lymph nodes with breast cancer metastases) is not. In such cases, the autoregressor can struggle to predict patch representations from the provided context because the vertical image axis is arbitrary, unlike in Imagenet where it correlates with the direction of gravity acting upon the image content. We make two modifications inspired by image in-filling to address this limitation: an alternative latent mask for producing a context vector, and a modified PixelCNN~\cite{oord2016pixel} for multi-directional context building. We propose multi-directional CPC, utilizing these two modifications, to more effectively learn representations from images when image rotation is uninformative.
+
+We first present a modified version of PixelCNN that will be used as the autoregressor. This method replaces each masked convolutional block of the PixelCNN architecture with a multi-directional masked block (Fig.~\ref{fig:multi-directional_masked_block}). Each multi-directional masked block takes a single input image patch and rotates through 90, 180 and 270 degrees, resulting in four versions of the input. A masked block, as described in~\cite{oord2016pixel}, is then applied to each of them. The four outputs from the masked blocks are then concatenated and put through a final 1x1 convolutional layer for the purpose of dimensionality reduction.   
+
+\begin{figure}
+	\begin{minipage}[b]{1.0\linewidth}
+		\centering
+		\centerline{\includegraphics[width=0.7\textwidth]{mcb.png}}
+	\end{minipage}
+	\caption{Architecture of a Multi-Directional Masked Block}
+	\label{fig:multi-directional_masked_block}
+\end{figure}
+
+We use this multi-directional autoregressor to learn a latent context from multiple directions at once. To take advantage of this we introduce an alternative latent mask inspired by in-filling. With this mask (illustrated in Fig.~\ref{fig:example_cpc_patches}(d)), the autoregressor only has access to patch representations around the perimeter of the images. The autoregressor predicts the patch representations of the central patches. This means that images where rotation is unimportant can be better represented with features learned using CPC.
 
 
 
@@ -38,18 +98,37 @@ Multi-Directional Contrastive Predictive Coding
 Unsupervised Representation Learning Experiments
 
 \subsection{Dataset}
-Dataset
+Our experiments used the Patch Camelyon dataset comprised of 327,680 96x96 pixel non-overlapping patches~\cite{veeling2018rotation}. These patches are from scans of lymph node sections in the Camelyon16 dataset~\cite{litjens20181399}. They are annotated with a binary label indicating the presence or absence of metastatic tissue. One reason we selected this dataset was that the small image size allows for larger batch sizes and faster training so that we were able to run experiments using a single Nvidia GeForce RTX 2080 Ti.
 
 \subsection{Experiment Setup}
-Experiment Setup
+We trained four CPC models with different combinations of single- or multi-directional autoregressors, and top-down or in-filling latent masks. To test the effectiveness of the models, we used the trained encoder weights to initialize the weights of CNN classifiers. For each CPC model, nine classification models were trained on subsets of the training data with their labels made available; these labelled subsets ranged in size from 10 to 100,000 images.
 
 \subsection{Training Parameters}
-Training Parameters
+Our CPC models split each input image into overlapping patches (24x24 patches overlapping by 12 pixels) and used a ResNeXt~\cite{xie2017aggregated} with 101 layers as the encoder followed by an additional convolutional layer to produce a 128-dimensional feature vector for each patch. The autoregressor is comprised of 6 masked convolutional blocks to produce the context vector and predict the masked feature vectors. The loss for the training of the CPC model uses 16 randomly selected images as negative samples in the loss function.
+
+When training the CPC and CNN models, random rotations (multiples of 90 degrees) as well as horizontal and vertical flips were applied to augment the training data. 20\% of the training data was used as a validation set (58,982 images) for early stopping. We trained the CPC models for 20 epochs using a learning rate of \(1e^{-4}\) and a batch size of 16. The CNN classifiers had a hidden layer of 256 neurons between the encoder and the output layer. They were trained for 50 epochs with the Adam optimizer~\cite{kingma2014adam}, a learning rate of \(1e^{-4}\), and a batch size of 64. Our experiments can be found on our GitHub Repository\footnote{\url{github.com/UoD-CVIP/Multi_Directional_CPC_Histology}}.
+
+Each CPC model took an average of 90 hours to train. Fig.~\ref{fig:cpc_training} plots validation loss at each epoch and clearly suggests that use of a multi-directional autoregressor was more effective at reducing the InfoNCE loss than a top-down autoregressor. The in-filling style in combination with the multi-directional autoregressor stabilized CPC training.
 
 \subsection{Results}
-Results
+Fig.~\ref{fig:cnn_training} shows average accuracies on a held out testing set (32,768 images) for CNN classifiers trained using the different CPC models' weights for initialization. A baseline using no pre-training is also included. CNNs trained on small amounts of annotated data were able to achieve higher accuracies when a multi-directional autoregressor had been used.  In contrast, standard CPC struggled to learn a representation suitable for initialising a CNN classifier (transfer learning), sometimes lowering accuracy compared to classifiers trained using random weight initialisation (no pre-training).
+
+\begin{table*}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{l|l|l|l|l|l|l|l|l|l}
+			Training Examples & 10 & 32 & 100 & 316 & 1000 & 3162 & 10000 & 31624 & 100000 \\ \hline
+			No Pretraining & 0.518 (0.041) & 0.500 (0.000) & 0.679 (0.014) & 0.691 (0.053) & 0.750 (0.014) & 0.772 (0.017) & 0.788 (0.005) & 0.773 (0.003) & 0.811 (0.004) \\
+			Single-Directional Normal Mask & 0.509 (0.029) & 0.520 (0.045) & 0.546 (0.046) & 0.670 (0.029) & 0.713 (0.022) & 0.781 (0.014) & 0.798 (0.003) & 0.790 (0.009) & 0.802 (0.008) \\
+			Single-Directional Infilling Mask & 0.509 (0.055) & 0.551 (0.042) & 0.643 (0.049) & 0.703 (0.014) & 0.731 (0.012) & 0.775 (0.012) & 0.797 (0.028) & 0.806 (0.014) & 0.804 (0.020) \\
+			Multi-Directional Normal Mask & 0.566 (0.071) & 0.573 (0.068) & 0.696 (0.065) & 0.727 (0.018) & 0.747 (0.002) & 0.771 (0.015) & 0.788 (0.018) & 0.792 (0.007) & 0.805 (0.012) \\
+			Multi-Directional Infilling Mask & 0.522 (0.045) & 0.614 (0.050) & 0.678 (0.004) & 0.720 (0.035) & 0.769 (0.012) & 0.784 (0.009) & 0.778 (0.013) & 0.801 (0.013) & 0.816 (0.020)
+		\end{tabular}%
+	}
+	\caption{Mean test accuracies of the CNN classifiers (standard deviations in parentheses).}
+	\label{tab:cnn_results}
+\end{table*}
 
 
 
 \section{Conclusion}
-Conclusions
+We have shown that the original CPC architecture does not perform well on a digital pathology patch classification task. We proposed a multi-directional modification to CPC that achieved better results, and improved classification accuracies when annotated data were limited. Our experiment illustrates that algorithms based on an assumption of image directionality (such as is present in Imagenet) will not necessarily perform well on images without such directionality. We suppose that this will also be true for other visual tasks where image orientation is unimportant, as is the case in multiple biomedical imaging settings.  
