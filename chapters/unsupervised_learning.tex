@@ -5,25 +5,25 @@ This work was presented at the IEEE International Symposium on Biomedical Imagin
 Modern deep learning algorithms have been shown to improve performance for digital pathology tasks such as nuclei detection and disease classification~\cite{litjens2017survey}. They have been able to achieve such results by jointly learning deep representations and discriminative classifiers or regressors. This end-to-end training allows them to learn feature representations tailored to the given task. However, this approach requires more annotated data than traditional machine learning methods to obtain good generalization. This need for large annotated datasets has been identified as a challenge for digital pathology~\cite{madabhushi2016image}, as well as other medical image analysis domains~\cite{litjens2017survey}. This study focuses on the use of unsupervised representation learning for digital pathology images. The learned representations can potentially be used in multiple tasks to improve generalization, decrease data dimensionality, improve computational performance, and initialize deep supervised learning models when access to annotated data is limited. 
 
 \begin{figure}
-	\begin{minipage}[b]{.48\linewidth}
+	\begin{minipage}[b]{.4\linewidth}
 		\centering
 		\centerline{\includegraphics[width=\textwidth]{images/cat.jpg}}
 		\centerline{(a)}\medskip
 	\end{minipage}
 	\hfill
-	\begin{minipage}[b]{0.48\linewidth}
+	\begin{minipage}[b]{0.4\linewidth}
 		\centering
 		\centerline{\includegraphics[width=\textwidth]{images/cat_grid_v2.png}}
 		\centerline{(b)}\medskip
 	\end{minipage}
 	\\
-	\begin{minipage}[b]{.48\linewidth}
+	\begin{minipage}[b]{.4\linewidth}
 		\centering
 		\centerline{\includegraphics[width=\textwidth]{images/histo.png}}
 		\centerline{(c)}\medskip
 	\end{minipage}
 	\hfill
-	\begin{minipage}[b]{.48\linewidth}
+	\begin{minipage}[b]{.4\linewidth}
 		\centering
 		\centerline{\includegraphics[width=\textwidth]{images/histo_grid.png}}
 		\centerline{(d)}\medskip
@@ -84,7 +84,7 @@ We first present a modified version of PixelCNN that will be used as the autoreg
 \begin{figure}
 	\begin{minipage}[b]{1.0\linewidth}
 		\centering
-		\centerline{\includegraphics[width=0.7\textwidth]{mcb.png}}
+		\centerline{\includegraphics[width=0.9\textwidth]{mcb.png}}
 	\end{minipage}
 	\caption{Architecture of a Multi-Directional Masked Block}
 	\label{fig:multi-directional_masked_block}
@@ -113,21 +113,30 @@ Each CPC model took an average of 90 hours to train. Fig.~\ref{fig:cpc_training}
 \subsection{Results}
 Fig.~\ref{fig:cnn_training} shows average accuracies on a held out testing set (32,768 images) for CNN classifiers trained using the different CPC models' weights for initialization. A baseline using no pre-training is also included. CNNs trained on small amounts of annotated data were able to achieve higher accuracies when a multi-directional autoregressor had been used.  In contrast, standard CPC struggled to learn a representation suitable for initialising a CNN classifier (transfer learning), sometimes lowering accuracy compared to classifiers trained using random weight initialisation (no pre-training).
 
-\begin{table*}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{l|l|l|l|l|l|l|l|l|l}
-			Training Examples & 10 & 32 & 100 & 316 & 1000 & 3162 & 10000 & 31624 & 100000 \\ \hline
-			No Pretraining & 0.518 (0.041) & 0.500 (0.000) & 0.679 (0.014) & 0.691 (0.053) & 0.750 (0.014) & 0.772 (0.017) & 0.788 (0.005) & 0.773 (0.003) & 0.811 (0.004) \\
-			Single-Directional Normal Mask & 0.509 (0.029) & 0.520 (0.045) & 0.546 (0.046) & 0.670 (0.029) & 0.713 (0.022) & 0.781 (0.014) & 0.798 (0.003) & 0.790 (0.009) & 0.802 (0.008) \\
-			Single-Directional Infilling Mask & 0.509 (0.055) & 0.551 (0.042) & 0.643 (0.049) & 0.703 (0.014) & 0.731 (0.012) & 0.775 (0.012) & 0.797 (0.028) & 0.806 (0.014) & 0.804 (0.020) \\
-			Multi-Directional Normal Mask & 0.566 (0.071) & 0.573 (0.068) & 0.696 (0.065) & 0.727 (0.018) & 0.747 (0.002) & 0.771 (0.015) & 0.788 (0.018) & 0.792 (0.007) & 0.805 (0.012) \\
-			Multi-Directional Infilling Mask & 0.522 (0.045) & 0.614 (0.050) & 0.678 (0.004) & 0.720 (0.035) & 0.769 (0.012) & 0.784 (0.009) & 0.778 (0.013) & 0.801 (0.013) & 0.816 (0.020)
-		\end{tabular}%
-	}
+\begin{table}[]
+	\centering
 	\caption{Mean test accuracies of the CNN classifiers (standard deviations in parentheses).}
 	\label{tab:cnn_results}
-\end{table*}
-
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{r|rrrrr}
+			\multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Training\\ Examples\end{tabular}} &
+			\multicolumn{1}{c}{No Pretraining} &
+			\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Single-Directional\\ Normal Mask\end{tabular}} &
+			\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Single-Directional\\ Infilling Mask\end{tabular}} &
+			\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Multi-Directional\\ Normal Mask\end{tabular}} &
+			\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Multi-Directional\\ Infilling Mask\end{tabular}} \\ \hline
+			10     & 0.518 (0.041) & 0.509 (0.029)          & 0.509 (0.055)          & \textbf{0.566 (0.071)} & 0.522 (0.045)          \\
+			32     & 0.500 (0.000) & 0.520 (0.045)          & 0.551 (0.042)          & 0.573 (0.068)          & \textbf{0.614 (0.050)} \\
+			100    & 0.679 (0.014) & 0.546 (0.046)          & 0.643 (0.049)          & \textbf{0.696 (0.065)} & 0.678 (0.004)          \\
+			316    & 0.691 (0.053) & 0.670 (0.029)          & 0.703 (0.014)          & \textbf{0.727 (0.018)} & 0.720 (0.035)          \\
+			1000   & 0.750 (0.014) & 0.713 (0.022)          & 0.731 (0.012)          & 0.747 (0.002)          & \textbf{0.769 (0.012)} \\
+			3162   & 0.772 (0.017) & 0.781 (0.014)          & 0.755 (0.012)          & 0.771 (0.015)          & \textbf{0.784 (0.009)} \\
+			10000  & 0.788 (0.005) & \textbf{0.798 (0.003)} & 0.797 (0.028)          & 0.788 (0.018)          & 0.778 (0.013)          \\
+			31624  & 0.773 (0.003) & 0.790 (0.009)          & \textbf{0.806 (0.014)} & 0.792 (0.007)          & 0.801 (0.013)          \\
+			100000 & 0.811 (0.004) & 0.802 (0.008)          & 0.804 (0.020)          & 0.805 (0.012)          & \textbf{0.816 (0.020)}
+		\end{tabular}%
+	}
+\end{table}
 
 
 \section{Conclusion}
