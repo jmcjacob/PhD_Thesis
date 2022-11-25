@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {3.1.2}Summary of Work}{17}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Review of Deep Unsupervised Representation Learning}{18}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Unsupervised Representation Learning}{18}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Contrastive Predictive Coding for Computer Vision}{18}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Deep Unsupervised Representation Learning}{18}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Unsupervised Representation Learning for Medical Images}{18}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Multi-Directional Contrastive Predictive Coding}{18}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Contrastive Predictive Coding for Medical Images}{18}{subsection.3.3.1}%
