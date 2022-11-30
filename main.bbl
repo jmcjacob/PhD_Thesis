@@ -1,5 +1,12 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Bengio et~al.]{Bengio, Courville \harvardand\
+  Vincent}{2013}{bengio2013representation}
+Bengio, Y., Courville, A. \harvardand\ Vincent, P.  \harvardyearleft
+  2013\harvardyearright , `Representation learning: A review and new
+  perspectives', {\em IEEE transactions on pattern analysis and machine
+  intelligence} {\bf 35}(8),~1798--1828.
+
 \harvarditem[Carse et~al.]{Carse, Carey \harvardand\
   McKenna}{2021}{carse2021unsupervised}
 Carse, J., Carey, F. \harvardand\ McKenna, S.  \harvardyearleft

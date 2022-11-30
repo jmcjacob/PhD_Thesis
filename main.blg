@@ -9,44 +9,44 @@ Reallocating 'name_of_file' (item size: 1) to 18 items.
 Database file #1: refs/intro.bib
 Database file #2: refs/active.bib
 Database file #3: refs/unsupervised.bib
-You've used 25 entries,
+You've used 26 entries,
             2909 wiz_defined-function locations,
-            791 strings with 9981 characters,
-and the built_in function-call counts, 157882 in all, are:
-= -- 25988
-> -- 2249
+            798 strings with 10191 characters,
+and the built_in function-call counts, 162784 in all, are:
+= -- 26787
+> -- 2319
 < -- 1
-+ -- 12758
-- -- 700
-* -- 14031
-:= -- 30734
-add.period$ -- 25
-call.type$ -- 25
-change.case$ -- 350
-chr.to.int$ -- 25
-cite$ -- 25
-duplicate$ -- 500
-empty$ -- 956
-format.name$ -- 793
-if$ -- 28568
++ -- 13141
+- -- 721
+* -- 14467
+:= -- 31703
+add.period$ -- 26
+call.type$ -- 26
+change.case$ -- 364
+chr.to.int$ -- 26
+cite$ -- 26
+duplicate$ -- 516
+empty$ -- 994
+format.name$ -- 817
+if$ -- 29451
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 25
-newline$ -- 78
-num.names$ -- 265
-pop$ -- 114
+missing$ -- 26
+newline$ -- 81
+num.names$ -- 276
+pop$ -- 116
 preamble$ -- 1
-purify$ -- 375
+purify$ -- 390
 quote$ -- 0
-skip$ -- 462
+skip$ -- 476
 stack$ -- 0
-substring$ -- 37313
-swap$ -- 143
-text.length$ -- 351
+substring$ -- 38454
+swap$ -- 146
+text.length$ -- 365
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
+type$ -- 104
 warning$ -- 0
-while$ -- 567
+while$ -- 590
 width$ -- 0
-write$ -- 355
+write$ -- 369

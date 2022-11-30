@@ -7,7 +7,8 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Average test loss of trained models with different amounts of annotated regions selected with query strategises.\relax }}{13}{figure.caption.25}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces (a) An example image from the ImageNet dataset\nobreakspace {}\cite {deng2009imagenet}. (b) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted. (c) An example image from the Patch Camelyon dataset\nobreakspace {}\cite {veeling2018rotation}. (d) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted.\relax }}{16}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{20}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed active learning framework with learnt representations from unsupervised representation learning on unannotated data.\relax }}{18}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{21}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
