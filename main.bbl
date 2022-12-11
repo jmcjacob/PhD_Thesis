@@ -47,6 +47,13 @@ Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
   artificial intelligence and statistics', JMLR Workshop and Conference
   Proceedings, pp.~249--256.
 
+\harvarditem{Gutmann \harvardand\ Hyv{\"a}rinen}{2010}{gutmann2010noise}
+Gutmann, M. \harvardand\ Hyv{\"a}rinen, A.  \harvardyearleft
+  2010\harvardyearright , Noise-contrastive estimation: A new estimation
+  principle for unnormalized statistical models, {\em in} `Proceedings of the
+  thirteenth international conference on artificial intelligence and
+  statistics', JMLR Workshop and Conference Proceedings, pp.~297--304.
+
 \harvarditem[H\'enaff et~al.]{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami
   \harvardand\ van~den Oord}{2019}{henaff2019data}
 H\'enaff, O., Srinivas, A., Fauw, J.~D., Razavi, A., Doersch, C., Eslami, S.~A.

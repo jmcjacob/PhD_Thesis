@@ -39,10 +39,11 @@
 \contentsline {subsection}{\numberline {3.2.2}Deep Unsupervised Representation Learning}{18}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Unsupervised Representation Learning for Medical Images}{18}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Multi-Directional Contrastive Predictive Coding}{18}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Contrastive Predictive Coding for Medical Images}{19}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Multi-Directional Contrastive Predictive Coding}{19}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Unsupervised Representation Learning Experiments}{20}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Dataset}{21}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.3.1}Contrastive Predictive Coding}{19}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Contrastive Predictive Coding for Computer Vision}{19}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Multi-Directional Contrastive Predictive Coding}{20}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Unsupervised Representation Learning Experiments}{21}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Dataset}{22}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Experiment Setup}{22}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Training Parameters}{22}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Results}{23}{subsection.3.4.4}%

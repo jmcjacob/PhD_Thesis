@@ -73,40 +73,40 @@ Unsupervised Representation Learning for Medical Images
 \label{sec:unsupervised_multi_directional_cpc}
 Multi-Directional Contrastive Predictive Coding
 
-\subsection{Contrastive Predictive Coding for Medical Images}
+\subsection{Contrastive Predictive Coding}
 \label{subsec:unsupervised_cpc}
-A CPC model is trained by predicting future representations from past representations, enabling it to learn `slow' features that effectively represent an input data distribution~\cite{henaff2019data,oord2018representation}. This is done by jointly training an encoder, \(g_{en}\), and an autoregressor, \(g_{ar}\). The encoder encodes each element, \(x_t\), of input sequence \(x\) into a latent representation, \(z_t = g_{en}(x_t)\). The autoregressor then summarizes part of the latent representation sequence \(z_{\le t}\) into a latent context representation \(c_t = g_{ar}(z_{\le t})\). A density ratio \(f\) can be modeled that can preserve the mutual information between \(x_{t+k}\) and \(c_t\) (Equation~(\ref{eq:density_ratio})).
+Contrastive predictive coding is a method to learn feature representations in an unsupervised manner from sequential data. A CPC model is trained by predicting future representations from past representations, enabling the model to learn ‘slow’ features that effectively represent an input data distribution~\citep{henaff2019data,oord2018representation}. A CPC model is made up of two components, the first is an encoder $g_{en}$ that encoders each element, $x_t$ of the input sequence $x$ into a latent representation $z_t = g_{en}(x_t)$. The second component is an autoregressive model $g_{ar}$, that summarises part of the latent representation sequence $z_{\le t}$ into a latent context representation $c_t = g_{ar}(z_{\le t})$. Rather than using the autoregressive model to predict future samples, a density ratio is modelled instead that preserves the mutual information between $x_{t+k}$ and $c_t$ (Equation~\ref{eq:density_ratio}).
 
 \begin{equation}
 	f_k(x_{t+k}, c_t) \propto \frac{p(x_{t+k}|c_t)}{p(x_{t+k})}
 	\label{eq:density_ratio}
 \end{equation}
 
-The InfoNCE loss function used to jointly train the encoder and autoregressor is based on noise-contrastive estimation and importance sampling. There is no way to evaluate \(p(x)\) or \(p(x|c)\) directly so instead a cross entropy loss is used to classify positive samples of \(z\) from random negative samples. Details of the function \(f\) and the InfoNCE loss can be found in~\cite{oord2018representation}.
+There is no way to evaluate $p(x)$ or $p(x|c)$ directly, but as the distribution can be sampled, Noise-contrastive estimation~\citep{gutmann2010noise} can be used by comparing target value to random negative samples. The loss function used to jointly optimise the encoder and autoregressive models are dubbed InfoNCE (Equation~\ref{eq:InfoNCE}) and is based on Noise-contrastive estimation. This loss function using a set $X=\{x_i,…,x_N\}$ of $N$ random samples containing one positive sample from $p(x_{t+k}|c_t)$ and $N – 1$ negative samples from $p(x_{t+k})$. By optimising this loss the result will be $f_k(x_{t+k}, c_t)$ that estimates the density ratio from Equation~\ref{eq:density_ratio}.
 
 \begin{equation}
 	L=-\underset{x}{\mathbb{E}}\left[\log\frac{f_k(x_{t+k},c_t)}{\sum_{x_j\in X}f_k(x_j,c_t))}\right]
 	\label{eq:InfoNCE}
 \end{equation} 
 
-This CPC method has been applied to computer vision by taking overlapping patches from each image as in Fig.~\ref{fig:example_cpc_patches}. Each of these patches is then encoded and an autoregressor is used to produce a context vector from the patch representations at the top of the image (as illustrated in Fig.~\ref{fig:example_cpc_patches}(b) where the top 3 rows of patches were used~\cite{oord2018representation}). Each column of the image is then treated as a sequence with the context vector from the top of the image used to predict the remaining patch representations below. CPC has been used to achieve data-efficient results on computer vision datasets such as Imagenet~\cite{deng2009imagenet}.
+\subsection{Contrastive Predictive Coding for Computer Vision}
+\label{subsec:unsupervised_cpc_for_vision}
+Contrastive Predictive Coding was originally purposed for sequential data and has been applied to computer vision by first splitting an input image into overlapping patches. Each of these patches is then encoded and an autoregressive model is used to produce a context vector from the patch representations at the top of the image (as illustrated in Figure~\ref{fig:example_cpc_patches}(b) where the top 3 rows of patches were used~\citep{oord2018representation}) Each column of the image is then treated as a sequence with the context vector from the top of the image used to model the density ratio with patch representations below. CPC has been used to achieve data-efficient results on high-level computer vision datasets such as Imagenet in the study from \cite{deng2009imagenet}.
 
 \subsection{Multi-Directional Contrastive Predictive Coding}
-\label{subsec:unsupervised_mlcpc}
-The treatment of columns of the representation matrix as individual sequences (as in the method described in Section~\ref{sec:cpc}) can negatively impact performance when working with images such as histology patches in which overall image rotation is irrelevant. Although the orientation of certain histology whole slide images can be biologically meaningful, the orientation of image patches such as those used in our experiments (images of lymph nodes with breast cancer metastases) is not. In such cases, the autoregressor can struggle to predict patch representations from the provided context because the vertical image axis is arbitrary, unlike in Imagenet where it correlates with the direction of gravity acting upon the image content. We make two modifications inspired by image in-filling to address this limitation: an alternative latent mask for producing a context vector, and a modified PixelCNN~\cite{oord2016pixel} for multi-directional context building. We propose multi-directional CPC, utilizing these two modifications, to more effectively learn representations from images when image rotation is uninformative.
-
-We first present a modified version of PixelCNN that will be used as the autoregressor. This method replaces each masked convolutional block of the PixelCNN architecture with a multi-directional masked block (Fig.~\ref{fig:multi-directional_masked_block}). Each multi-directional masked block takes a single input image patch and rotates through 90, 180 and 270 degrees, resulting in four versions of the input. A masked block, as described in~\cite{oord2016pixel}, is then applied to each of them. The four outputs from the masked blocks are then concatenated and put through a final 1x1 convolutional layer for the purpose of dimensionality reduction.   
+\label{subsec:unsupervised_mdcpc}
+The treatment of columns of the representation matrix as individual sequences (as described in Section~\ref{subsec:unsupervised_cpc_for_vision}). Can negatively impact performance when working with images where image orientation is irrelevant such as histology patches or dermoscopic skin lesion images. While the orientation of certain histology whole slide images can be biologically meaningful, the orientation of image patches such as those shown in Figure~\ref{fig:fig:example_cpc_patches}(c) (sentinel lymph node) orientation is not important. In such cases, the autoregressive model can struggle to predict patch representation from the provided context as the vertical image axis is arbitrary, unlike Imagenet where it correlates with the direction of gravity acting upon the image content. This work proposes two modifications inspired by image in-filling to address this limitation: an alternative latent mask for producing a context vector, and a modified PixelCNN~\citep{oord2016pixel} for multi-directional context building. The proposed multi-directional CPC utilises these two modifications to more effectively learn representations from images where image rotation is uninformative.
 
 \begin{figure}
-	\begin{minipage}[b]{1.0\linewidth}
-		\centering
-		\centerline{\includegraphics[width=0.9\textwidth]{mcb.png}}
-	\end{minipage}
+	\centering
+	\includegraphics[width=0.9\textwidth]{mcb.png}
 	\caption{Architecture of a Multi-Directional Masked Block}
 	\label{fig:multi-directional_masked_block}
 \end{figure}
 
-We use this multi-directional autoregressor to learn a latent context from multiple directions at once. To take advantage of this we introduce an alternative latent mask inspired by in-filling. With this mask (illustrated in Fig.~\ref{fig:example_cpc_patches}(d)), the autoregressor only has access to patch representations around the perimeter of the images. The autoregressor predicts the patch representations of the central patches. This means that images where rotation is unimportant can be better represented with features learned using CPC.
+The modified version of the PixelCNN is used as the autoregressive model in a multi-directional CPC model. This modification replaces each masked convolutional block of the PixelCNN architecture with a multi-directional masked (Figure~\ref{fig:multi-directional_masked_block}). Each multi-directional masked block takes a single input image and by rotation 0, 90, 180 and 270 degrees produces four versions of the original image. A masked block, as described in the paper from \cite{oord2016pixel}, is then applied to each of them. The four outputs from the masked blocks are then concatenated and put through a final 1x1 convolutional layer for dimensionality reduction.
+
+This multi-directional autoregressive model is used to learn a latent context from multiple directions at the same time. To take advantage of this we introduce an alternative latent mask inspired by in-filling. With this mask (illustrated in Figure~\ref{fig:example_cpc_patches}(d), the autoregressive model only has access to the patch representations around the perimeter of the images. The density ratio is then estimated between the context from the edges and the central patch representations. This means that images, where rotation is unimportant, can be better represented with features learned using a single directional CPC.
 
 
 
