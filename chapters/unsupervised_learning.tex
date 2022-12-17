@@ -136,7 +136,7 @@ Figure~\ref{fig:cnn_results} and Table~\ref{tab:cnn_results} show the mean accur
 
 \begin{table}[]
 	\centering
-	\caption{Mean test accuracies of the CNN classifiers (standard deviations in parentheses).}
+	\caption{Mean test accuracies of the CNN classifiers with different pre-training (standard deviations in parentheses).}
 	\label{tab:cnn_results}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{r|rrrrr}
@@ -162,4 +162,4 @@ Figure~\ref{fig:cnn_results} and Table~\ref{tab:cnn_results} show the mean accur
 
 \section{Conclusion}
 \label{sec:conclusion}
-We have shown that the original CPC architecture does not perform well on a digital pathology patch classification task. We proposed a multi-directional modification to CPC that achieved better results, and improved classification accuracies when annotated data were limited. Our experiment illustrates that algorithms based on an assumption of image directionality (such as is present in Imagenet) will not necessarily perform well on images without such directionality. We suppose that this will also be true for other visual tasks where image orientation is unimportant, as is the case in multiple biomedical imaging settings.  
+The experiment results in Section~\ref{subsec:unsupervised_results} show that the original implementation of Contrastive predictive coding does not perform well on patch-based digital pathology tasks. The proposed multi-directional modifications to the CPC achieved better results, and improved classification accuracies when annotated data were limited. These experiments illustrate that algorithms based on an assumption of image directionality (such as is present in standard computer vision datasets such as CIFAR and ImageNet) will not necessarily perform well on images without such directionality. It can be assumed that this method can be used in other visual tasks where image orientation is unimportant as is the case in multiple biomedical imaging settings.
