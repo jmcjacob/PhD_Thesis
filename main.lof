@@ -1,14 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Pool-based active learning framework.\relax }}{5}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Three example regions from the CRCHistoPhenotypes dataset\nobreakspace {}\cite {sirinukunwattana2016locality} with multiple nuclei that will be extracted into patches and augmented.\relax }}{9}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Average test accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{12}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Average test mean class accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{13}{figure.caption.24}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Average test loss of trained models with different amounts of annotated regions selected with query strategises.\relax }}{13}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pool-based active learning framework.\relax }}{5}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Three example regions from the CRCHistoPhenotypes dataset\nobreakspace {}\cite {sirinukunwattana2016locality} with multiple nuclei that will be extracted into patches and augmented.\relax }}{9}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Average test accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{12}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Average test mean class accuracy of trained models with different amounts of annotated regions selected with query strategises.\relax }}{13}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Average test loss of trained models with different amounts of annotated regions selected with query strategises.\relax }}{13}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces (a) An example image from the ImageNet dataset\nobreakspace {}\cite {deng2009imagenet}. (b) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted. (c) An example image from the Patch Camelyon dataset\nobreakspace {}\cite {veeling2018rotation}. (d) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted.\relax }}{16}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed active learning framework with learnt representations from unsupervised representation learning on unannotated data.\relax }}{18}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{21}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces (a) An example image from the ImageNet dataset\nobreakspace {}\cite {deng2009imagenet}. (b) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted. (c) An example image from the Patch Camelyon dataset\nobreakspace {}\cite {veeling2018rotation}. (d) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted.\relax }}{16}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed active learning framework with learnt representations from unsupervised representation learning on unannotated data.\relax }}{18}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{21}{figure.caption.29}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

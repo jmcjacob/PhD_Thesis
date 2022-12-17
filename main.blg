@@ -6,47 +6,49 @@ The style file: agsm.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 Reallocating 'name_of_file' (item size: 1) to 18 items.
+Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: refs/intro.bib
 Database file #2: refs/active.bib
 Database file #3: refs/unsupervised.bib
-You've used 27 entries,
+Database file #4: refs/calibration.bib
+You've used 59 entries,
             2909 wiz_defined-function locations,
-            802 strings with 10347 characters,
-and the built_in function-call counts, 167452 in all, are:
-= -- 27559
-> -- 2366
+            974 strings with 17828 characters,
+and the built_in function-call counts, 394088 in all, are:
+= -- 64848
+> -- 5828
 < -- 1
-+ -- 13497
-- -- 735
-* -- 14861
-:= -- 32615
-add.period$ -- 27
-call.type$ -- 27
-change.case$ -- 378
-chr.to.int$ -- 27
-cite$ -- 27
-duplicate$ -- 541
-empty$ -- 1040
-format.name$ -- 837
-if$ -- 30309
++ -- 31992
+- -- 1823
+* -- 35153
+:= -- 76501
+add.period$ -- 59
+call.type$ -- 59
+change.case$ -- 826
+chr.to.int$ -- 59
+cite$ -- 59
+duplicate$ -- 1190
+empty$ -- 2294
+format.name$ -- 2028
+if$ -- 71305
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 27
-newline$ -- 84
-num.names$ -- 286
-pop$ -- 123
+missing$ -- 59
+newline$ -- 180
+num.names$ -- 629
+pop$ -- 263
 preamble$ -- 1
-purify$ -- 405
+purify$ -- 885
 quote$ -- 0
-skip$ -- 499
+skip$ -- 1105
 stack$ -- 0
-substring$ -- 39536
-swap$ -- 155
-text.length$ -- 379
+substring$ -- 93335
+swap$ -- 346
+text.length$ -- 827
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 236
 warning$ -- 0
-while$ -- 614
+while$ -- 1353
 width$ -- 0
-write$ -- 383
+write$ -- 839

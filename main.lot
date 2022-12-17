@@ -1,9 +1,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces The Convolutional Neural Network architecture for nuclei classification used in the region-based active learning experiments.\relax }}{10}{table.caption.21}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Test results for each query strategy after 50 active iterations.\relax }}{12}{table.caption.22}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces The Convolutional Neural Network architecture for nuclei classification used in the region-based active learning experiments.\relax }}{10}{table.caption.22}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Test results for each query strategy after 50 active iterations.\relax }}{12}{table.caption.23}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Mean test accuracies of the CNN classifiers (standard deviations in parentheses).\relax }}{24}{table.caption.29}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Mean test accuracies of the CNN classifiers with different pre-training (standard deviations in parentheses).\relax }}{24}{table.caption.30}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Calibration and accuracy results for ISIC 2019 and PCam datasets. ISIC 2019 results are means and standard deviations over three iterations. Each section reports results from a single model type; TS denotes temperature scaling.\relax }}{32}{table.caption.31}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
