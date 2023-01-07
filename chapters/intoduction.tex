@@ -1,7 +1,6 @@
 \section{Introduction to Problem}
 \label{sec:intoduction_to_problem}
-This is where details about the medical issues and how they can be solved used artificial intelligence. This is where the limitations of AI will be discussed.
-
+Modern deep learning algorithms have been shown to improve performance for medical image analysis tasks such as classification, segmentation, and detection for different medical modalities including digital pathology. However, deep learning algorithms require large, annotated datasets to train models as these models learn a deep feature representation as well as a discriminative classifier. When dealing with medical images, annotation can be expensive as annotating requires specialist training and can be very time intensive. This requirement for annotated data has been identified as a key challenge for using deep learning algorithms for medical image analysis in general~\citep{geert2017survey}. 
 
 
 \section{Research Contributions}
@@ -37,11 +36,12 @@ Methods to reduce the need for costly data annotations become increasingly impor
 \subsection*{Unsupervised Representation Learning}
 Digital pathology tasks have benefited greatly from modern deep learning algorithms. However, their need for large quantities of annotated data has been identified as a key challenge. This need for data can be countered by using unsupervised learning in situations where data are abundant but access to annotations is limited. Feature representations learned from unannotated data using contrastive predictive coding (CPC) have been shown to enable classifiers to obtain state of the art performance from relatively small amounts of annotated computer vision data. We present a modification to the CPC framework for use with digital pathology patches. This is achieved by introducing an alternative mask for building the latent context and using a multi-directional PixelCNN autoregressor. To demonstrate our proposed method, we learn feature representations from the Patch Camelyon histology dataset. We show that our proposed modification can yield improved deep classification of histology patches.
 
-\subsection*{Classification Calibration}
+\subsection*{Predictive Probability Calibration}
 As deep learning classifiers become ever more widely deployed for medical image analysis tasks, issues of predictive calibration need to be addressed~\citep{maron2019systematic}. Mis-calibration is the deviation between predictive probability (confidence) and classification correctness~\citep{guo2017calibration}. Well-calibrated classifiers enable cost-sensitive and selective decision-making~\citep{carse2021robust}. This chapter presents an empirical investigation of calibration methods on two medical image datasets (multi-class dermatology and binary histopathology image classification). The effect of temperature scaling with the temperature parameter optimised using various measures of calibration replacing the standard negative log-likelihood is shown. This is done not only for networks trained using one-hot encoding and cross-entropy loss but also using focal loss and label smoothing. This is compared with two Bayesian neural network methods. Results suggest little or no advantage to the use of alternative calibration metrics for tuning temperature. Temperature scaling of networks trained using focal loss (with appropriate hyperparameters) provided strong results in terms of both calibration and accuracy across both datasets~\citep{carse2022calibration}.
 
-\subsection*{Selective Classification}
-
-\subsection*{Asymmetric Risks}
+\subsection*{Asymmetrical Selective Classification}
+Automated image analysis of skin lesions has potential to improve diagnostic decision making. A clinically useful system should be selective, rejecting images it is ill-equipped to classify, for example because they are of lesion types not represented well in training data. Furthermore, lesion classifiers should support cost-sensitive decision making. We investigate methods for selective, cost-sensitive classification within a binary setting of benign or malignant using test images of lesion types represented and not represented in training data. Further experiments with multi-class selective cost-sensitive classification with misclassification costs provided by clinical dermatologists based on healthcare economics. We experiment with different methods of uncertainty estimation with neural networks and probability calibration.
+% Needs editing when experiment results are in.
+We introduce EC-SelectiveNet, a modification to SelectiveNet that discards the selection head at test time, making decisions based on expected costs instead. Experiments show that training for full coverage is beneficial even when operating at lower coverage, and that EC-SelectiveNet outperforms standard cross-entropy training, whether temperature scaling or Monte Carlo dropout averaging are used, in both symmetric and asymmetric cost settings.
 
 \subsection*{Conclusion}

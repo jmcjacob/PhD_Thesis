@@ -52,7 +52,7 @@ The original implementation of temperature scaling optimises $T$ by minimising t
 \label{subsec:bayesian_calibration}
 Bayesian neural networks infer distributions over their weight parameters rather than the usual point estimates. Monte Carlo sampling can then be used to approximate predictive distributions and obtain estimates of predictive means and uncertainty measures such as variance. Bayesian neural nets have been used in medical applications for improved calibration and uncertainty estimation~\citep{kwon2020uncertainty}.
 
-Bayes by Backprop~\citep{blundell2015weight} trains a Bayesian neural network whilst using back-propagation to calculate gradients. It uses variational inference to approximate a posterior distribution over weights $q(w|\theta)$. The parameters for the distribution $\theta$ can be computed by minimising the KL divergence between a variational posterior and the true posterior. As there is no way of knowing the true posterior, it is estimated using Monte Carlo sampling of the evidence lower bound. This is shown in Equation~(\ref{eq:elbo}) where $D$ is the dataset and $N$ is the number of Monte Carlo samples.
+Bayes by Backprop~\citep{blundell2015weight} trains a Bayesian neural network whilst using back-propagation to calculate gradients. It uses variational inference to approximate a posterior distribution over weights $q(w|\theta)$. The parameters for the distribution $\theta$ can be computed by minimising the KL divergence between a variational posterior and the true posterior. As there is no way of knowing the true posterior, it is estimated using Monte Carlo sampling of the evidence lower bound. This is shown in Equation~\ref{eq:elbo} where $D$ is the dataset and $N$ is the number of Monte Carlo samples.
 
 \begin{equation}
 	\text{ELBO}(D, \theta) \approx \sum^N_{n=1}\log q(w^i|\theta)-\log p(w^i) - \log p(D|w^i)
@@ -70,10 +70,25 @@ Laplace approximation~\citep{mackay1992bayesian} is a cost-effective method for 
 This section details the datasets, training parameters, experimental setup, and results for the experiments with different methods for model calibration for medical image analysis. The code and full results used within this section can be found on the project GitHub repository\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Medical_Calibration}}.
 
 
-\subsection{Datasets}\begin{flushleft}
-	
-\end{flushleft}
+\subsection{Datasets}
 Our experiments utilise two datasets, the ISIC 2019 challenge dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} and the Patch Camelyon (PCam) dataset~\citep{veeling2018rotation}. The ISIC 2019 dataset consists of 25,331 dermoscopic skin lesion images of 8 diagnostic classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. The PCam dataset is comprised of 327,680 96x96 pixel image patches extracted from whole-slide images of H\&E-stained lymph node sections from the Camelyon16 dataset~\citep{bejnordi2017diagnostic}. The datasets were split into training, validation and testing sets with proportions 6:2:2. The ISIC images were pre-processed by centre-cropping their width to be equal to their height and then resizing to $256 \times 256$ pixels. Both datasets were augmented by normalising each of the image channels, randomly flipping both horizontally and vertically, and randomly rotating by multiples of 90\textdegree.
+
+\begin{figure}[!h]
+	\centering
+	\captionsetup[subfigure]{singlelinecheck=false}
+	\begin{tabular}{cc}
+		\subcaptionbox{Melanoma}{\includegraphics[width=1.7in]{images/MEL.jpg}} &
+		\subcaptionbox{Melanocytic \mbox{Nevus}}{\includegraphics[width=1.7in]{images/nv_example.jpeg}} \\
+		\subcaptionbox{Basal Cell \mbox{Carcinoma}}{\includegraphics[width=1.7in]{images/bcc_example.jpeg}} &
+		\subcaptionbox{Actinic Keratosis}{\includegraphics[width=1.7in]{images/ak_example.jpeg}} \\
+		\subcaptionbox{Benign Keratosis}{\includegraphics[width=1.7in]{images/bkl_example.jpeg}} &
+		\subcaptionbox{Dermatofibroma}{\includegraphics[width=1.7in]{images/df_example.jpeg}} \\
+		\subcaptionbox{Vascular Lesion}{\includegraphics[width=1.7in]{images/vasc_example.jpeg}} &
+		\subcaptionbox{Squamous Cell Carcinoma}{\includegraphics[width=1.7in]{images/scc_example.jpeg}}
+	\end{tabular}
+	\caption{Example Images from the ISIC Challenge 2019 dataset.}
+	\label{fig:ISIC_examples}
+\end{figure}
 
 
 \subsection{Experiment Setup}

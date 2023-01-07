@@ -1,116 +1,104 @@
 \contentsline {chapter}{List of Figures}{v}{chapter*.1}%
-\contentsline {chapter}{List of Tables}{vi}{chapter*.2}%
-\contentsline {chapter}{List of Terms}{vii}{chapter*.4}%
-\contentsline {chapter}{List of Abbreviations}{viii}{chapter*.5}%
-\contentsline {chapter}{List of Symbols}{ix}{chapter*.6}%
-\contentsline {chapter}{Acknowledgements}{x}{chapter*.7}%
-\contentsline {chapter}{Declaration}{xi}{chapter*.8}%
-\contentsline {chapter}{Abstract}{xii}{chapter*.10}%
+\contentsline {chapter}{List of Tables}{vii}{chapter*.2}%
+\contentsline {chapter}{List of Terms}{viii}{chapter*.4}%
+\contentsline {chapter}{List of Abbreviations}{ix}{chapter*.5}%
+\contentsline {chapter}{List of Symbols}{x}{chapter*.6}%
+\contentsline {chapter}{Acknowledgements}{xi}{chapter*.7}%
+\contentsline {chapter}{Declaration}{xii}{chapter*.8}%
+\contentsline {chapter}{Abstract}{xiii}{chapter*.10}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction to Problem}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Research Contributions}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Thesis Structure}{2}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Annotator Efficient Active Learning}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{4}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Active Learning for Medical Image Analysis}{4}{subsection.2.1.1}%
+\contentsline {chapter}{\numberline {2}Annotator Efficient Active Learning}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Active Learning for Medical Image Analysis}{5}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Deep Active Learning for Digital Pathology}{6}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Active Learning for Medical Images Review}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Application of Active Learning for Medicine}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Pool Based Active Learning Method}{6}{subsection.2.2.2}%
-\contentsline {subsubsection}{Traditional Machine Learning Query Strategies}{6}{section*.18}%
-\contentsline {subsubsection}{Deep Learning Query Strategies}{6}{section*.19}%
-\contentsline {subsection}{\numberline {2.2.3}Active Learning for Annotation Efficiently}{7}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Annotator Efficient Active Learning for Histopathology}{7}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Annotator Efficient Active Learning for Histopathology}{7}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Problem Setting defined by Review}{7}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Region-Based Active Learning}{7}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Active Learning Experiments}{8}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Dataset}{9}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Training Parameters}{9}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Experiment Setup}{11}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Results}{11}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Conclusion}{12}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Unsupervised Representation Learning}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Unsupervised Representation Learning for Images}{15}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Summary of Work}{17}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Review of Deep Unsupervised Representation Learning}{18}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Unsupervised Representation Learning}{18}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Deep Unsupervised Representation Learning}{18}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Unsupervised Representation Learning for Medical Images}{18}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Multi-Directional Contrastive Predictive Coding}{18}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Contrastive Predictive Coding}{19}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Contrastive Predictive Coding for Computer Vision}{19}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Multi-Directional Contrastive Predictive Coding}{20}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Unsupervised Representation Learning Experiments}{21}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Dataset}{22}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Experiment Setup}{22}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Training Parameters}{22}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Results}{23}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Conclusion}{24}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Classification Calibration}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Measures of Calibration}{26}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Calibration Methods and Literature Review}{27}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Model Regularisation For Calibration}{27}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Post-Hoc Calibration}{28}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Bayesian Approximation}{29}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Calibration Experiments}{30}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Datasets}{30}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Experiment Setup}{30}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Training Parameters}{31}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Results}{31}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Conclusion}{34}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Selective Classification}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{35}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Problem Statement}{35}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Summary of Work}{35}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Selective Classification Review}{35}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Selective Classification Methods}{35}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Bayesian Neural Networks Uncertainty}{35}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Predictive Probability Calibration}{35}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Selective Classification and Calibration}{36}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Selective Classification for Medical Triage}{36}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Methods for Selective Classification}{36}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Methods for Calibration}{36}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Calibration Experiments}{36}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Dataset}{36}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Experiment Setup}{36}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Training Parameters}{36}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Results}{36}{subsection.5.4.4}%
-\contentsline {section}{\numberline {5.5}Selective Classification Experiments}{36}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Dataset}{37}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Experiment Setup}{37}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Training Parameters}{37}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Results}{37}{subsection.5.5.4}%
-\contentsline {section}{\numberline {5.6}Conclusion}{37}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Asymmetrical Risks}{38}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introduction}{38}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Problem Statement}{38}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Summary of Work}{38}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Review of Asymmetrical Risks in Classification}{38}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Assigning Risks for Classification Decisions}{38}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Risk Management for Medical Image Classification}{38}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Asymmetrical Risks in Selective Classification}{39}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Selective Classification using Expected Risk}{39}{subsection.6.3.1}%
-\contentsline {section}{\numberline {6.4}Experiments with Selective Classification with Asymmetrical Risks}{39}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Dataset}{39}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Experiment Setup}{39}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Training Parameters}{39}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Results}{39}{subsection.6.4.4}%
-\contentsline {section}{\numberline {6.5}Conclusion}{39}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{40}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Pathway to Complete System}{40}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Summary of Contributions}{40}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Limitations}{40}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Future Work}{40}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Active Learning}{40}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{40}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{40}{subsection.7.4.3}%
-\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{41}{subsection.7.4.4}%
-\contentsline {chapter}{References}{42}{subsection.7.4.4}%
-\contentsline {chapter}{Appendices}{49}{section*.33}%
-\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{50}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}First Authored Publications}{50}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Contributed Publications}{51}{section.a.A.2}%
-\contentsline {section}{\numberline {A.3}Awards}{51}{section.a.A.3}%
+\contentsline {section}{\numberline {2.2}Active Learning for Medical Images Review}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Pool Based Active Learning Method}{7}{subsection.2.2.1}%
+\contentsline {subsubsection}{Traditional Machine Learning Query Strategies}{7}{section*.17}%
+\contentsline {subsubsection}{Deep Learning Query Strategies}{8}{section*.18}%
+\contentsline {subsection}{\numberline {2.2.2}Application of Active Learning for Medicine}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Active Learning for Annotation Efficiently}{8}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Annotator Efficient Active Learning for Histopathology}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Problem Setting defined by Review}{9}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Region-Based Active Learning}{9}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Active Learning Experiments}{10}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Dataset}{10}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Training Parameters}{11}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Experiment Setup}{12}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Results}{13}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}Conclusion}{15}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Unsupervised Representation Learning}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{16}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Unsupervised Representation Learning for Images}{16}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Summary of Work}{18}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Review of Deep Unsupervised Representation Learning}{19}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Unsupervised Representation Learning}{19}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Deep Unsupervised Representation Learning}{19}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Unsupervised Representation Learning for Medical Images}{19}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Multi-Directional Contrastive Predictive Coding}{19}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Contrastive Predictive Coding}{20}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Contrastive Predictive Coding for Computer Vision}{20}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Multi-Directional Contrastive Predictive Coding}{21}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Unsupervised Representation Learning Experiments}{22}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Dataset}{23}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Experiment Setup}{23}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Training Parameters}{23}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Results}{24}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Conclusion}{25}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Predictive Probability Calibration}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Measures of Calibration}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Calibration Methods and Literature Review}{28}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Model Regularisation For Calibration}{28}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Post-Hoc Calibration}{29}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Bayesian Approximation}{30}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Calibration Experiments}{31}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Datasets}{31}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Experiment Setup}{31}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Training Parameters}{33}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Results}{33}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Conclusion}{36}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Asymmetrical Selective Classification}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{37}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Problem Statement}{37}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Summary of Work}{38}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Literature Review}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Asymmetrical Selective Classification}{39}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Selective Classification Methods}{41}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Predictive Probabilities}{41}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Calibrated Predictive Probabilities}{41}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Bayesian Uncertainty}{41}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}SelectiveNet}{42}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Expected Cost SelectiveNet}{43}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5}Binary Experiments}{44}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Dataset}{44}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Experiment Setup}{45}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Training Parameters}{45}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Results}{45}{subsection.5.5.4}%
+\contentsline {subsubsection}{SelectiveNet: Effect of Target Coverage}{45}{section*.34}%
+\contentsline {subsubsection}{Does SelectiveNet Training Help?}{45}{section*.36}%
+\contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{46}{section*.37}%
+\contentsline {subsubsection}{Asymmetric Costs}{47}{section*.40}%
+\contentsline {section}{\numberline {5.6}Multi class Experiments}{48}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Dataset}{48}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{49}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Training Parameters}{49}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Results}{49}{subsection.5.6.4}%
+\contentsline {section}{\numberline {5.7}Conclusion}{49}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Conclusion and Discussion}{50}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Pathway to Complete System}{50}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Summary of Contributions}{50}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Limitations}{50}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Future Work}{50}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Active Learning}{50}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Unsupervised Learning}{50}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Selective Classification}{50}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Asymmetrical Risks}{51}{subsection.6.4.4}%
+\contentsline {chapter}{References}{52}{subsection.6.4.4}%
+\contentsline {chapter}{Appendices}{60}{section*.44}%
+\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{61}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}First Authored Publications}{61}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Contributed Publications}{62}{section.a.A.2}%
+\contentsline {section}{\numberline {A.3}Awards}{62}{section.a.A.3}%

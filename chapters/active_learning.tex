@@ -4,9 +4,7 @@ This work was presented at the European Congress on Digital Pathology 2019 and p
 
 \subsection{Active Learning for Medical Image Analysis}
 \label{subsec:active_for_medical_image_analysis}
-Modern deep learning algorithms have been shown to improve performance for medical image analysis tasks such as classification, segmentation, and detection for different medical modalities including digital pathology. However, deep learning algorithms require large, annotated datasets to train models as these models learn a deep feature representation as well as a discriminative classifier. This requirement for data has been identified as a key challenge for using deep learning algorithms for digital pathology~\citep{tizhoosh2018artificial} and medical image analysis in general~\citep{litjens2017survey}. There are several approaches to tackling this problem including semi-supervised learning, weakly supervised learning, active learning, and combinations of these approaches. This work focuses on the use of active learning to aid in annotation collection for patch-based digital pathology.
-
-Active learning is a type of machine learning that hypothesises that having a learning algorithm select the data that is used during training can reduce the amount of data needed for training~\citep{settles2012active}. Active learning is used within modern applications to reduce the quantity of data that needs to be annotated by selecting unannotated data to be annotated and added to the dataset used to train the model. By limiting the amount of data annotations needed can reduce annotation costs (which can be expensive when dealing with specialised data such as histopathology) and computation costs as the models can be trained with less data. In a pool-based scenario, the learning algorithm has access to a large pool of unannotated data. Over multiple iterations, the learning algorithm selects the most beneficial data from the pool to be annotated and added the training dataset, as shown in figure \ref{fig:pool_based_active_learning}.
+Active learning is a type of machine learning that hypothesises that having a learning algorithm select the data that is used during training can reduce the amount of data needed for training~\citep{settles2012active}. Active learning is used within modern applications to reduce the quantity of data that needs to be annotated by selecting unannotated data to be annotated and added to the dataset used to train the model. Limiting the amount of data annotations needed can reduce annotation costs (which can be expensive when dealing with specialised data such as histopathology) and computation costs as the models can be trained with fewer data. In a pool-based scenario, the learning algorithm has access to a large pool of unannotated data. Over multiple iterations, the learning algorithm selects the most beneficial data from the pool to be annotated and added the training dataset, as shown in figure \ref{fig:pool_based_active_learning}. One of the main advantages of pool-based active machine learning for medical image analysis is its ability to reduce the amount of human labour required. Medical image analysis often involves manual annotation, which can be time-consuming and labour-intensive. By using pool-based active learning, the burden of annotation is greatly reduced, as the algorithm can identify the most informative samples and prioritize them for labelling.
 
 \begin{figure}[h]
 	\centering
@@ -15,15 +13,13 @@ Active learning is a type of machine learning that hypothesises that having a le
 	\label{fig:pool_based_active_learning}
 \end{figure}
 
-Active learning algorithms use query strategies to decide which data is to be selected for annotation. There are numerous query strategies available with the most popular methods being based on model uncertainty. Uncertainty sampling is a query strategy that focuses on selecting unannotated data that the model’s prediction is most uncertain about.
-
-While these methods have been shown to perform well with many traditional learning algorithms, this is not the case when working with deep learning algorithms. There are several reasons for this, firstly, deep learning algorithms jointly learn feature representations and a classifier/regressor. Selecting only the difficult examples to train the model leads to the learnt features are not representative of the entire data distribution, decreasing the quality of the model~\citep{wang2016cost}. Secondly, traditional query strategies usually select a single data point, and it has been shown that deep learning algorithms perform better in an active learning environment with batch updates and so require a query strategy to select an optimal batch and not just a collection of the top-ranked points~\citep{sener2017active}. Thirdly, the softmax output from a classifier trained using deep learning algorithms does not represent the model’s uncertainty well, despite this the softmax output is still commonly used to represent uncertainty~\citep{gal2016dropout}.
+Active learning algorithms utilize query strategies to select data for annotation. While some popular query strategies, such as uncertainty sampling, have been demonstrated to be effective on deep learning algorithms~\citep{gal2017deep}, the unique feature-representation learning process of deep learning algorithms can present challenges. Specifically, the selection of only difficult examples for training can lead to a lower-quality model due to the resulting features not being representative of the entire data distribution. This issue is illustrated by \cite{pop2018deep}, who demonstrate the occurrence of mode collapse when using a Bayesian uncertainty query strategy to train a convolutional neural network (CNN). To address these challenges, batch-aware query strategies that make use of clustering methods have been shown to be effective in deep learning environments\citep{sener2017active, zhdanov2019diverse, kirsch2019batchbald}. These strategies optimize the selection of batches of images for annotation rather than individual data points.
 
 \subsection{Deep Active Learning for Digital Pathology}
 \label{subsec:active_deep_learning}
-A standard approach for using learning algorithms for digital pathology is to use patches from larger images. This allows the images to be input to learning algorithms such as convolutional neural networks (CNNs) more efficiently and removes the necessity of annotating very large images. When using patch-based methods that use small patches, for tasks such as nuclei detection and classification, using active learning to select patches for annotation can be detrimental to annotation collection. This is due to small patches being time-consuming and tedious to annotate, small patches may also not include enough spatial context for accurate annotation.
+To save computation time, it is common practice in digital pathology to use large patches from whole slide images when applying machine learning algorithms. These patches can be efficiently processed by deep learning algorithms like convolutional neural networks (CNNs), and do not require the entire slide image to be annotated. However, using patch-based methods with small patches for tasks such as nuclei detection and classification can be problematic when using active learning to query for annotation. This is because small patches are more time-consuming and labour-intensive to annotate, and may lack sufficient spatial context for accurate annotation, even for expert pathologists.
 
-To address these issues of using active learning for patch-based digital pathology, this work modifies the standard active learning framework to select regions for annotation that are built up of several patches to increase annotation throughput. This modified framework was evaluated with several active learning query strategies on a nuclei detection and classification task~\citep{sirinukunwattana2016locality}.
+To improve annotation efficiency and reduce costs, this chapter proposes a modified active learning framework for selecting larger regions comprising multiple small patches for annotation. This modified framework was tested using various active learning query strategies on a nuclei detection and classification task using the CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality}.
 
 
 
@@ -31,27 +27,35 @@ To address these issues of using active learning for patch-based digital patholo
 \label{sec:active_review}
 Active Learning for Medical Images Review
 
-\subsection{Application of Active Learning for Medicine}
-\label{subsec:active_applications}
-Application of Active Learning for Medicine
-
 \subsection{Pool Based Active Learning Method}
 \label{subsec:active_pool_based}
 Pool Based Active Learning Method 
 
 \subsubsection{Traditional Machine Learning Query Strategies}
-Traditional Machine Learning Query Strategies
+\textbf{Uncertainty sampling} is a method in active learning in which the learning algorithm focuses on data points it is most uncertain about to improve model performance. This can be measured using techniques such as entropy or distance to the decision boundary. It allows the algorithm to selectively request labels for the most informative data points, leading to more efficient and effective learning. It can be used in conjunction with other active learning strategies such as representative and diversity sampling.
+
+\textbf{Query by committee} is a method in active learning in which a committee of multiple classifiers make predictions on unlabelled data. If their predictions are diverse or conflicting, the learning algorithm may request a label for that data point. Query by committee can help reduce overfitting and improve generalisation and can be used with other active learning strategies like uncertainty and representative sampling.
+
+\textbf{Expected model change} is a method in active learning in which the learning algorithm estimates the change in overall performance after labelling a particular data point and prioritizes data points with the greatest expected impact. This allows the algorithm to focus on data points most likely to improve performance. It can be used with other active learning strategies like uncertainty and representative sampling.
+
+\textbf{Expected error reduction} is a method in active learning in which the learning algorithm estimates the reduction in error rate after labelling a particular data point, and prioritizes data points with the greatest expected impact. This allows the algorithm to focus on data points most likely to improve performance. It can be used with other active learning strategies like uncertainty and representative sampling.
+
+\textbf{Variance reduction} is a method in active learning in which the learning algorithm prioritizes data points that are expected to have the greatest impact on reducing the variance of the predictions. This can be achieved by calculating the variance of the predictions for a particular data point. It can be used with other active learning strategies like uncertainty and representative sampling.
+
+\textbf{Density-weighted methods} for active learning involve selecting data samples based on the density of the samples in the feature space, to select samples that are underrepresented or less dense. These samples are likely to be more informative and valuable for the model to learn from, which can improve its performance and generalization. There are several ways to implement density-weighted methods, including using a density estimate or weighting samples based on their informativeness and density.
+
 
 \subsubsection{Deep Learning Query Strategies}
 Deep Learning Query Strategies
+
+\subsection{Application of Active Learning for Medicine}
+\label{subsec:active_applications}
+Application of Active Learning for Medicine
 
 \subsection{Active Learning for Annotation Efficiently}
 \label{subsec:active_annotation_efficiently}
 Active Learning for Annotation Efficiently
 
-\subsection{Annotator Efficient Active Learning for Histopathology}
-\label{subsec:active_annotator_efficient_histopathology}
-Annotator Efficient Active Learning for Histopathology
 
 
 

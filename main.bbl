@@ -71,6 +71,21 @@ Codella, N.~C., Gutman, D., Celebi, M.~E., Helba, B., Marchetti, M.~A., Dusza,
   ({ISIC}), {\em in} `2018 IEEE 15th International Symposium on Biomedical
   Imaging', IEEE, pp.~168--172.
 
+\harvarditem{{Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B.
+  and Vilaplana, V. and Reiter, O., and others}}{2019{\em a}}{Combalia2019}
+{Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B. and Vilaplana,
+  V. and Reiter, O., and others}  \harvardyearleft 2019{\em a}\harvardyearright
+  , {BCN20000}: Dermoscopic lesions in the wild, {\em in} `arXiv preprint',
+  p.~arXiv:1908.02288.
+
+\harvarditem{{Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B.
+  and Vilaplana, V. and Reiter, O., and others}}{2019{\em
+  b}}{combalia2019csn20000}
+{Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B. and Vilaplana,
+  V. and Reiter, O., and others}  \harvardyearleft 2019{\em b}\harvardyearright
+  , {BCN20000}: Dermoscopic lesions in the wild, {\em in} `arXiv preprint',
+  p.~arXiv:1908.02288.
+
 \harvarditem[Combalia et~al.]{Combalia, Codella, Rotemberg, Helba, Vilaplana,
   Reiter, Carrera, Barreiro, Halpern, Puig et~al.}{2019}{combalia2019bcn20000}
 Combalia, M., Codella, N.~C., Rotemberg, V., Helba, B., Vilaplana, V., Reiter,
@@ -99,16 +114,27 @@ Deng, J., Dong, W., Socher, R., Li, L., Li, K. \harvardand\ Fei-Fei, L.
   Pattern Recognition', Institute of Electrical and Electronics Engineers,
   pp.~248--255.
 
+\harvarditem{Freeman}{1965}{freeman1965elementary}
+Freeman, L.~C.  \harvardyearleft 1965\harvardyearright , {\em Elementary
+  applied statistics: for students in behavioral science}, New York: Wiley.
+
 \harvarditem{Frenkel \harvardand\ Goldberger}{2021}{frenkel2021network}
 Frenkel, L. \harvardand\ Goldberger, J.  \harvardyearleft 2021\harvardyearright
   , Network calibration by class-based temperature scaling, {\em in} `2021 29th
   European Signal Processing Conference', IEEE, pp.~1486--1490.
 
-\harvarditem{Gal \harvardand\ Ghahramani}{2016}{gal2016dropout}
-Gal, Y. \harvardand\ Ghahramani, Z.  \harvardyearleft 2016\harvardyearright ,
-  Dropout as a bayesian approximation: Representing model uncertainty in deep
-  learning, {\em in} `international conference on machine learning', PMLR,
-  pp.~1050--1059.
+\harvarditem{Gal \harvardand\ Ghahramani}{2016{\em a}}{Gal2016}
+Gal, Y. \harvardand\ Ghahramani, Z.  \harvardyearleft 2016{\em
+  a}\harvardyearright , Dropout as a {B}ayesian approximation: representing
+  model uncertainty in deep learning, {\em in} `Proceedings of the 33rd
+  International Conference on Machine Learning (ICML)', Vol. PMLR 48,
+  p.~1050–1059.
+
+\harvarditem{Gal \harvardand\ Ghahramani}{2016{\em b}}{gal2016dropout}
+Gal, Y. \harvardand\ Ghahramani, Z.  \harvardyearleft 2016{\em
+  b}\harvardyearright , Dropout as a bayesian approximation: Representing model
+  uncertainty in deep learning, {\em in} `international conference on machine
+  learning', PMLR, pp.~1050--1059.
 
 \harvarditem[Gal et~al.]{Gal, Islam \harvardand\ Ghahramani}{2017}{gal2017deep}
 Gal, Y., Islam, R. \harvardand\ Ghahramani, Z.  \harvardyearleft
@@ -121,6 +147,18 @@ Gawlikowski, J., Tassi, C. R.~N., Ali, M., Lee, J., Humt, M., Feng, J., Kruspe,
   A., Triebel, R., Jung, P., Roscher, R. et~al.  \harvardyearleft
   2021\harvardyearright , `A survey of uncertainty in deep neural networks',
   {\em arXiv preprint arXiv:2107.03342} .
+
+\harvarditem{Geifman \harvardand\ El-Yaniv}{2019{\em a}}{Geifman2019}
+Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2019{\em
+  a}\harvardyearright , Selective{N}et: A deep neural network with an
+  integrated reject option, {\em in} `Proceedings of the 36th International
+  Conference on Machine Learning (ICML)', Vol. PMLR 97, pp.~2151--2159.
+
+\harvarditem{Geifman \harvardand\ El-Yaniv}{2019{\em b}}{Geifman2019Selective}
+Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2019{\em
+  b}\harvardyearright , Selective{N}et: A deep neural network with an
+  integrated reject option, {\em in} `Proceedings of the 36th International
+  Conference on Machine Learning (ICML)', Vol. PMLR 97, pp.~2151--2159.
 
 \harvarditem{Glorot \harvardand\ Bengio}{2010}{glorot2010understanding}
 Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
@@ -163,16 +201,37 @@ Hendrycks, D., Mu, N., Cubuk, E.~D., Zoph, B., Gilmer, J. \harvardand\
   simple data processing method to improve robustness and uncertainty', {\em
   arXiv preprint arXiv:1912.02781} .
 
+\harvarditem[Houlsby et~al.]{Houlsby, Husz{\'a}r, Ghahramani \harvardand\
+  Lengyel}{2011}{houlsby2011bayesian}
+Houlsby, N., Husz{\'a}r, F., Ghahramani, Z. \harvardand\ Lengyel, M.
+  \harvardyearleft 2011\harvardyearright , `Bayesian active learning for
+  classification and preference learning', {\em arXiv preprint arXiv:1112.5745}
+  .
+
 \harvarditem{Islam \harvardand\ Glocker}{2021}{islam2021spatially}
 Islam, M. \harvardand\ Glocker, B.  \harvardyearleft 2021\harvardyearright ,
   Spatially varying label smoothing: Capturing uncertainty from expert
   annotations, {\em in} `International Conference on Information Processing in
   Medical Imaging', Springer, pp.~677--688.
 
+\harvarditem[Jospin et~al.]{Jospin, Buntine, Boussaid, Laga \harvardand\
+  Bennamoun}{2020}{jospin2020hands}
+Jospin, L.~V., Buntine, W., Boussaid, F., Laga, H. \harvardand\ Bennamoun, M.
+  \harvardyearleft 2020\harvardyearright , `Hands-on bayesian neural
+  networks--a tutorial for deep learning users', {\em arXiv preprint
+  arXiv:2007.06823} .
+
 \harvarditem{Kingma \harvardand\ Ba}{2014}{kingma2014adam}
 Kingma, D.~P. \harvardand\ Ba, J.  \harvardyearleft 2014\harvardyearright ,
   `Adam: A method for stochastic optimization', {\em arXiv preprint
   arXiv:1412.6980} .
+
+\harvarditem[Kirsch et~al.]{Kirsch, Van~Amersfoort \harvardand\
+  Gal}{2019}{kirsch2019batchbald}
+Kirsch, A., Van~Amersfoort, J. \harvardand\ Gal, Y.  \harvardyearleft
+  2019\harvardyearright , `Batchbald: Efficient and diverse batch acquisition
+  for deep bayesian active learning', {\em Advances in neural information
+  processing systems} {\bf 32}.
 
 \harvarditem[Kwon et~al.]{Kwon, Won, Kim \harvardand\
   Paik}{2020}{kwon2020uncertainty}
@@ -181,8 +240,12 @@ Kwon, Y., Won, J.-H., Kim, B.~J. \harvardand\ Paik, M.~C.  \harvardyearleft
   networks in classification: Application to biomedical image segmentation',
   {\em Computational Statistics \& Data Analysis} {\bf 142},~106816.
 
-\harvarditem[Liang et~al.]{Liang, Zhang, Wang \harvardand\
-  Jacobs}{2020}{liang2020improved}
+\harvarditem{Liang, Zhang \harvardand\ Jacobs}{2020}{Liang2020Neural}
+Liang, G., Zhang, Y. \harvardand\ Jacobs, N.  \harvardyearleft
+  2020\harvardyearright , `Neural network calibration for medical imaging
+  classification using dca regularization', {\em ICML UDL} .
+
+\harvarditem{Liang, Zhang, Wang \harvardand\ Jacobs}{2020}{liang2020improved}
 Liang, G., Zhang, Y., Wang, X. \harvardand\ Jacobs, N.  \harvardyearleft
   2020\harvardyearright , `Improved trainable calibration method for neural
   networks on medical imaging classification', {\em arXiv preprint
@@ -239,6 +302,12 @@ Maron, R.~C., Weichenthal, M., Utikal, J.~S., Hekler, A., Berking, C.,
   convolutional neural networks', {\em European Journal of Cancer} {\bf
   119},~57--65.
 
+\harvarditem[Mohseni et~al.]{Mohseni, Yap, Yolland, Razmara \harvardand\
+  Atkins}{2021}{aleatoric_relation_proof}
+Mohseni, M., Yap, J., Yolland, W., Razmara, M. \harvardand\ Atkins, M.~S.
+  \harvardyearleft 2021\harvardyearright , `Out-of-distribution detection for
+  dermoscopic image classification', {\em arXiv preprint arXiv:2104.07819} .
+
 \harvarditem[Mukhoti et~al.]{Mukhoti, Kulharia, Sanyal, Golodetz, Torr
   \harvardand\ Dokania}{2020}{mukhoti2020calibrating}
 Mukhoti, J., Kulharia, V., Sanyal, A., Golodetz, S., Torr, P. \harvardand\
@@ -261,6 +330,11 @@ Parzen, E.  \harvardyearleft 1962\harvardyearright , `On estimation of a
 Platt, J. et~al.  \harvardyearleft 1999\harvardyearright , `Probabilistic
   outputs for support vector machines and comparisons to regularized likelihood
   methods', {\em Advances in Large Margin Classifiers} {\bf 10}(3),~61--74.
+
+\harvarditem{Pop \harvardand\ Fulop}{2018}{pop2018deep}
+Pop, R. \harvardand\ Fulop, P.  \harvardyearleft 2018\harvardyearright , `Deep
+  ensemble bayesian active learning: Addressing the mode collapse issue in
+  monte carlo dropout via ensembles', {\em arXiv preprint arXiv:1811.03897} .
 
 \harvarditem{Prechelt}{1998}{prechelt1998early}
 Prechelt, L.  \harvardyearleft 1998\harvardyearright , Early stopping-but
@@ -288,6 +362,11 @@ Sener, O. \harvardand\ Savarese, S.  \harvardyearleft 2017\harvardyearright ,
 Settles, B.  \harvardyearleft 2012\harvardyearright , `Active learning', {\em
   Synthesis lectures on artificial intelligence and machine learning} {\bf
   6}(1),~1--114.
+
+\harvarditem{Shannon}{1948}{shannon1948mathematical}
+Shannon, C.~E.  \harvardyearleft 1948\harvardyearright , `A mathematical theory
+  of communication', {\em The Bell system technical journal} {\bf
+  27}(3),~379--423.
 
 \harvarditem[Shao et~al.]{Shao, Sun \harvardand\ Zhang}{2018}{shao2018deep}
 Shao, W., Sun, L. \harvardand\ Zhang, D.  \harvardyearleft
@@ -330,11 +409,25 @@ Tizhoosh, H.~R. \harvardand\ Pantanowitz, L.  \harvardyearleft
   9}(1),~38.
 
 \harvarditem[Tschandl et~al.]{Tschandl, Rosendahl \harvardand\
-  Kittler}{2018}{tschandl2018ham10000}
-Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft
-  2018\harvardyearright , `The {HAM10000} dataset, a large collection of
+  Kittler}{2018{\em a}}{tschandl2018ham10000}
+Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft 2018{\em
+  a}\harvardyearright , `The {HAM10000} dataset, a large collection of
   multi-source dermatoscopic images of common pigmented skin lesions', {\em
   Scientific Data} {\bf 5}(1),~1--9.
+
+\harvarditem[Tschandl et~al.]{Tschandl, Rosendahl \harvardand\
+  Kittler}{2018{\em b}}{Tschandl2018}
+Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft 2018{\em
+  b}\harvardyearright , `The {HAM10000} dataset, a large collection of
+  multi-source dermatoscopic images of common pigmented skin lesions', {\em
+  Scientific Data} {\bf 5},~180161.
+
+\harvarditem[Tschandl et~al.]{Tschandl, Rosendahl \harvardand\
+  Kittler}{2018{\em c}}{tschandl2018the}
+Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft 2018{\em
+  c}\harvardyearright , `The {HAM10000} dataset, a large collection of
+  multi-source dermatoscopic images of common pigmented skin lesions', {\em
+  Scientific Data} {\bf 5},~180161.
 
 \harvarditem[Ulmer et~al.]{Ulmer, Meijerink \harvardand\
   Cin{\`a}}{2020}{ulmer2020trust}
@@ -394,5 +487,9 @@ Zhang, J., Kailkhura, B. \harvardand\ Han, T. Y.-J.  \harvardyearleft
   2020\harvardyearright , Mix-n-match: Ensemble and compositional methods for
   uncertainty calibration in deep learning, {\em in} `Proceedings of the 37th
   International Conference on Machine Learning', PMLR, pp.~11117--11128.
+
+\harvarditem{Zhdanov}{2019}{zhdanov2019diverse}
+Zhdanov, F.  \harvardyearleft 2019\harvardyearright , `Diverse mini-batch
+  active learning', {\em arXiv preprint arXiv:1901.05954} .
 
 \end{thebibliography}

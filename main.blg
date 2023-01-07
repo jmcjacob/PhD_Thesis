@@ -7,48 +7,52 @@ Reallocating 'name_of_file' (item size: 1) to 11 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 Reallocating 'name_of_file' (item size: 1) to 18 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
+Reallocating 'name_of_file' (item size: 1) to 15 items.
 Database file #1: refs/intro.bib
 Database file #2: refs/active.bib
 Database file #3: refs/unsupervised.bib
 Database file #4: refs/calibration.bib
-You've used 59 entries,
+Database file #5: refs/selective.bib
+Warning--I didn't find a database entry for "geert2017survey"
+You've used 75 entries,
             2909 wiz_defined-function locations,
-            974 strings with 17828 characters,
-and the built_in function-call counts, 394088 in all, are:
-= -- 64848
-> -- 5828
-< -- 1
-+ -- 31992
-- -- 1823
-* -- 35153
-:= -- 76501
-add.period$ -- 59
-call.type$ -- 59
-change.case$ -- 826
-chr.to.int$ -- 59
-cite$ -- 59
-duplicate$ -- 1190
-empty$ -- 2294
-format.name$ -- 2028
-if$ -- 71305
-int.to.chr$ -- 5
+            1046 strings with 20207 characters,
+and the built_in function-call counts, 491594 in all, are:
+= -- 81256
+> -- 6744
+< -- 4
++ -- 39902
+- -- 2103
+* -- 43623
+:= -- 95371
+add.period$ -- 75
+call.type$ -- 75
+change.case$ -- 1049
+chr.to.int$ -- 70
+cite$ -- 75
+duplicate$ -- 1550
+empty$ -- 2852
+format.name$ -- 2359
+if$ -- 89015
+int.to.chr$ -- 10
 int.to.str$ -- 0
-missing$ -- 59
-newline$ -- 180
-num.names$ -- 629
-pop$ -- 263
+missing$ -- 76
+newline$ -- 228
+num.names$ -- 794
+pop$ -- 338
 preamble$ -- 1
-purify$ -- 885
+purify$ -- 1125
 quote$ -- 0
-skip$ -- 1105
+skip$ -- 1472
 stack$ -- 0
-substring$ -- 93335
-swap$ -- 346
-text.length$ -- 827
+substring$ -- 116830
+swap$ -- 494
+text.length$ -- 1054
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 236
+type$ -- 298
 warning$ -- 0
-while$ -- 1353
+while$ -- 1702
 width$ -- 0
-write$ -- 839
+write$ -- 1049
+(There was 1 warning)
