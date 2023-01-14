@@ -31,6 +31,13 @@ Botev, A., Ritter, H. \harvardand\ Barber, D.  \harvardyearleft
   learning, {\em in} `Proceedings of the 34th International Conference on
   Machine Learning', PMLR, pp.~557--565.
 
+\harvarditem[Budd et~al.]{Budd, Robinson \harvardand\
+  Kainz}{2021}{budd2021survey}
+Budd, S., Robinson, E.~C. \harvardand\ Kainz, B.  \harvardyearleft
+  2021\harvardyearright , `A survey on active learning and human-in-the-loop
+  deep learning for medical image analysis', {\em Medical Image Analysis} {\bf
+  71},~102062.
+
 \harvarditem[Carse et~al.]{Carse, Alvarez~Olmo \harvardand\
   McKenna}{2022}{carse2022calibration}
 Carse, J., Alvarez~Olmo, A. \harvardand\ McKenna, S.  \harvardyearleft
@@ -90,6 +97,13 @@ Cohn, D.~A., Ghahramani, Z. \harvardand\ Jordan, M.~I.  \harvardyearleft
   1996\harvardyearright , `Active learning with statistical models', {\em
   Journal of artificial intelligence research} {\bf 4},~129--145.
 
+\harvarditem[Colling et~al.]{Colling, Roese-Koerner, Gottschalk \harvardand\
+  Rottmann}{2020}{colling2020metabox}
+Colling, P., Roese-Koerner, L., Gottschalk, H. \harvardand\ Rottmann, M.
+  \harvardyearleft 2020\harvardyearright , `Metabox+: A new region based active
+  learning method for semantic segmentation using priority maps', {\em arXiv
+  preprint arXiv:2010.01884} .
+
 \harvarditem{{Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B.
   and Vilaplana, V. and Reiter, O., and others}}{2019{\em a}}{Combalia2019}
 {Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B. and Vilaplana,
@@ -111,6 +125,14 @@ Combalia, M., Codella, N.~C., Rotemberg, V., Helba, B., Vilaplana, V., Reiter,
   O., Carrera, C., Barreiro, A., Halpern, A.~C., Puig, S. et~al.
   \harvardyearleft 2019\harvardyearright , `{BCN20000: Dermoscopic} lesions in
   the wild', {\em arXiv preprint arXiv:1908.02288} .
+
+\harvarditem[Cordts et~al.]{Cordts, Omran, Ramos, Rehfeld, Enzweiler, Benenson,
+  Franke, Roth \harvardand\ Schiele}{2016}{cordts2016cityscapes}
+Cordts, M., Omran, M., Ramos, S., Rehfeld, T., Enzweiler, M., Benenson, R.,
+  Franke, U., Roth, S. \harvardand\ Schiele, B.  \harvardyearleft
+  2016\harvardyearright , The cityscapes dataset for semantic urban scene
+  understanding, {\em in} `Proceedings of the IEEE conference on computer
+  vision and pattern recognition', pp.~3213--3223.
 
 \harvarditem[Dai et~al.]{Dai, Low \harvardand\ Jaillet}{2020}{dai2020federated}
 Dai, Z., Low, B. K.~H. \harvardand\ Jaillet, P.  \harvardyearleft
@@ -155,6 +177,13 @@ Farahani, R.~Z. \harvardand\ Hekmatfar, M.  \harvardyearleft
   2009\harvardyearright , {\em Facility location: concepts, models, algorithms
   and case studies}, Springer.
 
+\harvarditem[Folmsbee et~al.]{Folmsbee, Brandwein-Weber \harvardand\
+  Doyle}{2021}{folmsbee2021whole}
+Folmsbee, J., Brandwein-Weber, M. \harvardand\ Doyle, S.  \harvardyearleft
+  2021\harvardyearright , Whole slide semantic segmentation: large scale active
+  learning for digital pathology, {\em in} `Medical Imaging 2021: Digital
+  Pathology', Vol. 11603, SPIE, pp.~83--93.
+
 \harvarditem{Freeman}{1965}{freeman1965elementary}
 Freeman, L.~C.  \harvardyearleft 1965\harvardyearright , {\em Elementary
   applied statistics: for students in behavioral science}, New York: Wiley.
@@ -182,6 +211,20 @@ Gal, Y., Islam, R. \harvardand\ Ghahramani, Z.  \harvardyearleft
   2017\harvardyearright , Deep bayesian active learning with image data, {\em
   in} `International Conference on Machine Learning', PMLR, pp.~1183--1192.
 
+\harvarditem[Gamper et~al.]{Gamper, Alemi~Koohbanani, Benet, Khuram
+  \harvardand\ Rajpoot}{2019}{gamper2019pannuke}
+Gamper, J., Alemi~Koohbanani, N., Benet, K., Khuram, A. \harvardand\ Rajpoot,
+  N.  \harvardyearleft 2019\harvardyearright , Pannuke: an open pan-cancer
+  histology dataset for nuclei instance segmentation and classification, {\em
+  in} `European congress on digital pathology', Springer, pp.~11--19.
+
+\harvarditem[Gamper et~al.]{Gamper, Koohbanani, Benes, Graham, Jahanifar,
+  Khurram, Azam, Hewitt \harvardand\ Rajpoot}{2020}{gamper2020pannuke}
+Gamper, J., Koohbanani, N.~A., Benes, K., Graham, S., Jahanifar, M., Khurram,
+  S.~A., Azam, A., Hewitt, K. \harvardand\ Rajpoot, N.  \harvardyearleft
+  2020\harvardyearright , `Pannuke dataset extension, insights and baselines',
+  {\em arXiv preprint arXiv:2003.10778} .
+
 \harvarditem[Gawlikowski et~al.]{Gawlikowski, Tassi, Ali, Lee, Humt, Feng,
   Kruspe, Triebel, Jung, Roscher et~al.}{2021}{gawlikowski2021survey}
 Gawlikowski, J., Tassi, C. R.~N., Ali, M., Lee, J., Humt, M., Feng, J., Kruspe,
@@ -207,6 +250,12 @@ Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
   {\em in} `Proceedings of the thirteenth international conference on
   artificial intelligence and statistics', JMLR Workshop and Conference
   Proceedings, pp.~249--256.
+
+\harvarditem[Gorriz et~al.]{Gorriz, Carlier, Faure \harvardand\ Giro-i
+  Nieto}{2017}{gorriz2017cost}
+Gorriz, M., Carlier, A., Faure, E. \harvardand\ Giro-i Nieto, X.
+  \harvardyearleft 2017\harvardyearright , `Cost-effective active learning for
+  melanoma segmentation', {\em arXiv preprint arXiv:1711.09168} .
 
 \harvarditem[Guo et~al.]{Guo, Pleiss, Sun \harvardand\
   Weinberger}{2017}{guo2017calibration}
@@ -263,6 +312,13 @@ Islam, M. \harvardand\ Glocker, B.  \harvardyearleft 2021\harvardyearright ,
   annotations, {\em in} `International Conference on Information Processing in
   Medical Imaging', Springer, pp.~677--688.
 
+\harvarditem[Jin et~al.]{Jin, An, Wang, Wen \harvardand\
+  Wu}{2021}{jin2021reducing}
+Jin, X., An, H., Wang, J., Wen, K. \harvardand\ Wu, Z.  \harvardyearleft
+  2021\harvardyearright , Reducing the annotation cost of whole slide histology
+  images using active learning, {\em in} `2021 3rd International Conference on
+  Image Processing and Machine Vision (IPMV)', pp.~47--52.
+
 \harvarditem[Jospin et~al.]{Jospin, Buntine, Boussaid, Laga \harvardand\
   Bennamoun}{2020}{jospin2020hands}
 Jospin, L.~V., Buntine, W., Boussaid, F., Laga, H. \harvardand\ Bennamoun, M.
@@ -289,6 +345,13 @@ Kirsch, A., Van~Amersfoort, J. \harvardand\ Gal, Y.  \harvardyearleft
   2019\harvardyearright , `Batchbald: Efficient and diverse batch acquisition
   for deep bayesian active learning', {\em Advances in neural information
   processing systems} {\bf 32}.
+
+\harvarditem[Konyushkova et~al.]{Konyushkova, Sznitman \harvardand\
+  Fua}{2019}{konyushkova2019geometry}
+Konyushkova, K., Sznitman, R. \harvardand\ Fua, P.  \harvardyearleft
+  2019\harvardyearright , `Geometry in active learning for binary and
+  multi-class image segmentation', {\em Computer vision and image
+  understanding} {\bf 182},~1--16.
 
 \harvarditem{Krizhevsky \harvardand\ Hinton}{2009}{krizhevsky2009learning}
 Krizhevsky, A. \harvardand\ Hinton, G.  \harvardyearleft 2009\harvardyearright
@@ -367,9 +430,24 @@ Liu, D.~C. \harvardand\ Nocedal, J.  \harvardyearleft 1989\harvardyearright ,
   `On the limited memory {BFGS} method for large scale optimization', {\em
   Mathematical Programming} {\bf 45},~503--528.
 
+\harvarditem[Liu et~al.]{Liu, Lei, Wan, Liu, Luo \harvardand\
+  Feng}{2020}{liu2020semi}
+Liu, L., Lei, W., Wan, X., Liu, L., Luo, Y. \harvardand\ Feng, C.
+  \harvardyearleft 2020\harvardyearright , Semi-supervised active learning for
+  covid-19 lung ultrasound multi-symptom classification, {\em in} `2020 IEEE
+  32nd International Conference on Tools with Artificial Intelligence (ICTAI)',
+  IEEE, pp.~1268--1273.
+
 \harvarditem{MacKay}{1992}{mackay1992bayesian}
 MacKay, D.~J.  \harvardyearleft 1992\harvardyearright , `Bayesian
   interpolation', {\em Neural Computation} {\bf 4}(3),~415--447.
+
+\harvarditem[Mackowiak et~al.]{Mackowiak, Lenz, Ghori, Diego, Lange
+  \harvardand\ Rother}{2018}{mackowiak2018cereals}
+Mackowiak, R., Lenz, P., Ghori, O., Diego, F., Lange, O. \harvardand\ Rother,
+  C.  \harvardyearleft 2018\harvardyearright , `Cereals-cost-effective
+  region-based active learning for semantic segmentation', {\em arXiv preprint
+  arXiv:1810.09726} .
 
 \harvarditem{Madabhushi \harvardand\ Lee}{2016}{madabhushi2016image}
 Madabhushi, A. \harvardand\ Lee, G.  \harvardyearleft 2016\harvardyearright ,
@@ -466,6 +544,13 @@ Settles, B. \harvardand\ Craven, M.  \harvardyearleft 2008\harvardyearright ,
   language processing', pp.~1070--1079.
 
 \harvarditem[Settles et~al.]{Settles, Craven \harvardand\
+  Friedland}{2008}{settles2008active2}
+Settles, B., Craven, M. \harvardand\ Friedland, L.  \harvardyearleft
+  2008\harvardyearright , Active learning with real annotation costs, {\em in}
+  `Proceedings of the NIPS workshop on cost-sensitive learning', Vol.~1,
+  Vancouver, CA:.
+
+\harvarditem[Settles et~al.]{Settles, Craven \harvardand\
   Ray}{2007}{settles2007multiple}
 Settles, B., Craven, M. \harvardand\ Ray, S.  \harvardyearleft
   2007\harvardyearright , `Multiple-instance active learning', {\em Advances in
@@ -487,6 +572,13 @@ Shao, W., Sun, L. \harvardand\ Zhang, D.  \harvardyearleft
   2018\harvardyearright , Deep active learning for nucleus classification in
   pathology images, {\em in} `2018 IEEE 15th International Symposium on
   Biomedical Imaging (ISBI 2018)', IEEE, pp.~199--202.
+
+\harvarditem[Shi et~al.]{Shi, Dou, Xue, Qin, Chen \harvardand\
+  Heng}{2019}{shi2019active}
+Shi, X., Dou, Q., Xue, C., Qin, J., Chen, H. \harvardand\ Heng, P.-A.
+  \harvardyearleft 2019\harvardyearright , An active learning approach for
+  reducing annotation cost in skin lesion analysis, {\em in} `International
+  Workshop on Machine Learning in Medical Imaging', Springer, pp.~628--636.
 
 \harvarditem{Shin \harvardand\ Kim}{1949}{shin1949mathematical}
 Shin, J.~W. \harvardand\ Kim, S.~J.  \harvardyearleft 1949\harvardyearright ,
@@ -513,12 +605,6 @@ Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J. \harvardand\ Wojna, Z.
   \harvardyearleft 2016\harvardyearright , Rethinking the inception
   architecture for computer vision, {\em in} `Proceedings of the IEEE
   Conference on Computer Vision and Pattern Recognition', pp.~2818--2826.
-
-\harvarditem{Tan \harvardand\ Le}{2019}{tan2019efficientnet}
-Tan, M. \harvardand\ Le, Q.  \harvardyearleft 2019\harvardyearright ,
-  Efficientnet: Rethinking model scaling for convolutional neural networks,
-  {\em in} `Proceedings of the 36th International Conference on Machine
-  LearningInternational Conference on Machine Learning', PMLR, pp.~6105--6114.
 
 \harvarditem{Tizhoosh \harvardand\ Pantanowitz}{2018}{tizhoosh2018artificial}
 Tizhoosh, H.~R. \harvardand\ Pantanowitz, L.  \harvardyearleft
@@ -569,10 +655,10 @@ van~den Oord, A., Li, Y. \harvardand\ Vinyals, O.  \harvardyearleft
 
 \harvarditem[Veeling et~al.]{Veeling, Linmans, Winkens, Cohen \harvardand\
   Welling}{2018}{veeling2018rotation}
-Veeling, B., Linmans, J., Winkens, J., Cohen, T. \harvardand\ Welling, M.
-  \harvardyearleft 2018\harvardyearright , Rotation equivariant {CNN}s for
-  digital pathology, {\em in} `International Conference on Medical Image
-  Computing and Computer-Assisted Intervention', Springer, pp.~210--218.
+Veeling, B.~S., Linmans, J., Winkens, J., Cohen, T. \harvardand\ Welling, M.
+  \harvardyearleft 2018\harvardyearright , Rotation equivariant cnns for
+  digital pathology, {\em in} `International Conference on Medical image
+  computing and computer-assisted intervention', Springer, pp.~210--218.
 
 \harvarditem[Wang et~al.]{Wang, Zhang, Li, Zhang \harvardand\
   Lin}{2017}{wang2017cost}
@@ -591,20 +677,20 @@ Weiss, K., Khoshgoftaar, T.~M. \harvardand\ Wang, D.  \harvardyearleft
   He}{2017}{xie2017aggregated}
 Xie, S., Girshick, R., Doll{\'a}r, P., Tu, Z. \harvardand\ He, K.
   \harvardyearleft 2017\harvardyearright , Aggregated residual transformations
-  for deep neural networks, {\em in} `Proceedings of the IEEE Conference on
-  Computer Vision and Pattern Recognition', Institute of Electrical and
-  Electronics Engineers, pp.~1492--1500.
+  for deep neural networks, {\em in} `Proceedings of the IEEE conference on
+  computer vision and pattern recognition', pp.~1492--1500.
 
 \harvarditem{Zeiler}{2012}{zeiler2012adadelta}
 Zeiler, M.~D.  \harvardyearleft 2012\harvardyearright , `Adadelta: an adaptive
   learning rate method', {\em arXiv preprint arXiv:1212.5701} .
 
-\harvarditem[Zhang et~al.]{Zhang, Kailkhura \harvardand\
-  Han}{2020}{zhang2020mix}
-Zhang, J., Kailkhura, B. \harvardand\ Han, T. Y.-J.  \harvardyearleft
-  2020\harvardyearright , Mix-n-match: Ensemble and compositional methods for
-  uncertainty calibration in deep learning, {\em in} `Proceedings of the 37th
-  International Conference on Machine Learning', PMLR, pp.~11117--11128.
+\harvarditem[Zhao et~al.]{Zhao, Balakrishnan, Durand, Guttag \harvardand\
+  Dalca}{2019}{zhao2019data}
+Zhao, A., Balakrishnan, G., Durand, F., Guttag, J.~V. \harvardand\ Dalca, A.~V.
+   \harvardyearleft 2019\harvardyearright , Data augmentation using learned
+  transformations for one-shot medical image segmentation, {\em in}
+  `Proceedings of the IEEE/CVF conference on computer vision and pattern
+  recognition', pp.~8543--8553.
 
 \harvarditem{Zhdanov}{2019}{zhdanov2019diverse}
 Zhdanov, F.  \harvardyearleft 2019\harvardyearright , `Diverse mini-batch

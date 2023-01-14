@@ -79,28 +79,23 @@ To compare their method to others, the authors conducted experiments with differ
 
 \cite{zhdanov2019diverse} introduced Diverse mini-batch active learning (DBAL), which combines uncertainty and diversity sampling to identify an optimal batch of data. The data is first encoded and then clustered using K-means, with data points closest to the centre of each cluster being selected. To incorporate uncertainty, the authors utilize weighted K-means, where each data point is assigned, a weight based on an uncertainty function (in this case, margin-based uncertainty, which the authors found to be particularly effective). To improve computational efficiency, the authors pre-filter the unlabelled data points by uncertainty and only cluster the remaining data points. The authors demonstrated that DBAL outperforms other baselines on multiple datasets, including MNIST~\citep{lecun1998gradient} and CIFAR-10~\citep{krizhevsky2009learning}.
 
-
 \subsection{Application of Active Learning for Medicine}
 \label{subsec:active_applications}
-Application of Active Learning for Medicine
+Active learning has the potential to significantly reduce annotation costs in medical image analysis tasks, which are among the most expensive in the field~\citep{budd2021survey}. This is demonstrated by the PanNuke dataset~\citep{gamper2019pannuke, gamper2020pannuke}, which was generated through a combination of machine learning algorithms trained on public datasets, and active learning methods to refine the annotations. Specifically, the authors used the algorithm to detect and classify nuclei in whole slide images, and then applied active learning techniques to measure epistemic uncertainty and select the images for expert annotation. Through this approach, the authors were able to annotate 205,343 nuclei with 5 classification labels, using minimal manual annotation from pathologists. This serves as a compelling example of the utility of active learning in digital pathology, enabling the efficient construction of large and detailed datasets.
 
+The survey on deep active learning for medical image analysis, as presented in the literature by \cite{budd2021survey}, illustrates a significant body of research dedicated to the application of active learning methods in the field of medical image analysis. This research encompasses a diverse range of medical image analysis tasks, including but not limited to MRI segmentation~\citep{konyushkova2019geometry,zhao2019data}, skin lesion classification and segmentation~\citep{shi2019active, gorriz2017cost}, ultrasound classification~\cite{liu2020semi}, and histopathology whole slide image segmentation~\citep{folmsbee2021whole, jin2021reducing}. Despite this extensive body of research on active learning, the majority of the literature assumes that all annotations are equally costly, with little effort being made to account for the potential variations in annotation costs.
 
-\subsection{Active Learning for Annotation Efficiently}
-\label{subsec:active_annotation_efficiently}
+\subsection{Active Learning for Annotation Efficiency}
+\label{subsec:active_annotation_efficiency}
+Active learning is a widely researched methodology in the field of machine learning that emphasizes the selective annotation of a subset of data, rather than annotating all available data, to improve the performance of machine learning algorithms while also reducing annotation costs. The traditional approach to active learning has been to assume that the cost of annotating all data is the same, however, recent research has indicated that this is not always the case in practice, with some data being more difficult to annotate than others~\citep{settles2008active2}. In order to address this issue, various novel methods have been proposed to increase annotation efficiency, particularly in the context of deep learning algorithms. One such method is the cost-effective active learning approach tailored to multi-class semantic segmentation, known as CEREALS, which was proposed by \cite{mackowiak2018cereals}.
 
-
-
-
+The CEREALS method reduces annotation costs by identifying informative image patches that have low annotation costs. The authors accomplished this by developing information and estimated annotation cost maps for each image, which were then fused to extract patches that maximize information while minimizing annotation cost. The uncertainty for each pixel was calculated using vote entropy across Bayesian samples of the model, generated through the use of Monte Carlo dropout~\citep{gal2016dropout}. Annotation costs were approximated based on the number of clicks required to annotate the image. Evaluation of the CEREALS method on the Cityscapes dataset~\citep{cordts2016cityscapes} showed that it achieved high mean Intersection over Union (mIoU) scores while also requiring fewer annotator clicks when compared to other active learning methods. Building upon this approach, \cite{colling2020metabox} proposed a similar method but modified the definition used to estimate the cost of annotating and demonstrated a reduced annotation cost compared to other algorithms that don’t take into account variable annotation costs.
 
 
 
 \section{Annotator Efficient Active Learning for Histopathology}
 \label{sec:active_annotator_efficient}
-Annotator Efficient Active Learning for Histopathology
-
-\subsection{Problem Setting defined by Review}
-\label{subsec:active_problem_settings}
-Problem Setting defined by Review
+An extensive body of literature has been dedicated to investigating various query strategies for active learning and their application to deep learning algorithms. However, there remains a scarcity of research focusing specifically on methods to minimize annotation costs in relation to their true annotation expenses. In particular, the annotation of medical images, particularly histopathology tasks, poses a significant financial challenge. For instance, tasks such as nuclei detection and classification necessitate annotators to meticulously select and categorize nuclei in whole slide images. A notable example of this can be observed in the annotation procedure for the CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality}, in which annotators had to examine 500x500 patches extracted from 100 H\&E slides and assign each nuclei a classification of epithelial, inflammatory, fibroblast, or miscellaneous. This annotation effort was conducted by experienced pathologists and graduate students supervised by the same pathologist, highlighting the costly nature of such annotation efforts, given the high salary requirements of experienced pathologists. This illustrates the crucial need for active learning methods that incorporate considerations of annotation cost.
 
 \subsection{Region-Based Active Learning}
 \label{subsec:active_region_based}
@@ -203,17 +198,13 @@ During the active learning process, the training environment is continuously evo
 \label{subsec:active_experiments}
 A series of experiments were conducted to evaluate the effectiveness of the proposed region-based active learning approach in conjunction with various query strategies. These strategies included several basic methods, which served as baselines, as well as deep learning-specific query algorithms. The baseline strategies included random querying, least confident uncertainty, margin uncertainty, and entropy uncertainty sampling. The deep learning-specific query strategies tested were K-Centre sampling (employing greedy approximation), core-set sampling~\citep{sener2017active}, and Bayesian active learning by disagreement (BALD) using Monte Carlo dropout~\citep{gal2017deep}. These methods were selected due to their state-of-the-art status in the field of deep active learning. 
 
-WHY WERE THINGS NOT CONSIDERED.
-
 In each experiment, all available data was initially treated as unannotated, with a small initial annotated training dataset comprising two randomly selected regions. During each active learning iteration, two additional regions were chosen from the pool of unannotated regions and added to the training dataset. A randomly initialized model (using uniform Xavier initialization, as proposed by \cite{glorot2010understanding}) was then trained on the updated dataset. This process was repeated for 50 active learning iterations, resulting in a final training set of 102 regions out of 2,500 in each experiment. To account for random variations, each experimental condition was run five times, with different seeds used to generate random elements such as model weight initialization and initial annotated patches.
 
 \subsection{Results}
 \label{subsec:active_results}
 The performance of the various query strategies was assessed by evaluating the trained models on a fixed test set after each active learning iteration. Table~\ref{tab:query_results} presents the mean test accuracy and cross-entropy loss over five runs, after 50 iterations, for each of the query strategies. As shown, only the K-Centre sampling approach yielded higher average accuracy than a random sampling baseline. The core-set sampling strategy produced results that were similar to those of the random sampling approach, while the other query strategies all performed worse.
 
-Figures~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_accuracy}, and \ref{fig:active_learning_loss} illustrate the test accuracy, mean class accuracy, and cross-entropy loss for models trained with annotated data selected using each of the query strategies after each active learning iteration, averaged over five runs. The figures also include the results for a model trained using all 1487 annotated training regions. For reference, a fully supervised CNN trained on the entire annotated dataset achieved an accuracy of 68.53\% and a cross-entropy loss of 1.111. In contrast, the model trained with the K-Centre query strategy achieved an accuracy of 61.41\% and a cross-entropy loss of 1.137, using only 7\% of the annotated data.
-
-\begin{table}
+\begin{table}[h]
 	\centering
 	\caption{Test results for each query strategy after 50 active iterations.}
 	\label{tab:query_results}
@@ -226,6 +217,9 @@ Figures~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_
 		\end{tabular}%
 	}
 \end{table}
+
+\newpage
+Figures~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_accuracy}, and \ref{fig:active_learning_loss} illustrate the test accuracy, mean class accuracy, and cross-entropy loss for models trained with annotated data selected using each of the query strategies after each active learning iteration, averaged over five runs. The figures also include the results for a model trained using all 1487 annotated training regions. For reference, a fully supervised CNN trained on the entire annotated dataset achieved an accuracy of 68.53\% and a cross-entropy loss of 1.111. In contrast, the model trained with the K-Centre query strategy achieved an accuracy of 61.41\% and a cross-entropy loss of 1.137, using only 7\% of the annotated data.
 
 \begin{figure}
 	\centering
@@ -247,6 +241,7 @@ Figures~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_
 	\caption{Average test loss of trained models using different amounts of annotated regions selected through various query strategies.}
 	\label{fig:active_learning_loss}
 \end{figure}
+
 
 
 \section{Conclusion}

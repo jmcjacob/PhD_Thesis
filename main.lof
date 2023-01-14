@@ -2,24 +2,26 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Pool-based active learning framework.\relax }}{6}{figure.caption.16}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces A visual illustration of the core-sets query strategy, in which four points are selected that cover all other data points and minimize $\delta _s$\nobreakspace {}\citep {sener2017active}.\relax }}{11}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Three example regions from the CRCHistoPhenotypes dataset\nobreakspace {}\cite {sirinukunwattana2016locality} are shown, each containing multiple nuclei that will be extracted into patches and augmented.\relax }}{14}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Average test accuracy of trained models using different amounts of annotated regions selected through various query strategies.\relax }}{17}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Average test mean class accuracy of trained models using different amounts of annotated regions selected through various query strategies.\relax }}{18}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Average test loss of trained models using different amounts of annotated regions selected through various query strategies.\relax }}{18}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Three example regions from the CRCHistoPhenotypes dataset\nobreakspace {}\cite {sirinukunwattana2016locality} are shown, each containing multiple nuclei that will be extracted into patches and augmented.\relax }}{16}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Average test accuracy of trained models using different amounts of annotated regions selected through various query strategies.\relax }}{19}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Average test mean class accuracy of trained models using different amounts of annotated regions selected through various query strategies.\relax }}{20}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Average test loss of trained models using different amounts of annotated regions selected through various query strategies.\relax }}{20}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces (a) An example image from the ImageNet dataset\nobreakspace {}\cite {deng2009imagenet}. (b) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted. (c) An example image from the Patch Camelyon dataset\nobreakspace {}\cite {veeling2018rotation}. (d) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted.\relax }}{21}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed active learning framework with learnt representations from unsupervised representation learning on unannotated data.\relax }}{23}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{26}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces (a) An example image from the ImageNet dataset\nobreakspace {}\cite {deng2009imagenet}. (b) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted. (c) An example image from the Patch Camelyon dataset\nobreakspace {}\cite {veeling2018rotation}. (d) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted.\relax }}{23}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed active learning framework with learnt representations from unsupervised representation learning on unannotated data.\relax }}{25}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{27}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Training loss each epoch with the CPC Models.\relax }}{30}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Mean class testing accuracies of the CNN classifiers trained using varying amounts of training examples, with standard errors.\relax }}{31}{figure.caption.33}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Cost matrices for the classes of the ISIC 2019 dataset. (a) Shows a symmetrical cost matrices where all costs of misclassification are equal. (b) shows a asymmetrical cost matrix where mis-classifications have different costs based on numerous factors.\relax }}{33}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Example images from the test data sets \(S_{in}\) and \(S_{unknown}\).\relax }}{37}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Cost-coverage curves for SelectiveNets trained with different target coverages. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{38}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Cost-coverage curves using MC-Dropout on $S_{in}$, $S_{unknown}$, and $S_{combined}$\relax }}{39}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Cost-coverage curves. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{40}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{40}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{41}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example reliability diagram.\relax }}{35}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Example Images from the ISIC Challenge 2019 dataset.\relax }}{40}{figure.caption.36}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example reliability diagram.\relax }}{46}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Example Images from the ISIC Challenge 2019 dataset.\relax }}{50}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cost matrices for the classes of the ISIC 2019 dataset. (a) Shows a symmetrical cost matrices where all costs of misclassification are equal. (b) shows a asymmetrical cost matrix where mis-classifications have different costs based on numerous factors.\relax }}{48}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Example images from the test data sets \(S_{in}\) and \(S_{unknown}\).\relax }}{52}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Cost-coverage curves for SelectiveNets trained with different target coverages. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{53}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost-coverage curves using MC-Dropout on $S_{in}$, $S_{unknown}$, and $S_{combined}$\relax }}{54}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Cost-coverage curves. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{55}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{55}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{56}{figure.caption.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

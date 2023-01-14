@@ -20,14 +20,14 @@ There are several metrics that can be used to assess the calibration of a machin
 
 Histogram-based estimation of ECE, which involves dividing the range of predicted probabilities into equally spaced bins, has been widely used to evaluate model calibration~\cite{muller2019does}. However, this approach has been criticized for its inherent bias and statistical inefficiency, leading to the development of methods that adapt the number and sizes of bins~\cite{roelofs2022mitigating}. An alternative approach is to use continuous density estimators, such as kernel density estimation (KDE)~\cite{parzen1962estimation}, to estimate the densities of accuracy and confidence in place of histograms. This method, known as KDE-ECE, has been shown to offer improved data efficiency compared to histogram-based approaches. In this study, we used a triweight kernel when calculating KDE-ECE.
 
-The negative log-likelihood loss function is a common choice for optimizing deep neural network classifiers because it assesses the capacity of a probabilistic model to accurately predict the true conditional distribution. Beyond its use as an optimization objective, the negative log-likelihood can also serve as a measure of a model's calibration. One way to analyze the calibration performance of a model is through the use of reliability diagrams, which plot the gap between the confidence of predictions and their accuracy over histogram bins. An example of a reliability diagram is shown in Figure~\ref{fig:reliability_diagram}.
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{images/reliability_diagram.png}
 	\caption{Example reliability diagram.}
 	\label{fig:reliability_diagram}
 \end{figure}
+
+The negative log-likelihood loss function is a common choice for optimizing deep neural network classifiers because it assesses the capacity of a probabilistic model to accurately predict the true conditional distribution. Beyond its use as an optimization objective, the negative log-likelihood can also serve as a measure of a model's calibration. One way to analyze the calibration performance of a model is through the use of reliability diagrams, which plot the gap between the confidence of predictions and their accuracy over histogram bins. An example of a reliability diagram is shown in Figure~\ref{fig:reliability_diagram}.
 
 
 
