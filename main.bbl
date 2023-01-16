@@ -438,6 +438,14 @@ Liu, L., Lei, W., Wan, X., Liu, L., Luo, Y. \harvardand\ Feng, C.
   32nd International Conference on Tools with Artificial Intelligence (ICTAI)',
   IEEE, pp.~1268--1273.
 
+\harvarditem[Liu et~al.]{Liu, Lin, Cao, Hu, Wei, Zhang, Lin \harvardand\
+  Guo}{2021}{liu2021swin}
+Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., Lin, S. \harvardand\
+  Guo, B.  \harvardyearleft 2021\harvardyearright , Swin transformer:
+  Hierarchical vision transformer using shifted windows, {\em in} `Proceedings
+  of the IEEE/CVF International Conference on Computer Vision',
+  pp.~10012--10022.
+
 \harvarditem{MacKay}{1992}{mackay1992bayesian}
 MacKay, D.~J.  \harvardyearleft 1992\harvardyearright , `Bayesian
   interpolation', {\em Neural Computation} {\bf 4}(3),~415--447.
@@ -592,6 +600,11 @@ Sirinukunwattana, K., Raza, S. E.~A., Tsang, Y.-W., Snead, D.~R., Cree, I.~A.
   in routine colon cancer histology images', {\em IEEE transactions on medical
   imaging} {\bf 35}(5),~1196--1206.
 
+\harvarditem{Smith}{2017}{smith2017cyclical}
+Smith, L.  \harvardyearleft 2017\harvardyearright , Cyclical learning rates for
+  training neural networks, {\em in} `IEEE Winter Conf. on Applications of
+  Computer Vision (WACV)', IEEE, pp.~464--472.
+
 \harvarditem[Srivastava et~al.]{Srivastava, Hinton, Krizhevsky, Sutskever
   \harvardand\ Salakhutdinov}{2014}{srivastava2014dropout}
 Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. \harvardand\
@@ -605,6 +618,12 @@ Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J. \harvardand\ Wojna, Z.
   \harvardyearleft 2016\harvardyearright , Rethinking the inception
   architecture for computer vision, {\em in} `Proceedings of the IEEE
   Conference on Computer Vision and Pattern Recognition', pp.~2818--2826.
+
+\harvarditem{Tan \harvardand\ Le}{2019}{tan2019efficient}
+Tan, M. \harvardand\ Le, Q.~V.  \harvardyearleft 2019\harvardyearright ,
+  Efficient{N}et: Rethinking model scaling for convolutional neural networks,
+  {\em in} `Proceedings of the 36th International Conference on Machine
+  Learning (ICML)', Vol. PMLR 97, pp.~6105--6114.
 
 \harvarditem{Tizhoosh \harvardand\ Pantanowitz}{2018}{tizhoosh2018artificial}
 Tizhoosh, H.~R. \harvardand\ Pantanowitz, L.  \harvardyearleft
@@ -679,6 +698,13 @@ Xie, S., Girshick, R., Doll{\'a}r, P., Tu, Z. \harvardand\ He, K.
   \harvardyearleft 2017\harvardyearright , Aggregated residual transformations
   for deep neural networks, {\em in} `Proceedings of the IEEE conference on
   computer vision and pattern recognition', pp.~1492--1500.
+
+\harvarditem[Yang et~al.]{Yang, Wu, Liang, Sun, Cheng, Rosin \harvardand\
+  Wang}{2019}{yang2019self}
+Yang, J., Wu, X., Liang, J., Sun, X., Cheng, M.-M., Rosin, P.~L. \harvardand\
+  Wang, L.  \harvardyearleft 2019\harvardyearright , `Self-paced balance
+  learning for clinical skin disease recognition', {\em IEEE transactions on
+  neural networks and learning systems} {\bf 31}(8),~2832--2846.
 
 \harvarditem{Zeiler}{2012}{zeiler2012adadelta}
 Zeiler, M.~D.  \harvardyearleft 2012\harvardyearright , `Adadelta: an adaptive

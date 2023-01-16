@@ -83,16 +83,16 @@ In these experiments, two datasets were used: the ISIC 2019 challenge dataset~\c
 	\centering
 	\captionsetup[subfigure]{singlelinecheck=false}
 	\begin{tabular}{cc}
-		\subcaptionbox{Melanoma}{\includegraphics[width=1.7in]{images/MEL.jpg}} &
-		\subcaptionbox{Melanocytic \mbox{Nevus}}{\includegraphics[width=1.7in]{images/nv_example.jpeg}} \\
-		\subcaptionbox{Basal Cell \mbox{Carcinoma}}{\includegraphics[width=1.7in]{images/bcc_example.jpeg}} &
-		\subcaptionbox{Actinic Keratosis}{\includegraphics[width=1.7in]{images/ak_example.jpeg}} \\
-		\subcaptionbox{Benign Keratosis}{\includegraphics[width=1.7in]{images/bkl_example.jpeg}} &
-		\subcaptionbox{Dermatofibroma}{\includegraphics[width=1.7in]{images/df_example.jpeg}} \\
-		\subcaptionbox{Vascular Lesion}{\includegraphics[width=1.7in]{images/vasc_example.jpeg}} &
-		\subcaptionbox{Squamous Cell Carcinoma}{\includegraphics[width=1.7in]{images/scc_example.jpeg}}
+		\subcaptionbox{\centering Melanoma}{\includegraphics[width=1.7in]{images/MEL.jpg}} &
+		\subcaptionbox{\centering Melanocytic \mbox{Nevus}}{\includegraphics[width=1.7in]{images/nv_example.jpeg}} \\
+		\subcaptionbox{\centering Basal Cell \mbox{Carcinoma}}{\includegraphics[width=1.7in]{images/bcc_example.jpeg}} &
+		\subcaptionbox{\centering Actinic Keratosis}{\includegraphics[width=1.7in]{images/ak_example.jpeg}} \\
+		\subcaptionbox{\centering Benign Keratosis}{\includegraphics[width=1.7in]{images/bkl_example.jpeg}} &
+		\subcaptionbox{\centering Dermatofibroma}{\includegraphics[width=1.7in]{images/df_example.jpeg}} \\
+		\subcaptionbox{\centering Vascular Lesion}{\includegraphics[width=1.7in]{images/vasc_example.jpeg}} &
+		\subcaptionbox{\centering Squamous Cell Carcinoma}{\includegraphics[width=1.7in]{images/scc_example.jpeg}}
 	\end{tabular}
-	\caption{Example Images from the ISIC Challenge 2019 dataset.}
+	\caption{Example images from the ISIC Challenge 2019 dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}.}
 	\label{fig:ISIC_examples}
 \end{figure}
 
@@ -102,7 +102,7 @@ Seven different types of convolutional neural network (CNN) classifiers were tra
 
 
 \subsection{Training Parameters}
-An EfficientNet encoder with a compound coefficient of 7, pre-trained on ImageNet, was utilized as the CNN model in this study. The encoder was followed by a fully connected hidden layer with a width of 512 neurons before the output layer. For Bayesian convolutional neural networks, the final hidden and output fully-connected layers were replaced with Bayesian fully-connected layers that learn distributions for the weights and biases to be sampled from. Cyclical learning rate scheduling was employed, with scheduling between $10^{-4}$ and $10^{-1}$. The batch size for the ISIC 2019 data was 16, and the batch size for the PCam data was 64. Bayes by backprop used a weighted loss function that combined the expected lower bound from 10 forward-propagation passes and the cross-entropy of the 10 predictions. The Laplace approximation was optimized post-hoc by fitting it to a trained convolutional neural network model on the output layer of the model using a full Hessian structure. Each model was trained for 40 epochs, and the model with the best validation loss was selected for evaluation.
+An EfficientNet~\citep{tan2019efficient} encoder with a compound coefficient of 7, pre-trained on ImageNet~\citep{deng2009imagenet}, was utilized as the CNN model in this study. The encoder was followed by a fully connected hidden layer with a width of 512 neurons before the output layer. For Bayesian convolutional neural networks, the final hidden and output fully-connected layers were replaced with Bayesian fully-connected layers that learn distributions for the weights and biases to be sampled from. Cyclical learning rate scheduling was employed, with scheduling between $10^{-4}$ and $10^{-1}$. The batch size for the ISIC 2019 data was 16, and the batch size for the PCam data was 64. Bayes by backprop used a weighted loss function that combined the expected lower bound from 10 forward-propagation passes and the cross-entropy of the 10 predictions. The Laplace approximation was optimized post-hoc by fitting it to a trained convolutional neural network model on the output layer of the model using a full Hessian structure. Each model was trained for 40 epochs, and the model with the best validation loss was selected for evaluation.
 
 
 \subsection{Results}
