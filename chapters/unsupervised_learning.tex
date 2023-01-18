@@ -40,7 +40,7 @@ One approach to reducing the need for large, annotated datasets is through the u
 
 \subsection{Summary of Work}
 \label{subsec:unsupervised_summary}
-The current study builds upon the idea that unsupervised representation learning can be utilized to learn deep representations, which can then be used in conjunction with transfer learning to train a discriminative classifier with limited annotated data (as depicted in Figure~\ref{fig:active_unsupervised_learning_framework}). By implementing this approach, the need for complex deep learning-specific active learning query strategies is mitigated and instead allows for a focus on uncertainty-based querying. In order to realize this approach, a state-of-the-art unsupervised representation learning algorithm for digital pathology images was required. To this end, a multi-directional CPC extension was proposed, which includes an alternative mask for building latent context and a new extension to the autoregressive model PixelCNN~\citep{oord2016pixel} for multi-directional predictions (as depicted in Figure~\ref{fig:example_cpc_patches}(d)). The effectiveness of this modification was demonstrated using the PatchCamelyon dataset~\citep{veeling2018rotation}, derived from the Camelyon16 dataset~\citep{litjens20181399}, where it was shown that classification can be performed with less annotated data when utilizing representations learned in this way.
+The current study builds upon the idea that unsupervised representation learning can be utilized to learn deep representations, which can then be used in conjunction with transfer learning to train a discriminative classifier with limited annotated data (as depicted in Figure~\ref{fig:active_unsupervised_learning_framework}). By implementing this approach, the need for complex deep learning-specific active learning query strategies is mitigated and instead allows for a focus on uncertainty-based querying. In order to realize this approach, a state-of-the-art unsupervised representation learning algorithm for digital pathology images was required. To this end, a multi-directional CPC extension was proposed, which includes an alternative mask for building latent context and a new extension to the autoregressive model PixelCNN~\citep{oord2016pixel} for multi-directional predictions (as depicted in Figure~\ref{fig:example_cpc_patches}(d)). The effectiveness of this modification was demonstrated using the PatchCamelyon dataset~\citep{veeling2018rotation}, derived from the Camelyon16 dataset~\citep{litjens20181399}, where it was shown that classification can be performed with less annotated data when utilizing representations learned in this way.This work was presented at the IEEE International Symposium on Biomedical Imaging 2021 and published as part of its proceedings \citep{carse2021unsupervised}.
 
 \begin{figure}
 	\centering
@@ -51,28 +51,50 @@ The current study builds upon the idea that unsupervised representation learning
 
 
 
-\section{Review of Deep Unsupervised Representation Learning}
-\label{sec:unsupervised_review}
-Review of Deep Unsupervised Representation Learning
-
-\subsection{Unsupervised Representation Learning}
+\section{Unsupervised Representation Learning for Computer Vision}
 \label{subsec:unsupervised_representation}
-Unsupervised Representation Learning
+In the field of deep learning, methods have shown exceptional performance in tasks involving abundant labelled data. However, their performance is known to suffer in scenarios where the supervision is limited. One solution to this issue is to utilize supervised learning techniques to learn highly structured data representations, which can lead to more data-efficient models~\citep{lake2015human}.
 
-\subsection{Deep Unsupervised Representation Learning}
-\label{subsec:unsupervised_deep_representation}
-Deep Unsupervised Representation Learning
+Deep learning models typically consist of layers that are used for specific tasks, such as classification or regression, and others that are used to encode the data into feature representations, known as encoders. Unsupervised representation learning in deep learning focuses on learning the parameters of the encoder. Once trained, the encoder can be used for transfer learning and applied to tasks such as classification, object detection, or segmentation~\citep{weiss2016survey}.
 
-\subsection{Unsupervised Representation Learning for Medical Images}
+In the context of computer vision, there are two main approaches to deep representation learning: generative methods and self-supervised learning~\citep{bengio2013representation}. Generative methods aim to learn representative feature encodings by attempting to reconstruct images. On the other hand, self-supervised learning involves training models in a supervised manner using auto-generated labels for classification or regression tasks.
+
+\subsection{Generative Methods}
+\label{subsec:generative_methods}
+Autoencoders 
+
+Variational Autoencoders
+
+Generative Adversarial Networks
+
+BigBiGAN
+
+\subsection{Self-supervised Methods}
+\label{subsec:self_supervised_methods}
+Non-Parametric Instance Discrimination
+
+Local Aggregation
+
+Momentum Contrast
+
+Pretext-Invariant Representations
+
+RotNet
+
+AMDIM
+
+Contrastive Multiview Coding
+
+\subsection{Unsupervised Representation Learning for Medical Image Analysis}
 \label{subsec:unsupervise_representation_for_medical}
-Unsupervised Representation Learning for Medical Images
+In the field of digital pathology, transfer learning is a widely used technique for various tasks~\citep{srinidhi2020deep}, as it has been shown to accelerate the convergence of deep learning models~\citep{bayramoglu2016transfer}. Studies have also demonstrated the effectiveness of utilizing representation learning to initialize a convolutional neural network (CNN) in situations where the learning task may be challenging due to a lack of annotated data~\citep{hou2016automatic}. This approach can also be extended to active learning, where limited annotations make it difficult to learn features effectively~\cite{carse2019active}.
+
+Instead of relying on features trained on general computer vision data, some researchers have explored the use of more general histology features for cell-level tasks~\citep{hu2018unsupervised}. One method for achieving this is by training a unified generative adversarial network with a modified loss function for cell-level representation learning. Another approach is to use multi-scale convolutional sparse coding, which aims to jointly learn features at different scales with enforced scale-specificity~\citep{chang2017unsupervised}.
 
 
 
 \section{Multi-Directional Contrastive Predictive Coding}
 \label{sec:unsupervised_multi_directional_cpc}
-Multi-Directional Contrastive Predictive Coding
-
 \subsection{Contrastive Predictive Coding}
 \label{subsec:unsupervised_cpc}
 Contrastive Predictive Coding (CPC) is a method for learning feature representations in an unsupervised manner from sequential data. The CPC method is based on the idea of predicting future representations from past representations, thereby allowing the model to learn "slow" features that effectively represent the underlying input data distribution \citep{henaff2019data,oord2018representation}. A CPC model consists of two main components: an encoder $g_{en}$ that encodes each element $x_t$ of the input sequence $x$ into a latent representation $z_t = g_{en}(x_t)$, and an autoregressive model $g_{ar}$ that summarizes part of the latent representation sequence $z_{\le t}$ into a latent context representation $c_t = g_{ar}(z_{\le t})$. Instead of using the autoregressive model to predict future samples, a density ratio is modeled, which preserves the mutual information between $x_{t+k}$ and $c_t$ (as described in Equation\ref{eq:density_ratio}).

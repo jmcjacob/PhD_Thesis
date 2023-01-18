@@ -1,5 +1,12 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Bayramoglu \harvardand\
+  Heikkil{\"a}}{2016}{bayramoglu2016transfer}
+Bayramoglu, N. \harvardand\ Heikkil{\"a}, J.  \harvardyearleft
+  2016\harvardyearright , Transfer learning for cell nuclei classification in
+  histopathology images, {\em in} `European Conference on Computer Vision',
+  Springer, pp.~532--539.
+
 \harvarditem[Bejnordi et~al.]{Bejnordi, Veta, Van~Diest, Van~Ginneken,
   Karssemeijer, Litjens, Van Der~Laak, Hermsen, Manson, Balkenhol
   et~al.}{2017}{bejnordi2017diagnostic}
@@ -67,6 +74,14 @@ Carse, J., S{\"u}veges, T., Hogg, S., Trucco, E., Proby, C., Fleming, C.
   `Uncertainty for Safe Utilization of Machine Learning in Medical Imaging, and
   Perinatal Imaging, Placental and Preterm Image Analysis', Springer,
   pp.~112--121.
+
+\harvarditem[Chang et~al.]{Chang, Han, Zhong, Snijders \harvardand\
+  Mau}{2017}{chang2017unsupervised}
+Chang, H., Han, J., Zhong, C., Snijders, A.~M. \harvardand\ Mau, J.
+  \harvardyearleft 2017\harvardyearright , `Unsupervised transfer learning via
+  multi-scale convolutional sparse coding for biomedical applications', {\em
+  IEEE Transactions on Pattern Analysis and Machine Intelligence} {\bf
+  40}(5),~1182--1194.
 
 \harvarditem[Chen et~al.]{Chen, Chen \harvardand\ Hsu}{2014}{chen2014cross}
 Chen, B.-C., Chen, C.-S. \harvardand\ Hsu, W.~H.  \harvardyearleft
@@ -352,12 +367,28 @@ Hendrycks, D., Mu, N., Cubuk, E.~D., Zoph, B., Gilmer, J. \harvardand\
   simple data processing method to improve robustness and uncertainty', {\em
   arXiv preprint arXiv:1912.02781} .
 
+\harvarditem[Hou et~al.]{Hou, Singh, Samaras, Kurc, Gao, Seidman \harvardand\
+  Saltz}{2016}{hou2016automatic}
+Hou, L., Singh, K., Samaras, D., Kurc, T.~M., Gao, Y., Seidman, R.~J.
+  \harvardand\ Saltz, J.~H.  \harvardyearleft 2016\harvardyearright , Automatic
+  histopathology image analysis with cnns, {\em in} `2016 New York Scientific
+  Data Summit (NYSDS)', Institute of Electrical and Electronics Engineers,
+  pp.~1--6.
+
 \harvarditem[Houlsby et~al.]{Houlsby, Husz{\'a}r, Ghahramani \harvardand\
   Lengyel}{2011}{houlsby2011bayesian}
 Houlsby, N., Husz{\'a}r, F., Ghahramani, Z. \harvardand\ Lengyel, M.
   \harvardyearleft 2011\harvardyearright , `Bayesian active learning for
   classification and preference learning', {\em arXiv preprint arXiv:1112.5745}
   .
+
+\harvarditem[Hu et~al.]{Hu, Tang, Chang, Fan, Lai \harvardand\
+  Xu}{2018}{hu2018unsupervised}
+Hu, B., Tang, Y., Chang, E.~I., Fan, Y., Lai, M. \harvardand\ Xu, Y.
+  \harvardyearleft 2018\harvardyearright , `Unsupervised learning for
+  cell-level visual representation in histopathology images with generative
+  adversarial networks', {\em IEEE Journal of Biomedical and Health
+  Informatics} {\bf 23}(3),~1316--1328.
 
 \harvarditem{Islam \harvardand\ Glocker}{2021}{islam2021spatially}
 Islam, M. \harvardand\ Glocker, B.  \harvardyearleft 2021\harvardyearright ,
@@ -423,6 +454,12 @@ Kwon, Y., Won, J.-H., Kim, B.~J. \harvardand\ Paik, M.~C.  \harvardyearleft
   2020\harvardyearright , `Uncertainty quantification using bayesian neural
   networks in classification: Application to biomedical image segmentation',
   {\em Computational Statistics \& Data Analysis} {\bf 142},~106816.
+
+\harvarditem[Lake et~al.]{Lake, Salakhutdinov \harvardand\
+  Tenenbaum}{2015}{lake2015human}
+Lake, B.~M., Salakhutdinov, R. \harvardand\ Tenenbaum, J.~B.  \harvardyearleft
+  2015\harvardyearright , `Human-level concept learning through probabilistic
+  program induction', {\em Science} {\bf 350}(6266),~1332--1338.
 
 \harvarditem[LeCun et~al.]{LeCun, Bottou, Bengio \harvardand\
   Haffner}{1998}{lecun1998gradient}
@@ -665,6 +702,12 @@ Sirinukunwattana, K., Raza, S. E.~A., Tsang, Y.-W., Snead, D.~R., Cree, I.~A.
 Smith, L.  \harvardyearleft 2017\harvardyearright , Cyclical learning rates for
   training neural networks, {\em in} `IEEE Winter Conf. on Applications of
   Computer Vision (WACV)', IEEE, pp.~464--472.
+
+\harvarditem[Srinidhi et~al.]{Srinidhi, Ciga \harvardand\
+  Martel}{2020}{srinidhi2020deep}
+Srinidhi, C., Ciga, O. \harvardand\ Martel, A.  \harvardyearleft
+  2020\harvardyearright , `Deep neural network models for computational
+  histopathology: A survey', {\em Medical Image Analysis} {\bf 67},~101813.
 
 \harvarditem[Srivastava et~al.]{Srivastava, Hinton, Krizhevsky, Sutskever
   \harvardand\ Salakhutdinov}{2014}{srivastava2014dropout}
