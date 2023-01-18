@@ -1,7 +1,9 @@
-\section{Introduction}
-\label{sec:selective_introduction}
 This work was presented at the Uncertainty for Safe Utilization of Machine Learning in Medical Imaging 2021 (UNSURE) workshop hosted at Medical Image Computing and Computing Assisted Intervention (MICCAI) in Strasbourg, France and published as part of its proceedings \citep{carse2021robust}.
 
+
+
+\section{Introduction}
+\label{sec:selective_introduction}
 \subsection{Problem Statement}
 \label{subsec:selective_probelm_statement}
 Automated image analysis of skin lesions has great potential to improve diagnostic decision making and efficiency of clinical workflows in dermatology and primary care. Lesion classifiers that produce class probability distributions could be used to estimate the expected costs of clinical decisions such as whether or not to refer a patient, and thus inform effective decision making. Costs associated with mis-classification are usually asymmetric: deciding that a skin lesion is benign when it is really malignant is more costly than deciding it is malignant when it is benign. Optimal decision making requires predicted class probabilities to be well-calibrated. In addition, a clinically useful system should ascertain whether it has been sufficiently well trained to deal with the image under inspection. This is important for robustness and clinical usability. Classifiers should be selective, rejecting images they are ill-equipped to deal with; in particular, not all lesion types will be represented well in training data. Here we investigate methods for selective, cost-sensitive skin lesion classification. We focus on binary classification of malignant versus benign lesions using an experimental setup with test data from disease types represented in the training data as well as types not represented in the training data. Images were sourced from the ISIC 2019 data set~\citep{codella2018skin,Combalia2019,Tschandl2018}.
@@ -152,7 +154,7 @@ Expected costs are also used as a method for selection, equation \ref{eq:expecte
 This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion triage. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Selective_Dermatology}}.
 
 \subsection{Dataset}
-The ISIC Challenge 2019~\citep{codella2018skin,Combalia2019,Tschandl2018} was used and consists of 25,331 total images covering 8 classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. Two datasets are compiles from ISIC 2019 which we refer to as \(S_{in}\) and \(S_{unknown}\). 
+The ISIC Challenge 2019~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} was used and consists of 25,331 total images covering 8 classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. Two datasets are compiles from ISIC 2019 which we refer to as \(S_{in}\) and \(S_{unknown}\). 
 
 \begin{figure}[h]
 	\centering
@@ -241,7 +243,7 @@ Figure \ref{fig:temp_scaling} plots the effect of temperature scaling. Both the 
 This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion classification. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Asymetric_Selective_Dermatology}}.
 
 \subsection{Dataset}
-The ISIC Challenge 2019~\citep{codella2018skin,combalia2019csn20000,tschandl2018the} dataset which consists in total of 25,331 images covering 8 classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma was used for this study. For this study the dataset set is randomly split into training, validation and testing with the ratio $0.6:0.2:0.2$. Each image is first normalised using the standard deviation and mean across each colour channel. Each of the images in the dataset is squared by cropping the horizontal sides evenly until the image is square, each image is then resized to 256 by 256. Augmentation is used during training by applying random augmentations to each image as it is loaded each epoch. Random 90 degree rotations, horizontal and vertical flips, make up the set of augmentations.
+The ISIC Challenge 2019~\citep{codella2018skin,combalia2019csn20000,tschandl2018ham10000} dataset which consists in total of 25,331 images covering 8 classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma was used for this study. For this study the dataset set is randomly split into training, validation and testing with the ratio $0.6:0.2:0.2$. Each image is first normalised using the standard deviation and mean across each colour channel. Each of the images in the dataset is squared by cropping the horizontal sides evenly until the image is square, each image is then resized to 256 by 256. Augmentation is used during training by applying random augmentations to each image as it is loaded each epoch. Random 90 degree rotations, horizontal and vertical flips, make up the set of augmentations.
 
 \subsection{Experiment Setup}
 

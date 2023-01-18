@@ -74,6 +74,14 @@ Chen, B.-C., Chen, C.-S. \harvardand\ Hsu, W.~H.  \harvardyearleft
   recognition and retrieval, {\em in} `European conference on computer vision',
   Springer, pp.~768--783.
 
+\harvarditem[Chin et~al.]{Chin, Suveges, Carse, Butt, Muthiah, Morton, Trucco,
+  Proby, McKenna \harvardand\ Fleming}{2022}{chin2022prepare}
+Chin, G.~X., Suveges, T., Carse, J., Butt, S., Muthiah, S., Morton, C., Trucco,
+  E., Proby, C., McKenna, S. \harvardand\ Fleming, C.  \harvardyearleft
+  2022\harvardyearright , `Prepare to succeed: Real-world image datasets for
+  artificial intelligence in skin cancer triage', {\em British Journal of
+  Dermatology} {\bf 187}(Suppl. 1)),~125.
+
 \harvarditem[Codella et~al.]{Codella, Gutman, Celebi, Helba, Marchetti, Dusza,
   Kalloo, Liopyris, Mishra, Kittler et~al.}{2018}{codella2018skin}
 Codella, N.~C., Gutman, D., Celebi, M.~E., Helba, B., Marchetti, M.~A., Dusza,
@@ -167,10 +175,23 @@ Deng, J., Dong, W., Socher, R., Li, L., Li, K. \harvardand\ Fei-Fei, L.
   Pattern Recognition', Institute of Electrical and Electronics Engineers,
   pp.~248--255.
 
+\harvarditem[Du-Harpur et~al.]{Du-Harpur, Watt, Luscombe \harvardand\
+  Lynch}{2020}{du2020ai}
+Du-Harpur, X., Watt, F., Luscombe, N. \harvardand\ Lynch, M.  \harvardyearleft
+  2020\harvardyearright , `What is ai? applications of artificial intelligence
+  to dermatology', {\em British Journal of Dermatology} {\bf 183}(3),~423--430.
+
 \harvarditem{Ducoffe \harvardand\ Precioso}{2018}{ducoffe2018adversarial}
 Ducoffe, M. \harvardand\ Precioso, F.  \harvardyearleft 2018\harvardyearright ,
   `Adversarial active learning for deep networks: a margin based approach',
   {\em arXiv preprint arXiv:1802.09841} .
+
+\harvarditem[Esteva et~al.]{Esteva, Kuprel, Novoa, Ko, Swetter, Blau
+  \harvardand\ Thrun}{2017}{esteva2017dermatologist}
+Esteva, A., Kuprel, B., Novoa, R.~A., Ko, J., Swetter, S.~M., Blau, H.~M.
+  \harvardand\ Thrun, S.  \harvardyearleft 2017\harvardyearright ,
+  `Dermatologist-level classification of skin cancer with deep neural
+  networks', {\em nature} {\bf 542}(7639),~115--118.
 
 \harvarditem{Farahani \harvardand\ Hekmatfar}{2009}{farahani2009facility}
 Farahani, R.~Z. \harvardand\ Hekmatfar, M.  \harvardyearleft
@@ -192,6 +213,16 @@ Freeman, L.~C.  \harvardyearleft 1965\harvardyearright , {\em Elementary
 Frenkel, L. \harvardand\ Goldberger, J.  \harvardyearleft 2021\harvardyearright
   , Network calibration by class-based temperature scaling, {\em in} `2021 29th
   European Signal Processing Conference', IEEE, pp.~1486--1490.
+
+\harvarditem[Fujisawa et~al.]{Fujisawa, Otomo, Ogata, Nakamura, Fujita,
+  Ishitsuka, Watanabe, Okiyama, Ohara \harvardand\
+  Fujimoto}{2019}{fujisawa2019deep}
+Fujisawa, Y., Otomo, Y., Ogata, Y., Nakamura, Y., Fujita, R., Ishitsuka, Y.,
+  Watanabe, R., Okiyama, N., Ohara, K. \harvardand\ Fujimoto, M.
+  \harvardyearleft 2019\harvardyearright , `Deep-learning-based, computer-aided
+  classifier developed with a small dataset of clinical images surpasses
+  board-certified dermatologists in skin tumour diagnosis', {\em British
+  Journal of Dermatology} {\bf 180}(2),~373--381.
 
 \harvarditem{Gal \harvardand\ Ghahramani}{2016{\em a}}{gal2016dropout}
 Gal, Y. \harvardand\ Ghahramani, Z.  \harvardyearleft 2016{\em
@@ -257,6 +288,11 @@ Gorriz, M., Carlier, A., Faure, E. \harvardand\ Giro-i Nieto, X.
   \harvardyearleft 2017\harvardyearright , `Cost-effective active learning for
   melanoma segmentation', {\em arXiv preprint arXiv:1711.09168} .
 
+\harvarditem{Guan \harvardand\ Liu}{2021}{guan2021domain}
+Guan, H. \harvardand\ Liu, M.  \harvardyearleft 2021\harvardyearright , `Domain
+  adaptation for medical image analysis: a survey', {\em IEEE Transactions on
+  Biomedical Engineering} {\bf 69}(3),~1173--1185.
+
 \harvarditem[Guo et~al.]{Guo, Pleiss, Sun \harvardand\
   Weinberger}{2017}{guo2017calibration}
 Guo, C., Pleiss, G., Sun, Y. \harvardand\ Weinberger, K.~Q.  \harvardyearleft
@@ -278,6 +314,23 @@ Gutmann, M. \harvardand\ Hyv{\"a}rinen, A.  \harvardyearleft
   principle for unnormalized statistical models, {\em in} `Proceedings of the
   thirteenth international conference on artificial intelligence and
   statistics', JMLR Workshop and Conference Proceedings, pp.~297--304.
+
+\harvarditem[Haenssle et~al.]{Haenssle, Fink, Schneiderbauer, Toberer, Buhl,
+  Blum, Kalloo, Hassen, Thomas, Enk et~al.}{2018}{haenssle2018man}
+Haenssle, H.~A., Fink, C., Schneiderbauer, R., Toberer, F., Buhl, T., Blum, A.,
+  Kalloo, A., Hassen, A. B.~H., Thomas, L., Enk, A. et~al.  \harvardyearleft
+  2018\harvardyearright , `Man against machine: diagnostic performance of a
+  deep learning convolutional neural network for dermoscopic melanoma
+  recognition in comparison to 58 dermatologists', {\em Annals of oncology}
+  {\bf 29}(8),~1836--1842.
+
+\harvarditem[Han et~al.]{Han, Kim, Lim, Park, Park \harvardand\
+  Chang}{2018}{han2018classification}
+Han, S.~S., Kim, M.~S., Lim, W., Park, G.~H., Park, I. \harvardand\ Chang,
+  S.~E.  \harvardyearleft 2018\harvardyearright , `Classification of the
+  clinical images for benign and malignant cutaneous tumors using a deep
+  learning algorithm', {\em Journal of Investigative Dermatology} {\bf
+  138}(7),~1529--1538.
 
 \harvarditem[H\'enaff et~al.]{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami
   \harvardand\ van~den Oord}{2019}{henaff2019data}
@@ -472,6 +525,14 @@ Maron, R.~C., Weichenthal, M., Utikal, J.~S., Hekler, A., Berking, C.,
   convolutional neural networks', {\em European Journal of Cancer} {\bf
   119},~57--65.
 
+\harvarditem[Matsoukas et~al.]{Matsoukas, Haslum, Sorkhei, S{\"o}derberg
+  \harvardand\ Smith}{2022}{matsoukas2022makes}
+Matsoukas, C., Haslum, J.~F., Sorkhei, M., S{\"o}derberg, M. \harvardand\
+  Smith, K.  \harvardyearleft 2022\harvardyearright , What makes transfer
+  learning work for medical images: Feature reuse \& other factors, {\em in}
+  `Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition', pp.~9225--9234.
+
 \harvarditem[Mohseni et~al.]{Mohseni, Yap, Yolland, Razmara \harvardand\
   Atkins}{2021}{aleatoric_relation_proof}
 Mohseni, M., Yap, J., Yolland, W., Razmara, M. \harvardand\ Atkins, M.~S.
@@ -631,26 +692,20 @@ Tizhoosh, H.~R. \harvardand\ Pantanowitz, L.  \harvardyearleft
   challenges and opportunities', {\em Journal of pathology informatics} {\bf
   9}(1),~38.
 
+\harvarditem[Tschandl et~al.]{Tschandl, Rosendahl, Akay, Argenziano, Blum,
+  Braun, Cabo, Gourhant, Kreusch, Lallas et~al.}{2019}{tschandl2019expert}
+Tschandl, P., Rosendahl, C., Akay, B.~N., Argenziano, G., Blum, A., Braun,
+  R.~P., Cabo, H., Gourhant, J.-Y., Kreusch, J., Lallas, A. et~al.
+  \harvardyearleft 2019\harvardyearright , `Expert-level diagnosis of
+  nonpigmented skin cancer by combined convolutional neural networks', {\em
+  JAMA dermatology} {\bf 155}(1),~58--65.
+
 \harvarditem[Tschandl et~al.]{Tschandl, Rosendahl \harvardand\
-  Kittler}{2018{\em a}}{tschandl2018ham10000}
-Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft 2018{\em
-  a}\harvardyearright , `The {HAM10000} dataset, a large collection of
+  Kittler}{2018}{tschandl2018ham10000}
+Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft
+  2018\harvardyearright , `The {HAM10000} dataset, a large collection of
   multi-source dermatoscopic images of common pigmented skin lesions', {\em
   Scientific Data} {\bf 5}(1),~1--9.
-
-\harvarditem[Tschandl et~al.]{Tschandl, Rosendahl \harvardand\
-  Kittler}{2018{\em b}}{Tschandl2018}
-Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft 2018{\em
-  b}\harvardyearright , `The {HAM10000} dataset, a large collection of
-  multi-source dermatoscopic images of common pigmented skin lesions', {\em
-  Scientific Data} {\bf 5},~180161.
-
-\harvarditem[Tschandl et~al.]{Tschandl, Rosendahl \harvardand\
-  Kittler}{2018{\em c}}{tschandl2018the}
-Tschandl, P., Rosendahl, C. \harvardand\ Kittler, H.  \harvardyearleft 2018{\em
-  c}\harvardyearright , `The {HAM10000} dataset, a large collection of
-  multi-source dermatoscopic images of common pigmented skin lesions', {\em
-  Scientific Data} {\bf 5},~180161.
 
 \harvarditem[Ulmer et~al.]{Ulmer, Meijerink \harvardand\
   Cin{\`a}}{2020}{ulmer2020trust}
@@ -691,6 +746,19 @@ Wang, K., Zhang, D., Li, Y., Zhang, R. \harvardand\ Lin, L.  \harvardyearleft
 Weiss, K., Khoshgoftaar, T.~M. \harvardand\ Wang, D.  \harvardyearleft
   2016\harvardyearright , `A survey of transfer learning', {\em Journal of Big
   Data} {\bf 3}(1),~1--40.
+
+\harvarditem[Wen et~al.]{Wen, Khan, Xu, Ibrahim, Smith, Caballero, Zepeda,
+  de~Blas~Perez, Denniston, Liu et~al.}{2021}{wen2021characteristics}
+Wen, D., Khan, S.~M., Xu, A.~J., Ibrahim, H., Smith, L., Caballero, J., Zepeda,
+  L., de~Blas~Perez, C., Denniston, A.~K., Liu, X. et~al.  \harvardyearleft
+  2021\harvardyearright , `Characteristics of publicly available skin cancer
+  image datasets: a systematic review', {\em The Lancet Digital Health} .
+
+\harvarditem[Wu et~al.]{Wu, Chen, Zeng, Pan, Wang \harvardand\
+  Zhao}{2022}{wu2022skin}
+Wu, Y., Chen, B., Zeng, A., Pan, D., Wang, R. \harvardand\ Zhao, S.
+  \harvardyearleft 2022\harvardyearright , `Skin cancer classification with
+  deep learning: A systematic review', {\em Frontiers in Oncology} {\bf 12}.
 
 \harvarditem[Xie et~al.]{Xie, Girshick, Doll{\'a}r, Tu \harvardand\
   He}{2017}{xie2017aggregated}

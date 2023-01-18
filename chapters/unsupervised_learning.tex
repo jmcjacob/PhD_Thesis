@@ -1,7 +1,9 @@
-\section{Introduction}
-\label{sec:unsupervised_intro}
 This work was presented at the IEEE International Symposium on Biomedical Imaging 2021 and published as part of its proceedings \citep{carse2021unsupervised}.
 
+
+
+\section{Introduction}
+\label{sec:unsupervised_intro}
 \subsection{Unsupervised Representation Learning for Images}
 \label{subsec:unsupervised_for_medical}
 As previously discussed in Section \ref{subsec:active_for_medical_image_analysis}, the application of modern deep learning algorithms has demonstrated significant improvements in digital pathology tasks such as nuclei detection and disease classification~\citep{litjens2017survey}. The ability to jointly learn deep representations and discriminative classifiers or regressors through end-to-end training allows for feature representations that are specifically tailored to a given task. However, this approach necessitates a significant amount of annotated data for adequate generalization, which poses a major challenge for digital pathology~\citep{madabhushi2016image} and other medical image analysis domains. In an effort to address this challenge, we previously explored the use of active learning (Chapter \ref{ch:active_learning}), however, the limitations of this approach were highlighted in Section \ref{sec:active_conclusion} and subsequently led to a focus on unsupervised representation learning as a means to extract information from unannotated images. Unsupervised representation learning can be utilized to improve generalization, decrease data dimensionality, improve computational performance, and initialize deep supervised learning models when access to annotated data is limited~\citep{bengio2013representation}.
@@ -168,7 +170,7 @@ The results of the held-out testing set (32,768 images) for CNN classifiers trai
 			3162   & 0.750 (0.002) & 0.777 (0.028)          & 0.775 (0.012)          & 0.784 (0.006)          & \textbf{0.786 (0.014)} \\
 			10000  & 0.786 (0.006) & 0.787 (0.008)          & 0.776 (0.012)          & \textbf{0.792 (0.033)} & 0.781 (0.019)          \\
 			31624  & 0.779 (0.012) & 0.774 (0.004)          & 0.770 (0.009)          & \textbf{0.786 (0.005)} & 0.784 (0.009)          \\
-			100000 & 0.777 (0.009) & 0.774 (0.011)          & \textbf{0.786 (0.003)} & 0.785 (0.006)          & 0.784 (0.010)
+			100000 & 0.775 (0.007) & 0.774 (0.011)          & \textbf{0.786 (0.003)} & 0.785 (0.006)          & 0.784 (0.010)
 		\end{tabular}%
 	}
 \end{table}

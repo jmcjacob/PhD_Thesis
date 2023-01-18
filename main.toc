@@ -90,29 +90,29 @@
 \contentsline {section}{\numberline {5.7}Conclusion}{58}{section.5.7}%
 \contentsline {chapter}{\numberline {6}Dataset Generalisation}{59}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Introduction}{59}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Generalisation Review}{60}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Generalisation Review}{61}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Datasets}{61}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Tayside Dataset}{61}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Forth Valley Dataset}{61}{subsection.6.3.2}%
 \contentsline {subsection}{\numberline {6.3.3}Annotation Procedure}{61}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Generalisation Experiments}{61}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Datasets}{62}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Training Parameters}{62}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Experiment Setup}{64}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Results}{65}{subsection.6.4.4}%
-\contentsline {section}{\numberline {6.5}Generalisation Conclusion}{65}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{70}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Pathway to Complete System}{70}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Summary of Contributions}{70}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Limitations}{70}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Future Work}{70}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Active Learning}{70}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{70}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{70}{subsection.7.4.3}%
-\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{71}{subsection.7.4.4}%
-\contentsline {chapter}{References}{72}{subsection.7.4.4}%
-\contentsline {chapter}{Appendices}{84}{section*.58}%
-\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{85}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}First Authored Publications}{85}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Contributed Publications}{86}{section.a.A.2}%
-\contentsline {section}{\numberline {A.3}Awards}{86}{section.a.A.3}%
+\contentsline {section}{\numberline {6.4}Generalisation Experiments}{62}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Datasets}{63}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Training Parameters}{63}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Experiment Setup}{65}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Results}{66}{subsection.6.4.4}%
+\contentsline {section}{\numberline {6.5}Conclusion}{68}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{73}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Pathway to Complete System}{73}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Summary of Contributions}{73}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Limitations}{73}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Future Work}{73}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Active Learning}{73}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{73}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{73}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{74}{subsection.7.4.4}%
+\contentsline {chapter}{References}{75}{subsection.7.4.4}%
+\contentsline {chapter}{Appendices}{88}{section*.58}%
+\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{89}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}First Authored Publications}{89}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Contributed Publications}{90}{section.a.A.2}%
+\contentsline {section}{\numberline {A.3}Awards}{90}{section.a.A.3}%

@@ -1,7 +1,9 @@
-\section{Introduction}
-\label{sec:calibration_introduction}
 This work was presented at the Uncertainty for Safe Utilization of Machine Learning in Medical Imaging 2022 (UNSURE) workshop hosted at Medical Image Computing and Computing Assisted Intervention (MICCAI) in Singapore and published as part of its proceedings \citep{carse2022calibration}.
 
+
+
+\section{Introduction}
+\label{sec:calibration_introduction}
 As previously demonstrated, deep learning algorithms have been widely adopted for medical image analysis tasks and have even outperformed medical specialists in certain contexts, such as the binary classification of dermoscopic melanoma and nevi images~\citep{maron2019systematic}. However, to ensure reliable translation of these classifiers to clinical settings, further improvements are necessary. As discussed in previous chapters, a known challenge with deep learning algorithms is poor calibration, which often leads to overconfident predictions. Mis-calibration, or the deviation between confidence and correctness, can impair the model's ability to accurately identify uncertainty in its predictions. To support cost-sensitive and selective clinical decision-making (Chapter~\ref{ch:selective_classification}) and avoid adverse outcomes, well-calibrated probabilistic outputs are essential. Calibrated predictions are also relevant for applications such as active learning (Chapter~\ref{ch:active_learning}), reinforcement learning~\citep{dai2020federated}, and out-of-distribution detection~\citep{ulmer2020trust}.
 
 There have been numerous reports in the literature on techniques aimed at improving the calibration of deep learning classifiers in medical image classification. However, the effectiveness of these methods can be variable and there is a lack of clear guidance on which approach is most appropriate for a particular task or dataset. This empirical study contributes to the existing body of evidence in this area by evaluating the performance of various calibration methods on medical image classification datasets from dermatology and histopathology.

@@ -1,7 +1,9 @@
-\section{Introduction}
-\label{sec:active_introduction}
 This work was presented at the European Congress on Digital Pathology 2019 and published as part of its proceedings ~\citep{carse2019active}.
 
+
+
+\section{Introduction}
+\label{sec:active_introduction}
 \subsection{Active Learning for Medical Image Analysis}
 \label{subsec:active_for_medical_image_analysis}
 Active learning is a type of machine learning that hypothesises that having a learning algorithm select the data that is used during training can reduce the amount of data needed for training~\citep{settles2012active}. Active learning is used within modern applications to reduce the quantity of data that needs to be annotated by selecting unannotated data to be annotated and added to the dataset used to train the model. Limiting the amount of data annotations needed can reduce annotation costs (which can be expensive when dealing with specialised data such as histopathology) and computation costs as the models can be trained with fewer data. In a pool-based scenario, the learning algorithm has access to a large pool of unannotated data. Over multiple iterations, the learning algorithm selects the most beneficial data from the pool to be annotated and added the training dataset, as shown in Figure~\ref{fig:pool_based_active_learning}. One of the main advantages of pool-based active machine learning for medical image analysis is its ability to reduce the amount of human labour required. Medical image analysis often involves manual annotation, which can be time-consuming and labour-intensive. By using pool-based active learning, the burden of annotation is greatly reduced, as the algorithm can identify the most informative samples and prioritize them for labelling.
