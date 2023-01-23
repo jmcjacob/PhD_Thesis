@@ -12,11 +12,11 @@ Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: refs/intro.bib
 Database file #2: refs/active.bib
 Database file #3: refs/unsupervised.bib
-Repeated entry---line 317 of file refs/unsupervised.bib
+Repeated entry---line 475 of file refs/unsupervised.bib
  : @inproceedings{veeling2018rotation
  :                                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 357 of file refs/unsupervised.bib
+Repeated entry---line 515 of file refs/unsupervised.bib
  : @inproceedings{xie2017aggregated
  :                                 ,
 I'm skipping whatever remains of this entry
@@ -30,45 +30,45 @@ Database file #6: refs/generalisation.bib
 Warning--I didn't find a database entry for "geert2017survey"
 Warning--I didn't find a database entry for "Tschandl2018"
 Warning--can't use both volume and number fields in lewis1995sequential
-You've used 126 entries,
+You've used 135 entries,
             2909 wiz_defined-function locations,
-            1320 strings with 31881 characters,
-and the built_in function-call counts, 835913 in all, are:
-= -- 137701
-> -- 12216
+            1364 strings with 33336 characters,
+and the built_in function-call counts, 877167 in all, are:
+= -- 144425
+> -- 12805
 < -- 9
-+ -- 67974
-- -- 3818
-* -- 74512
-:= -- 162364
-add.period$ -- 126
-call.type$ -- 126
-change.case$ -- 1763
-chr.to.int$ -- 123
-cite$ -- 127
-duplicate$ -- 2512
-empty$ -- 4717
-format.name$ -- 4251
-if$ -- 151164
++ -- 71202
+- -- 4000
+* -- 78104
+:= -- 170587
+add.period$ -- 135
+call.type$ -- 135
+change.case$ -- 1888
+chr.to.int$ -- 132
+cite$ -- 136
+duplicate$ -- 2670
+empty$ -- 5022
+format.name$ -- 4467
+if$ -- 158595
 int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 127
-newline$ -- 381
-num.names$ -- 1343
-pop$ -- 574
+missing$ -- 137
+newline$ -- 408
+num.names$ -- 1435
+pop$ -- 616
 preamble$ -- 1
-purify$ -- 1890
+purify$ -- 2025
 quote$ -- 0
-skip$ -- 2345
+skip$ -- 2480
 stack$ -- 0
-substring$ -- 198103
-swap$ -- 737
-text.length$ -- 1773
+substring$ -- 207595
+swap$ -- 770
+text.length$ -- 1899
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 500
+type$ -- 534
 warning$ -- 1
-while$ -- 2856
+while$ -- 3059
 width$ -- 0
-write$ -- 1771
+write$ -- 1887
 (There were 3 error messages)

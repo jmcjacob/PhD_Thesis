@@ -1,5 +1,13 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Akrami et~al.]{Akrami, Joshi, Li, Aydore \harvardand\
+  Leahy}{2020}{akrami2020brain}
+Akrami, H., Joshi, A.~A., Li, J., Aydore, S. \harvardand\ Leahy, R.~M.
+  \harvardyearleft 2020\harvardyearright , Brain lesion detection using a
+  robust variational autoencoder and transfer learning, {\em in} `2020 IEEE
+  17th International Symposium on Biomedical Imaging (ISBI)', IEEE,
+  pp.~786--790.
+
 \harvarditem{Bayramoglu \harvardand\
   Heikkil{\"a}}{2016}{bayramoglu2016transfer}
 Bayramoglu, N. \harvardand\ Heikkil{\"a}, J.  \harvardyearleft
@@ -17,12 +25,18 @@ Bejnordi, B.~E., Veta, M., Van~Diest, P.~J., Van~Ginneken, B., Karssemeijer,
   breast cancer', {\em Journal of the American Medical Association} {\bf
   318}(22),~2199--2210.
 
-\harvarditem[Bengio et~al.]{Bengio, Courville \harvardand\
+\harvarditem{Bengio, Courville \harvardand\
   Vincent}{2013}{bengio2013representation}
 Bengio, Y., Courville, A. \harvardand\ Vincent, P.  \harvardyearleft
   2013\harvardyearright , `Representation learning: A review and new
   perspectives', {\em IEEE transactions on pattern analysis and machine
   intelligence} {\bf 35}(8),~1798--1828.
+
+\harvarditem{Bengio, Yao, Alain \harvardand\
+  Vincent}{2013}{bengio2013generalized}
+Bengio, Y., Yao, L., Alain, G. \harvardand\ Vincent, P.  \harvardyearleft
+  2013\harvardyearright , `Generalized denoising auto-encoders as generative
+  models', {\em Advances in neural information processing systems} {\bf 26}.
 
 \harvarditem[Blundell et~al.]{Blundell, Cornebise, Kavukcuoglu \harvardand\
   Wierstra}{2015}{blundell2015weight}
@@ -297,6 +311,11 @@ Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
   artificial intelligence and statistics', JMLR Workshop and Conference
   Proceedings, pp.~249--256.
 
+\harvarditem[Goodfellow et~al.]{Goodfellow, Bengio \harvardand\
+  Courville}{2016}{goodfellow2016deep}
+Goodfellow, I., Bengio, Y. \harvardand\ Courville, A.  \harvardyearleft
+  2016\harvardyearright , {\em Deep learning}, MIT press.
+
 \harvarditem[Gorriz et~al.]{Gorriz, Carlier, Faure \harvardand\ Giro-i
   Nieto}{2017}{gorriz2017cost}
 Gorriz, M., Carlier, A., Faure, E. \harvardand\ Giro-i Nieto, X.
@@ -423,6 +442,10 @@ Kingma, D.~P. \harvardand\ Ba, J.  \harvardyearleft 2014\harvardyearright ,
   `Adam: A method for stochastic optimization', {\em arXiv preprint
   arXiv:1412.6980} .
 
+\harvarditem{Kingma \harvardand\ Welling}{2013}{kingma2013auto}
+Kingma, D.~P. \harvardand\ Welling, M.  \harvardyearleft 2013\harvardyearright
+  , `Auto-encoding variational bayes', {\em arXiv preprint arXiv:1312.6114} .
+
 \harvarditem[Kirsch et~al.]{Kirsch, Van~Amersfoort \harvardand\
   Gal}{2019}{kirsch2019batchbald}
 Kirsch, A., Van~Amersfoort, J. \harvardand\ Gal, Y.  \harvardyearleft
@@ -437,10 +460,20 @@ Konyushkova, K., Sznitman, R. \harvardand\ Fua, P.  \harvardyearleft
   multi-class image segmentation', {\em Computer vision and image
   understanding} {\bf 182},~1--16.
 
+\harvarditem{Kramer}{1991}{kramer1991nonlinear}
+Kramer, M.~A.  \harvardyearleft 1991\harvardyearright , `Nonlinear principal
+  component analysis using autoassociative neural networks', {\em AIChE
+  journal} {\bf 37}(2),~233--243.
+
 \harvarditem{Krizhevsky \harvardand\ Hinton}{2009}{krizhevsky2009learning}
 Krizhevsky, A. \harvardand\ Hinton, G.  \harvardyearleft 2009\harvardyearright
   , Learning multiple layers of features from tiny images, Technical report,
   Citeseer.
+
+\harvarditem{Kullback \harvardand\ Leibler}{1951}{kullback1951information}
+Kullback, S. \harvardand\ Leibler, R.~A.  \harvardyearleft
+  1951\harvardyearright , `On information and sufficiency', {\em The annals of
+  mathematical statistics} {\bf 22}(1),~79--86.
 
 \harvarditem[Kurakin et~al.]{Kurakin, Goodfellow \harvardand\
   Bengio}{2016}{kurakin2016adversarial}
@@ -551,6 +584,10 @@ Mackowiak, R., Lenz, P., Ghori, O., Diego, F., Lange, O. \harvardand\ Rother,
 Madabhushi, A. \harvardand\ Lee, G.  \harvardyearleft 2016\harvardyearright ,
   `Image analysis and machine learning in digital pathology: Challenges and
   opportunities', {\em Medical Image Analysis} {\bf 100}(33),~170--175.
+
+\harvarditem{Makhzani \harvardand\ Frey}{2013}{makhzani2013k}
+Makhzani, A. \harvardand\ Frey, B.  \harvardyearleft 2013\harvardyearright ,
+  `K-sparse autoencoders', {\em arXiv preprint arXiv:1312.5663} .
 
 \harvarditem[Maron et~al.]{Maron, Weichenthal, Utikal, Hekler, Berking,
   Hauschild, Enk, Haferkamp, Klode, Schadendorf
@@ -729,6 +766,14 @@ Tan, M. \harvardand\ Le, Q.~V.  \harvardyearleft 2019\harvardyearright ,
   {\em in} `Proceedings of the 36th International Conference on Machine
   Learning (ICML)', Vol. PMLR 97, pp.~6105--6114.
 
+\harvarditem[Thiagarajan et~al.]{Thiagarajan, Venkatesh, Rajan \harvardand\
+  Sattigeri}{2020}{thiagarajan2020improving}
+Thiagarajan, J.~J., Venkatesh, B., Rajan, D. \harvardand\ Sattigeri, P.
+  \harvardyearleft 2020\harvardyearright , Improving reliability of clinical
+  models using prediction calibration, {\em in} `Uncertainty for Safe
+  Utilization of Machine Learning in Medical Imaging, and Graphs in Biomedical
+  Image Analysis', Springer, pp.~71--80.
+
 \harvarditem{Tizhoosh \harvardand\ Pantanowitz}{2018}{tizhoosh2018artificial}
 Tizhoosh, H.~R. \harvardand\ Pantanowitz, L.  \harvardyearleft
   2018\harvardyearright , `Artificial intelligence and digital pathology:
@@ -783,6 +828,11 @@ Wang, K., Zhang, D., Li, Y., Zhang, R. \harvardand\ Lin, L.  \harvardyearleft
   2017\harvardyearright , `Cost-effective active learning for deep image
   classification', {\em IEEE Transactions on Circuits and Systems for Video
   Technology} {\bf 27}(12),~2591--2600.
+
+\harvarditem{Wei \harvardand\ Mahmood}{2020}{wei2020recent}
+Wei, R. \harvardand\ Mahmood, A.  \harvardyearleft 2020\harvardyearright ,
+  `Recent advances in variational autoencoders with representation learning for
+  biomedical informatics: A survey', {\em Ieee Access} {\bf 9},~4939--4956.
 
 \harvarditem[Weiss et~al.]{Weiss, Khoshgoftaar \harvardand\
   Wang}{2016}{weiss2016survey}
