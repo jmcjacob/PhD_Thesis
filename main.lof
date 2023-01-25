@@ -9,24 +9,25 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces (a) An example image from the ImageNet dataset\nobreakspace {}\citep {deng2009imagenet}. (b) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted. (c) An example image from the Patch Camelyon dataset\nobreakspace {}\citep {veeling2018rotation}. (d) Extracted overlapping patches with those used to produce context and autoregressor direction highlighted.\relax }}{24}{figure.caption.30}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed active learning framework with learnt representations from unsupervised representation learning on unannotated data.\relax }}{25}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{34}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Training loss each epoch with the CPC Models.\relax }}{37}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Mean class testing accuracies of the CNN classifiers trained using varying amounts of training examples, with standard errors.\relax }}{38}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of a Multi-Directional Masked Block\relax }}{35}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example images from the Patch Cameleyon dataset\nobreakspace {}\citep {veeling2018rotation,litjens20181399}.\relax }}{37}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Training loss each epoch with the CPC Models.\relax }}{39}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Mean class testing accuracies of the CNN classifiers trained using varying amounts of training examples, with standard errors.\relax }}{40}{figure.caption.44}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example reliability diagram.\relax }}{42}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Example images from the ISIC Challenge 2019 dataset\nobreakspace {}\citep {codella2018skin,combalia2019bcn20000,tschandl2018ham10000}.\relax }}{47}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example reliability diagram.\relax }}{44}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Example images from the ISIC Challenge 2019 dataset\nobreakspace {}\citep {codella2018skin,combalia2019bcn20000,tschandl2018ham10000}.\relax }}{49}{figure.caption.47}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Cost matrices for the classes of the ISIC 2019 dataset. (a) Shows a symmetrical cost matrices where all costs of misclassification are equal. (b) shows a asymmetrical cost matrix where mis-classifications have different costs based on numerous factors.\relax }}{55}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Example images from the test data sets \(S_{in}\) and \(S_{unknown}\).\relax }}{59}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Cost-coverage curves for SelectiveNets trained with different target coverages. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{60}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost-coverage curves using MC-Dropout on $S_{in}$, $S_{unknown}$, and $S_{combined}$\relax }}{61}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Cost-coverage curves. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{62}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{62}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{63}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cost matrices for the classes of the ISIC 2019 dataset. (a) Shows a symmetrical cost matrices where all costs of misclassification are equal. (b) shows a asymmetrical cost matrix where mis-classifications have different costs based on numerous factors.\relax }}{57}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Example images from the test data sets \(S_{in}\) and \(S_{unknown}\).\relax }}{61}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Cost-coverage curves for SelectiveNets trained with different target coverages. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{62}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost-coverage curves using MC-Dropout on $S_{in}$, $S_{unknown}$, and $S_{combined}$\relax }}{63}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Cost-coverage curves. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).\relax }}{64}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{64}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{65}{figure.caption.59}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the SD-260 dataset\nobreakspace {}\citep {yang2019self}.\relax }}{70}{figure.caption.61}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{75}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{76}{figure.caption.66}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }}{79}{figure.caption.67}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the SD-260 dataset\nobreakspace {}\citep {yang2019self}.\relax }}{72}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{77}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{78}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }}{81}{figure.caption.66}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

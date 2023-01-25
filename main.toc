@@ -1,11 +1,11 @@
 \contentsline {chapter}{List of Figures}{v}{chapter*.1}%
-\contentsline {chapter}{List of Tables}{vii}{chapter*.2}%
-\contentsline {chapter}{List of Terms}{viii}{chapter*.4}%
-\contentsline {chapter}{List of Abbreviations}{ix}{chapter*.5}%
-\contentsline {chapter}{List of Symbols}{x}{chapter*.6}%
-\contentsline {chapter}{Acknowledgements}{xi}{chapter*.7}%
-\contentsline {chapter}{Declaration}{xii}{chapter*.8}%
-\contentsline {chapter}{Abstract}{xiii}{chapter*.10}%
+\contentsline {chapter}{List of Tables}{viii}{chapter*.2}%
+\contentsline {chapter}{List of Terms}{ix}{chapter*.4}%
+\contentsline {chapter}{List of Abbreviations}{x}{chapter*.5}%
+\contentsline {chapter}{List of Symbols}{xi}{chapter*.6}%
+\contentsline {chapter}{Acknowledgements}{xii}{chapter*.7}%
+\contentsline {chapter}{Declaration}{xiii}{chapter*.8}%
+\contentsline {chapter}{Abstract}{xiv}{chapter*.10}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction to Problem}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Research Contributions}{1}{section.1.2}%
@@ -42,86 +42,84 @@
 \contentsline {subsubsection}{Non-Parametric Instance-Level Discrimination}{30}{section*.36}%
 \contentsline {subsubsection}{Local Aggregation}{30}{section*.37}%
 \contentsline {subsubsection}{Momentum Contrast}{31}{section*.38}%
-\contentsline {subsubsection}{Pretext-Invariant Representations}{32}{section*.39}%
-\contentsline {subsubsection}{Multi-Task Visual Learning}{32}{section*.40}%
-\contentsline {subsubsection}{Augmented Multiscale Deep InfoMax}{32}{section*.41}%
-\contentsline {subsubsection}{Contrastive Multiview Coding}{32}{section*.42}%
-\contentsline {subsection}{\numberline {3.2.3}Unsupervised Representation Learning for \\Medical Image Analysis}{32}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Multi-Directional Contrastive Predictive Coding}{32}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Contrastive Predictive Coding}{32}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Contrastive Predictive Coding for Computer Vision}{33}{subsection.3.3.2}%
+\contentsline {subsubsection}{Pretext-Invariant Representations}{31}{section*.39}%
+\contentsline {subsubsection}{Deep InfoMax}{32}{section*.40}%
+\contentsline {subsection}{\numberline {3.2.3}Unsupervised Representation Learning for \\Medical Image Analysis}{33}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Multi-Directional Contrastive Predictive Coding}{33}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Contrastive Predictive Coding}{33}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Contrastive Predictive Coding for Computer Vision}{34}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Multi-Directional Contrastive Predictive Coding}{34}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Unsupervised Representation Learning Experiments}{35}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Dataset}{35}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Experiment Setup}{36}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Training Parameters}{36}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.4}Unsupervised Representation Learning Experiments}{36}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Dataset}{36}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Experiment Setup}{37}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Training Parameters}{38}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Results}{38}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Conclusion}{38}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Predictive Probability Calibration}{40}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{40}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Measures of Calibration}{42}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Calibration Methods and Literature Review}{43}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Model Regularisation For Calibration}{43}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Post-Hoc Calibration}{44}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Bayesian Approximation}{45}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Calibration Experiments}{46}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Datasets}{46}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Experiment Setup}{47}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Training Parameters}{48}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Results}{48}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Conclusion}{51}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Asymmetrical Selective Classification}{52}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{52}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Problem Statement}{52}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Summary of Work}{53}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Literature Review}{54}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Asymmetrical Selective Classification}{54}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Selective Classification Methods}{56}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Predictive Probabilities}{56}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Calibrated Predictive Probabilities}{56}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Bayesian Uncertainty}{56}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}SelectiveNet}{57}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Expected Cost SelectiveNet}{58}{subsection.5.4.5}%
-\contentsline {section}{\numberline {5.5}Binary Experiments}{59}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Dataset}{59}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Experiment Setup}{60}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Training Parameters}{60}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Results}{60}{subsection.5.5.4}%
-\contentsline {subsubsection}{SelectiveNet: Effect of Target Coverage}{60}{section*.52}%
-\contentsline {subsubsection}{Does SelectiveNet Training Help?}{60}{section*.54}%
-\contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{61}{section*.55}%
-\contentsline {subsubsection}{Asymmetric Costs}{62}{section*.58}%
-\contentsline {section}{\numberline {5.6}Multi class Experiments}{63}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Dataset}{63}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{64}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Training Parameters}{64}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Results}{64}{subsection.5.6.4}%
-\contentsline {section}{\numberline {5.7}Conclusion}{64}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Dataset Generalisation}{65}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introduction}{65}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Generalisation Review}{67}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Datasets}{67}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Tayside Dataset}{67}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Forth Valley Dataset}{68}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Annotation Procedure}{68}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Generalisation Experiments}{69}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Datasets}{69}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Training Parameters}{71}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Experiment Setup}{72}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Results}{73}{subsection.6.4.4}%
-\contentsline {section}{\numberline {6.5}Conclusion}{76}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{80}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Pathway to Complete System}{80}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Summary of Contributions}{80}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Limitations}{80}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Future Work}{80}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Active Learning}{80}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{80}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{80}{subsection.7.4.3}%
-\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{81}{subsection.7.4.4}%
-\contentsline {chapter}{References}{82}{subsection.7.4.4}%
-\contentsline {chapter}{Appendices}{98}{section*.69}%
-\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{99}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}First Authored Publications}{99}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Contributed Publications}{100}{section.a.A.2}%
-\contentsline {section}{\numberline {A.3}Awards}{100}{section.a.A.3}%
+\contentsline {section}{\numberline {3.5}Conclusion}{39}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Predictive Probability Calibration}{42}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{42}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Measures of Calibration}{44}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Calibration Methods and Literature Review}{45}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Model Regularisation For Calibration}{45}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Post-Hoc Calibration}{46}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Bayesian Approximation}{47}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Calibration Experiments}{48}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Datasets}{48}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Experiment Setup}{49}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Training Parameters}{50}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Results}{50}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Conclusion}{53}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Asymmetrical Selective Classification}{54}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{54}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Problem Statement}{54}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Summary of Work}{55}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Literature Review}{56}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Asymmetrical Selective Classification}{56}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Selective Classification Methods}{58}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Predictive Probabilities}{58}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Calibrated Predictive Probabilities}{58}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Bayesian Uncertainty}{58}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}SelectiveNet}{59}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Expected Cost SelectiveNet}{60}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5}Binary Experiments}{61}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Dataset}{61}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Experiment Setup}{62}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Training Parameters}{62}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Results}{62}{subsection.5.5.4}%
+\contentsline {subsubsection}{SelectiveNet: Effect of Target Coverage}{62}{section*.51}%
+\contentsline {subsubsection}{Does SelectiveNet Training Help?}{62}{section*.53}%
+\contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{63}{section*.54}%
+\contentsline {subsubsection}{Asymmetric Costs}{64}{section*.57}%
+\contentsline {section}{\numberline {5.6}Multi class Experiments}{65}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Dataset}{65}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{66}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Training Parameters}{66}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Results}{66}{subsection.5.6.4}%
+\contentsline {section}{\numberline {5.7}Conclusion}{66}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Dataset Generalisation}{67}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{67}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Generalisation Review}{69}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Datasets}{69}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Tayside Dataset}{69}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Forth Valley Dataset}{70}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Annotation Procedure}{70}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Generalisation Experiments}{71}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Datasets}{71}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Training Parameters}{73}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Experiment Setup}{74}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Results}{75}{subsection.6.4.4}%
+\contentsline {section}{\numberline {6.5}Conclusion}{78}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{82}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Pathway to Complete System}{82}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Summary of Contributions}{82}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Limitations}{82}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Future Work}{82}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Active Learning}{82}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{82}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{82}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{83}{subsection.7.4.4}%
+\contentsline {chapter}{References}{84}{subsection.7.4.4}%
+\contentsline {chapter}{Appendices}{101}{section*.68}%
+\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{102}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}First Authored Publications}{102}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Contributed Publications}{103}{section.a.A.2}%
+\contentsline {section}{\numberline {A.3}Awards}{103}{section.a.A.3}%

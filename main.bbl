@@ -14,6 +14,13 @@ Arjovsky, M., Chintala, S. \harvardand\ Bottou, L.  \harvardyearleft
   2017\harvardyearright , Wasserstein generative adversarial networks, {\em in}
   `International conference on machine learning', PMLR, pp.~214--223.
 
+\harvarditem[Bachman et~al.]{Bachman, Hjelm \harvardand\
+  Buchwalter}{2019}{bachman2019learning}
+Bachman, P., Hjelm, R.~D. \harvardand\ Buchwalter, W.  \harvardyearleft
+  2019\harvardyearright , `Learning representations by maximizing mutual
+  information across views', {\em Advances in neural information processing
+  systems} {\bf 32}.
+
 \harvarditem{Bayramoglu \harvardand\
   Heikkil{\"a}}{2016}{bayramoglu2016transfer}
 Bayramoglu, N. \harvardand\ Heikkil{\"a}, J.  \harvardyearleft
@@ -421,6 +428,12 @@ He, K., Fan, H., Wu, Y., Xie, S. \harvardand\ Girshick, R.  \harvardyearleft
   Computer Vision and Pattern Recognition', Institute of Electrical and
   Electronics Engineers, pp.~9729--9738.
 
+\harvarditem[He et~al.]{He, Zhang, Ren \harvardand\ Sun}{2016}{he2016deep}
+He, K., Zhang, X., Ren, S. \harvardand\ Sun, J.  \harvardyearleft
+  2016\harvardyearright , Deep residual learning for image recognition, {\em
+  in} `Proceedings of the IEEE conference on computer vision and pattern
+  recognition', pp.~770--778.
+
 \harvarditem[H\'enaff et~al.]{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami
   \harvardand\ van~den Oord}{2019}{henaff2019data}
 H\'enaff, O., Srinivas, A., Fauw, J.~D., Razavi, A., Doersch, C., Eslami, S.~A.
@@ -440,6 +453,13 @@ Hendrycks, D., Mu, N., Cubuk, E.~D., Zoph, B., Gilmer, J. \harvardand\
   Lakshminarayanan, B.  \harvardyearleft 2019\harvardyearright , `Augmix: A
   simple data processing method to improve robustness and uncertainty', {\em
   arXiv preprint arXiv:1912.02781} .
+
+\harvarditem[Hjelm et~al.]{Hjelm, Fedorov, Lavoie-Marchildon, Grewal, Bachman,
+  Trischler \harvardand\ Bengio}{2018}{hjelm2018learning}
+Hjelm, R.~D., Fedorov, A., Lavoie-Marchildon, S., Grewal, K., Bachman, P.,
+  Trischler, A. \harvardand\ Bengio, Y.  \harvardyearleft 2018\harvardyearright
+  , `Learning deep representations by mutual information estimation and
+  maximization', {\em arXiv preprint arXiv:1808.06670} .
 
 \harvarditem[Hou et~al.]{Hou, Singh, Samaras, Kurc, Gao, Seidman \harvardand\
   Saltz}{2016}{hou2016automatic}
@@ -669,6 +689,12 @@ Matsoukas, C., Haslum, J.~F., Sorkhei, M., S{\"o}derberg, M. \harvardand\
   `Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
   Recognition', pp.~9225--9234.
 
+\harvarditem{Misra \harvardand\ Maaten}{2020}{misra2020self}
+Misra, I. \harvardand\ Maaten, L. v.~d.  \harvardyearleft 2020\harvardyearright
+  , Self-supervised learning of pretext-invariant representations, {\em in}
+  `Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition', pp.~6707--6717.
+
 \harvarditem[Mohseni et~al.]{Mohseni, Yap, Yolland, Razmara \harvardand\
   Atkins}{2021}{aleatoric_relation_proof}
 Mohseni, M., Yap, J., Yolland, W., Razmara, M. \harvardand\ Atkins, M.~S.
@@ -694,6 +720,11 @@ Mukhoti, J., Kulharia, V., Sanyal, A., Golodetz, S., Torr, P. \harvardand\
 M{\"u}ller, R., Kornblith, S. \harvardand\ Hinton, G.~E.  \harvardyearleft
   2019\harvardyearright , `When does label smoothing help?', {\em Advances in
   Neural Information Processing Systems} {\bf 32}.
+
+\harvarditem{Noroozi \harvardand\ Favaro}{2016}{noroozi2016unsupervised}
+Noroozi, M. \harvardand\ Favaro, P.  \harvardyearleft 2016\harvardyearright ,
+  Unsupervised learning of visual representations by solving jigsaw puzzles,
+  {\em in} `European conference on computer vision', Springer, pp.~69--84.
 
 \harvarditem[Parikh et~al.]{Parikh, Boyd et~al.}{2014}{parikh2014proximal}
 Parikh, N., Boyd, S. et~al.  \harvardyearleft 2014\harvardyearright , `Proximal

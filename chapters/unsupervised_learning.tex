@@ -95,19 +95,17 @@ In their work, \cite{zhuang2019local} proposed a method for unsupervised represe
 
 \subsubsection{Momentum Contrast}
 \label{subsubsec:momentum_contrast}
-In their work, \cite{he2020momentum} proposed a method for unsupervised representation learning called Momentum Contrast. The method uses a dynamic dictionary of keys to train an encoder. Specifically, the encoder is trained using a contrastive loss, which compares the representation of a query image to the key representations from the dynamic dictionary, which is made up of a queue of data samples. The authors claim that the use of a large and dynamic dictionary allows for an effective sampling of high-dimensional visual space, which results in competitive performance. This is supported by the experimental results presented in the work, which show that the learned feature representations can be used to pre-train encoders for a variety of tasks such as classification, detection, and segmentation. This highlights the potential of the Momentum Contrast method for unsupervised representation learning in computer vision tasks.
+In their work, \cite{he2020momentum} proposed a method for unsupervised representation learning called momentum contrast. The method uses a dynamic dictionary of keys to train an encoder. Specifically, the encoder is trained using a contrastive loss, which compares the representation of a query image to the key representations from the dynamic dictionary, which is made up of a queue of data samples. The authors claim that the use of a large and dynamic dictionary allows for an effective sampling of high-dimensional visual space, which results in competitive performance. This is supported by the experimental results presented in the work, which show that the learned feature representations can be used to pre-train encoders for a variety of tasks such as classification, detection, and segmentation. This highlights the potential of the Momentum Contrast method for unsupervised representation learning in computer vision tasks.
 
 \subsubsection{Pretext-Invariant Representations}
 \label{subsubsec:pretext_invariant_representations}
+In a recent study, \cite{misra2020self} highlighted a limitation of using pretext tasks for self-supervised representation learning, specifically that it can result in overfitting and poor generalization to other tasks. To address this issue, the authors proposed a novel approach called pretext-invariant representation learning. This method involves applying a transformation, such as a rotation, to an input image, and then encoding both the original and transformed images using a shared encoder. The final embeddings are generated using separate prediction heads. To further improve the robustness of the learned representations, the authors employed a noise contrastive estimator~\citep{gutmann2010noise} as the loss function, which aims to reduce the similarity between the original and transformed images, while maximizing the similarity between the transformed image and randomly sampled negative images. The encoder used in the study was a ResNet~\citep{he2016deep}, and the authors demonstrated the effectiveness of the proposed approach by achieving state-of-the-art results using a jigsaw pretext task~\citep{noroozi2016unsupervised} in their method.
 
-\subsubsection{Multi-Task Visual Learning}
-\label{subsubsec:multi-task_visual_learning}
+\subsubsection{Deep InfoMax}
+\label{subsubsec:DIM}
+Deep infomax, first proposed in~\citep{hjelm2018learning}, is a self-supervised deep learning approach for learning compact and informative representations of data through the optimization of mutual information~\citep{shannon1948mathematical} between the data and the learned representations. Mutual information is a measure of the dependence between two random variables and quantifies the amount of information that one variable contains about the other. In the case of deep infomax, the data is considered as one random variable and the learned representation as the other. The mutual information between the data and the learned representation is estimated using a variational lower bound.
 
-\subsubsection{Augmented Multiscale Deep InfoMax}
-\label{subsubsec:AMDIM}
-
-\subsubsection{Contrastive Multiview Coding}
-\label{subsubsec:contrastive_multiview_coding}
+An extension of this approach, Augmented Multiscale Deep InfoMax (AMDIM)~\cite{bachman2019learning}, aims to learn hierarchical representations of data by utilizing a multiscale architecture. This architecture is composed of multiple sub-networks, each responsible for learning representations at a different scale. The decoder network also comprises of multiple sub-networks, each responsible for reconstructing the data from the representations at a corresponding scale. Like deep infomax, the mutual information between the data and the learned representations is estimated using a variational lower bound. The key difference between deep infomax and AMDIM is that the latter utilizes multiple scales to learn hierarchical representations, while the former only uses one scale. The authors of the paper have demonstrated state-of-the-art results using transfer learning to train classifiers.
 
 \subsection{Unsupervised Representation Learning for \\Medical Image Analysis}
 \label{subsec:unsupervise_representation_for_medical}
@@ -165,6 +163,26 @@ This section presents a comprehensive description of the datasets, training para
 \subsection{Dataset}
 \label{subsec:unsupervised_dataset}
 In the experiments conducted, the publicly available dataset Patch Cameleyon~\citep{veeling2018rotation} was chosen for its suitability to evaluate the proposed method. This dataset was selected due to its larger number of non-overlapping whole slide image patches that possess no inherent directionality, making it a suitable benchmark for evaluating rotation-invariant representations, originally used to evaluate Rotation Equivariant CNNs~\citep{veeling2018rotation}. These patches were extracted from 400 whole slide image scans of sentinel lymph node sections from the Camelyon16 dataset~\citep{litjens20181399}. These whole slide images were collected from two different centres and digitized using an objective of 40x magnification, resulting in a pixel resolution of 0.243 microns. Each patch was annotated with a binary label indicating the presence or absence of metastatic tissue, by determining if the centre 32x32 pixels of the patch contains at least one pixel of tumour. The dataset contains a total of 327,680 patches which were split into training and testing sets, with a ratio of 90:10. To improve generalization, data augmentation was applied during training, by randomly rotating, flipping vertically and horizontally each patch during sampling.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.3\linewidth]{images/pcam_0_0.png}
+		\includegraphics[width=0.3\linewidth]{images/pcam_79_0.png}
+		\includegraphics[width=0.3\linewidth]{images/pcam_13_0.png}
+		\caption{Negative Examples}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/pcam_1_1.png}
+	\includegraphics[width=0.3\linewidth]{images/pcam_78_1.png}
+	\includegraphics[width=0.3\linewidth]{images/pcam_22_1.png}
+	\caption{Positive Examples}
+\end{subfigure}
+	\caption{Example images from the Patch Cameleyon dataset~\citep{veeling2018rotation,litjens20181399}.}
+	\label{fig:pcam_examples}
+\end{figure}
 
 \subsection{Experiment Setup}
 \label{subsec:unsupervised_experiment}

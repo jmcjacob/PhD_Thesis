@@ -3,13 +3,13 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces The Convolutional Neural Network architecture employed for nuclei classification in the region-based active learning experiments.\relax }}{18}{table.caption.25}%
 \contentsline {table}{\numberline {2.2}{\ignorespaces Test results for each query strategy after 50 active iterations.\relax }}{19}{table.caption.26}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Mean test accuracies of the CNN classifiers with different pre-training (standard deviation in parentheses).\relax }}{39}{table.caption.46}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Mean test accuracies of the CNN classifiers with different pre-training (standard deviation in parentheses).\relax }}{41}{table.caption.45}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Calibration and accuracy results for ISIC 2019 and PCam datasets. ISIC 2019 results are means and standard deviations over three iterations. Each section reports results from a single model type; TS denotes temperature scaling.\relax }}{49}{table.caption.49}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Calibration and accuracy results for ISIC 2019 and PCam datasets. ISIC 2019 results are means and standard deviations over three iterations. Each section reports results from a single model type; TS denotes temperature scaling.\relax }}{51}{table.caption.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Number of images per diagnosis in each dataset.\relax }}{71}{table.caption.62}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Class-balanced accuracy when training and testing on the various datasets.\relax }}{73}{table.caption.63}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }}{74}{table.caption.64}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Number of images per diagnosis in each dataset.\relax }}{73}{table.caption.61}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Class-balanced accuracy when training and testing on the various datasets.\relax }}{75}{table.caption.62}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }}{76}{table.caption.63}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
