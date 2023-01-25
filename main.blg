@@ -12,11 +12,19 @@ Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: refs/intro.bib
 Database file #2: refs/active.bib
 Database file #3: refs/unsupervised.bib
-Repeated entry---line 475 of file refs/unsupervised.bib
+Repeated entry---line 543 of file refs/unsupervised.bib
+ : @inproceedings{caron2018deep
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 639 of file refs/unsupervised.bib
+ : @inproceedings{gidaris2018unsupervised
+ :                                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 763 of file refs/unsupervised.bib
  : @inproceedings{veeling2018rotation
  :                                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 515 of file refs/unsupervised.bib
+Repeated entry---line 803 of file refs/unsupervised.bib
  : @inproceedings{xie2017aggregated
  :                                 ,
 I'm skipping whatever remains of this entry
@@ -27,48 +35,48 @@ Repeated entry---line 719 of file refs/selective.bib
  :                                 ,
 I'm skipping whatever remains of this entry
 Database file #6: refs/generalisation.bib
-Warning--I didn't find a database entry for "geert2017survey"
 Warning--I didn't find a database entry for "Tschandl2018"
 Warning--can't use both volume and number fields in lewis1995sequential
-You've used 135 entries,
+Warning--can't use both volume and number fields in mukherjee2019clustergan
+You've used 152 entries,
             2909 wiz_defined-function locations,
-            1364 strings with 33336 characters,
-and the built_in function-call counts, 877167 in all, are:
-= -- 144425
-> -- 12805
-< -- 9
-+ -- 71202
-- -- 4000
-* -- 78104
-:= -- 170587
-add.period$ -- 135
-call.type$ -- 135
-change.case$ -- 1888
-chr.to.int$ -- 132
-cite$ -- 136
-duplicate$ -- 2670
-empty$ -- 5022
-format.name$ -- 4467
-if$ -- 158595
+            1443 strings with 36592 characters,
+and the built_in function-call counts, 968121 in all, are:
+= -- 159204
+> -- 14236
+< -- 11
++ -- 78375
+- -- 4439
+* -- 86098
+:= -- 188457
+add.period$ -- 152
+call.type$ -- 152
+change.case$ -- 2126
+chr.to.int$ -- 149
+cite$ -- 154
+duplicate$ -- 3021
+empty$ -- 5682
+format.name$ -- 4966
+if$ -- 175088
 int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 137
-newline$ -- 408
-num.names$ -- 1435
-pop$ -- 616
+missing$ -- 154
+newline$ -- 460
+num.names$ -- 1621
+pop$ -- 696
 preamble$ -- 1
-purify$ -- 2025
+purify$ -- 2280
 quote$ -- 0
-skip$ -- 2480
+skip$ -- 2810
 stack$ -- 0
-substring$ -- 207595
-swap$ -- 770
-text.length$ -- 1899
+substring$ -- 228580
+swap$ -- 878
+text.length$ -- 2139
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 534
-warning$ -- 1
-while$ -- 3059
+type$ -- 602
+warning$ -- 2
+while$ -- 3446
 width$ -- 0
-write$ -- 1887
-(There were 3 error messages)
+write$ -- 2134
+(There were 5 error messages)

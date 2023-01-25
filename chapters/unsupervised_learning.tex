@@ -1,11 +1,5 @@
-This work was presented at the IEEE International Symposium on Biomedical Imaging 2021 and published as part of its proceedings \citep{carse2021unsupervised}.
-
-
-
 \section{Introduction}
 \label{sec:unsupervised_intro}
-\subsection{Unsupervised Representation Learning for Images}
-\label{subsec:unsupervised_for_medical}
 As previously discussed in Section \ref{subsec:active_for_medical_image_analysis}, the application of modern deep learning algorithms has demonstrated significant improvements in digital pathology tasks such as nuclei detection and disease classification~\citep{litjens2017survey}. The ability to jointly learn deep representations and discriminative classifiers or regressors through end-to-end training allows for feature representations that are specifically tailored to a given task. However, this approach necessitates a significant amount of annotated data for adequate generalization, which poses a major challenge for digital pathology~\citep{madabhushi2016image} and other medical image analysis domains. In an effort to address this challenge, we previously explored the use of active learning (Chapter \ref{ch:active_learning}), however, the limitations of this approach were highlighted in Section \ref{sec:active_conclusion} and subsequently led to a focus on unsupervised representation learning as a means to extract information from unannotated images. Unsupervised representation learning can be utilized to improve generalization, decrease data dimensionality, improve computational performance, and initialize deep supervised learning models when access to annotated data is limited~\citep{bengio2013representation}.
 
 \begin{figure}
@@ -38,16 +32,16 @@ As previously discussed in Section \ref{subsec:active_for_medical_image_analysis
 
 One approach to reducing the need for large, annotated datasets is through the use of transfer learning. This is accomplished by using the weights of a deep encoder, trained on a large pool of unannotated data, to initialize another model~\citep{weiss2016survey}. Contrastive predictive coding (CPC) is a state-of-the-art method for unsupervised representation learning~\citep{oord2018representation}. It involves training an autoregressive model to predict future data representations in a sequence, using a loss function composed of noise-contrastive estimation and importance sampling, to preserve the density ratio between each sample and their representation. Although originally developed for sequential data, CPC has been adapted for images by splitting each image into overlapping patches and using an encoder to produce a matrix of feature representations. A mask is then applied to the matrix so that an autoregressive model can only see a subset of the feature representations in order to predict the representations of the masked patches from the context available to it. This framework has been applied successfully to object detection and Imagenet classification tasks with modifications to model capacity, layer normalization, prediction directions, and patch-based augmentations~\citep{henaff2019data}. However, in previous implementations, the autoregressive model’s predictions were made in multiple directions individually, which can be inefficient when dealing with images, such as in digital pathology, where the orientation of the image is arbitrary and does not carry useful information. Figure~\ref{fig:example_cpc_patches}(b) illustrates an example of this framework applied to an image.
 
-\subsection{Summary of Work}
-\label{subsec:unsupervised_summary}
-The current study builds upon the idea that unsupervised representation learning can be utilized to learn deep representations, which can then be used in conjunction with transfer learning to train a discriminative classifier with limited annotated data (as depicted in Figure~\ref{fig:active_unsupervised_learning_framework}). By implementing this approach, the need for complex deep learning-specific active learning query strategies is mitigated and instead allows for a focus on uncertainty-based querying. In order to realize this approach, a state-of-the-art unsupervised representation learning algorithm for digital pathology images was required. To this end, a multi-directional CPC extension was proposed, which includes an alternative mask for building latent context and a new extension to the autoregressive model PixelCNN~\citep{oord2016pixel} for multi-directional predictions (as depicted in Figure~\ref{fig:example_cpc_patches}(d)). The effectiveness of this modification was demonstrated using the PatchCamelyon dataset~\citep{veeling2018rotation}, derived from the Camelyon16 dataset~\citep{litjens20181399}, where it was shown that classification can be performed with less annotated data when utilizing representations learned in this way.This work was presented at the IEEE International Symposium on Biomedical Imaging 2021 and published as part of its proceedings \citep{carse2021unsupervised}.
-
-\begin{figure}
+\begin{figure}[b]
 	\centering
 	\includegraphics[width=\textwidth]{images/active_unsupervised_learning.png}
 	\caption{Proposed active learning framework with learnt representations from unsupervised representation learning on unannotated data.}
 	\label{fig:active_unsupervised_learning_framework}
 \end{figure}
+
+The current study builds upon the idea that unsupervised representation learning can be utilized to learn deep representations, which can then be used in conjunction with transfer learning to train a discriminative classifier with limited annotated data (as depicted in Figure~\ref{fig:active_unsupervised_learning_framework}). By implementing this approach, the need for complex deep learning-specific active learning query strategies is mitigated and instead allows for a focus on uncertainty-based querying. In order to realize this approach, a state-of-the-art unsupervised representation learning algorithm for digital pathology images was required. To this end, a multi-directional CPC extension was proposed, which includes an alternative mask for building latent context and a new extension to the autoregressive model PixelCNN~\citep{oord2016pixel} for multi-directional predictions (as depicted in Figure~\ref{fig:example_cpc_patches}(d)). The effectiveness of this modification was demonstrated using the PatchCamelyon dataset~\citep{veeling2018rotation}, derived from the Camelyon16 dataset~\citep{litjens20181399}, where it was shown that classification can be performed with less annotated data when utilizing representations learned in this way.This work was presented at the IEEE International Symposium on Biomedical Imaging 2021 and published as part of its proceedings \citep{carse2021unsupervised}.
+
+This work was presented at the IEEE International Symposium on Biomedical Imaging 2021 and published as part of its proceedings \citep{carse2021unsupervised}.
 
 
 
@@ -61,33 +55,61 @@ In the context of computer vision, there are two main approaches to deep represe
 
 \subsection{Generative Methods}
 \label{subsec:generative_methods}
+Generative models, a class of machine learning algorithms, have been widely adopted for representation learning, as they can learn to generate new data samples that are similar to the training data. In particular, in the context of medical image analysis, generative models have been used for image-to-image translation tasks, such as converting images from one modality to another~\citep{kaji2019overview}. The increasing popularity of generative models in medical image analysis can be attributed to their ability to learn useful representations from large amounts of unlabelled data, which can subsequently be utilized to improve performance on tasks such as segmentation and classification~\citep{yi2019generative}.
+
+\subsubsection{Autoencoders}
+\label{subsubsec:autoencoders}
 Autoencoders are a class of generative models that employ an encoder to reduce the dimensionality of the input data and a decoder to reconstruct the original data from the reduced representation~\citep{kramer1991nonlinear}. Transfer learning can be achieved by utilizing the parameters learned by the encoder and training a new classifier with the encoded representations. One of the most widely used types of autoencoders is the undercomplete autoencoder, which is trained to minimize the reconstruction error by learning a compressed feature representation~\citep{goodfellow2016deep}. Other variations of autoencoders include sparse autoencoders, which are designed to learn sparse representations that have been shown to improve performance when used for transfer learning~\citep{makhzani2013k}. Denoising autoencoders, on the other hand, are trained by corrupting the input data with noise and the goal of the network is to reconstruct the original data without the added noise. This denoising training process forces the encoder and decoder to implicitly learn the underlying structure of the data, which can be beneficial for transfer learning~\citep{bengio2013generalized}.
 
 The final category of autoencoder is the regularized autoencoder, which modifies the traditional autoencoder architecture in order to enhance the model's ability to learn more informative representations and capture relevant information. One of the most widely employed forms of regularized autoencoder is the variational autoencoder, as proposed by \cite{kingma2013auto}. This variant of autoencoder ensures that the latent space possesses desirable properties that enable a generative process by encoding an input image as a distribution over the latent space, as opposed to encoding it into a single point in the latent space. A variational autoencoder is trained by sampling from the encoded latent distribution and decoding it into an output image. The loss function for this model is based on the reconstruction error of the output image and the Kulback-Leibler divergence~\citep{kullback1951information} as the regularization term.
 
 Most recent work with autoencoders in medical image analysis has been using variational autoencoders as they have shown a high level or performance and have been used for multiple tasks~\citep{wei2020recent}. \cite{akrami2020brain} used a combination of variational autoencoders and transfer learning to build unsupervised lesion detection models for MRI brain scans images and showed it robustness when working with training and testing datasets with different parameters. \cite{thiagarajan2020improving}
 
-Generative Adversarial Networks
+\subsubsection{Generative Adversarial Networks}
+\label{subsubsec:generative_adversarial_networks}
+Generative adversarial networks~\citep{goodfellow2014advances} are a class of deep learning models that are designed to generate new samples of data that resemble existing samples from a given dataset. They consist of two main components: a generator network, which produces new samples, and a discriminator network, which attempts to distinguish the generated samples from the real samples. The two networks are trained in an adversarial manner, with the generator attempting to produce samples that the discriminator cannot distinguish from real samples, and the discriminator attempting to correctly identify the generated samples. However, generative adversarial networks are known to be difficult to train and converge to a good solution. Several techniques, such as Wasserstein generative adversarial networks~\citep{arjovsky2017wasserstein} and gradient penalty~\citep{gulrajani2017improved}, have been proposed to stabilize the training process.
 
-BigBiGAN
+In the context of representation learning, generative adversarial networks can be used to learn a compact, low-dimensional representation of the data that captures the underlying structure of the dataset. This can be achieved by training the generator to produce samples that are similar to the real samples, but in a lower-dimensional space. The generator can then be used as a feature extractor, mapping the real samples to their corresponding low-dimensional representations. Additionally, the discriminator can be used as a classifier, allowing the learned representations to be used for downstream tasks such as classification~\citep{srivastav2021improved} or clustering~\citep{mukherjee2019clustergan}.
+
+A variant of generative adversarial networks is BigBiGAN~\citep{donahue2019large}, which is designed to generate high-quality images from a compact, low-dimensional representation of the data. It is based on the idea of BiGAN~\citep{donahue2016adversarial} and the primary difference between BigBiGAN and the original BiGAN is the scale of the model. BigBiGAN is trained on a large dataset such as ImageNet, which contains millions of images, whereas BiGAN is trained on smaller datasets. The increased size of the dataset allows BigBiGAN to learn a more powerful and expressive representation of the data. BigBiGAN consists of three main components: an encoder network, a generator network, and a discriminator network. The encoder network maps the input data to a low-dimensional representation, which is then used as input to the generator network to produce a reconstructed sample.
 
 \subsection{Self-supervised Methods}
 \label{subsec:self_supervised_methods}
-Non-Parametric Instance Discrimination
+Self-supervised learning for representation learning is a subset of machine learning that aims to learn meaningful representations of data without the need for explicit labels. A prevalent method for self-supervised representation learning in medical imaging is to employ a pretext task, a task that is simple to solve through the utilization of the features learned by the model, but also serves as a means to learn relevant features for the ultimate task of interest. The utilization of self-supervised pre-training techniques is rapidly gaining popularity in medical image analysis, as it enables the learning of useful features from vast amounts of unlabelled data, which can then be applied to enhance performance in tasks such as segmentation and classification~\citep{shurrab2022self}.
 
-Local Aggregation
+\subsubsection{RotNet}
+\label{subsubsec:RotNet}
+RotNet, as proposed by \cite{gidaris2018unsupervised}, is a novel unsupervised representation learning technique that utilizes rotation as a self-supervised task for learning useful representations of images. The fundamental concept behind RotNet is that by training a neural network to predict the rotation of an image, it can learn useful features that are robust to rotation and can be utilized in other tasks such as image classification. The RotNet model comprises of a convolutional neural network that takes an image as input and predicts the angle of rotation. The output of the last convolutional layer, prior to the fully connected layers, is used as the representation of the image. This technique enables the model to train on a large dataset of unlabelled images, which can then be utilized for other tasks such as image classification as demonstrated by \cite{zhou2021preservational}.
 
-Momentum Contrast
+\subsubsection{Deep Clustering}
+\label{subsubsec:deep_clustering}
+DeepCluster, as proposed by \cite{caron2018deep}, is a technique for unsupervised representation learning that combines the utilization of clustering algorithms as a form of self-supervision to train deep neural networks. The method initiates by initializing the weights of a deep neural network randomly and subsequently utilizing the network to extract features from a dataset of unlabelled images. These features are then employed to cluster the images into different groups using a clustering algorithm, such as k-means. Upon completion of the clustering process, the labels generated by the clustering algorithm are used as pseudo-labels for the images. The neural network is then fine-tuned using these pseudo-labels to enhance the representations of the images. This process is repeated multiple times, with the neural network being fine-tuned using the updated pseudo-labels generated by the clustering algorithm.
 
-Pretext-Invariant Representations
+\subsubsection{Non-Parametric Instance-Level Discrimination}
+\label{subsubsec:non-parametric_instance-level_discrimination}
+Non-parametric instance-level discrimination is a method for unsupervised representation learning that focuses on learning a set of discriminative features that can be used to differentiate between individual instances in a dataset. This approach is non-parametric, meaning that it does not rely on any assumptions about the underlying distribution of the data or the form of the learned features. \cite{wu2018unsupervised} purposed a modification to apply this to deep learning. The authors noted that simply extended the softmax output to the size of the dataset is not feasible and instead found a way around this by approximating the softmax distribution using noise-contrastive estimation~\citep{gutmann2010noise} and using proximal regularisation method~\citep{parikh2014proximal}.
 
-RotNet
+\subsubsection{Local Aggregation}
+\label{subsubsec:local_aggregation}
+In their work, \cite{zhuang2019local} proposed a method for unsupervised representation learning using local non-parametric aggregation in the latent feature space. The proposed method is based on training an encoder to produce latent features, and encouraging similar data instances to move together and dissimilar instances to separate in the latent feature space. To achieve this, the method employs a clustering technique. Specifically, multiple passes of k-means clustering are performed for each latent encoding to determine its close neighbours and background neighbours. The loss function used to train the model is based on the negative log-likelihood of an encoding being recognized as a close neighbour, given that it is recognized as a background neighbour. The effectiveness of the proposed method is demonstrated through experiments on the Imagenet dataset~\citep{deng2009imagenet}. The results show that the model trained with this method exhibits substantial ability to recognize high-level visual context without the need for any dataset annotations. This highlights the potential of the proposed method for unsupervised representation learning in computer vision tasks.
 
-AMDIM
+\subsubsection{Momentum Contrast}
+\label{subsubsec:momentum_contrast}
+In their work, \cite{he2020momentum} proposed a method for unsupervised representation learning called Momentum Contrast. The method uses a dynamic dictionary of keys to train an encoder. Specifically, the encoder is trained using a contrastive loss, which compares the representation of a query image to the key representations from the dynamic dictionary, which is made up of a queue of data samples. The authors claim that the use of a large and dynamic dictionary allows for an effective sampling of high-dimensional visual space, which results in competitive performance. This is supported by the experimental results presented in the work, which show that the learned feature representations can be used to pre-train encoders for a variety of tasks such as classification, detection, and segmentation. This highlights the potential of the Momentum Contrast method for unsupervised representation learning in computer vision tasks.
 
-Contrastive Multiview Coding
+\subsubsection{Pretext-Invariant Representations}
+\label{subsubsec:pretext_invariant_representations}
 
-\subsection{Unsupervised Representation Learning for Medical Image Analysis}
+\subsubsection{Multi-Task Visual Learning}
+\label{subsubsec:multi-task_visual_learning}
+
+\subsubsection{Augmented Multiscale Deep InfoMax}
+\label{subsubsec:AMDIM}
+
+\subsubsection{Contrastive Multiview Coding}
+\label{subsubsec:contrastive_multiview_coding}
+
+\subsection{Unsupervised Representation Learning for \\Medical Image Analysis}
 \label{subsec:unsupervise_representation_for_medical}
 In the field of digital pathology, transfer learning is a widely used technique for various tasks~\citep{srinidhi2020deep}, as it has been shown to accelerate the convergence of deep learning models~\citep{bayramoglu2016transfer}. Studies have also demonstrated the effectiveness of utilizing representation learning to initialize a convolutional neural network (CNN) in situations where the learning task may be challenging due to a lack of annotated data~\citep{hou2016automatic}. This approach can also be extended to active learning, where limited annotations make it difficult to learn features effectively~\cite{carse2019active}.
 

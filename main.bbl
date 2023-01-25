@@ -8,6 +8,12 @@ Akrami, H., Joshi, A.~A., Li, J., Aydore, S. \harvardand\ Leahy, R.~M.
   17th International Symposium on Biomedical Imaging (ISBI)', IEEE,
   pp.~786--790.
 
+\harvarditem[Arjovsky et~al.]{Arjovsky, Chintala \harvardand\
+  Bottou}{2017}{arjovsky2017wasserstein}
+Arjovsky, M., Chintala, S. \harvardand\ Bottou, L.  \harvardyearleft
+  2017\harvardyearright , Wasserstein generative adversarial networks, {\em in}
+  `International conference on machine learning', PMLR, pp.~214--223.
+
 \harvarditem{Bayramoglu \harvardand\
   Heikkil{\"a}}{2016}{bayramoglu2016transfer}
 Bayramoglu, N. \harvardand\ Heikkil{\"a}, J.  \harvardyearleft
@@ -58,6 +64,13 @@ Budd, S., Robinson, E.~C. \harvardand\ Kainz, B.  \harvardyearleft
   2021\harvardyearright , `A survey on active learning and human-in-the-loop
   deep learning for medical image analysis', {\em Medical Image Analysis} {\bf
   71},~102062.
+
+\harvarditem[Caron et~al.]{Caron, Bojanowski, Joulin \harvardand\
+  Douze}{2018}{caron2018deep}
+Caron, M., Bojanowski, P., Joulin, A. \harvardand\ Douze, M.  \harvardyearleft
+  2018\harvardyearright , Deep clustering for unsupervised learning of visual
+  features, {\em in} `Proceedings of the European conference on computer vision
+  (ECCV)', pp.~132--149.
 
 \harvarditem[Carse et~al.]{Carse, Alvarez~Olmo \harvardand\
   McKenna}{2022}{carse2022calibration}
@@ -204,6 +217,17 @@ Deng, J., Dong, W., Socher, R., Li, L., Li, K. \harvardand\ Fei-Fei, L.
   Pattern Recognition', Institute of Electrical and Electronics Engineers,
   pp.~248--255.
 
+\harvarditem[Donahue et~al.]{Donahue, Kr{\"a}henb{\"u}hl \harvardand\
+  Darrell}{2016}{donahue2016adversarial}
+Donahue, J., Kr{\"a}henb{\"u}hl, P. \harvardand\ Darrell, T.  \harvardyearleft
+  2016\harvardyearright , `Adversarial feature learning', {\em arXiv preprint
+  arXiv:1605.09782} .
+
+\harvarditem{Donahue \harvardand\ Simonyan}{2019}{donahue2019large}
+Donahue, J. \harvardand\ Simonyan, K.  \harvardyearleft 2019\harvardyearright ,
+  `Large scale adversarial representation learning', {\em Advances in neural
+  information processing systems} {\bf 32}.
+
 \harvarditem[Du-Harpur et~al.]{Du-Harpur, Watt, Luscombe \harvardand\
   Lynch}{2020}{du2020ai}
 Du-Harpur, X., Watt, F., Luscombe, N. \harvardand\ Lynch, M.  \harvardyearleft
@@ -304,6 +328,12 @@ Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2019{\em
   integrated reject option, {\em in} `Proceedings of the 36th International
   Conference on Machine Learning (ICML)', Vol. PMLR 97, pp.~2151--2159.
 
+\harvarditem[Gidaris et~al.]{Gidaris, Singh \harvardand\
+  Komodakis}{2018}{gidaris2018unsupervised}
+Gidaris, S., Singh, P. \harvardand\ Komodakis, N.  \harvardyearleft
+  2018\harvardyearright , `Unsupervised representation learning by predicting
+  image rotations', {\em arXiv preprint arXiv:1803.07728} .
+
 \harvarditem{Glorot \harvardand\ Bengio}{2010}{glorot2010understanding}
 Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
   Understanding the difficulty of training deep feedforward neural networks,
@@ -316,6 +346,16 @@ Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
 Goodfellow, I., Bengio, Y. \harvardand\ Courville, A.  \harvardyearleft
   2016\harvardyearright , {\em Deep learning}, MIT press.
 
+\harvarditem[Goodfellow et~al.]{Goodfellow, Pouget-Abadie, Mirza, Xu,
+  Warde-Farley, Ozair, Courville \harvardand\
+  Bengio}{2014}{goodfellow2014advances}
+Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair,
+  S., Courville, A. \harvardand\ Bengio, Y.  \harvardyearleft
+  2014\harvardyearright , Generative adversarial nets, {\em in} Z.~Ghahramani,
+  M.~Welling, C.~Cortes, N.~Lawrence \harvardand\ K.~Weinberger, eds, `Advances
+  in Neural Information Processing Systems', Vol.~27, Curran Associates, Inc.
+\newline\harvardurl{https://proceedings.neurips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf}
+
 \harvarditem[Gorriz et~al.]{Gorriz, Carlier, Faure \harvardand\ Giro-i
   Nieto}{2017}{gorriz2017cost}
 Gorriz, M., Carlier, A., Faure, E. \harvardand\ Giro-i Nieto, X.
@@ -326,6 +366,13 @@ Gorriz, M., Carlier, A., Faure, E. \harvardand\ Giro-i Nieto, X.
 Guan, H. \harvardand\ Liu, M.  \harvardyearleft 2021\harvardyearright , `Domain
   adaptation for medical image analysis: a survey', {\em IEEE Transactions on
   Biomedical Engineering} {\bf 69}(3),~1173--1185.
+
+\harvarditem[Gulrajani et~al.]{Gulrajani, Ahmed, Arjovsky, Dumoulin
+  \harvardand\ Courville}{2017}{gulrajani2017improved}
+Gulrajani, I., Ahmed, F., Arjovsky, M., Dumoulin, V. \harvardand\ Courville,
+  A.~C.  \harvardyearleft 2017\harvardyearright , `Improved training of
+  wasserstein gans', {\em Advances in neural information processing systems}
+  {\bf 30}.
 
 \harvarditem[Guo et~al.]{Guo, Pleiss, Sun \harvardand\
   Weinberger}{2017}{guo2017calibration}
@@ -365,6 +412,14 @@ Han, S.~S., Kim, M.~S., Lim, W., Park, G.~H., Park, I. \harvardand\ Chang,
   clinical images for benign and malignant cutaneous tumors using a deep
   learning algorithm', {\em Journal of Investigative Dermatology} {\bf
   138}(7),~1529--1538.
+
+\harvarditem[He et~al.]{He, Fan, Wu, Xie \harvardand\
+  Girshick}{2020}{he2020momentum}
+He, K., Fan, H., Wu, Y., Xie, S. \harvardand\ Girshick, R.  \harvardyearleft
+  2020\harvardyearright , Momentum contrast for unsupervised visual
+  representation learning, {\em in} `Proceedings of the IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition', Institute of Electrical and
+  Electronics Engineers, pp.~9729--9738.
 
 \harvarditem[H\'enaff et~al.]{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami
   \harvardand\ van~den Oord}{2019}{henaff2019data}
@@ -428,6 +483,13 @@ Jospin, L.~V., Buntine, W., Boussaid, F., Laga, H. \harvardand\ Bennamoun, M.
   \harvardyearleft 2020\harvardyearright , `Hands-on bayesian neural
   networks--a tutorial for deep learning users', {\em arXiv preprint
   arXiv:2007.06823} .
+
+\harvarditem{Kaji \harvardand\ Kida}{2019}{kaji2019overview}
+Kaji, S. \harvardand\ Kida, S.  \harvardyearleft 2019\harvardyearright ,
+  `Overview of image-to-image translation by use of deep neural networks:
+  denoising, super-resolution, modality conversion, and reconstruction in
+  medical imaging', {\em Radiological physics and technology} {\bf
+  12}(3),~235--248.
 
 \harvarditem[Kampffmeyer et~al.]{Kampffmeyer, Salberg \harvardand\
   Jenssen}{2016}{kampffmeyer2016semantic}
@@ -613,6 +675,13 @@ Mohseni, M., Yap, J., Yolland, W., Razmara, M. \harvardand\ Atkins, M.~S.
   \harvardyearleft 2021\harvardyearright , `Out-of-distribution detection for
   dermoscopic image classification', {\em arXiv preprint arXiv:2104.07819} .
 
+\harvarditem[Mukherjee et~al.]{Mukherjee, Asnani, Lin \harvardand\
+  Kannan}{2019}{mukherjee2019clustergan}
+Mukherjee, S., Asnani, H., Lin, E. \harvardand\ Kannan, S.  \harvardyearleft
+  2019\harvardyearright , Clustergan: Latent space clustering in generative
+  adversarial networks, {\em in} `Proceedings of the AAAI conference on
+  artificial intelligence', Vol.~33, pp.~4610--4617.
+
 \harvarditem[Mukhoti et~al.]{Mukhoti, Kulharia, Sanyal, Golodetz, Torr
   \harvardand\ Dokania}{2020}{mukhoti2020calibrating}
 Mukhoti, J., Kulharia, V., Sanyal, A., Golodetz, S., Torr, P. \harvardand\
@@ -625,6 +694,11 @@ Mukhoti, J., Kulharia, V., Sanyal, A., Golodetz, S., Torr, P. \harvardand\
 M{\"u}ller, R., Kornblith, S. \harvardand\ Hinton, G.~E.  \harvardyearleft
   2019\harvardyearright , `When does label smoothing help?', {\em Advances in
   Neural Information Processing Systems} {\bf 32}.
+
+\harvarditem[Parikh et~al.]{Parikh, Boyd et~al.}{2014}{parikh2014proximal}
+Parikh, N., Boyd, S. et~al.  \harvardyearleft 2014\harvardyearright , `Proximal
+  algorithms', {\em Foundations and trends{\textregistered} in Optimization}
+  {\bf 1}(3),~127--239.
 
 \harvarditem{Parzen}{1962}{parzen1962estimation}
 Parzen, E.  \harvardyearleft 1962\harvardyearright , `On estimation of a
@@ -727,6 +801,11 @@ Shi, X., Dou, Q., Xue, C., Qin, J., Chen, H. \harvardand\ Heng, P.-A.
 Shin, J.~W. \harvardand\ Kim, S.~J.  \harvardyearleft 1949\harvardyearright ,
   `A mathematical theory of communication', {\em University of Ulinois Ress} .
 
+\harvarditem{Shurrab \harvardand\ Duwairi}{2022}{shurrab2022self}
+Shurrab, S. \harvardand\ Duwairi, R.  \harvardyearleft 2022\harvardyearright ,
+  `Self-supervised learning methods and applications in medical imaging
+  analysis: A survey', {\em PeerJ Computer Science} {\bf 8},~e1045.
+
 \harvarditem[Sirinukunwattana et~al.]{Sirinukunwattana, Raza, Tsang, Snead,
   Cree \harvardand\ Rajpoot}{2016}{sirinukunwattana2016locality}
 Sirinukunwattana, K., Raza, S. E.~A., Tsang, Y.-W., Snead, D.~R., Cree, I.~A.
@@ -745,6 +824,14 @@ Smith, L.  \harvardyearleft 2017\harvardyearright , Cyclical learning rates for
 Srinidhi, C., Ciga, O. \harvardand\ Martel, A.  \harvardyearleft
   2020\harvardyearright , `Deep neural network models for computational
   histopathology: A survey', {\em Medical Image Analysis} {\bf 67},~101813.
+
+\harvarditem[Srivastav et~al.]{Srivastav, Bajpai \harvardand\
+  Srivastava}{2021}{srivastav2021improved}
+Srivastav, D., Bajpai, A. \harvardand\ Srivastava, P.  \harvardyearleft
+  2021\harvardyearright , Improved classification for pneumonia detection using
+  transfer learning with gan based synthetic image augmentation, {\em in} `2021
+  11th International Conference on Cloud Computing, Data Science \& Engineering
+  (Confluence)', IEEE, pp.~433--437.
 
 \harvarditem[Srivastava et~al.]{Srivastava, Hinton, Krizhevsky, Sutskever
   \harvardand\ Salakhutdinov}{2014}{srivastava2014dropout}
@@ -853,6 +940,13 @@ Wu, Y., Chen, B., Zeng, A., Pan, D., Wang, R. \harvardand\ Zhao, S.
   \harvardyearleft 2022\harvardyearright , `Skin cancer classification with
   deep learning: A systematic review', {\em Frontiers in Oncology} {\bf 12}.
 
+\harvarditem[Wu et~al.]{Wu, Xiong, Yu \harvardand\
+  Lin}{2018}{wu2018unsupervised}
+Wu, Z., Xiong, Y., Yu, S.~X. \harvardand\ Lin, D.  \harvardyearleft
+  2018\harvardyearright , Unsupervised feature learning via non-parametric
+  instance discrimination, {\em in} `Proceedings of the IEEE conference on
+  computer vision and pattern recognition', pp.~3733--3742.
+
 \harvarditem[Xie et~al.]{Xie, Girshick, Doll{\'a}r, Tu \harvardand\
   He}{2017}{xie2017aggregated}
 Xie, S., Girshick, R., Doll{\'a}r, P., Tu, Z. \harvardand\ He, K.
@@ -866,6 +960,11 @@ Yang, J., Wu, X., Liang, J., Sun, X., Cheng, M.-M., Rosin, P.~L. \harvardand\
   Wang, L.  \harvardyearleft 2019\harvardyearright , `Self-paced balance
   learning for clinical skin disease recognition', {\em IEEE transactions on
   neural networks and learning systems} {\bf 31}(8),~2832--2846.
+
+\harvarditem[Yi et~al.]{Yi, Walia \harvardand\ Babyn}{2019}{yi2019generative}
+Yi, X., Walia, E. \harvardand\ Babyn, P.  \harvardyearleft
+  2019\harvardyearright , `Generative adversarial network in medical imaging: A
+  review', {\em Medical image analysis} {\bf 58},~101552.
 
 \harvarditem{Zeiler}{2012}{zeiler2012adadelta}
 Zeiler, M.~D.  \harvardyearleft 2012\harvardyearright , `Adadelta: an adaptive
@@ -882,5 +981,20 @@ Zhao, A., Balakrishnan, G., Durand, F., Guttag, J.~V. \harvardand\ Dalca, A.~V.
 \harvarditem{Zhdanov}{2019}{zhdanov2019diverse}
 Zhdanov, F.  \harvardyearleft 2019\harvardyearright , `Diverse mini-batch
   active learning', {\em arXiv preprint arXiv:1901.05954} .
+
+\harvarditem[Zhou et~al.]{Zhou, Lu, Yang, Han \harvardand\
+  Yu}{2021}{zhou2021preservational}
+Zhou, H.-Y., Lu, C., Yang, S., Han, X. \harvardand\ Yu, Y.  \harvardyearleft
+  2021\harvardyearright , Preservational learning improves self-supervised
+  medical image models by reconstructing diverse contexts, {\em in}
+  `Proceedings of the IEEE/CVF International Conference on Computer Vision',
+  pp.~3499--3509.
+
+\harvarditem[Zhuang et~al.]{Zhuang, Zhai \harvardand\
+  Yamins}{2019}{zhuang2019local}
+Zhuang, C., Zhai, A.~L. \harvardand\ Yamins, D.  \harvardyearleft
+  2019\harvardyearright , Local aggregation for unsupervised learning of visual
+  embeddings, {\em in} `Proceedings of the IEEE/CVF International Conference on
+  Computer Vision', pp.~6002--6012.
 
 \end{thebibliography}
