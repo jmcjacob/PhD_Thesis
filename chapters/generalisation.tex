@@ -16,7 +16,7 @@ Work is currently unpublished but is aiming to be submitted to the British Journ
 
 
 
-\section{Generalisation Review}
+\section{Literature Review of Medical Dataset Generalisation}
 \label{sec:generalisation_review}
 Review
 
@@ -24,31 +24,31 @@ Review
 
 \section{Datasets}
 \label{sec:generalisation_datasets}
-In this study, two datasets of community-acquired macroscopic (non-dermoscopic) images were curated. These datasets were extracted from previously stored images referred from primary to secondary care in Tayside and Forth Valley, United Kingdom. The Tayside dataset was sourced from NHS Tayside~\footnote{NHS Tayside: \url{nhstayside.scot.nhs.uk}} and the Forth Valley dataset was sourced from the NHS Forth Valley~\footnote{NHS Forth Valley: \url{nhsforthvalley.com}}. The inclusion of these datasets allows for the examination of a diverse range of macroscopic images acquired in a community setting.
+In this study, two datasets of community-acquired macroscopic (non-dermoscopic) images were curated. These datasets were extracted from previously stored images referred from primary to secondary care in Tayside and Forth Valley, United Kingdom. The inclusion of these datasets allows for the examination of a diverse range of macroscopic images acquired in a community setting. Both sets of images were annotated using the same procedure explained in Section~\ref{subsec:annotation_procedure}.
 
 \subsection{Tayside Dataset}
 \label{subsec:tayside_dataset}
-The Tayside images were obtained by primary care practitioners using a variety of cameras, from various cutaneous anatomical sites, under non-standardized lighting, framing, focusing, and acquisition settings. After the removal of duplicates and images that were not of clinical use, the data were cross-linked with the electronic patient record to determine the final diagnosis for the images. The NHS Tayside has an in-house diagnostic database, Dermabase, where all patient contacts are required to have a consultant-level diagnostic label using the BAD diagnostic index, which corresponds to ICD-10. The images were then de-identified manually and cropped to highlight abnormalities if necessary. The image labelling was performed by four clinicians, including a consultant (CF) who had the final decision on all diagnoses, thus producing a database of dermatology images defined by a consultant as well as diagnoses reviewed by a consultant.
+The Tayside dataset, sources from NHS Tayside~\footnote{NHS Tayside: \url{nhstayside.scot.nhs.uk}}, is centred on community-acquired skin lesion data, which possess a unique quality, as they represent real-world data capture. The images were obtained by primary care practitioners utilizing a diverse array of cameras, from various cutaneous anatomical sites, utilizing non-standardized lighting, framing, focusing, and acquisition settings. The dataset is intended for triage experiments, with the goal of reliably identifying common benign conditions in a real-world clinical setting. This dataset not only represents real-world teledermatology images acquired by primary care practitioners, but it also serves as a proxy for international skin datasets, where high-quality images and dermoscopy may not be readily available.
 
 \subsection{Forth Valley Dataset}
 \label{subsec:forth_valley_dataset}
-Forth Valley Data
+The Forth Valley dataset was procured by medical photographers, who were referred for specialist assessment by primary care practitioners within NHS Forth Valley~\footnote{NHS Forth Valley: \url{nhsforthvalley.com}}. The medical photographers possess a higher degree of expertise in the acquisition of photos of skin lesions, despite potentially lacking specialized knowledge in the field of dermatology. The medical photographers employ standard equipment, such as cameras, lighting, and backgrounds, to ensure uniformity in image quality. Furthermore, a standardized pattern of image capture is utilized to ensure high-quality, wide-angle, and close-up macro images.
 
 \subsection{Annotation Procedure}
 \label{subsec:annotation_procedure}
-Annotation Procedure
+The dataset underwent a comprehensive annotation process that adhered to strict ethical guidelines and protocols for ensuring the quality and clinical usefulness of the images. This included the removal of duplicate images and those that were not clinically relevant, as well as the de-identification and cropping of images to highlight any abnormalities. The images were then assigned a diagnostic label using the British Association of Dermatologists diagnostic index~\footnote{BAD Clinical Guidelines: \url{https://www.bad.org.uk/guidelines-and-standards/clinical-guidelines/}}, which corresponds to the International Classification of Diseases (version 10)~\footnote{ICD-10: \url{https://icd.who.int/browse10/2019/en}}. The assignment of these labels was conducted by two consultant-level dermatologists, registered on the UK General Medical Council specialist register of dermatologists~\footnote{UK GMC Medical Register: \url{https://www.gmc-uk.org/registration-and-licensing/the-medical-register/}}, and any discrepancies were resolved by a third consultant-level dermatologist. This decision was based on all available clinical information, including pathology reports from a consultant pathologist. The labels represent real sources of data, with diagnoses for malignancy being derived from pathology, and for benign lesions, based on the opinions of consultant dermatologists. The risk of serious misdiagnosis, such as mistaking malignant disease for benign disease, is less than 1 in 10,000, as per the audit experience of this group. The full annotation procedure is presented in detail for further reference.
 
 \begin{enumerate}
-	\item Ensure Caldicott/Ethical approvals are in place.
-	\item Open the first patient record. 
-	\item View images. For each image determine whether to keep it as potentially diagnostically useful, keep as a negative control, or discard it.
+	\item Ensure the necessary Caldicott/Ethical approvals are in place. 
+	\item Proceed to open the first patient record.
+	\item Proceed to view the images. For each image, determine whether to retain it as potentially diagnostically useful, retain as a negative control, or discard it.
 	\begin{enumerate}
-		\item Keep as potentially diagnostically useful if any triage-level information can be obtained from the image.
-		\item Keep as negative control if a clinical image of skin without even triage level information i.e., where photographic information is insufficient to make a skin diagnosis. This may include images which are blurred by background details e.g., scarring or tattooing.
+		\item Retain as potentially diagnostically useful if any triage-level information can be obtained from the image.
+		\item Retain as negative control if a clinical image of skin without even triage level information i.e., where photographic information is insufficient to make a skin diagnosis. This may include images which are blurred by background details e.g., scarring or tattooing.
 		\item Discard the image if: a. No skin clinical images present, e.g., a clinical letter with no images may be in your system, X-ray image b. Duplicate image, i.e., multiple images, of which you will choose the best single view.
 	\end{enumerate}
-	\item If keeping the image, anonymise where necessary. This may involve the removal of distinguishing features e.g., a tattoo, a label with patient details, or full-face views. Minimise cropping to ensure the remaining image has a maximum resolution. 
-	\item Where multiple skin lesions, attempt to crop the image to ensure one lesion per image. Minimise cropping to ensure the remaining image has a maximum resolution.
+	\item If retaining the image, anonymize where necessary. This may involve the removal of distinguishing features e.g., a tattoo, a label with patient details, or full-face views. Minimize cropping to ensure the remaining image has a maximum resolution. 
+	\item Where multiple skin lesions, attempt to crop the image to ensure one lesion per image. Minimize cropping to ensure the remaining image has a maximum resolution.
 	\item For multiple skin lesions of the same disease process/widespread disease, if not possible to crop sufficiently, ensure all skin lesions have the same diagnostic label and are the same disease process.
 	\item Label the image with the diagnosis using BAD Diagnostic Index.
 \end{enumerate}
@@ -115,7 +115,7 @@ To facilitate deep learning experiments, the four skin lesion datasets used in t
 \label{subsec:generalisation_training}
 In this study, we employed two methods for image classification using deep learning. The first method was a convolutional neural network, specifically an EfficientNet architecture~\citep{tan2019efficient} with a compound coefficient of 7 and an additional fully connected layer of 512 neurons preceding the output layer. The second method was a SWIN-B transformer~\citep{liu2021swin}, a state-of-the-art visual transformer network for image classification.
 
-Subsequent training sessions were conducted for 40 epochs, with the model being saved each time the lowest validation loss was achieved. The weights were optimized using stochastic gradient descent with batches of 16 images and a triangular$^2$ cyclical scheduler~\citep{smith2017cyclical}, which alternated the learning rate between 10-5 and 10-2 and the momentum between 0.8 and 0.9. All images were pre-processed by cropping, resizing to 224 x 224 pixels, and normalizing the pixel values between 0.0 and 1.0. Data augmentation was used to improve generalization, specifically using a range of geometric and photometric transformations applied randomly when sampled. XXXX ADD MORE INFO
+Subsequent training sessions were conducted for 40 epochs, with the model being saved each time the lowest validation loss was achieved. The weights were optimized using stochastic gradient descent with batches of 16 images and a triangular$^2$ cyclical scheduler~\citep{smith2017cyclical}, which alternated the learning rate between 10-5 and 10-2 and the momentum between 0.8 and 0.9. All images were pre-processed by cropping, resizing to 224 x 224 pixels, and normalizing the pixel values between 0.0 and 1.0. Data augmentation was used to improve generalization, specifically using a range of geometric and photometric transformations applied randomly when sampled.
 
 Given an image, the deep network models predicted class probabilities for each of the seven diagnostic classes. These probabilities were constrained, by definition, to sum to one. Three of the seven classes represented malignant lesions. By summing the probabilities of these three classes, we obtained the probability that the observed lesion is malignant, assuming the class probabilities computed were well-calibrated~\citep{carse2022calibration}. We adopted this rule to evaluate the ability of the CNN and SWIN transformer models to identify malignant lesions. Specifically, we used ROC curves to quantify the sensitivity-specificity trade-offs that can be obtained on our macroscopic image datasets. The models were pretrained on SD-260 data and then trained on either Tayside or Forth Valley data.
 

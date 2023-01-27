@@ -25,9 +25,9 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{64}{figure.caption.58}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)\relax }}{65}{figure.caption.59}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the SD-260 dataset\nobreakspace {}\citep {yang2019self}.\relax }}{72}{figure.caption.60}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{77}{figure.caption.64}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{78}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the SD-260 dataset\nobreakspace {}\citep {yang2019self}.\relax }}{73}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{78}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{79}{figure.caption.65}%
 \contentsline {figure}{\numberline {6.4}{\ignorespaces ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }}{81}{figure.caption.66}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

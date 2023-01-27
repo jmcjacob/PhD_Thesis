@@ -97,14 +97,14 @@
 \contentsline {section}{\numberline {5.7}Conclusion}{66}{section.5.7}%
 \contentsline {chapter}{\numberline {6}Dataset Generalisation}{67}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Introduction}{67}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Generalisation Review}{69}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Literature Review of Medical Dataset Generalisation}{69}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Datasets}{69}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Tayside Dataset}{69}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Forth Valley Dataset}{70}{subsection.6.3.2}%
 \contentsline {subsection}{\numberline {6.3.3}Annotation Procedure}{70}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Generalisation Experiments}{71}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Datasets}{71}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Training Parameters}{73}{subsection.6.4.2}%
+\contentsline {section}{\numberline {6.4}Generalisation Experiments}{72}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Datasets}{72}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Training Parameters}{72}{subsection.6.4.2}%
 \contentsline {subsection}{\numberline {6.4.3}Experiment Setup}{74}{subsection.6.4.3}%
 \contentsline {subsection}{\numberline {6.4.4}Results}{75}{subsection.6.4.4}%
 \contentsline {section}{\numberline {6.5}Conclusion}{78}{section.6.5}%
