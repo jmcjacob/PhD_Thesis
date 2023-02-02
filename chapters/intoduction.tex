@@ -44,7 +44,7 @@ Automated image analysis of skin lesions has potential to improve diagnostic dec
 % Needs editing when experiment results are in.
 We introduce EC-SelectiveNet, a modification to SelectiveNet that discards the selection head at test time, making decisions based on expected costs instead. Experiments show that training for full coverage is beneficial even when operating at lower coverage, and that EC-SelectiveNet outperforms standard cross-entropy training, whether temperature scaling or Monte Carlo dropout averaging are used, in both symmetric and asymmetric cost settings.
 
-\subsection*{Dataset Generalisation}
+\subsection*{Cross Site Generalisation}
 Background Deep learning has been reported to diagnostically classify skin lesion images as accurately as accredited dermatologist in certain highly curated datasets. Most images of skin disease in primary and secondary care are macroscopic and lack accompanying dermoscopy. These real-world images are more varied and challenging, and captured on a plethora of devices. Further investigation of generalisation across populations and acquisition settings is needed. 
 Objectives To evaluate the ability of deep neural network classifiers to generalise to macroscopic real-world derived NHS datasets, obtained in a specific use case scenario, and to investigate the effect of pre-training on external datasets. 
 Methods Two diagnostically labelled image datasets were prepared consisting of 2218 community-acquired images from NHS Tayside and 1518 macroscopic images from NHS Forth Valley. Two further datasets with the same seven diagnostic labels were extracted from public domain dermoscopic (ISIC) and non-dermoscopic (SD-260) datasets. TO BE COMPLETED…

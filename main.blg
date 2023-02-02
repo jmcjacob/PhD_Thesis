@@ -38,45 +38,45 @@ Database file #6: refs/generalisation.bib
 Warning--I didn't find a database entry for "Tschandl2018"
 Warning--can't use both volume and number fields in lewis1995sequential
 Warning--can't use both volume and number fields in mukherjee2019clustergan
-You've used 157 entries,
+You've used 161 entries,
             2909 wiz_defined-function locations,
-            1462 strings with 37385 characters,
-and the built_in function-call counts, 995907 in all, are:
-= -- 163753
-> -- 14645
+            1483 strings with 38275 characters,
+and the built_in function-call counts, 1033199 in all, are:
+= -- 169982
+> -- 15177
 < -- 11
-+ -- 80583
-- -- 4565
-* -- 88533
-:= -- 193899
-add.period$ -- 157
-call.type$ -- 157
-change.case$ -- 2196
-chr.to.int$ -- 154
-cite$ -- 159
-duplicate$ -- 3126
-empty$ -- 5872
-format.name$ -- 5113
-if$ -- 180130
++ -- 83727
+- -- 4733
+* -- 91933
+:= -- 201062
+add.period$ -- 161
+call.type$ -- 161
+change.case$ -- 2252
+chr.to.int$ -- 158
+cite$ -- 163
+duplicate$ -- 3189
+empty$ -- 6000
+format.name$ -- 5293
+if$ -- 186841
 int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 159
-newline$ -- 475
-num.names$ -- 1674
-pop$ -- 724
+missing$ -- 163
+newline$ -- 487
+num.names$ -- 1718
+pop$ -- 734
 preamble$ -- 1
-purify$ -- 2355
+purify$ -- 2415
 quote$ -- 0
-skip$ -- 2909
+skip$ -- 2965
 stack$ -- 0
-substring$ -- 235042
-swap$ -- 910
-text.length$ -- 2209
+substring$ -- 244129
+swap$ -- 921
+text.length$ -- 2265
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 622
+type$ -- 638
 warning$ -- 2
-while$ -- 3560
+while$ -- 3650
 width$ -- 0
-write$ -- 2204
+write$ -- 2260
 (There were 5 error messages)

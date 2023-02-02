@@ -2,7 +2,8 @@
 \label{sec:generalisation_intro}
 Recent years have seen significant advancements in the use of deep learning for the dermatological classification of skin lesion images~\citep{du2020ai,wu2022skin}. Deep learning classifiers have been shown to be particularly effective with large datasets, such as the ISIC archive, which have enabled substantial progress in this field~\citep{tschandl2018ham10000,wen2021characteristics}. Studies utilizing high-quality datasets have reported performance that is comparable to or surpasses that of dermatologists in the classification of skin lesions~\citep{esteva2017dermatologist,haenssle2018man,han2018classification,tschandl2019expert}. Additionally, research has investigated the ability of deep learning classifiers to accurately classify macroscopic clinical images, as opposed to solely dermoscopic images~\citep{fujisawa2019deep}. However, it should be noted that community-acquired images are often of variable quality, with wider and less consistent fields of view, and may include visual distractions.
 
-Current deep learning classifiers for medical images have been observed to exhibit poor generalization across different healthcare systems, acquisition protocols, and patient populations. This phenomenon has been documented in several studies, with evaluations typically being conducted in an internal manner, where the model training and testing datasets are drawn from the same source (e.g., \cite{han2018classification}). However, there remains a significant degree of uncertainty regarding the ability of these models to generalize across diverse domains, datasets, and imaging modalities.
+Current deep learning classifiers for medical images have been observed to exhibit poor generalization across different healthcare systems, acquisition protocols, and patient populations. This phenomenon has been documented in several studies, with evaluations typically being conducted in an internal manner, where the model training and testing datasets are drawn from the same source (e.g., \cite{han2018classification}). However, there remains a significant degree of uncertainty regarding the ability of these models to generalize across diverse domains, datasets, and imaging modalities. 
+
 Given the complexity of the medical imaging domain, it may be unrealistic to expect the development of a universally applicable skin lesion classifier. A more practical approach may involve the utilization of local datasets to adapt models to specific target populations and healthcare systems. This approach would involve leveraging the knowledge acquired from these datasets to fine-tune existing models, thus increasing their applicability and performance within specific domains. This approach has been proposed in several studies and is considered a more realistic and practical solution to the challenges of generalization in deep learning-based medical image analysis.
 
 The creation and curation of labelled datasets can be a costly and time-consuming task, as highlighted in recent studies such as \cite{chin2022prepare}. To address this issue, transfer learning~\citep{srinidhi2020deep} has emerged as a valuable approach for utilizing knowledge acquired from large datasets in other domains and applying it to a target domain with limited data. This method has been widely adopted in the field of medical image analysis, as it allows for the fine-tuning of features learned from large datasets for use in smaller datasets within the medical domain. The effectiveness of transfer learning, however, is dependent on the similarity between the source and target domains, as well as the deep learning models utilized, as noted in studies such as \cite{matsoukas2022makes}. For instance, the utilization of knowledge acquired from the large ImageNet dataset (Deng et al., 2009) has been extensively applied in medical image analysis, despite the visual dissimilarity between the images in ImageNet~\citep{deng2009imagenet} and medical images. This approach has been demonstrated to be effective in the deep classification of the ISIC 2019 dermoscopy dataset, with evidence of feature re-use~\citep{matsoukas2022makes}.
@@ -18,13 +19,34 @@ Work is currently unpublished but is aiming to be submitted to the British Journ
 
 \section{Literature Review of Medical Dataset Generalisation}
 \label{sec:generalisation_review}
-Review
+The utilization of deep learning in the field of medical imaging has demonstrated noteworthy performance outcomes. However, when these models are deployed to novel populations, their efficacy may be impacted by the phenomenon known as "domain shift." This phenomenon occurs when the distribution of features in the new population differs from the distribution of features in the training data, leading to weakened performance outcomes. This issue has been identified as a crucial challenge in implementing artificial intelligence systems in clinical settings, as highlighted in \cite{kelly2019key}. Additionally, this weakness arising from domain shift can result in unintended consequences such as gender or racial discrimination bias~\citep{glocker2022risk}. The utilization of medical datasets for the training of deep learning models is often hindered by the lack of diversity, which is often derived from a single source with a specific population distribution. Domain shift can also occur due to differences in the image capture methods, such as differences in the intensity distribution of MRI scanners at different sites~\citep{prados2017spinal} or staining of histological slides~\citep{stacke2020measuring}. These complexities pose significant challenges in delivering artificial intelligence systems in clinical settings.
+
+\subsection{Population Domain Shift}
+\label{subsec:new_data_populations}
+
+\subsection{Modality Domain Shift}
+\label{subsec:modality_generalisation}
 
 
 
 \section{Datasets}
 \label{sec:generalisation_datasets}
 In this study, two datasets of community-acquired macroscopic (non-dermoscopic) images were curated. These datasets were extracted from previously stored images referred from primary to secondary care in Tayside and Forth Valley, United Kingdom. The inclusion of these datasets allows for the examination of a diverse range of macroscopic images acquired in a community setting. Both sets of images were annotated using the same procedure explained in Section~\ref{subsec:annotation_procedure}.
+
+\begin{figure}
+	\centering
+	\captionsetup[subfigure]{singlelinecheck=false}
+	\begin{tabular}{ccc}
+		\subcaptionbox{\centering Tayside Melanoma}{\includegraphics[width=0.3\textwidth]{images/TAY_MEL.jpg}} &
+		\subcaptionbox{\centering Tayside Melanocytic Nevus}{\includegraphics[width=0.3\textwidth]{images/TAY_NV.jpg}} &
+		\subcaptionbox{\centering Tayside Benign Actinic Keratosis}{\includegraphics[width=0.3\textwidth]{images/TAY_BKL.jpg}} \\
+		\subcaptionbox{\centering Forth Valley Melanoma}{\includegraphics[width=0.3\textwidth]{images/FV_MEL.jpg}} &
+		\subcaptionbox{\centering Forth Valley Melanocytic Nevus}{\includegraphics[width=0.3\textwidth]{images/FV_NV.jpg}} &
+		\subcaptionbox{\centering Forth Valley Actinic Keratosis}{\includegraphics[width=0.3\textwidth]{images/FV_AK.jpg}}
+	\end{tabular}
+	\caption{Example images from the Tayside and Forth Valley datasets.}
+	\label{fig:nhs_dataset_examples}
+\end{figure}
 
 \subsection{Tayside Dataset}
 \label{subsec:tayside_dataset}

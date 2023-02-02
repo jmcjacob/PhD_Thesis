@@ -341,6 +341,12 @@ Gidaris, S., Singh, P. \harvardand\ Komodakis, N.  \harvardyearleft
   2018\harvardyearright , `Unsupervised representation learning by predicting
   image rotations', {\em arXiv preprint arXiv:1803.07728} .
 
+\harvarditem[Glocker et~al.]{Glocker, Jones, Bernhardt \harvardand\
+  Winzeck}{2022}{glocker2022risk}
+Glocker, B., Jones, C., Bernhardt, M. \harvardand\ Winzeck, S.
+  \harvardyearleft 2022\harvardyearright , `Risk of bias in chest x-ray
+  foundation models', {\em arXiv preprint arXiv:2209.02965} .
+
 \harvarditem{Glorot \harvardand\ Bengio}{2010}{glorot2010understanding}
 Glorot, X. \harvardand\ Bengio, Y.  \harvardyearleft 2010\harvardyearright ,
   Understanding the difficulty of training deep feedforward neural networks,
@@ -518,6 +524,13 @@ Kampffmeyer, M., Salberg, A.-B. \harvardand\ Jenssen, R.  \harvardyearleft
   of uncertainty in urban remote sensing images using deep convolutional neural
   networks, {\em in} `Proceedings of the IEEE conference on computer vision and
   pattern recognition workshops', pp.~1--9.
+
+\harvarditem[Kelly et~al.]{Kelly, Karthikesalingam, Suleyman, Corrado
+  \harvardand\ King}{2019}{kelly2019key}
+Kelly, C.~J., Karthikesalingam, A., Suleyman, M., Corrado, G. \harvardand\
+  King, D.  \harvardyearleft 2019\harvardyearright , `Key challenges for
+  delivering clinical impact with artificial intelligence', {\em BMC medicine}
+  {\bf 17},~1--9.
 
 \harvarditem{Kingma \harvardand\ Ba}{2014}{kingma2014adam}
 Kingma, D.~P. \harvardand\ Ba, J.  \harvardyearleft 2014\harvardyearright ,
@@ -746,6 +759,14 @@ Pop, R. \harvardand\ Fulop, P.  \harvardyearleft 2018\harvardyearright , `Deep
   ensemble bayesian active learning: Addressing the mode collapse issue in
   monte carlo dropout via ensembles', {\em arXiv preprint arXiv:1811.03897} .
 
+\harvarditem[Prados et~al.]{Prados, Ashburner, Blaiotta, Brosch,
+  Carballido-Gamio, Cardoso, Conrad, Datta, D{\'a}vid, De~Leener
+  et~al.}{2017}{prados2017spinal}
+Prados, F., Ashburner, J., Blaiotta, C., Brosch, T., Carballido-Gamio, J.,
+  Cardoso, M.~J., Conrad, B.~N., Datta, E., D{\'a}vid, G., De~Leener, B. et~al.
+   \harvardyearleft 2017\harvardyearright , `Spinal cord grey matter
+  segmentation challenge', {\em Neuroimage} {\bf 152},~312--329.
+
 \harvarditem{Prechelt}{1998}{prechelt1998early}
 Prechelt, L.  \harvardyearleft 1998\harvardyearright , Early stopping-but
   when?, {\em in} `Neural Networks: Tricks of the trade', Springer, pp.~55--69.
@@ -870,6 +891,13 @@ Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. \harvardand\
   Salakhutdinov, R.  \harvardyearleft 2014\harvardyearright , `Dropout: a
   simple way to prevent neural networks from overfitting', {\em The journal of
   machine learning research} {\bf 15}(1),~1929--1958.
+
+\harvarditem[Stacke et~al.]{Stacke, Eilertsen, Unger \harvardand\
+  Lundstr{\"o}m}{2020}{stacke2020measuring}
+Stacke, K., Eilertsen, G., Unger, J. \harvardand\ Lundstr{\"o}m, C.
+  \harvardyearleft 2020\harvardyearright , `Measuring domain shift for deep
+  learning in histopathology', {\em IEEE journal of biomedical and health
+  informatics} {\bf 25}(2),~325--336.
 
 \harvarditem[Szegedy et~al.]{Szegedy, Vanhoucke, Ioffe, Shlens \harvardand\
   Wojna}{2016}{szegedy2016rethinking}
