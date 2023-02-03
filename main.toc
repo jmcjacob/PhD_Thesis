@@ -70,27 +70,26 @@
 \contentsline {section}{\numberline {4.5}Conclusion}{53}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Asymmetrical Selective Classification}{54}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Introduction}{54}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Problem Statement}{54}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.1}Robust Selective Classification for Skin\\Lesions}{54}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Summary of Work}{55}{subsection.5.1.2}%
 \contentsline {section}{\numberline {5.2}Literature Review}{56}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Asymmetrical Selective Classification}{56}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Selective Classification Methods}{58}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Predictive Probabilities}{58}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Calibrated Predictive Probabilities}{58}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Bayesian Uncertainty}{58}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}SelectiveNet}{59}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Expected Cost SelectiveNet}{60}{subsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.4.2}Bayesian Uncertainty}{59}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}SelectiveNet}{60}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Expected Cost SelectiveNet}{61}{subsection.5.4.4}%
 \contentsline {section}{\numberline {5.5}Binary Experiments}{61}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Dataset}{61}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Experiment Setup}{62}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.1}Experiment Setup}{61}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Dataset}{61}{subsection.5.5.2}%
 \contentsline {subsection}{\numberline {5.5.3}Training Parameters}{62}{subsection.5.5.3}%
 \contentsline {subsection}{\numberline {5.5.4}Results}{62}{subsection.5.5.4}%
 \contentsline {subsubsection}{SelectiveNet: Effect of Target Coverage}{62}{section*.51}%
-\contentsline {subsubsection}{Does SelectiveNet Training Help?}{62}{section*.53}%
+\contentsline {subsubsection}{Does SelectiveNet Training Help?}{63}{section*.53}%
 \contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{63}{section*.54}%
 \contentsline {subsubsection}{Asymmetric Costs}{64}{section*.57}%
 \contentsline {section}{\numberline {5.6}Multi class Experiments}{65}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Dataset}{65}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.1}Dataset}{66}{subsection.5.6.1}%
 \contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{66}{subsection.5.6.2}%
 \contentsline {subsection}{\numberline {5.6.3}Training Parameters}{66}{subsection.5.6.3}%
 \contentsline {subsection}{\numberline {5.6.4}Results}{66}{subsection.5.6.4}%
@@ -120,8 +119,8 @@
 \contentsline {subsection}{\numberline {7.4.3}Selective Classification}{83}{subsection.7.4.3}%
 \contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{84}{subsection.7.4.4}%
 \contentsline {chapter}{References}{85}{subsection.7.4.4}%
-\contentsline {chapter}{Appendices}{102}{section*.69}%
-\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{103}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}First Authored Publications}{103}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Contributed Publications}{104}{section.a.A.2}%
-\contentsline {section}{\numberline {A.3}Awards}{104}{section.a.A.3}%
+\contentsline {chapter}{Appendices}{101}{section*.69}%
+\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{102}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}First Authored Publications}{102}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Contributed Publications}{103}{section.a.A.2}%
+\contentsline {section}{\numberline {A.3}Awards}{103}{section.a.A.3}%

@@ -30,53 +30,53 @@ Repeated entry---line 883 of file refs/unsupervised.bib
 I'm skipping whatever remains of this entry
 Database file #4: refs/calibration.bib
 Database file #5: refs/selective.bib
-Repeated entry---line 719 of file refs/selective.bib
+Repeated entry---line 701 of file refs/selective.bib
  : @inproceedings{smith2017cyclical
  :                                 ,
 I'm skipping whatever remains of this entry
 Database file #6: refs/generalisation.bib
-Warning--I didn't find a database entry for "Tschandl2018"
+Warning--I didn't find a database entry for "Geifman2019Selective"
 Warning--can't use both volume and number fields in lewis1995sequential
 Warning--can't use both volume and number fields in mukherjee2019clustergan
-You've used 161 entries,
+You've used 156 entries,
             2909 wiz_defined-function locations,
-            1483 strings with 38275 characters,
-and the built_in function-call counts, 1033199 in all, are:
-= -- 169982
-> -- 15177
-< -- 11
-+ -- 83727
-- -- 4733
-* -- 91933
-:= -- 201062
-add.period$ -- 161
-call.type$ -- 161
-change.case$ -- 2252
-chr.to.int$ -- 158
-cite$ -- 163
-duplicate$ -- 3189
-empty$ -- 6000
-format.name$ -- 5293
-if$ -- 186841
-int.to.chr$ -- 8
+            1462 strings with 37617 characters,
+and the built_in function-call counts, 995916 in all, are:
+= -- 163643
+> -- 14864
+< -- 9
++ -- 80668
+- -- 4635
+* -- 88689
+:= -- 193970
+add.period$ -- 156
+call.type$ -- 156
+change.case$ -- 2182
+chr.to.int$ -- 156
+cite$ -- 158
+duplicate$ -- 3044
+empty$ -- 5804
+format.name$ -- 5179
+if$ -- 180019
+int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 163
-newline$ -- 487
-num.names$ -- 1718
-pop$ -- 734
+missing$ -- 158
+newline$ -- 472
+num.names$ -- 1668
+pop$ -- 708
 preamble$ -- 1
-purify$ -- 2415
+purify$ -- 2340
 quote$ -- 0
-skip$ -- 2965
+skip$ -- 2805
 stack$ -- 0
-substring$ -- 244129
-swap$ -- 921
-text.length$ -- 2265
+substring$ -- 235038
+swap$ -- 842
+text.length$ -- 2193
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 638
+type$ -- 618
 warning$ -- 2
-while$ -- 3650
+while$ -- 3539
 width$ -- 0
-write$ -- 2260
+write$ -- 2195
 (There were 5 error messages)
