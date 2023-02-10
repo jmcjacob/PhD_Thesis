@@ -160,6 +160,7 @@ This section details the datasets, training parameters, experimental setup and r
 \subsection{Experiment Setup}
 
 \subsection{Dataset}
+\label{subsec:selective_binary_dataset}
 The ISIC Challenge 2019~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}, was employed in this study and consists of a total of 25,331 images spanning eight distinct classes, including melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. For the purposes of the experiments, two datasets were compiled from the ISIC 2019 data, referred to as $S_{in}$ and $S_{unknown}$.
 
 \begin{figure}[h]
@@ -186,8 +187,19 @@ $S_{unknown}$: : These data consisted of 4,360 images from classes that were not
 
 The combination of the $S_{in}$ and $S_{unknown}$ test sets is referred to as the $S_{combined}$ dataset. Figure \ref{fig:isic_dataset_examples} provides illustrative examples from the ISIC 2019 dataset.
 
+In the current study, a random split strategy was employed to divide the dataset into three distinct sets: training, validation, and testing, in the ratio of 60:20:20. To ensure comparability across all images, normalization was performed utilizing the standard deviation and mean calculation for each color channel of the images. Subsequently, each image underwent resizing to 256x256, and during the training phase, data augmentation was carried out by implementing randomized flips and rotations of 90 degrees.
 
 \subsection{Training Parameters}
+\label{subsec:selective_binary_training}
+The implementation of the conventional convolutional neural network comprises an EfficientNet~\citep{tan2019efficient} encoder with a compound coefficient of 7. This encoder is followed by an average pooling operation that reduces the width and height by a factor of 8, thereby compressing the encoding size from 163840 to 2560. Subsequently, the architecture includes a hidden layer equipped with 512 neurons and a rectified linear unit activation function, which is followed by a final output layer with 2 output neurons and a softmax activation function. To mitigate overfitting, dropout regularization is applied with a drop chance of 0.5 before and after the hidden layer. In total, the architecture encompasses 275 layers (convolutional and fully connected) with 65,099,224 total parameters. Additionally, the use of dropout during training enables the simulation of a Bayesian neural network through Monte Carlo dropout~\citep{gal2016dropout} by sampling the trained model with the same dropout rates.
+
+The SelectiveNet model architecture~\citep{geifman2019selectivenet}, is constructed upon an EfficientNet encoder, followed by average pooling and a fully connected hidden layer containing 512 neurons. The prediction head of the model comprises a single fully connected output layer with 2 neurons and a softmax activation function. The selection head is composed of an additional hidden layer with 512 neurons and a softmax activation function, which is followed by an output layer with a single neuron and a sigmoid activation function. The auxiliary head is similarly structured to the classification head. These additional components result in an increased number of layers in the SelectiveNet architecture, bringing the total to 277 layers, with 65,364,449 parameters in total.
+
+The training configurations were standardized across all experiments. The models were trained utilizing 16-bit precision to compute gradients, and Stochastic Gradient Descent was employed to optimize the model parameters. The optimization process employed a triangular cyclical scheduler~\citep{smith2017cyclical} that cyclically adjusted the learning rate between 0.00001 and 0.1 and the momentum between 0.8 and 0.9 every 2000 training steps. The experiments were performed using mini-batches of 8 images each.
+
+During the training of the conventional convolutional neural network, the cross-entropy loss function was utilized to evaluate the model's performance. To mitigate overfitting, dropout regularization was applied with a drop rate of 0.5 before both the hidden and output layers. By consistently applying the same dropout pattern during both training and evaluation, the convolutional neural network can be treated as a Bayesian Neural Network and sampled multiple times through Monte Carlo dropout~\citep{gal2016dropout}.
+
+The SelectiveNet model's performance is evaluated using a loss function that integrates the outputs of the three heads, predictive ($p$), selective ($g$), and auxiliary ($h$). The predictive and selective heads are utilized to calculate a portion of the loss $L_{p,g}$, which optimizes the model for a specific target coverage. The auxiliary head, in contrast, calculates cross-entropy loss $L_h$, and the two components are weighted together using the parameter $\alpha$ (as specified in Equation \ref{eq:selective_loss}). In the present set of experiments, the parameter $\alpha$ has been set to 0.5 and multiple target coverages have been explored. The remaining hyperparameters associated with the SelectiveNet loss function have been set to the values recommended by \cite{geifman2019selectivenet}.
 
 \subsection{Results}
 \subsubsection{SelectiveNet: Effect of Target Coverage}
@@ -247,12 +259,37 @@ Figure \ref{fig:temp_scaling} plots the effect of temperature scaling. Both the 
 \label{sec:selective_multi_class_experiments}
 This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion classification. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Asymetric_Selective_Dermatology}}.
 
-\subsection{Dataset}
-The ISIC Challenge 2019~\citep{codella2018skin,combalia2019csn20000,tschandl2018ham10000} dataset which consists in total of 25,331 images covering 8 classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma was used for this study. For this study the dataset set is randomly split into training, validation and testing with the ratio $0.6:0.2:0.2$. Each image is first normalised using the standard deviation and mean across each colour channel. Each of the images in the dataset is squared by cropping the horizontal sides evenly until the image is square, each image is then resized to 256 by 256. Augmentation is used during training by applying random augmentations to each image as it is loaded each epoch. Random 90 degree rotations, horizontal and vertical flips, make up the set of augmentations.
-
 \subsection{Experiment Setup}
 
+\subsection{Dataset}
+In this study, the ISIC Challenge 2019 dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} was employed. The data was processed using a similar methodology to the one described in Section~\ref{subsec:selective_binary_dataset}. A random splitting method was utilized to divide the dataset into three subsets: training, validation, and testing, in a 60:20:20 ratio. Prior to the training process, the images underwent normalization, which involved computing the standard deviation and mean across each colour channel. Then, the images were square-cropped by evenly trimming the horizontal sides and resized to 256x256. During the training phase, data augmentation was applied by randomly augmenting the images at each epoch. The augmentations consisted of 90-degree rotations and horizontal and vertical flips.
+
 \subsection{Training Parameters}
+The architecture of the convolutional neural networks and SelectiveNet in this study was consistent with the binary experiments outlined in Section~\ref{subsec:selective_binary_training}. The primary distinction between the two models lies in the number of output neurons in the output layer of the convolutional neural network and the predictive and auxiliary heads of the SelectiveNet architecture, which was increased to 8, resulting in a total of 65,102,296 parameters for the convolutional neural network model and 65,370,593 parameters for the SelectiveNet model.
+
+Additionally, the Bayes by Backprop model~\citep{Blundell2015Weight} utilized in this study was implemented as a convolutional neural network, with the final two fully connected layers replaced by fully connected Bayesian layers. In these layers, each parameter was represented by a distribution initialized with a mean and standard deviation randomly drawn from the ranges 0 to 0.1 and -7 to 0.1, respectively. The parameter priors were modelled using a scale mixture of two Gaussian distributions (Equation \ref{eq:scalemixture}) with standard deviation values of 0.1 and 0.4 and a $\pi$ weighting the two Gaussian distributions of 0.5.
+
+\begin{equation}
+	P(w) = \prod_j\pi N(w_j|0, \sigma_1) + (1-\pi) N(w_j|0, \sigma_2)
+	\label{eq:scalemixture}
+\end{equation}
+
+The convolutional neural network and SelectiveNet models were trained with the same parameters as those presented in the binary experiments described in Section~\ref{subsec:selective_binary_training}. The Bayesian Neural Network model, which was trained using the Bayes by Backprop method~\citep{Blundell2015Weight}, employed variational inference to approximate the posterior distribution over weights, $q(w|\theta)$. The parameters for the distribution, $\theta$, were determined by minimizing the KL-Divergence between the variational posterior and the true posterior. The true posterior was estimated through Monte Carlo sampling of the evidence lower bound, as expressed in Equation~\ref{eq:elbo}, where $D$ represents the dataset and $N$ denotes the number of Monte Carlo samples.
+
+\begin{equation}
+	\text{ELBO}(D, \theta) \approx \sum^N_{n=1}\log q(w^i|\theta)-\log p(w^i) - \log p(D|w^i)
+	\label{eq:elbo}
+\end{equation}
+
+The loss function utilized for training the Bayesian Neural Network model was a combination of the (ELBO) and cross-entropy. The weight assigned to the ELBO component of the loss function was modulated based on the current mini-batch, as depicted in Equation \ref{eq:elbo_weighting}, where $M$ represents the number of mini-batches per epoch and $m$ denotes the current mini-batch. This weighting approach was employed such that the early mini-batches were more influenced by Bayesian complexity and later mini-batches focused more on learning from the training data. In the experiments, the Bayesian neural network model trained with the Bayes by Backprop method was trained using a weighted combination of ELBO and cross-entropy, with the ELBO estimated using three Monte Carlo samples during training. All other training settings were equivalent to those utilized for the training of the convolutional neural network model.
+
+\begin{equation}
+	\pi_m = \frac{2^{M-m}}{2^M-1}
+	\label{eq:elbo_weighting}
+\end{equation}
+
+After training the Convolutional neural network model, it can be transformed into a Bayesian neural network using the Laplace approximation method~\citep{mackay1992bayesian}. The Laplace approximation is a technique for approximating the posterior of a model as a Gaussian distribution cantered around the parameters learned by the CNN. The curvature of the approximation is estimated through the use of approximations to the Hessian matrix~\citep{botev2017practical} at the maximum. In the experiments, Laplace approximation was applied to the last layer of the neural network due to hardware constraints, however, it has been demonstrated by~\cite{kristiadi2020being} that this approach can lead to improved calibration and estimation of predictive uncertainty. After performing the Laplace approximation, a predictive probability can be computed by averaging Monte Carlo samples.
+
 
 \subsection{Results}
 
