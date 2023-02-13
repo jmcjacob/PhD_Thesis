@@ -159,6 +159,28 @@ This section details the datasets, training parameters, experimental setup and r
 
 \subsection{Experiment Setup}
 
+
+\begin{table}[]
+	\centering
+	\caption{Binary experiment trained models and selection methods to be evaluated.}
+	\label{tab:binary-experiment-setup}
+	\begin{tabular}{|l|l|}
+		\hline
+		Model & Selection Method \\ \hline
+		Convolutional & Softmax Response \\
+		Neural Network & Temperature Scaled Softmax Response \\ \hline
+		SelectiveNet 0.7 & SelectiveNet \\
+		SelectiveNet 0.75 & EC-SelectiveNet \\
+		SelectiveNet 0.8 & Temperature Scaled EC-SelectiveNet \\
+		SelectiveNet 0.85 &  \\
+		SelectiveNet 0.9 &  \\
+		SelectiveNet $t=0.95$ &  \\
+		SelectiveNet 1.0 &  \\ \hline
+		Monte Carlo Dropout & Average Softmax Response \\
+		& Average Variance \\ \hline
+	\end{tabular}
+\end{table}
+
 \subsection{Dataset}
 \label{subsec:selective_binary_dataset}
 The ISIC Challenge 2019~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}, was employed in this study and consists of a total of 25,331 images spanning eight distinct classes, including melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. For the purposes of the experiments, two datasets were compiled from the ISIC 2019 data, referred to as $S_{in}$ and $S_{unknown}$.
@@ -203,63 +225,60 @@ The SelectiveNet model's performance is evaluated using a loss function that int
 
 \subsection{Results}
 \subsubsection{SelectiveNet: Effect of Target Coverage}
-We examined the effect of the SelectiveNet target-coverage parameter, $t$, when SelectiveNet's selection head is used to make selection decisions. Figure \ref{fig:sn_coverage} shows cost-coverage curves for values of $t$ ranging from $0.7$ to $1.0$. These are plotted for $S_{in}$, $S_{unknown}$, and $S_{combined}$. 
-
-We expected to find, in accordance with the intended purpose of this parameter, that lower values of $t$ would be effective at lower coverage. On the contrary, training with $t=1.0$ incurred the lowest test cost on $S_{in}$ for coverage values as low as $0.2$. Costs incurred on $S_{unknown}$ are higher as expected, and curves show no clear ordering; the $t=1.0$ curve, however, does show a clear reduction in cost as coverage is reduced.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.95\textwidth]{images/selectivenet_v2.png}
-	\caption{Cost-coverage curves for SelectiveNets trained with different target coverages. From left to right: \(S_{in}\), \(S_{unknown}\) and  \(S_{combined}\).}
-	\label{fig:sn_coverage}
-\end{figure}
+In order to examine the impact of the SelectiveNet target-coverage parameter, $t$, on the selection decisions made by the SelectiveNet selection head, the cost-coverage curves were plotted for various values of $t$, ranging from $0.7$ to $1.0$ with increments of $0.05$, as depicted in Figure~\ref{fig:thing}. The curves were computed for $S_{in}$, $S_{unknown}$, and $S_{combined}$. According to the design objectives of the target coverage parameter, a lower value of $t$ would result in a more effective model at lower coverages. However, the results indicate that training with a value of $t=1.0$ resulted in the lowest test cost on $S_{in}$ for coverage values as low as $0.2$. The costs incurred on $S_{unknown}$ were higher, as expected, and the curves did not exhibit a clear ordering. Nevertheless, the model trained with $t=1.0$ demonstrated a notable reduction in cost as coverage decreased.
 
 \subsubsection{Does SelectiveNet Training Help?}
-The extent to which the target coverage $t$ is enforced is controlled by the weighting parameter $\lambda$. Even when set to target full coverage ($t=1.0$), the model can trade off coverage for cost in extreme cases during training. For this reason, results obtained by SelectiveNet with $t=1.0$ will differ from those obtained by training a network without selective and auxiliary heads. We trained such a network using cross-entropy loss, retaining only the softmax predictive head. It made selection decisions at test time based on the maximum softmax output. The resulting cost-coverage curve is plotted in Figure \ref{fig:sn_coverage} (labelled `softmax'). SelectiveNet trained with a target coverage of 1.0 performed better than a standard CNN with softmax for any coverage above $0.4$.
+The extent to which the target coverage $t$ is imposed is regulated by the weighting parameter $\lambda$. Despite being set to target full coverage ($t=1.0$), the model may, in exceptional circumstances during training, compromise coverage for cost. As a result, the results obtained by SelectiveNet with $t=1.0$ may differ from those obtained through training a network without selective and auxiliary heads. These networks were trained using cross-entropy loss and only retained the softmax predictive head, making selection decisions at test time based on the maximum softmax output. The corresponding cost-coverage curve is plotted in Figure~\ref{fig:thing} (labelled “softmax”). The results indicate that SelectiveNet trained with a target coverage of 1.0 performed better than a standard convolutional neural network with a softmax response for any coverage value above $0.4$.
 
 \subsubsection{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}
-We investigated the effect of MC-Dropout on selective classification, using the mean and variance of the Monte Carlo iterations as selection scores, respectively. Figure \ref{fig:mc_dropout} compares the resulting cost-coverage curves with those obtained using a network with no dropout at test time (`softmax response'). On $S_{in}$, using the MC-Dropout average had negligible effect whereas MC variance performed a little worse than simply using the maximum softmax response. In contrast, gains in cost were obtained by MC variance on $S_{unknown}$ for which model uncertainty should be high.
-   
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.95\textwidth]{images/mc_dropout_v2.png}
-	\caption{Cost-coverage curves using MC-Dropout on $S_{in}$, $S_{unknown}$, and $S_{combined}$}
-	\label{fig:mc_dropout}
-\end{figure}
-   
-Figure \ref{fig:dataset_splits} plots curves for a softmax network using temperature scaling (trained with cross-entropy loss). Although temperature scaling improved calibration it had negligible effect on cost-coverage curves.  Figure \ref{fig:dataset_splits} also shows curves obtained using EC-SelectiveNet in which the selection head is dropped at test time. EC-SelectiveNet showed a clear benefit on both $S_{in}$ and $S_{unknown}$ compared to training a softmax network without the additional heads.
+The impact of MC-Dropout on selective classification was analyzed by using the mean and variance of the Monte Carlo iterations as selection scores. Figure~\ref{fig:thing} compares the resulting cost-coverage curves to those obtained using a network without dropout at test time (labeled “softmax response”). The results reveal that for the $S_{in}$ data, utilizing the average of Monte Carlo samples had minimal impact, whereas the variance of the Monte Carlo samples performed slightly worse than simply relying on the maximum softmax response. Conversely, significant cost savings were achieved by using the variance of the Monte Carlo samples on the $S_{unknown}$ data, where model uncertainty is expected to be high.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.95\textwidth]{images/datasets_v2.png}
-	\caption{Cost-coverage curves. From left to right: \(S_{in}\), \(S_{unknown}\) and \(S_{combined}\).}
-	\label{fig:dataset_splits}
-\end{figure}
+The effect of temperature scaling on a softmax network was analysed and the results are shown in Figure~\ref{fig:thing}. The softmax network was trained using cross-entropy loss and temperature scaling was applied to improve calibration. However, the results indicated that temperature scaling had a minimal effect on the cost-coverage curves. Furthermore, Figure~\ref{fig:thing} displays the results obtained using EC-SelectiveNet, in which the selection head was omitted during testing. The results demonstrate that EC-SelectiveNet achieved a noticeable improvement on both the $S_{in}$ and $S_{unknown}$ datasets when compared to training a standard convolutional neural network model without the auxiliary heads.
 
 \subsubsection{Asymmetric Costs}
-We investigated the effect of asymmetric mis-classification costs. Figure \ref{fig:sn_costs} compares SelectiveNet with EC-SelectiveNet ($t=1.0$). They performed similarly when costs were symmetric with SelectiveNet achieving a small cost reduction (approximately $0.015$) at middling coverage. However, in the more realistic asymmetric settings, EC-SelectiveNet achieved cost reductions of approximately $0.1$ at all coverages below about $0.8$.
+The results of comparing SelectiveNet with EC-SelectiveNet with a target coverage of $t=1.0$ are depicted in Figure~\ref{fig:thing}. In symmetric cost scenarios, the performance of both methods was comparable, with SelectiveNet exhibiting a slight advantage in terms of cost, yielding a reduction of approximately $0.015$ at intermediate coverage levels. However, when the cost matrix was asymmetric, EC-SelectiveNet demonstrated significant cost reductions of approximately $0.1$ at all coverages below approximately $0.8$.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.95\textwidth]{images/selectivenet_cost.png}
-	\caption{Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)}
-	\label{fig:sn_costs}
-\end{figure}
+The effect of temperature scaling on selective classification is presented in Figure~\ref{fig:thing}. The methodologies of both the softmax response and temperature scaling selection are founded on the principle of expected costs. The impact of temperature scaling was found to be minimal in the context of symmetrical costs. In the asymmetrical cost matrix scenario, a slight effect on selective classification was observed. This effect was consistent regardless of whether EC-SelectiveNet ($t=1.0$) or a convolutional neural network trained with cross-entropy loss was employed. As depicted in Figure~\ref{fig:thing}, the application of temperature scaling resulted in an increase in costs at high coverage levels and a reduction in costs at low coverage levels. The figure also highlights the superiority of EC-SelectiveNet in comparison to temperature scaling.
 
-Figure \ref{fig:temp_scaling} plots the effect of temperature scaling. Both the softmax response and temperature scaling selection methods are based on the expected costs. The effect of temperature scaling was negligible with symmetric costs. In the asymmetric settings it had a small effect on selective classification. This effect was similar whether using EC-SelectiveNet ($t=1.0$) or standard network training with cross-entropy loss. In both cases, temperature scaling increased costs at high coverage and reduced costs at low coverage. Figure \ref{fig:temp_scaling} also makes clear the relative advantage of EC-SelectiveNet.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.95\textwidth]{images/tmp_scaling_v2.png}
-	\caption{Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From left to right: $C_{1,0}=1$ (symmetric costs), $10$, and $50$ (highly asymmetric costs)}
-	\label{fig:temp_scaling}
-\end{figure}
 
 \section{Multi class Experiments}
 \label{sec:selective_multi_class_experiments}
 This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion classification. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Asymetric_Selective_Dermatology}}.
 
 \subsection{Experiment Setup}
+In the context of the multi-class set of experiments, it is imperative to note that all models and methods were subjected to repetition thrice, with the final results being an average of the outcomes from each run. In order to ensure a comprehensive evaluation, the training, validation, and testing splits were randomized for each of the three repetitions. A total of eleven models were trained, utilizing the validation set to determine the most suitable model for the experiments. As demonstrated in Table~\ref{tab:multi-class-experiment-setup}, the models were trained using diverse selection methods, grouped based on the similarity of the methods applied to each model.
+
+The efficacy of the selection methods employed with each of the models was evaluated using both a typical symmetrical cost matrix (Figure~\ref{fig:multiclasssymcosts}) and an asymmetrical cost matrix (Figure~\ref{fig:multiclassasymcosts}). The asymmetrical cost matrix was developed by a consultant-level dermatologist, taking into account the estimated clinical costs. However, it is important to acknowledge that in cases where multiple lesion classes are present, the cost matrix may become even more complex and thus, should be determined through consultation with relevant stakeholders such as general practitioners, patient representative groups, and health economists. It is imperative to emphasize that the values assigned to the asymmetric costs are context-dependent and should be arrived at through engagement with relevant experts, taking into consideration the specific clinical setting.
+
+\begin{table}[h]
+	\centering
+	\caption{Multi-class experiment trained models and selection methods to be evaluated.}
+	\label{tab:multi-class-experiment-setup}
+	\begin{tabular}{|l|l|}
+		\hline
+		Model & Selection Method \\ \hline
+		Convolutional & Softmax Response \\
+		Neural Network & Expected Costs \\
+		& Temperature Scaled Softmax Response \\
+		& Temperature Scaled Expected Costs \\ \hline
+		SelectiveNet $t=0.7$ & SelectiveNet \\
+		SelectiveNet $t=0.75$ & Softmax Response \\
+		SelectiveNet $t=0.8$ & Temperature Scaled Softmax Response \\
+		SelectiveNet $t=0.85$ & EC-SelectiveNet \\
+		SelectiveNet $t=0.9$ & Temperature Scaled Expected Costs \\
+		SelectiveNet $t=0.95$ &  \\
+		SelectiveNet $t=1.0$ &  \\ \hline
+		Monte Carlo Dropout & Average Softmax Response \\
+		Bayes By Backprop & Average Expected Costs \\
+		Laplace Approximation & Bayesian Sample Agreement \\
+		& Average Variance \\
+		& Predicted Class Variance \\
+		& Predictive Entropy \\
+		& Variational Ratio \\
+		& Mutual Information \\ \hline
+	\end{tabular}
+\end{table}
 
 \subsection{Dataset}
 In this study, the ISIC Challenge 2019 dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} was employed. The data was processed using a similar methodology to the one described in Section~\ref{subsec:selective_binary_dataset}. A random splitting method was utilized to divide the dataset into three subsets: training, validation, and testing, in a 60:20:20 ratio. Prior to the training process, the images underwent normalization, which involved computing the standard deviation and mean across each colour channel. Then, the images were square-cropped by evenly trimming the horizontal sides and resized to 256x256. During the training phase, data augmentation was applied by randomly augmenting the images at each epoch. The augmentations consisted of 90-degree rotations and horizontal and vertical flips.
