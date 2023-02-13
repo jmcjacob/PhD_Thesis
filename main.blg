@@ -3,6 +3,16 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: agsm.bst
+Case mismatch error between cite keys Blundell2015Weight and blundell2015weight
+---line 477 of file main.aux
+ : \citation{Blundell2015Weight
+ :                             }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys Blundell2015Weight and blundell2015weight
+---line 478 of file main.aux
+ : \citation{Blundell2015Weight
+ :                             }
+I'm skipping whatever remains of this command
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 Reallocating 'name_of_file' (item size: 1) to 18 items.
@@ -30,53 +40,52 @@ Repeated entry---line 883 of file refs/unsupervised.bib
 I'm skipping whatever remains of this entry
 Database file #4: refs/calibration.bib
 Database file #5: refs/selective.bib
-Repeated entry---line 701 of file refs/selective.bib
+Repeated entry---line 719 of file refs/selective.bib
  : @inproceedings{smith2017cyclical
  :                                 ,
 I'm skipping whatever remains of this entry
 Database file #6: refs/generalisation.bib
-Warning--I didn't find a database entry for "Geifman2019Selective"
 Warning--can't use both volume and number fields in lewis1995sequential
 Warning--can't use both volume and number fields in mukherjee2019clustergan
-You've used 156 entries,
+You've used 157 entries,
             2909 wiz_defined-function locations,
-            1462 strings with 37617 characters,
-and the built_in function-call counts, 995916 in all, are:
-= -- 163643
-> -- 14864
+            1463 strings with 37666 characters,
+and the built_in function-call counts, 986792 in all, are:
+= -- 161879
+> -- 14957
 < -- 9
-+ -- 80668
-- -- 4635
-* -- 88689
-:= -- 193970
-add.period$ -- 156
-call.type$ -- 156
-change.case$ -- 2182
++ -- 79773
+- -- 4663
+* -- 87865
+:= -- 192392
+add.period$ -- 157
+call.type$ -- 157
+change.case$ -- 2196
 chr.to.int$ -- 156
-cite$ -- 158
-duplicate$ -- 3044
-empty$ -- 5804
-format.name$ -- 5179
-if$ -- 180019
-int.to.chr$ -- 5
+cite$ -- 159
+duplicate$ -- 3049
+empty$ -- 5852
+format.name$ -- 5214
+if$ -- 178356
+int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 158
-newline$ -- 472
-num.names$ -- 1668
-pop$ -- 708
+missing$ -- 159
+newline$ -- 475
+num.names$ -- 1679
+pop$ -- 710
 preamble$ -- 1
-purify$ -- 2340
+purify$ -- 2355
 quote$ -- 0
-skip$ -- 2805
+skip$ -- 2801
 stack$ -- 0
-substring$ -- 235038
-swap$ -- 842
-text.length$ -- 2193
+substring$ -- 232331
+swap$ -- 833
+text.length$ -- 2207
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 618
+type$ -- 622
 warning$ -- 2
-while$ -- 3539
+while$ -- 3565
 width$ -- 0
-write$ -- 2195
-(There were 5 error messages)
+write$ -- 2212
+(There were 7 error messages)

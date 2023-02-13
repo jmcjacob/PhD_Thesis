@@ -161,13 +161,6 @@ Colling, P., Roese-Koerner, L., Gottschalk, H. \harvardand\ Rottmann, M.
   learning method for semantic segmentation using priority maps', {\em arXiv
   preprint arXiv:2010.01884} .
 
-\harvarditem{{Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B.
-  and Vilaplana, V. and Reiter, O., and others}}{2019}{combalia2019csn20000}
-{Combalia, M. and Codella, N. C. and Rotemberg, V. and Helba, B. and Vilaplana,
-  V. and Reiter, O., and others}  \harvardyearleft 2019\harvardyearright ,
-  {BCN20000}: Dermoscopic lesions in the wild, {\em in} `arXiv preprint',
-  p.~arXiv:1908.02288.
-
 \harvarditem[Combalia et~al.]{Combalia, Codella, Rotemberg, Helba, Vilaplana,
   Reiter, Carrera, Barreiro, Halpern, Puig et~al.}{2019}{combalia2019bcn20000}
 Combalia, M., Codella, N.~C., Rotemberg, V., Helba, B., Vilaplana, V., Reiter,
@@ -308,11 +301,18 @@ Gawlikowski, J., Tassi, C. R.~N., Ali, M., Lee, J., Humt, M., Feng, J., Kruspe,
   2021\harvardyearright , `A survey of uncertainty in deep neural networks',
   {\em arXiv preprint arXiv:2107.03342} .
 
-\harvarditem{Geifman \harvardand\ El-Yaniv}{2019}{selective2019geifman}
-Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2019\harvardyearright ,
-  Selective{N}et: A deep neural network with an integrated reject option, {\em
-  in} `Proceedings of the 36th International Conference on Machine Learning
-  (ICML)', Vol. PMLR 97, pp.~2151--2159.
+\harvarditem{Geifman \harvardand\ El-Yaniv}{2019{\em a}}{selective2019geifman}
+Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2019{\em
+  a}\harvardyearright , Selective{N}et: A deep neural network with an
+  integrated reject option, {\em in} `Proceedings of the 36th International
+  Conference on Machine Learning (ICML)', Vol. PMLR 97, pp.~2151--2159.
+
+\harvarditem{Geifman \harvardand\ El-Yaniv}{2019{\em
+  b}}{geifman2019selectivenet}
+Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2019{\em
+  b}\harvardyearright , Selectivenet: A deep neural network with an integrated
+  reject option, {\em in} `International conference on machine learning', PMLR,
+  pp.~2151--2159.
 
 \harvarditem[Gidaris et~al.]{Gidaris, Singh \harvardand\
   Komodakis}{2018}{gidaris2018unsupervised}
@@ -538,6 +538,13 @@ Konyushkova, K., Sznitman, R. \harvardand\ Fua, P.  \harvardyearleft
 Kramer, M.~A.  \harvardyearleft 1991\harvardyearright , `Nonlinear principal
   component analysis using autoassociative neural networks', {\em AIChE
   journal} {\bf 37}(2),~233--243.
+
+\harvarditem[Kristiadi et~al.]{Kristiadi, Hein \harvardand\
+  Hennig}{2020}{kristiadi2020being}
+Kristiadi, A., Hein, M. \harvardand\ Hennig, P.  \harvardyearleft
+  2020\harvardyearright , Being bayesian, even just a bit, fixes overconfidence
+  in relu networks, {\em in} `International conference on machine learning',
+  PMLR, pp.~5436--5446.
 
 \harvarditem{Krizhevsky \harvardand\ Hinton}{2009}{krizhevsky2009learning}
 Krizhevsky, A. \harvardand\ Hinton, G.  \harvardyearleft 2009\harvardyearright
