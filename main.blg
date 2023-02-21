@@ -4,12 +4,12 @@ The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: agsm.bst
 Case mismatch error between cite keys Blundell2015Weight and blundell2015weight
----line 477 of file main.aux
+---line 470 of file main.aux
  : \citation{Blundell2015Weight
  :                             }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys Blundell2015Weight and blundell2015weight
----line 478 of file main.aux
+---line 473 of file main.aux
  : \citation{Blundell2015Weight
  :                             }
 I'm skipping whatever remains of this command
@@ -45,6 +45,10 @@ Repeated entry---line 719 of file refs/selective.bib
  :                                 ,
 I'm skipping whatever remains of this entry
 Database file #6: refs/generalisation.bib
+Repeated entry---line 43 of file refs/generalisation.bib
+ : @article{weiss2016survey
+ :                         ,
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in lewis1995sequential
 Warning--can't use both volume and number fields in mukherjee2019clustergan
 You've used 157 entries,
@@ -88,4 +92,4 @@ warning$ -- 2
 while$ -- 3565
 width$ -- 0
 write$ -- 2212
-(There were 7 error messages)
+(There were 8 error messages)

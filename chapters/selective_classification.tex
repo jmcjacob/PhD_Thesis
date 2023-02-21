@@ -10,14 +10,13 @@ In this chapter, methods for cost-sensitive and selective classification of skin
 
 To add selectivity to a machine learning model, selective classification can be utilised, where the classifier has the option to reject an image if it does not meet certain criteria. The goal of selective classification is to reduce the number of incorrect classifications and increase the overall accuracy of the classifier. In selective classification, a classifier first makes a prediction about the class of an image and then decides whether to accept or reject that prediction based on a criterion such as threshold of confidence. The threshold can be set based on the desired false positive rate or other performance metrics. If the confidence score of the classifier is below the threshold, the image is rejected and not assigned a class label.
 
-Asymmetrical misclassification cost is a technique used in machine learning to address the issue of unequal consequences for different types of classification errors. In medical imaging, false negatives (i.e., misclassifying a malignant skin lesion as benign) can have more serious consequences than false positives (i.e., misclassifying a benign skin lesion as malignant). To address this issue, asymmetrical misclassification cost involves assigning different costs or weights to different types of misclassifications, so that false negatives are penalized more heavily than false positives. This approach allows the classifier to balance sensitivity and specificity in a way that is appropriate for the medical imaging application. By assigning a higher cost to false negatives, the classifier can be encouraged to prioritise sensitivity over specificity.
-
+Asymmetrical misclassification cost is a technique used in machine learning to address the issue of unequal consequences for different types of classification errors. In medical imaging, false negatives (i.e., misclassifying a malignant skin lesion as benign) can have more serious consequences than false positives (i.e., misclassifying a benign skin lesion as malignant). To address this issue, asymmetrical misclassification cost involves assigning different costs or weights to different types of misclassifications, so that false negatives are penalised more heavily than false positives. This approach allows the classifier to balance sensitivity and specificity in a way that is appropriate for the medical imaging application. By assigning a higher cost to false negatives, the classifier can be encouraged to prioritise sensitivity over specificity.
 
 \subsection{Summary of Work}
 \label{subsec:selective_summary_of_work}
-The experiments in this study focus on the use of empirical coverage and selective costs to evaluate the performance of selective classification methods in skin lesion analysis. The significance of considering the asymmetry of misclassification costs in both binary (benign vs malignant) and multi-class disease classification scenarios is emphasized. A comprehensive evaluation of various selective classification methods, including predictive probability calibration, uncertainty estimation, and selective classification models, is carried out. A novel selective classification model, Expected Cost SelectiveNet (EC-SelectiveNet) is introduced and analysed in the study. EC-SelectiveNet is based on the SelectiveNet model~\cite{selective2019geifman} and makes selection decisions based on expected costs, rather than on the image rejection rate. This model discards the additional heads used in SelectiveNet (selection and auxiliary heads) and relies solely on the expected costs for image selection during inference.
+The experiments in this study focus on the use of empirical coverage and selective costs to evaluate the performance of selective classification methods in skin lesion analysis. The significance of considering the asymmetry of misclassification costs in both binary (benign vs malignant) and multi-class disease classification scenarios is emphasised. A comprehensive evaluation of various selective classification methods, including predictive probability calibration, uncertainty estimation, and selective classification models, is carried out. A novel selective classification model, Expected Cost SelectiveNet (EC-SelectiveNet) is introduced and analysed in the study. EC-SelectiveNet is based on the SelectiveNet model~\cite{selective2019geifman} and makes selection decisions based on expected costs, rather than on the image rejection rate. This model discards the additional heads used in SelectiveNet (selection and auxiliary heads) and relies solely on the expected costs for image selection during inference.
 
-This work was presented at the Uncertainty for Safe Utilization of Machine Learning in Medical Imaging 2021 (UNSURE) workshop hosted at Medical Image Computing and Computing Assisted Intervention (MICCAI) in Strasbourg, France and published as part of its proceedings~\citep{carse2021robust}.
+This work was presented at the Uncertainty for Safe Utilization of Machine Learning in Medical Imaging 2021 (UNSURE) workshop hosted at Medical Image Computing and Computing Assisted Intervention (MICCAI) in Strasbourg, France and published as part of its proceedings \citep{carse2021robust}.
 
 
 
@@ -53,9 +52,9 @@ For instance, in the binary classification of malignant (class 1) and benign (cl
 	\label{fig:multiclasscosts}
 \end{figure}
 
-Optimizing classifiers for a particular cost matrix may seem like a viable solution, however, it is not recommended due to the potential changes in the cost matrix after implementation. This would necessitate the frequent retraining of the classifiers, which can become a tedious and time-consuming process.
+Optimising classifiers for a particular cost matrix may seem like a viable solution, however, it is not recommended due to the potential changes in the cost matrix after implementation. This would necessitate the frequent retraining of the classifiers, which can become a tedious and time-consuming process.
 
-Given a trained classifier that outputs a calibrated posterior distribution $P(x)$ over classes $T$ for an image $x$, the expected costs of classification can be utilized to make a decision on the image's classification. In the binary classification scenario of benign ($t=0$) and malignant ($t=1$) classes, the expected cost of a benign classification is defined as $R_0 = C_{10} P(t=1|x)$, while the expected cost of a malignant classification is expressed as $R_1 = C_{01} P(t=0|x)$. The image $x$ is classified as malignant if $R_1 < R_0$, otherwise it is classified as benign. In the case of multiple classes, the expected cost for each class is calculated as the sum of costs incurred for each class assuming it to be the true class, and the class with the minimum expected cost is selected as the final decision (Equation \ref{eq:expected_cost_multi}).
+Given a trained classifier that outputs a calibrated posterior distribution $P(x)$ over classes $T$ for an image $x$, the expected costs of classification can be utilised to make a decision on the image's classification. In the binary classification scenario of benign ($t=0$) and malignant ($t=1$) classes, the expected cost of a benign classification is defined as $R_0 = C_{10} P(t=1|x)$, while the expected cost of a malignant classification is expressed as $R_1 = C_{01} P(t=0|x)$. The image $x$ is classified as malignant if $R_1 < R_0$, otherwise it is classified as benign. In the case of multiple classes, the expected cost for each class is calculated as the sum of costs incurred for each class assuming it to be the true class, and the class with the minimum expected cost is selected as the final decision (Equation \ref{eq:expected_cost_multi}).
 
 \begin{equation}
 	\sigma_{EC}(x) = \min_{j} \sum_{t=1}^{T} C_{jt} P(t|x)
@@ -69,14 +68,14 @@ Given a trained classifier that outputs a calibrated posterior distribution $P(x
 
 \subsection{Predictive Probabilities}
 \label{subsec:selective_predictive_probabilites}
-The softmax response selection function $\sigma_{SR}(x)$ is computed by determining the maximum value of the prediction function $P(x)$ (Equation \ref{eq:softmax_response}). This assumes that the neural network model utilized has employed a softmax activation function to generate predictive probabilities. While this methodology is straightforward to implement and intuitive, it has limitations as the output probabilities from a softmax activation are not properly calibrated and do not reflect the uncertainty of the model, as demonstrated by~\citep{gal2016dropout}.
+The softmax response selection function $\sigma_{SR}(x)$ is computed by determining the maximum value of the prediction function $P(x)$ (Equation \ref{eq:softmax_response}). This assumes that the neural network model utilised has employed a softmax activation function to generate predictive probabilities. While this methodology is straightforward to implement and intuitive, it has limitations as the output probabilities from a softmax activation are not properly calibrated and do not reflect the uncertainty of the model, as demonstrated by~\citep{gal2016dropout}.
 
 \begin{equation}
 	\sigma_{SR}(x) = \max_{t} P(T|x)
 	\label{eq:softmax_response}
 \end{equation}
 
-Temperature scaling is a method utilized for calibrating the output probabilities of a neural network model. This method was chosen due to its demonstrated effectiveness in calibrating predictive probabilities for medical images as well as its ease of implementation. The temperature scaling technique involves scaling the output logits of a neural network with a temperature value $temp > 0$, which is optimized on a validation set during the model's training process. The temperature value is determined from the training epoch that exhibits the lowest validation loss. This technique can be incorporated into a selection function by modifying the prediction function $P(x)$ to include the scaled logits $P_{TS}(x)$ and taking the maximum predicted probability (as shown in Equation \ref{eq:temperature_scaling}).
+Temperature scaling is a method utilised for calibrating the output probabilities of a neural network model. This method was chosen due to its demonstrated effectiveness in calibrating predictive probabilities for medical images as well as its ease of implementation. The temperature scaling technique involves scaling the output logits of a neural network with a temperature value $temp > 0$, which is optimised on a validation set during the model's training process. The temperature value is determined from the training epoch that exhibits the lowest validation loss. This technique can be incorporated into a selection function by modifying the prediction function $P(x)$ to include the scaled logits $P_{TS}(x)$ and taking the maximum predicted probability (as shown in Equation \ref{eq:temperature_scaling}).
 
 \begin{equation}
 	\sigma_{TS}(x) = \max_t P_{TS}(T|x)
@@ -87,7 +86,7 @@ Temperature scaling is a method utilized for calibrating the output probabilitie
 \label{subsec:selective_uncertainity}
 Bayesian neural networks represent a promising approach for improving the accuracy of probabilistic predictions and for more effectively estimating uncertainty. This is achieved through the representation of model parameters using distributions that are sampled from the forward propagation of the network.
 
-In this study, we evaluate the Bayesian neural network methodology using two methods, namely Bayes by Backprop~\citep{blundell2015weight} and Laplace Approximation~\citep{mackay1992bayesian}, for training the network. The resulting Bayesian neural network can be sampled $M$ times and the average of the predictions (Equation \ref{eq:avg_baysian_neural_network}) can be used to produce more calibrated probabilities, as demonstrated by~\citep{jospin2020hands}. The uncertainty in the Bayesian neural network can be estimated through the variance of the predictive samples (Equation \ref{eq:var_baysian_neural_network}) and can be employed as a method of selection.
+In this study, Bayesian neural networks are evaluated using two methods, namely Bayes by Backprop~\citep{blundell2015weight} and Laplace Approximation~\citep{mackay1992bayesian}, for training the network. The resulting Bayesian neural network can be sampled $M$ times and the average of the predictions (Equation \ref{eq:avg_baysian_neural_network}) can be used to produce more calibrated probabilities, as demonstrated by~\citep{jospin2020hands}. The uncertainty in the Bayesian neural network can be estimated through the variance of the predictive samples (Equation \ref{eq:var_baysian_neural_network}) and can be employed as a method of selection.
 
 \begin{equation}
 	\sigma_{AVG}(x) = \max_t \frac{1}{M} \sum_m^M P_{w^m}(T|x)
@@ -122,16 +121,16 @@ Multiple methods exist for estimating the uncertainty of Bayesian neural network
 
 \subsection{SelectiveNet}
 \label{subsec:selectivenet}
-In the context of neural networks or Bayesian neural networks, data representations optimized for classification have been widely studied. However, \cite{selective2019geifman} posits that data representations can also be optimized for scenarios where a portion of the data is anticipated to be rejected. To address this issue, the author introduces SelectiveNet, a modified training approach for neural networks that enables end-to-end optimization for a specific target coverage.
+In the context of neural networks or Bayesian neural networks, data representations optimised for classification have been widely studied. However, \cite{geifman2019selectivenet} posits that data representations can also be optimised for scenarios where a portion of the data is anticipated to be rejected. To address this issue, the author introduces SelectiveNet, a modified training approach for neural networks that enables end-to-end optimisation for a specific target coverage.
 
-This is achieved by adding two heads to the model's encoder, in addition to the predictive head (denoted as $P(x)$). These heads consist of a selective head (denoted as $G(x)$) that outputs a selection score and an auxiliary head (denoted as $A(x)$) that provides predictions used within the loss function. The overall loss function used to optimize the entire model is based on selective risk and balances the predictive and selective heads against the auxiliary head to ensure that robust features for classification are learned while still optimizing for target coverage.
+This is achieved by adding two heads to the model's encoder, in addition to the predictive head (denoted as $P(x)$). These heads consist of a selective head (denoted as $G(x)$) that outputs a selection score and an auxiliary head (denoted as $A(x)$) that provides predictions used within the loss function. The overall loss function used to optimise the entire model is based on selective risk and balances the predictive and selective heads against the auxiliary head to ensure that robust features for classification are learned while still optimising for target coverage.
 
 \begin{equation}
 	L = \alpha L_{p, g} + (1 - \alpha)L_a
 	\label{eq:selective_loss}
 \end{equation}
 
-The SelectiveNet loss function (Equation~\ref{eq:selective_loss}) is a combination of two functions ($L_{p,g}$ and $L_a$), weighted by a hyperparameter $\alpha$ to control the relative importance of coverage optimization. The first term uses both the predictive and selective heads (Equation~\ref{eq:selectivenet_loss}) and combines cross-entropy loss with coverage. The hyperparameter $t$ represents the target coverage for the model, while $\lambda$ regulates the significance of this target coverage. On the other hand, the auxiliary head uses a standard cross-entropy loss ($L_a$) to encourage the model to learn robust features from the training data. 
+The SelectiveNet loss function (Equation~\ref{eq:selective_loss}) is a combination of two functions ($L_{p,g}$ and $L_a$), weighted by a hyperparameter $\alpha$ to control the relative importance of coverage optimisation. The first term uses both the predictive and selective heads (Equation~\ref{eq:selectivenet_loss}) and combines cross-entropy loss with coverage. The hyperparameter $t$ represents the target coverage for the model, while $\lambda$ regulates the significance of this target coverage. On the other hand, the auxiliary head uses a standard cross-entropy loss ($L_a$) to encourage the model to learn robust features from the training data. For selective classification, the output of the selective head (Equation~\ref{eq:selectivenet}) is utilised.
 
 \begin{equation}
 	L_{p, g} = \frac{1}{N \phi(g)}\sum^{N}_{i=1}l(p(x_i), y_i) g(x_i) + \lambda\max(t - \phi(g|S), 0)^2
@@ -147,9 +146,9 @@ The SelectiveNet loss function (Equation~\ref{eq:selective_loss}) is a combinati
 
 \subsection{Expected Cost SelectiveNet}
 \label{subsec:ec_selectivenet}
-Expected costs serve as a method for selection in both the Convolutional Neural Network (CNN) and the SelectiveNet model, as evidenced by Equation \ref{eq:expected_cost_multi}. In this regard, we propose a new approach to selection, referred to as Expected Cost SelectiveNet (EC-SelectiveNet), which is based on expected costs computed from the predictive head, instead of the selective head output utilized in SelectiveNet.
+Expected costs serve as a method for selection in both the Convolutional Neural Network and the SelectiveNet model, as evidenced by Equation \ref{eq:expected_cost_multi}. A new approach to selection is proposed, referred to as Expected Cost SelectiveNet, which is based on expected costs computed from the predictive head, instead of the selective head output utilised in SelectiveNet.
 
-Despite the fact that SelectiveNet directly outputs a selection score, our proposed EC-SelectiveNet method utilizes the expected costs computed from the predictive head for selection. The selective head is used during training to guide representation learning but, in contrast to the approach presented in \cite{selective2019geifman}, we discard both the selective head and auxiliary head at test time.
+Despite the fact that SelectiveNet directly outputs a selection score, the proposed EC-SelectiveNet method utilises the expected costs computed from the predictive head for selection. The selective head is used during training to guide representation learning but, in contrast to the approach presented in \cite{selective2019geifman}, both the selective head and auxiliary head are discarded when inferenced.
 
 
 
@@ -157,31 +156,7 @@ Despite the fact that SelectiveNet directly outputs a selection score, our propo
 \label{sec:selective_binary_experiment}
 This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion triage. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Selective_Dermatology}}.
 
-\subsection{Experiment Setup}
-
-
-\begin{table}[]
-	\centering
-	\caption{Binary experiment trained models and selection methods to be evaluated.}
-	\label{tab:binary-experiment-setup}
-	\begin{tabular}{|l|l|}
-		\hline
-		Model & Selection Method \\ \hline
-		Convolutional & Softmax Response \\
-		Neural Network & Temperature Scaled Softmax Response \\ \hline
-		SelectiveNet 0.7 & SelectiveNet \\
-		SelectiveNet 0.75 & EC-SelectiveNet \\
-		SelectiveNet 0.8 & Temperature Scaled EC-SelectiveNet \\
-		SelectiveNet 0.85 &  \\
-		SelectiveNet 0.9 &  \\
-		SelectiveNet $t=0.95$ &  \\
-		SelectiveNet 1.0 &  \\ \hline
-		Monte Carlo Dropout & Average Softmax Response \\
-		& Average Variance \\ \hline
-	\end{tabular}
-\end{table}
-
-\subsection{Dataset}
+\subsection{Dataset Processing}
 \label{subsec:selective_binary_dataset}
 The ISIC Challenge 2019~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}, was employed in this study and consists of a total of 25,331 images spanning eight distinct classes, including melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. For the purposes of the experiments, two datasets were compiled from the ISIC 2019 data, referred to as $S_{in}$ and $S_{unknown}$.
 
@@ -205,23 +180,46 @@ The ISIC Challenge 2019~\citep{codella2018skin,combalia2019bcn20000,tschandl2018
 
 $S_{in}$: These data encompassed the melanoma, melanocytic nevus, and basal cell carcinoma (BCC) images from the ISIC 2019 dataset, which were assigned to two classes for classification: malignant (melanoma, BCC) and benign (melanocytic nevus). The $S_{in}$ dataset was split into three subsets for training, validation, and testing, containing 12432, 3316, and 4972 images, respectively.
 
-$S_{unknown}$: : These data consisted of 4,360 images from classes that were not present in $S_{in}$, including benign keratosis, dermatofibroma, actinic keratosis, and squamous cell carcinoma, and were assigned to either the malignant or benign class. The $S_{unknown}$ dataset was not utilized for training, but instead was employed to test the performance of selective classification on images from disease types not represented in the training data.
+$S_{unknown}$: These data consisted of 4,360 images from classes that were not present in $S_{in}$, including benign keratosis, dermatofibroma, actinic keratosis, and squamous cell carcinoma, and were assigned to either the malignant or benign class. The $S_{unknown}$ dataset was not utilised for training, but instead was employed to test the performance of selective classification on images from disease types not represented in the training data.
 
-The combination of the $S_{in}$ and $S_{unknown}$ test sets is referred to as the $S_{combined}$ dataset. Figure \ref{fig:isic_dataset_examples} provides illustrative examples from the ISIC 2019 dataset.
+The combination of the $S_{in}$ and $S_{unknown}$ test sets is referred to as the $S_{combined}$ dataset. Figure \ref{fig:isic_dataset_examples} provides illustrative examples from the ISIC 2019 dataset. In the current study, a random split strategy was employed to divide the dataset into three distinct sets: training, validation, and testing, in the ratio of 60:20:20. To ensure comparability across all images, normalization was performed utilizing the standard deviation and mean calculation for each colour channel of the images. Subsequently, each image underwent resizing to 256x256, and during the training phase, data augmentation was carried out by implementing randomized flips and rotations of 90 degrees.
 
-In the current study, a random split strategy was employed to divide the dataset into three distinct sets: training, validation, and testing, in the ratio of 60:20:20. To ensure comparability across all images, normalization was performed utilizing the standard deviation and mean calculation for each color channel of the images. Subsequently, each image underwent resizing to 256x256, and during the training phase, data augmentation was carried out by implementing randomized flips and rotations of 90 degrees.
+\subsection{Experiment Setup}
+For the binary experiments, the training of eight models was conducted on the training split $S_{in}$, utilizing the validation set to identify the most optimal model from the training epochs. The performance of each selection method is then evaluation by using selection methods with the appropriate model. A detailed overview of the experimental setup is presented in Table~\ref{tab:binary-experiment-setup}. The evaluation of the selection methods on the trained models was carried out utilising a symmetrical cost matrix that is commonly used in such evaluations, where the cost of false positives and false negatives was set to $1.0$. To investigate the effect of adjusting the level of asymmetry, the cost of false positives was set to $10.0$ and $50.0$ while keeping the cost of false negatives fixed at $1.0$. The evaluation of the selection methods was conducted on three different datasets: $S_{in}$ was used to evaluate the in-distribution performance, $S_{unknown}$ was used to assess the generalization performance on unknown types of skin lesions, and $S_{combines}$ was used to evaluate the performance of the selection methods on the two types of data combined.
+
+\begin{table}[h]
+	\centering
+	\caption{Binary experiments trained models and selection methods for each model to be evaluated.}
+	\label{tab:binary-experiment-setup}
+	\begin{tabular}{|l|l|}
+		\hline
+		Model & Selection Method \\ \hline
+		Convolutional & Softmax Response \\
+		Neural Network & Temperature Scaled Softmax Response \\ \hline
+		SelectiveNet 0.7 & SelectiveNet \\
+		SelectiveNet 0.75 & EC-SelectiveNet \\
+		SelectiveNet 0.8 & Temperature Scaled EC-SelectiveNet \\
+		SelectiveNet 0.85 &  \\
+		SelectiveNet 0.9 &  \\
+		SelectiveNet $t=0.95$ &  \\
+		SelectiveNet 1.0 &  \\ \hline
+		Monte Carlo Dropout & Average Softmax Response \\
+		& Average Prediction Variance \\ \hline
+	\end{tabular}
+\end{table}
+
 
 \subsection{Training Parameters}
 \label{subsec:selective_binary_training}
-The implementation of the conventional convolutional neural network comprises an EfficientNet~\citep{tan2019efficient} encoder with a compound coefficient of 7. This encoder is followed by an average pooling operation that reduces the width and height by a factor of 8, thereby compressing the encoding size from 163840 to 2560. Subsequently, the architecture includes a hidden layer equipped with 512 neurons and a rectified linear unit activation function, which is followed by a final output layer with 2 output neurons and a softmax activation function. To mitigate overfitting, dropout regularization is applied with a drop chance of 0.5 before and after the hidden layer. In total, the architecture encompasses 275 layers (convolutional and fully connected) with 65,099,224 total parameters. Additionally, the use of dropout during training enables the simulation of a Bayesian neural network through Monte Carlo dropout~\citep{gal2016dropout} by sampling the trained model with the same dropout rates.
+The implementation of the conventional convolutional neural network comprises an EfficientNet~\citep{tan2019efficient} encoder with a compound coefficient of 7. This encoder is followed by an average pooling operation that reduces the width and height by a factor of 8, thereby compressing the encoding size from 163,840 to 2560. Subsequently, the architecture includes a hidden layer equipped with 512 neurons and a rectified linear unit activation function, which is followed by a final output layer with 2 output neurons and a softmax activation function. To mitigate overfitting, dropout regularisation is applied with a drop chance of 0.5 before and after the hidden layer. In total, the architecture encompasses 275 layers (convolutional and fully connected) with 65,099,224 total parameters. Additionally, the use of dropout during training enables the simulation of a Bayesian neural network through Monte Carlo dropout~\citep{gal2016dropout} by sampling the trained model with the same dropout rates.
 
 The SelectiveNet model architecture~\citep{geifman2019selectivenet}, is constructed upon an EfficientNet encoder, followed by average pooling and a fully connected hidden layer containing 512 neurons. The prediction head of the model comprises a single fully connected output layer with 2 neurons and a softmax activation function. The selection head is composed of an additional hidden layer with 512 neurons and a softmax activation function, which is followed by an output layer with a single neuron and a sigmoid activation function. The auxiliary head is similarly structured to the classification head. These additional components result in an increased number of layers in the SelectiveNet architecture, bringing the total to 277 layers, with 65,364,449 parameters in total.
 
-The training configurations were standardized across all experiments. The models were trained utilizing 16-bit precision to compute gradients, and Stochastic Gradient Descent was employed to optimize the model parameters. The optimization process employed a triangular cyclical scheduler~\citep{smith2017cyclical} that cyclically adjusted the learning rate between 0.00001 and 0.1 and the momentum between 0.8 and 0.9 every 2000 training steps. The experiments were performed using mini-batches of 8 images each.
+The training configurations were standardised across all experiments. The models were trained utilising 16-bit precision to compute gradients, and Stochastic Gradient Descent was employed to optimise the model parameters. The optimisation process employed a triangular cyclical scheduler~\citep{smith2017cyclical} that cyclically adjusted the learning rate between 0.00001 and 0.1 and the momentum between 0.8 and 0.9 every 2000 training steps. The experiments were performed using mini-batches of 8 images each.
 
-During the training of the conventional convolutional neural network, the cross-entropy loss function was utilized to evaluate the model's performance. To mitigate overfitting, dropout regularization was applied with a drop rate of 0.5 before both the hidden and output layers. By consistently applying the same dropout pattern during both training and evaluation, the convolutional neural network can be treated as a Bayesian Neural Network and sampled multiple times through Monte Carlo dropout~\citep{gal2016dropout}.
+During the training of the conventional convolutional neural network, the cross-entropy loss function was utilised to evaluate the model's performance. To mitigate overfitting, dropout regularisation was applied with a drop rate of 0.5 before both the hidden and output layers. By consistently applying the same dropout pattern during both training and evaluation, the convolutional neural network can be treated as a Bayesian Neural Network and sampled multiple times through Monte Carlo dropout~\citep{gal2016dropout}.
 
-The SelectiveNet model's performance is evaluated using a loss function that integrates the outputs of the three heads, predictive ($p$), selective ($g$), and auxiliary ($h$). The predictive and selective heads are utilized to calculate a portion of the loss $L_{p,g}$, which optimizes the model for a specific target coverage. The auxiliary head, in contrast, calculates cross-entropy loss $L_h$, and the two components are weighted together using the parameter $\alpha$ (as specified in Equation \ref{eq:selective_loss}). In the present set of experiments, the parameter $\alpha$ has been set to 0.5 and multiple target coverages have been explored. The remaining hyperparameters associated with the SelectiveNet loss function have been set to the values recommended by \cite{geifman2019selectivenet}.
+The SelectiveNet model's performance is evaluated using a loss function that integrates the outputs of the three heads, predictive ($p$), selective ($g$), and auxiliary ($h$). The predictive and selective heads are utilised to calculate a portion of the loss $L_{p,g}$, which optimises the model for a specific target coverage. The auxiliary head, in contrast, calculates cross-entropy loss $L_h$, and the two components are weighted together using the parameter $\alpha$ (as specified in Equation \ref{eq:selective_loss}). In the present set of experiments, the parameter $\alpha$ has been set to 0.5 and multiple target coverages have been explored. The remaining hyperparameters associated with the SelectiveNet loss function have been set to the values recommended by the authors in~\citep{geifman2019selectivenet}.
 
 \subsection{Results}
 \subsubsection{SelectiveNet: Effect of Target Coverage}
@@ -231,7 +229,7 @@ In order to examine the impact of the SelectiveNet target-coverage parameter, $t
 The extent to which the target coverage $t$ is imposed is regulated by the weighting parameter $\lambda$. Despite being set to target full coverage ($t=1.0$), the model may, in exceptional circumstances during training, compromise coverage for cost. As a result, the results obtained by SelectiveNet with $t=1.0$ may differ from those obtained through training a network without selective and auxiliary heads. These networks were trained using cross-entropy loss and only retained the softmax predictive head, making selection decisions at test time based on the maximum softmax output. The corresponding cost-coverage curve is plotted in Figure~\ref{fig:thing} (labelled “softmax”). The results indicate that SelectiveNet trained with a target coverage of 1.0 performed better than a standard convolutional neural network with a softmax response for any coverage value above $0.4$.
 
 \subsubsection{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}
-The impact of MC-Dropout on selective classification was analyzed by using the mean and variance of the Monte Carlo iterations as selection scores. Figure~\ref{fig:thing} compares the resulting cost-coverage curves to those obtained using a network without dropout at test time (labeled “softmax response”). The results reveal that for the $S_{in}$ data, utilizing the average of Monte Carlo samples had minimal impact, whereas the variance of the Monte Carlo samples performed slightly worse than simply relying on the maximum softmax response. Conversely, significant cost savings were achieved by using the variance of the Monte Carlo samples on the $S_{unknown}$ data, where model uncertainty is expected to be high.
+The impact of MC-Dropout on selective classification was analysed by using the mean and variance of the Monte Carlo iterations as selection scores. Figure~\ref{fig:thing} compares the resulting cost-coverage curves to those obtained using a network without dropout at test time (labelled “softmax response”). The results reveal that for the $S_{in}$ data, utilising the average of Monte Carlo samples had minimal impact, whereas the variance of the Monte Carlo samples performed slightly worse than simply relying on the maximum softmax response. Conversely, significant cost savings were achieved by using the variance of the Monte Carlo samples on the $S_{unknown}$ data, where model uncertainty is expected to be high.
 
 The effect of temperature scaling on a softmax network was analysed and the results are shown in Figure~\ref{fig:thing}. The softmax network was trained using cross-entropy loss and temperature scaling was applied to improve calibration. However, the results indicated that temperature scaling had a minimal effect on the cost-coverage curves. Furthermore, Figure~\ref{fig:thing} displays the results obtained using EC-SelectiveNet, in which the selection head was omitted during testing. The results demonstrate that EC-SelectiveNet achieved a noticeable improvement on both the $S_{in}$ and $S_{unknown}$ datasets when compared to training a standard convolutional neural network model without the auxiliary heads.
 
@@ -246,10 +244,11 @@ The effect of temperature scaling on selective classification is presented in Fi
 \label{sec:selective_multi_class_experiments}
 This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion classification. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Asymetric_Selective_Dermatology}}.
 
-\subsection{Experiment Setup}
-In the context of the multi-class set of experiments, it is imperative to note that all models and methods were subjected to repetition thrice, with the final results being an average of the outcomes from each run. In order to ensure a comprehensive evaluation, the training, validation, and testing splits were randomized for each of the three repetitions. A total of eleven models were trained, utilizing the validation set to determine the most suitable model for the experiments. As demonstrated in Table~\ref{tab:multi-class-experiment-setup}, the models were trained using diverse selection methods, grouped based on the similarity of the methods applied to each model.
+\subsection{Dataset Processing}
+In this study, the ISIC Challenge 2019 dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} was employed. The data was processed using a similar methodology to the one described in Section~\ref{subsec:selective_binary_dataset}. A random splitting method was utilised to divide the dataset into three subsets: training, validation, and testing, in a 60:20:20 ratio. Prior to the training process, the images underwent normalisation, which involved computing the standard deviation and mean across each colour channel. Then, the images were square cropped by evenly trimming the horizontal sides and resized to 256x256. During the training phase, data augmentation was applied by randomly augmenting the images at each epoch. The augmentations consisted of 90-degree rotations and horizontal and vertical flips.
 
-The efficacy of the selection methods employed with each of the models was evaluated using both a typical symmetrical cost matrix (Figure~\ref{fig:multiclasssymcosts}) and an asymmetrical cost matrix (Figure~\ref{fig:multiclassasymcosts}). The asymmetrical cost matrix was developed by a consultant-level dermatologist, taking into account the estimated clinical costs. However, it is important to acknowledge that in cases where multiple lesion classes are present, the cost matrix may become even more complex and thus, should be determined through consultation with relevant stakeholders such as general practitioners, patient representative groups, and health economists. It is imperative to emphasize that the values assigned to the asymmetric costs are context-dependent and should be arrived at through engagement with relevant experts, taking into consideration the specific clinical setting.
+\subsection{Experiment Setup}
+In the context of the multi-class set of experiments, it is imperative to note that all models and methods were subjected to repetition thrice, with the final results being an average of the outcomes from each run. In order to ensure a comprehensive evaluation, the training, validation, and testing splits were randomised for each of the three repetitions. A total of eleven models were trained, utilising the validation set to determine the most suitable model for the experiments. As demonstrated in Table~\ref{tab:multi-class-experiment-setup}, these trained models are used evaluate a diverse mix of selection methods, grouped based on suitability between the method and model.
 
 \begin{table}[h]
 	\centering
@@ -280,27 +279,26 @@ The efficacy of the selection methods employed with each of the models was evalu
 	\end{tabular}
 \end{table}
 
-\subsection{Dataset}
-In this study, the ISIC Challenge 2019 dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} was employed. The data was processed using a similar methodology to the one described in Section~\ref{subsec:selective_binary_dataset}. A random splitting method was utilized to divide the dataset into three subsets: training, validation, and testing, in a 60:20:20 ratio. Prior to the training process, the images underwent normalization, which involved computing the standard deviation and mean across each colour channel. Then, the images were square-cropped by evenly trimming the horizontal sides and resized to 256x256. During the training phase, data augmentation was applied by randomly augmenting the images at each epoch. The augmentations consisted of 90-degree rotations and horizontal and vertical flips.
+The efficacy of the selection methods employed with each of the models was evaluated using both a typical symmetrical cost matrix (Figure~\ref{fig:multiclasssymcosts}) and an asymmetrical cost matrix (Figure~\ref{fig:multiclassasymcosts}). The asymmetrical cost matrix was developed by a consultant-level dermatologist, taking into account the estimated clinical costs. However, it is important to acknowledge that in cases where multiple lesion classes are present, the cost matrix may become even more complex and thus, should be determined through consultation with relevant stakeholders such as general practitioners, patient representative groups, and health economists. It is imperative to emphasise that the values assigned to the asymmetric costs are context-dependent and should be arrived at through engagement with relevant experts, taking into consideration the specific clinical setting.
 
 \subsection{Training Parameters}
 The architecture of the convolutional neural networks and SelectiveNet in this study was consistent with the binary experiments outlined in Section~\ref{subsec:selective_binary_training}. The primary distinction between the two models lies in the number of output neurons in the output layer of the convolutional neural network and the predictive and auxiliary heads of the SelectiveNet architecture, which was increased to 8, resulting in a total of 65,102,296 parameters for the convolutional neural network model and 65,370,593 parameters for the SelectiveNet model.
 
-Additionally, the Bayes by Backprop model~\citep{Blundell2015Weight} utilized in this study was implemented as a convolutional neural network, with the final two fully connected layers replaced by fully connected Bayesian layers. In these layers, each parameter was represented by a distribution initialized with a mean and standard deviation randomly drawn from the ranges 0 to 0.1 and -7 to 0.1, respectively. The parameter priors were modelled using a scale mixture of two Gaussian distributions (Equation \ref{eq:scalemixture}) with standard deviation values of 0.1 and 0.4 and a $\pi$ weighting the two Gaussian distributions of 0.5.
+Additionally, the Bayes by Backprop model~\citep{Blundell2015Weight} utilised in this study was implemented as a convolutional neural network, with the final two fully connected layers replaced by fully connected Bayesian layers. In these layers, each parameter was represented by a distribution initialised with a mean and standard deviation randomly drawn from the ranges 0 to 0.1 and -7 to 0.1, respectively. The parameter priors were modelled using a scale mixture of two Gaussian distributions (Equation \ref{eq:scalemixture}) with standard deviation values of 0.1 and 0.4 and a $\pi$ weighting the two Gaussian distributions of 0.5.
 
 \begin{equation}
 	P(w) = \prod_j\pi N(w_j|0, \sigma_1) + (1-\pi) N(w_j|0, \sigma_2)
 	\label{eq:scalemixture}
 \end{equation}
 
-The convolutional neural network and SelectiveNet models were trained with the same parameters as those presented in the binary experiments described in Section~\ref{subsec:selective_binary_training}. The Bayesian Neural Network model, which was trained using the Bayes by Backprop method~\citep{Blundell2015Weight}, employed variational inference to approximate the posterior distribution over weights, $q(w|\theta)$. The parameters for the distribution, $\theta$, were determined by minimizing the KL-Divergence between the variational posterior and the true posterior. The true posterior was estimated through Monte Carlo sampling of the evidence lower bound, as expressed in Equation~\ref{eq:elbo}, where $D$ represents the dataset and $N$ denotes the number of Monte Carlo samples.
+The convolutional neural network and SelectiveNet models were trained with the same parameters as those presented in the binary experiments described in Section~\ref{subsec:selective_binary_training}. The Bayesian Neural Network model, which was trained using the Bayes by Backprop method~\citep{Blundell2015Weight}, employed variational inference to approximate the posterior distribution over weights, $q(w|\theta)$. The parameters for the distribution, $\theta$, were determined by minimising the KL-Divergence between the variational posterior and the true posterior. The true posterior was estimated through Monte Carlo sampling of the evidence lower bound, as expressed in Equation~\ref{eq:elbo}, where $D$ represents the dataset and $N$ denotes the number of Monte Carlo samples.
 
 \begin{equation}
 	\text{ELBO}(D, \theta) \approx \sum^N_{n=1}\log q(w^i|\theta)-\log p(w^i) - \log p(D|w^i)
 	\label{eq:elbo}
 \end{equation}
 
-The loss function utilized for training the Bayesian Neural Network model was a combination of the (ELBO) and cross-entropy. The weight assigned to the ELBO component of the loss function was modulated based on the current mini-batch, as depicted in Equation \ref{eq:elbo_weighting}, where $M$ represents the number of mini-batches per epoch and $m$ denotes the current mini-batch. This weighting approach was employed such that the early mini-batches were more influenced by Bayesian complexity and later mini-batches focused more on learning from the training data. In the experiments, the Bayesian neural network model trained with the Bayes by Backprop method was trained using a weighted combination of ELBO and cross-entropy, with the ELBO estimated using three Monte Carlo samples during training. All other training settings were equivalent to those utilized for the training of the convolutional neural network model.
+The loss function utilised for training the Bayesian Neural Network model was a combination of the ELBO and cross-entropy. The weight assigned to the ELBO component of the loss function was modulated based on the current mini-batch, as depicted in Equation \ref{eq:elbo_weighting}, where $M$ represents the number of mini-batches per epoch and $m$ denotes the current mini-batch. This weighting approach was employed such that the early mini-batches were more influenced by Bayesian complexity and later mini-batches focused more on learning from the training data. In the experiments, the Bayesian neural network model trained with the Bayes by Backprop method was trained using a weighted combination of ELBO and cross-entropy, with the ELBO estimated using three Monte Carlo samples during training. All other training settings were equivalent to those utilised for the training of the convolutional neural network model.
 
 \begin{equation}
 	\pi_m = \frac{2^{M-m}}{2^M-1}
@@ -312,10 +310,69 @@ After training the Convolutional neural network model, it can be transformed int
 
 \subsection{Results}
 
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-bayesian-sym.png}
+		\caption{Symmetrical Costs}	
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-bayesian-asym.png}
+		\caption{Asymmetrical Costs}
+	\end{subfigure}
+	\caption{Results with experiments with Bayesian Neural Networks.}
+	\label{fig:multi-class-bayesian}
+\end{figure}
 
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-uncertainity-sym.png}
+		\caption{Symmetrical Costs}	
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-uncertainity-asym.png}
+		\caption{Asymmetrical Costs}
+	\end{subfigure}
+	\caption{Results with experiments with measures of uncertainty.}
+	\label{fig:multi-class-uncertainity}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-selective-sym.png}
+		\caption{Symmetrical Costs}	
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-selective-asym.png}
+		\caption{Asymmetrical Costs}
+	\end{subfigure}
+	\caption{Results with experiments with SelectiveNet.}
+	\label{fig:multi-class-selective}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-temp-sym.png}
+		\caption{Symmetrical Costs}	
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/multi-class-temp-asym.png}
+		\caption{Asymmetrical Costs}
+	\end{subfigure}
+	\caption{Results with experiments with temperature scaling.}
+	\label{fig:multi-class-temp}
+\end{figure}
 
 \section{Conclusion}
 \label{sec:selective_conclusion}
-This study set out to better understand selective classification of skin lesions using asymmetric costs. In a primary care setting, for example, the cost of mis-classifying a life-threatening melanoma is clearly greater than that of misclassifying a benign lesion. We also investigated selective classification with lesion types not adequately represented during training. Generally, EC-SelectiveNet was effective for robust selective classification when trained with a target coverage at (or close to) 1.0. EC-SelectiveNet produced similar or better cost-coverage curves than SelectiveNet.
-
-MC-Dropout averaging made little difference but we note that variance gave encouraging results on \(S_{unknown}\). Temperature scaling to calibrate output probabilities worsened costs at higher coverage. Future work should investigate use of asymmetric cost matrices in multi-class settings, as well as how so-called out-of-distribution detection methods can help in the context of selective skin lesion classification as investigated here.
