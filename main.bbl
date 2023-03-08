@@ -131,6 +131,11 @@ Chin, G.~X., Suveges, T., Carse, J., Butt, S., Muthiah, S., Morton, C., Trucco,
   artificial intelligence in skin cancer triage', {\em British Journal of
   Dermatology} {\bf 187}(Suppl. 1)),~125.
 
+\harvarditem{Chow}{1957}{chow1957optimum}
+Chow, C.-K.  \harvardyearleft 1957\harvardyearright , `An optimum character
+  recognition system using decision functions', {\em IRE Transactions on
+  Electronic Computers} (4),~247--254.
+
 \harvarditem[Codella et~al.]{Codella, Gutman, Celebi, Helba, Marchetti, Dusza,
   Kalloo, Liopyris, Mishra, Kittler et~al.}{2018}{codella2018skin}
 Codella, N.~C., Gutman, D., Celebi, M.~E., Helba, B., Marchetti, M.~A., Dusza,
@@ -175,6 +180,13 @@ Cordts, M., Omran, M., Ramos, S., Rehfeld, T., Enzweiler, M., Benenson, R.,
   2016\harvardyearright , The cityscapes dataset for semantic urban scene
   understanding, {\em in} `Proceedings of the IEEE conference on computer
   vision and pattern recognition', pp.~3213--3223.
+
+\harvarditem[Cortes et~al.]{Cortes, DeSalvo \harvardand\
+  Mohri}{2016}{cortes2016learning}
+Cortes, C., DeSalvo, G. \harvardand\ Mohri, M.  \harvardyearleft
+  2016\harvardyearright , Learning with rejection, {\em in} `Algorithmic
+  Learning Theory: 27th International Conference, ALT 2016, Bari, Italy,
+  October 19-21, 2016, Proceedings 27', Springer, pp.~67--82.
 
 \harvarditem[Dai et~al.]{Dai, Low \harvardand\ Jaillet}{2020}{dai2020federated}
 Dai, Z., Low, B. K.~H. \harvardand\ Jaillet, P.  \harvardyearleft
@@ -231,6 +243,11 @@ Ducoffe, M. \harvardand\ Precioso, F.  \harvardyearleft 2018\harvardyearright ,
   `Adversarial active learning for deep networks: a margin based approach',
   {\em arXiv preprint arXiv:1802.09841} .
 
+\harvarditem{El-Yaniv et~al.}{2010}{el2010foundations}
+El-Yaniv, R. et~al.  \harvardyearleft 2010\harvardyearright , `On the
+  foundations of noise-free selective classification.', {\em Journal of Machine
+  Learning Research} {\bf 11}(5).
+
 \harvarditem[Esteva et~al.]{Esteva, Kuprel, Novoa, Ko, Swetter, Blau
   \harvardand\ Thrun}{2017}{esteva2017dermatologist}
 Esteva, A., Kuprel, B., Novoa, R.~A., Ko, J., Swetter, S.~M., Blau, H.~M.
@@ -269,6 +286,17 @@ Fujisawa, Y., Otomo, Y., Ogata, Y., Nakamura, Y., Fujita, R., Ishitsuka, Y.,
   board-certified dermatologists in skin tumour diagnosis', {\em British
   Journal of Dermatology} {\bf 180}(2),~373--381.
 
+\harvarditem{Fumera \harvardand\ Roli}{2002}{fumera2002support}
+Fumera, G. \harvardand\ Roli, F.  \harvardyearleft 2002\harvardyearright ,
+  Support vector machines with embedded reject option, {\em in} `Pattern
+  Recognition with Support Vector Machines: First International Workshop, SVM
+  2002 Niagara Falls, Canada, August 10, 2002 Proceedings', Springer,
+  pp.~68--82.
+
+\harvarditem{Gal}{2016}{Gal2016Uncertainty}
+Gal, Y.  \harvardyearleft 2016\harvardyearright , Uncertainty in Deep Learning,
+  PhD thesis, University of Cambridge.
+
 \harvarditem{Gal \harvardand\ Ghahramani}{2016}{gal2016dropout}
 Gal, Y. \harvardand\ Ghahramani, Z.  \harvardyearleft 2016\harvardyearright ,
   Dropout as a bayesian approximation: Representing model uncertainty in deep
@@ -300,6 +328,11 @@ Gawlikowski, J., Tassi, C. R.~N., Ali, M., Lee, J., Humt, M., Feng, J., Kruspe,
   A., Triebel, R., Jung, P., Roscher, R. et~al.  \harvardyearleft
   2021\harvardyearright , `A survey of uncertainty in deep neural networks',
   {\em arXiv preprint arXiv:2107.03342} .
+
+\harvarditem{Geifman \harvardand\ El-Yaniv}{2017}{geifman2017selective}
+Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2017\harvardyearright ,
+  `Selective classification for deep neural networks', {\em Advances in neural
+  information processing systems} {\bf 30}.
 
 \harvarditem{Geifman \harvardand\ El-Yaniv}{2019{\em a}}{selective2019geifman}
 Geifman, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2019{\em
@@ -418,6 +451,11 @@ He, K., Zhang, X., Ren, S. \harvardand\ Sun, J.  \harvardyearleft
   2016\harvardyearright , Deep residual learning for image recognition, {\em
   in} `Proceedings of the IEEE conference on computer vision and pattern
   recognition', pp.~770--778.
+
+\harvarditem{Hellman}{1970}{hellman1970nearest}
+Hellman, M.~E.  \harvardyearleft 1970\harvardyearright , `The nearest neighbor
+  classification rule with a reject option', {\em IEEE Transactions on Systems
+  Science and Cybernetics} {\bf 6}(3),~179--185.
 
 \harvarditem[H\'enaff et~al.]{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami
   \harvardand\ van~den Oord}{2019}{henaff2019data}
@@ -968,6 +1006,11 @@ Wen, D., Khan, S.~M., Xu, A.~J., Ibrahim, H., Smith, L., Caballero, J., Zepeda,
   L., de~Blas~Perez, C., Denniston, A.~K., Liu, X. et~al.  \harvardyearleft
   2021\harvardyearright , `Characteristics of publicly available skin cancer
   image datasets: a systematic review', {\em The Lancet Digital Health} .
+
+\harvarditem{Wiener \harvardand\ El-Yaniv}{2015}{wiener2015agnostic}
+Wiener, Y. \harvardand\ El-Yaniv, R.  \harvardyearleft 2015\harvardyearright ,
+  `Agnostic pointwise-competitive selective classification', {\em Journal of
+  Artificial Intelligence Research} {\bf 52},~171--201.
 
 \harvarditem[Wu et~al.]{Wu, Chen, Zeng, Pan, Wang \harvardand\
   Zhao}{2022}{wu2022skin}

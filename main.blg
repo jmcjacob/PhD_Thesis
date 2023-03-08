@@ -4,12 +4,12 @@ The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: agsm.bst
 Case mismatch error between cite keys Blundell2015Weight and blundell2015weight
----line 470 of file main.aux
+---line 481 of file main.aux
  : \citation{Blundell2015Weight
  :                             }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys Blundell2015Weight and blundell2015weight
----line 473 of file main.aux
+---line 482 of file main.aux
  : \citation{Blundell2015Weight
  :                             }
 I'm skipping whatever remains of this command
@@ -49,47 +49,48 @@ Repeated entry---line 43 of file refs/generalisation.bib
  : @article{weiss2016survey
  :                         ,
 I'm skipping whatever remains of this entry
+Warning--there's a number but no volume in chow1957optimum
 Warning--can't use both volume and number fields in lewis1995sequential
 Warning--can't use both volume and number fields in mukherjee2019clustergan
-You've used 157 entries,
+You've used 165 entries,
             2909 wiz_defined-function locations,
-            1463 strings with 37666 characters,
-and the built_in function-call counts, 986792 in all, are:
-= -- 161879
-> -- 14957
+            1502 strings with 38860 characters,
+and the built_in function-call counts, 1009880 in all, are:
+= -- 165529
+> -- 15287
 < -- 9
-+ -- 79773
-- -- 4663
-* -- 87865
-:= -- 192392
-add.period$ -- 157
-call.type$ -- 157
-change.case$ -- 2196
-chr.to.int$ -- 156
-cite$ -- 159
-duplicate$ -- 3049
-empty$ -- 5852
-format.name$ -- 5214
-if$ -- 178356
++ -- 81427
+- -- 4761
+* -- 89772
+:= -- 197196
+add.period$ -- 165
+call.type$ -- 165
+change.case$ -- 2307
+chr.to.int$ -- 164
+cite$ -- 168
+duplicate$ -- 3184
+empty$ -- 6118
+format.name$ -- 5343
+if$ -- 182496
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 159
-newline$ -- 475
-num.names$ -- 1679
-pop$ -- 710
+missing$ -- 166
+newline$ -- 499
+num.names$ -- 1760
+pop$ -- 744
 preamble$ -- 1
-purify$ -- 2355
+purify$ -- 2475
 quote$ -- 0
-skip$ -- 2801
+skip$ -- 2918
 stack$ -- 0
-substring$ -- 232331
-swap$ -- 833
-text.length$ -- 2207
+substring$ -- 237323
+swap$ -- 861
+text.length$ -- 2319
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 622
-warning$ -- 2
-while$ -- 3565
+type$ -- 654
+warning$ -- 3
+while$ -- 3745
 width$ -- 0
-write$ -- 2212
+write$ -- 2315
 (There were 8 error messages)
