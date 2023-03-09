@@ -8,11 +8,11 @@
 \contentsline {table}{\numberline {4.1}{\ignorespaces Calibration and accuracy results for ISIC 2019 and PCam datasets. ISIC 2019 results are means and standard deviations over three iterations. Each section reports results from a single model type; TS denotes temperature scaling.\relax }}{51}{table.caption.48}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Binary experiments trained models and selection methods for each model to be evaluated.\relax }}{64}{table.caption.51}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Multi-class experiment trained models and selection methods to be evaluated.\relax }}{69}{table.caption.56}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Multi-class experiment trained models and selection methods to be evaluated.\relax }}{72}{table.caption.61}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Number of images per diagnosis in each dataset.\relax }}{86}{table.caption.67}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Class-balanced accuracy when training and testing on the various datasets.\relax }}{88}{table.caption.68}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }}{89}{table.caption.69}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Number of images per diagnosis in each dataset.\relax }}{89}{table.caption.72}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Class-balanced accuracy when training and testing on the various datasets.\relax }}{91}{table.caption.73}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }}{92}{table.caption.74}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

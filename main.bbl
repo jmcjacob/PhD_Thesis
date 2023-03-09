@@ -260,6 +260,10 @@ Farahani, R.~Z. \harvardand\ Hekmatfar, M.  \harvardyearleft
   2009\harvardyearright , {\em Facility location: concepts, models, algorithms
   and case studies}, Springer.
 
+\harvarditem{Ferrer}{2022}{ferrer2022analysis}
+Ferrer, L.  \harvardyearleft 2022\harvardyearright , `Analysis and comparison
+  of classification metrics', {\em arXiv preprint arXiv:2209.05355} .
+
 \harvarditem[Folmsbee et~al.]{Folmsbee, Brandwein-Weber \harvardand\
   Doyle}{2021}{folmsbee2021whole}
 Folmsbee, J., Brandwein-Weber, M. \harvardand\ Doyle, S.  \harvardyearleft
@@ -519,6 +523,15 @@ Jin, X., An, H., Wang, J., Wen, K. \harvardand\ Wu, Z.  \harvardyearleft
   2021\harvardyearright , Reducing the annotation cost of whole slide histology
   images using active learning, {\em in} `2021 3rd International Conference on
   Image Processing and Machine Vision (IPMV)', pp.~47--52.
+
+\harvarditem[Jones et~al.]{Jones, Matin, van~der Schaar, Bhayankaram, Ranmuthu,
+  Islam, Behiyat, Boscott, Calanzani, Emery et~al.}{2022}{jones2022artificial}
+Jones, O., Matin, R., van~der Schaar, M., Bhayankaram, K.~P., Ranmuthu, C.,
+  Islam, M., Behiyat, D., Boscott, R., Calanzani, N., Emery, J. et~al.
+  \harvardyearleft 2022\harvardyearright , `Artificial intelligence and machine
+  learning algorithms for early detection of skin cancer in community and
+  primary care settings: a systematic review', {\em The Lancet Digital Health}
+  {\bf 4}(6),~e466--e476.
 
 \harvarditem[Jospin et~al.]{Jospin, Buntine, Boussaid, Laga \harvardand\
   Bennamoun}{2020}{jospin2020hands}
@@ -981,6 +994,13 @@ Veeling, B.~S., Linmans, J., Winkens, J., Cohen, T. \harvardand\ Welling, M.
   \harvardyearleft 2018\harvardyearright , Rotation equivariant cnns for
   digital pathology, {\em in} `International Conference on Medical image
   computing and computer-assisted intervention', Springer, pp.~210--218.
+
+\harvarditem[Wang et~al.]{Wang, Zhang, Li, Zhang \harvardand\
+  Lin}{2016}{wang2016cost}
+Wang, K., Zhang, D., Li, Y., Zhang, R. \harvardand\ Lin, L.  \harvardyearleft
+  2016\harvardyearright , `Cost-effective active learning for deep image
+  classification', {\em IEEE Transactions on Circuits and Systems for Video
+  Technology} {\bf 27}(12),~2591--2600.
 
 \harvarditem[Wang et~al.]{Wang, Zhang, Li, Zhang \harvardand\
   Lin}{2017}{wang2017cost}

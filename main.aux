@@ -23,13 +23,13 @@
 \@writefile{toc}{\contentsline {chapter}{List of Figures}{v}{chapter*.1}\protected@file@percent }
 \citation{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}
 \citation{yang2019self}
-\@writefile{toc}{\contentsline {chapter}{List of Tables}{vii}{chapter*.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of Terms}{viii}{chapter*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of Abbreviations}{ix}{chapter*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of Symbols}{x}{chapter*.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Acknowledgements}{xi}{chapter*.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Declaration}{xii}{chapter*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Abstract}{xiii}{chapter*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of Tables}{viii}{chapter*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of Terms}{ix}{chapter*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of Abbreviations}{x}{chapter*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of Symbols}{xi}{chapter*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Acknowledgements}{xii}{chapter*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Declaration}{xiii}{chapter*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Abstract}{xiv}{chapter*.10}\protected@file@percent }
 \citation{litjens2017survey}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -42,13 +42,20 @@
 \newlabel{sec:research_contributions}{{1.2}{1}{Research Contributions}{section.1.2}{}}
 \citation{tizhoosh2018artificial}
 \citation{settles2012active}
+\citation{wang2016cost}
 \citation{carse2019active}
+\citation{oord2018representation}
+\citation{oord2016pixel}
+\citation{veeling2018rotation}
+\citation{carse2021unsupervised}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Thesis Structure}{2}{section.1.3}\protected@file@percent }
 \newlabel{sec:thesis_structure}{{1.3}{2}{Thesis Structure}{section.1.3}{}}
 \citation{maron2019systematic}
 \citation{guo2017calibration}
 \citation{carse2021robust}
 \citation{carse2022calibration}
+\citation{jones2022artificial}
+\citation{yang2019self}
 \citation{carse2019active}
 \citation{settles2012active}
 \citation{gal2017deep}
@@ -412,6 +419,7 @@
 \newlabel{sec:selective_review}{{5.2}{56}{Literature Review}{section.5.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Asymmetrical Selective Classification}{57}{section.5.3}\protected@file@percent }
 \newlabel{sec:selective_classification}{{5.3}{57}{Asymmetrical Selective Classification}{section.5.3}{}}
+\citation{ferrer2022analysis}
 \newlabel{fig:multiclasssymcosts}{{5.1a}{58}{\relax }{figure.caption.49}{}}
 \newlabel{sub@fig:multiclasssymcosts}{{a}{58}{\relax }{figure.caption.49}{}}
 \newlabel{fig:multiclassasymcosts}{{5.1b}{58}{\relax }{figure.caption.49}{}}
@@ -468,53 +476,63 @@
 \citation{geifman2019selectivenet}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}Results}{66}{subsection.5.5.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{SelectiveNet: Effect of Target Coverage}{66}{section*.52}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Does SelectiveNet Training Help?}{66}{section*.53}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{67}{section*.54}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Asymmetric Costs}{67}{section*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Does SelectiveNet Training Help?}{66}{section*.54}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Cost-coverage curves for SelectiveNets trained with different target coverages. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }}{67}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:binary-selectivenet}{{5.3}{67}{Cost-coverage curves for SelectiveNets trained with different target coverages. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }{figure.caption.53}{}}
+\@writefile{toc}{\contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{67}{section*.56}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost-coverage curves using MC-Dropout. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }}{68}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:binary-mcdropout}{{5.4}{68}{Cost-coverage curves using MC-Dropout. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }{figure.caption.55}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Asymmetric Costs}{68}{section*.59}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Cost-coverage curves for different selective classification methods. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }}{69}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:binary-datasets}{{5.5}{69}{Cost-coverage curves for different selective classification methods. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }{figure.caption.57}{}}
 \citation{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Multi class Experiments}{68}{section.5.6}\protected@file@percent }
-\newlabel{sec:selective_multi_class_experiments}{{5.6}{68}{Multi class Experiments}{section.5.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Dataset Processing}{68}{subsection.5.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{68}{subsection.5.6.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Multi-class experiment trained models and selection methods to be evaluated.\relax }}{69}{table.caption.56}\protected@file@percent }
-\newlabel{tab:multi-class-experiment-setup}{{5.2}{69}{Multi-class experiment trained models and selection methods to be evaluated.\relax }{table.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From top to bottom: $C_{1,0}=1$, $C_{1,0}=10$ and $C_{1,0}=50$.\relax }}{70}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:binary-ecselectivenet}{{5.6}{70}{Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From top to bottom: $C_{1,0}=1$, $C_{1,0}=10$ and $C_{1,0}=50$.\relax }{figure.caption.58}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Multi class Experiments}{70}{section.5.6}\protected@file@percent }
+\newlabel{sec:selective_multi_class_experiments}{{5.6}{70}{Multi class Experiments}{section.5.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From top to bottom: $C_{1,0}=1$, $C_{1,0}=10$ and $C_{1,0}=50$.\relax }}{71}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:binary-asymetric}{{5.7}{71}{Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From top to bottom: $C_{1,0}=1$, $C_{1,0}=10$ and $C_{1,0}=50$.\relax }{figure.caption.60}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Dataset Processing}{71}{subsection.5.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{72}{subsection.5.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Multi-class experiment trained models and selection methods to be evaluated.\relax }}{72}{table.caption.61}\protected@file@percent }
+\newlabel{tab:multi-class-experiment-setup}{{5.2}{72}{Multi-class experiment trained models and selection methods to be evaluated.\relax }{table.caption.61}{}}
 \citation{Blundell2015Weight}
 \citation{Blundell2015Weight}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.3}Training Parameters}{70}{subsection.5.6.3}\protected@file@percent }
-\newlabel{eq:scalemixture}{{5.12}{70}{Training Parameters}{equation.5.6.12}{}}
-\newlabel{eq:elbo}{{5.13}{70}{Training Parameters}{equation.5.6.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.3}Training Parameters}{73}{subsection.5.6.3}\protected@file@percent }
+\newlabel{eq:scalemixture}{{5.12}{73}{Training Parameters}{equation.5.6.12}{}}
 \citation{mackay1992bayesian}
 \citation{botev2017practical}
 \citation{kristiadi2020being}
-\newlabel{eq:elbo_weighting}{{5.14}{71}{Training Parameters}{equation.5.6.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.4}Results}{71}{subsection.5.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{SelectiveNet, EC-SelectiveNet and Target Coverage}{71}{section*.57}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Effect of Temperature Scaling}{72}{section*.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Methods Bayesian Neural Networks}{72}{section*.61}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Results with experiments with SelectiveNet.\relax }}{73}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:multi-class-selective}{{5.3}{73}{Results with experiments with SelectiveNet.\relax }{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Results with experiments with temperature scaling.\relax }}{74}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:multi-class-temp}{{5.4}{74}{Results with experiments with temperature scaling.\relax }{figure.caption.60}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Measures of Uncertainty}{74}{section*.63}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Results with experiments with Bayesian Neural Networks.\relax }}{75}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:multi-class-bayesian}{{5.5}{75}{Results with experiments with Bayesian Neural Networks.\relax }{figure.caption.62}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Results with experiments with measures of uncertainty.\relax }}{76}{figure.caption.64}\protected@file@percent }
-\newlabel{fig:multi-class-uncertainity}{{5.6}{76}{Results with experiments with measures of uncertainty.\relax }{figure.caption.64}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}Conclusion}{76}{section.5.7}\protected@file@percent }
-\newlabel{sec:selective_conclusion}{{5.7}{76}{Conclusion}{section.5.7}{}}
+\newlabel{eq:elbo}{{5.13}{74}{Training Parameters}{equation.5.6.13}{}}
+\newlabel{eq:elbo_weighting}{{5.14}{74}{Training Parameters}{equation.5.6.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.4}Results}{75}{subsection.5.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{SelectiveNet, EC-SelectiveNet and Target Coverage}{75}{section*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Effect of Temperature Scaling}{75}{section*.64}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Results with experiments with SelectiveNet.\relax }}{76}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:multi-class-selective}{{5.8}{76}{Results with experiments with SelectiveNet.\relax }{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Methods Bayesian Neural Networks}{76}{section*.66}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Results with experiments with temperature scaling.\relax }}{77}{figure.caption.65}\protected@file@percent }
+\newlabel{fig:multi-class-temp}{{5.9}{77}{Results with experiments with temperature scaling.\relax }{figure.caption.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Results with experiments with Bayesian Neural Networks.\relax }}{78}{figure.caption.67}\protected@file@percent }
+\newlabel{fig:multi-class-bayesian}{{5.10}{78}{Results with experiments with Bayesian Neural Networks.\relax }{figure.caption.67}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Measures of Uncertainty}{78}{section*.68}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Results with experiments with measures of uncertainty.\relax }}{79}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:multi-class-uncertainity}{{5.11}{79}{Results with experiments with measures of uncertainty.\relax }{figure.caption.69}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Conclusion}{79}{section.5.7}\protected@file@percent }
+\newlabel{sec:selective_conclusion}{{5.7}{79}{Conclusion}{section.5.7}{}}
 \citation{du2020ai,wu2022skin}
 \citation{tschandl2018ham10000,wen2021characteristics}
 \citation{esteva2017dermatologist,haenssle2018man,han2018classification,tschandl2019expert}
 \citation{fujisawa2019deep}
 \citation{han2018classification}
 \citation{glocker2022risk}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Evaluating Dataset Generalisation}{78}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Evaluating Dataset Generalisation}{81}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{ch:dataset_generalisation}{{6}{78}{Evaluating Dataset Generalisation}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{78}{section.6.1}\protected@file@percent }
-\newlabel{sec:generalisation_intro}{{6.1}{78}{Introduction}{section.6.1}{}}
+\newlabel{ch:dataset_generalisation}{{6}{81}{Evaluating Dataset Generalisation}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{81}{section.6.1}\protected@file@percent }
+\newlabel{sec:generalisation_intro}{{6.1}{81}{Introduction}{section.6.1}{}}
 \citation{kelly2019key}
 \citation{glocker2022risk}
 \citation{prados2017spinal}
@@ -524,65 +542,65 @@
 \citation{matsoukas2022makes}
 \citation{deng2009imagenet}
 \citation{matsoukas2022makes}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the Tayside and Forth Valley datasets.\relax }}{81}{figure.caption.65}\protected@file@percent }
-\newlabel{fig:nhs_dataset_examples}{{6.1}{81}{Example images from the Tayside and Forth Valley datasets.\relax }{figure.caption.65}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Datasets}{81}{section.6.2}\protected@file@percent }
-\newlabel{sec:generalisation_datasets}{{6.2}{81}{Datasets}{section.6.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Tayside Dataset}{81}{subsection.6.2.1}\protected@file@percent }
-\newlabel{subsec:tayside_dataset}{{6.2.1}{81}{Tayside Dataset}{subsection.6.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Forth Valley Dataset}{82}{subsection.6.2.2}\protected@file@percent }
-\newlabel{subsec:forth_valley_dataset}{{6.2.2}{82}{Forth Valley Dataset}{subsection.6.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Annotation Procedure}{82}{subsection.6.2.3}\protected@file@percent }
-\newlabel{subsec:annotation_procedure}{{6.2.3}{82}{Annotation Procedure}{subsection.6.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the Tayside and Forth Valley datasets.\relax }}{84}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:nhs_dataset_examples}{{6.1}{84}{Example images from the Tayside and Forth Valley datasets.\relax }{figure.caption.70}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Datasets}{84}{section.6.2}\protected@file@percent }
+\newlabel{sec:generalisation_datasets}{{6.2}{84}{Datasets}{section.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Tayside Dataset}{84}{subsection.6.2.1}\protected@file@percent }
+\newlabel{subsec:tayside_dataset}{{6.2.1}{84}{Tayside Dataset}{subsection.6.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Forth Valley Dataset}{85}{subsection.6.2.2}\protected@file@percent }
+\newlabel{subsec:forth_valley_dataset}{{6.2.2}{85}{Forth Valley Dataset}{subsection.6.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Annotation Procedure}{85}{subsection.6.2.3}\protected@file@percent }
+\newlabel{subsec:annotation_procedure}{{6.2.3}{85}{Annotation Procedure}{subsection.6.2.3}{}}
 \citation{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}
 \citation{yang2019self}
 \citation{yang2019self}
 \citation{yang2019self}
 \citation{tan2019efficient}
 \citation{liu2021swin}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Generalisation Experiments}{84}{section.6.3}\protected@file@percent }
-\newlabel{sec:generalisation_experiments}{{6.3}{84}{Generalisation Experiments}{section.6.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Datasets}{84}{subsection.6.3.1}\protected@file@percent }
-\newlabel{subsec:generalisation_datasets}{{6.3.1}{84}{Datasets}{subsection.6.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Training Parameters}{84}{subsection.6.3.2}\protected@file@percent }
-\newlabel{subsec:generalisation_training}{{6.3.2}{84}{Training Parameters}{subsection.6.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Example images from the SD-260 dataset\nobreakspace  {}\citep  {yang2019self}.\relax }}{85}{figure.caption.66}\protected@file@percent }
-\newlabel{fig:sd260_examples}{{6.2}{85}{Example images from the SD-260 dataset~\citep {yang2019self}.\relax }{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Generalisation Experiments}{87}{section.6.3}\protected@file@percent }
+\newlabel{sec:generalisation_experiments}{{6.3}{87}{Generalisation Experiments}{section.6.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Datasets}{87}{subsection.6.3.1}\protected@file@percent }
+\newlabel{subsec:generalisation_datasets}{{6.3.1}{87}{Datasets}{subsection.6.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Training Parameters}{87}{subsection.6.3.2}\protected@file@percent }
+\newlabel{subsec:generalisation_training}{{6.3.2}{87}{Training Parameters}{subsection.6.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Example images from the SD-260 dataset\nobreakspace  {}\citep  {yang2019self}.\relax }}{88}{figure.caption.71}\protected@file@percent }
+\newlabel{fig:sd260_examples}{{6.2}{88}{Example images from the SD-260 dataset~\citep {yang2019self}.\relax }{figure.caption.71}{}}
 \citation{smith2017cyclical}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Number of images per diagnosis in each dataset.\relax }}{86}{table.caption.67}\protected@file@percent }
-\newlabel{tab:generalisation_datasets}{{6.1}{86}{Number of images per diagnosis in each dataset.\relax }{table.caption.67}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Experiment Setup}{86}{subsection.6.3.3}\protected@file@percent }
-\newlabel{subsec:generalisation_experiment}{{6.3.3}{86}{Experiment Setup}{subsection.6.3.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Number of images per diagnosis in each dataset.\relax }}{89}{table.caption.72}\protected@file@percent }
+\newlabel{tab:generalisation_datasets}{{6.1}{89}{Number of images per diagnosis in each dataset.\relax }{table.caption.72}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Experiment Setup}{89}{subsection.6.3.3}\protected@file@percent }
+\newlabel{subsec:generalisation_experiment}{{6.3.3}{89}{Experiment Setup}{subsection.6.3.3}{}}
 \citation{deng2009imagenet}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}Results}{87}{subsection.6.3.4}\protected@file@percent }
-\newlabel{subsec:generalisation_results}{{6.3.4}{87}{Results}{subsection.6.3.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Class-balanced accuracy when training and testing on the various datasets.\relax }}{88}{table.caption.68}\protected@file@percent }
-\newlabel{tab:generalisation_results}{{6.2}{88}{Class-balanced accuracy when training and testing on the various datasets.\relax }{table.caption.68}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }}{89}{table.caption.69}\protected@file@percent }
-\newlabel{tab:generalisation_models}{{6.3}{89}{Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }{table.caption.69}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{90}{figure.caption.70}\protected@file@percent }
-\newlabel{fig:generalisation_models}{{6.3}{90}{Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }{figure.caption.70}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Conclusion}{90}{section.6.4}\protected@file@percent }
-\newlabel{sec:generalisation_conclusion}{{6.4}{90}{Conclusion}{section.6.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{91}{figure.caption.71}\protected@file@percent }
-\newlabel{fig:generalisation_testing}{{6.4}{91}{Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }{figure.caption.71}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.4}Results}{90}{subsection.6.3.4}\protected@file@percent }
+\newlabel{subsec:generalisation_results}{{6.3.4}{90}{Results}{subsection.6.3.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Class-balanced accuracy when training and testing on the various datasets.\relax }}{91}{table.caption.73}\protected@file@percent }
+\newlabel{tab:generalisation_results}{{6.2}{91}{Class-balanced accuracy when training and testing on the various datasets.\relax }{table.caption.73}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }}{92}{table.caption.74}\protected@file@percent }
+\newlabel{tab:generalisation_models}{{6.3}{92}{Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. \relax }{table.caption.74}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{93}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:generalisation_models}{{6.3}{93}{Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }{figure.caption.75}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Conclusion}{93}{section.6.4}\protected@file@percent }
+\newlabel{sec:generalisation_conclusion}{{6.4}{93}{Conclusion}{section.6.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{94}{figure.caption.76}\protected@file@percent }
+\newlabel{fig:generalisation_testing}{{6.4}{94}{Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }{figure.caption.76}{}}
 \citation{guan2021domain,carse2021robust}
 \citation{carse2021robust,carse2022calibration}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }}{94}{figure.caption.72}\protected@file@percent }
-\newlabel{fig:generalisation_roc}{{6.5}{94}{ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }{figure.caption.72}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{95}{chapter.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }}{97}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:generalisation_roc}{{6.5}{97}{ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }{figure.caption.77}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{98}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{ch:conclusion_and_discussion}{{7}{95}{Conclusion and Discussion}{chapter.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Pathway to Complete System}{95}{section.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Summary of Contributions}{95}{section.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Limitations}{95}{section.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.4}Future Work}{95}{section.7.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.1}Active Learning}{95}{subsection.7.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{95}{subsection.7.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{95}{subsection.7.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{96}{subsection.7.4.4}\protected@file@percent }
+\newlabel{ch:conclusion_and_discussion}{{7}{98}{Conclusion and Discussion}{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Pathway to Complete System}{98}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Summary of Contributions}{98}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Limitations}{98}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Future Work}{98}{section.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.1}Active Learning}{98}{subsection.7.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{98}{subsection.7.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{98}{subsection.7.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{99}{subsection.7.4.4}\protected@file@percent }
 \bibdata{refs/intro,refs/active,refs/unsupervised,refs/calibration,refs/selective,refs/generalisation}
 \bibcite{akrami2020brain}{{1}{2020}{{Akrami et~al.}}{{Akrami, Joshi, Li, Aydore \&\ Leahy}}}
 \bibcite{arjovsky2017wasserstein}{{2}{2017}{{Arjovsky et~al.}}{{Arjovsky, Chintala \&\ Bottou}}}
@@ -592,7 +610,7 @@
 \bibcite{bengio2013representation}{{6}{2013}{{Bengio, Courville \&\ Vincent}}{{}}}
 \bibcite{bengio2013generalized}{{7}{2013}{{Bengio, Yao, Alain \&\ Vincent}}{{}}}
 \bibcite{blundell2015weight}{{8}{2015}{{Blundell et~al.}}{{Blundell, Cornebise, Kavukcuoglu \&\ Wierstra}}}
-\@writefile{toc}{\contentsline {chapter}{References}{97}{subsection.7.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{References}{100}{subsection.7.4.4}\protected@file@percent }
 \bibcite{botev2017practical}{{9}{2017}{{Botev et~al.}}{{Botev, Ritter \&\ Barber}}}
 \bibcite{budd2021survey}{{10}{2021}{{Budd et~al.}}{{Budd, Robinson \&\ Kainz}}}
 \bibcite{caron2018deep}{{11}{2018}{{Caron et~al.}}{{Caron, Bojanowski, Joulin \&\ Douze}}}
@@ -623,148 +641,151 @@
 \bibcite{el2010foundations}{{36}{2010}{{El-Yaniv et~al.}}{{}}}
 \bibcite{esteva2017dermatologist}{{37}{2017}{{Esteva et~al.}}{{Esteva, Kuprel, Novoa, Ko, Swetter, Blau \&\ Thrun}}}
 \bibcite{farahani2009facility}{{38}{2009}{{Farahani \&\ Hekmatfar}}{{}}}
-\bibcite{folmsbee2021whole}{{39}{2021}{{Folmsbee et~al.}}{{Folmsbee, Brandwein-Weber \&\ Doyle}}}
-\bibcite{freeman1965elementary}{{40}{1965}{{Freeman}}{{}}}
-\bibcite{frenkel2021network}{{41}{2021}{{Frenkel \&\ Goldberger}}{{}}}
-\bibcite{fujisawa2019deep}{{42}{2019}{{Fujisawa et~al.}}{{Fujisawa, Otomo, Ogata, Nakamura, Fujita, Ishitsuka, Watanabe, Okiyama, Ohara \&\ Fujimoto}}}
-\bibcite{fumera2002support}{{43}{2002}{{Fumera \&\ Roli}}{{}}}
-\bibcite{Gal2016Uncertainty}{{44}{2016}{{Gal}}{{}}}
-\bibcite{gal2016dropout}{{45}{2016}{{Gal \&\ Ghahramani}}{{}}}
-\bibcite{gal2017deep}{{46}{2017}{{Gal et~al.}}{{Gal, Islam \&\ Ghahramani}}}
-\bibcite{gamper2019pannuke}{{47}{2019}{{Gamper et~al.}}{{Gamper, Alemi~Koohbanani, Benet, Khuram \&\ Rajpoot}}}
-\bibcite{gamper2020pannuke}{{48}{2020}{{Gamper et~al.}}{{Gamper, Koohbanani, Benes, Graham, Jahanifar, Khurram, Azam, Hewitt \&\ Rajpoot}}}
-\bibcite{gawlikowski2021survey}{{49}{2021}{{Gawlikowski et~al.}}{{Gawlikowski, Tassi, Ali, Lee, Humt, Feng, Kruspe, Triebel, Jung, Roscher et~al.}}}
-\bibcite{geifman2017selective}{{50}{2017}{{Geifman \&\ El-Yaniv}}{{}}}
-\bibcite{selective2019geifman}{{51}{2019{\em  a}}{{Geifman \&\ El-Yaniv}}{{}}}
-\bibcite{geifman2019selectivenet}{{52}{2019{\em  b}}{{Geifman \&\ El-Yaniv}}{{}}}
-\bibcite{gidaris2018unsupervised}{{53}{2018}{{Gidaris et~al.}}{{Gidaris, Singh \&\ Komodakis}}}
-\bibcite{glocker2022risk}{{54}{2022}{{Glocker et~al.}}{{Glocker, Jones, Bernhardt \&\ Winzeck}}}
-\bibcite{glorot2010understanding}{{55}{2010}{{Glorot \&\ Bengio}}{{}}}
-\bibcite{goodfellow2016deep}{{56}{2016}{{Goodfellow et~al.}}{{Goodfellow, Bengio \&\ Courville}}}
-\bibcite{goodfellow2014advances}{{57}{2014}{{Goodfellow et~al.}}{{Goodfellow, Pouget-Abadie, Mirza, Xu, Warde-Farley, Ozair, Courville \&\ Bengio}}}
-\bibcite{gorriz2017cost}{{58}{2017}{{Gorriz et~al.}}{{Gorriz, Carlier, Faure \&\ Giro-i Nieto}}}
-\bibcite{guan2021domain}{{59}{2021}{{Guan \&\ Liu}}{{}}}
-\bibcite{gulrajani2017improved}{{60}{2017}{{Gulrajani et~al.}}{{Gulrajani, Ahmed, Arjovsky, Dumoulin \&\ Courville}}}
-\bibcite{guo2017calibration}{{61}{2017}{{Guo et~al.}}{{Guo, Pleiss, Sun \&\ Weinberger}}}
-\bibcite{gutman2016skin}{{62}{2016}{{Gutman et~al.}}{{Gutman, Codella, Celebi, Helba, Marchetti, Mishra \&\ Halpern}}}
-\bibcite{gutmann2010noise}{{63}{2010}{{Gutmann \&\ Hyv{\"a}rinen}}{{}}}
-\bibcite{haenssle2018man}{{64}{2018}{{Haenssle et~al.}}{{Haenssle, Fink, Schneiderbauer, Toberer, Buhl, Blum, Kalloo, Hassen, Thomas, Enk et~al.}}}
-\bibcite{han2018classification}{{65}{2018}{{Han et~al.}}{{Han, Kim, Lim, Park, Park \&\ Chang}}}
-\bibcite{he2020momentum}{{66}{2020}{{He et~al.}}{{He, Fan, Wu, Xie \&\ Girshick}}}
-\bibcite{he2016deep}{{67}{2016}{{He et~al.}}{{He, Zhang, Ren \&\ Sun}}}
-\bibcite{hellman1970nearest}{{68}{1970}{{Hellman}}{{}}}
-\bibcite{henaff2019data}{{69}{2019}{{H\'enaff et~al.}}{{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami \&\ van~den Oord}}}
-\bibcite{hendrycks2018deep}{{70}{2018}{{Hendrycks et~al.}}{{Hendrycks, Mazeika \&\ Dietterich}}}
-\bibcite{hendrycks2019augmix}{{71}{2019}{{Hendrycks et~al.}}{{Hendrycks, Mu, Cubuk, Zoph, Gilmer \&\ Lakshminarayanan}}}
-\bibcite{hjelm2018learning}{{72}{2018}{{Hjelm et~al.}}{{Hjelm, Fedorov, Lavoie-Marchildon, Grewal, Bachman, Trischler \&\ Bengio}}}
-\bibcite{hou2016automatic}{{73}{2016}{{Hou et~al.}}{{Hou, Singh, Samaras, Kurc, Gao, Seidman \&\ Saltz}}}
-\bibcite{houlsby2011bayesian}{{74}{2011}{{Houlsby et~al.}}{{Houlsby, Husz{\'a}r, Ghahramani \&\ Lengyel}}}
-\bibcite{hu2018unsupervised}{{75}{2018}{{Hu et~al.}}{{Hu, Tang, Chang, Fan, Lai \&\ Xu}}}
-\bibcite{islam2021spatially}{{76}{2021}{{Islam \&\ Glocker}}{{}}}
-\bibcite{jin2021reducing}{{77}{2021}{{Jin et~al.}}{{Jin, An, Wang, Wen \&\ Wu}}}
-\bibcite{jospin2020hands}{{78}{2020}{{Jospin et~al.}}{{Jospin, Buntine, Boussaid, Laga \&\ Bennamoun}}}
-\bibcite{kaji2019overview}{{79}{2019}{{Kaji \&\ Kida}}{{}}}
-\bibcite{kampffmeyer2016semantic}{{80}{2016}{{Kampffmeyer et~al.}}{{Kampffmeyer, Salberg \&\ Jenssen}}}
-\bibcite{kelly2019key}{{81}{2019}{{Kelly et~al.}}{{Kelly, Karthikesalingam, Suleyman, Corrado \&\ King}}}
-\bibcite{kingma2014adam}{{82}{2014}{{Kingma \&\ Ba}}{{}}}
-\bibcite{kingma2013auto}{{83}{2013}{{Kingma \&\ Welling}}{{}}}
-\bibcite{kirsch2019batchbald}{{84}{2019}{{Kirsch et~al.}}{{Kirsch, Van~Amersfoort \&\ Gal}}}
-\bibcite{konyushkova2019geometry}{{85}{2019}{{Konyushkova et~al.}}{{Konyushkova, Sznitman \&\ Fua}}}
-\bibcite{kramer1991nonlinear}{{86}{1991}{{Kramer}}{{}}}
-\bibcite{kristiadi2020being}{{87}{2020}{{Kristiadi et~al.}}{{Kristiadi, Hein \&\ Hennig}}}
-\bibcite{krizhevsky2009learning}{{88}{2009}{{Krizhevsky \&\ Hinton}}{{}}}
-\bibcite{kullback1951information}{{89}{1951}{{Kullback \&\ Leibler}}{{}}}
-\bibcite{kurakin2016adversarial}{{90}{2016}{{Kurakin et~al.}}{{Kurakin, Goodfellow \&\ Bengio}}}
-\bibcite{kwon2020uncertainty}{{91}{2020}{{Kwon et~al.}}{{Kwon, Won, Kim \&\ Paik}}}
-\bibcite{lake2015human}{{92}{2015}{{Lake et~al.}}{{Lake, Salakhutdinov \&\ Tenenbaum}}}
-\bibcite{lecun1998gradient}{{93}{1998}{{LeCun et~al.}}{{LeCun, Bottou, Bengio \&\ Haffner}}}
-\bibcite{lee2013pseudo}{{94}{2013}{{Lee}}{{}}}
-\bibcite{lewis1995sequential}{{95}{1995}{{Lewis}}{{}}}
-\bibcite{liang2020improved}{{96}{2020}{{Liang et~al.}}{{Liang, Zhang, Wang \&\ Jacobs}}}
-\bibcite{lin2017focal}{{97}{2017}{{Lin et~al.}}{{Lin, Goyal, Girshick, He \&\ Doll{\'a}r}}}
-\bibcite{litjens20181399}{{98}{2018}{{Litjens et~al.}}{{Litjens, Bandi, Bejnordi, Geessink, Balkenhol, Bult, Halilovic, Hermsen, van~de Loo, Vogels, Manson, Stathonikos, Baidoshvili, van Diest, Wauters, van Dijk \&\ van~der Laak}}}
-\bibcite{litjens2017survey}{{99}{2017}{{Litjens et~al.}}{{Litjens, Kooi, Bejnordi, Setio, Ciompi, Ghafoorian, Van Der~Laak, Van~Ginneken \&\ S{\'a}nchez}}}
-\bibcite{liu1989limited}{{100}{1989}{{Liu \&\ Nocedal}}{{}}}
-\bibcite{liu2020semi}{{101}{2020}{{Liu et~al.}}{{Liu, Lei, Wan, Liu, Luo \&\ Feng}}}
-\bibcite{liu2021swin}{{102}{2021}{{Liu et~al.}}{{Liu, Lin, Cao, Hu, Wei, Zhang, Lin \&\ Guo}}}
-\bibcite{mackay1992bayesian}{{103}{1992}{{MacKay}}{{}}}
-\bibcite{mackowiak2018cereals}{{104}{2018}{{Mackowiak et~al.}}{{Mackowiak, Lenz, Ghori, Diego, Lange \&\ Rother}}}
-\bibcite{madabhushi2016image}{{105}{2016}{{Madabhushi \&\ Lee}}{{}}}
-\bibcite{makhzani2013k}{{106}{2013}{{Makhzani \&\ Frey}}{{}}}
-\bibcite{maron2019systematic}{{107}{2019}{{Maron et~al.}}{{Maron, Weichenthal, Utikal, Hekler, Berking, Hauschild, Enk, Haferkamp, Klode, Schadendorf et~al.}}}
-\bibcite{matsoukas2022makes}{{108}{2022}{{Matsoukas et~al.}}{{Matsoukas, Haslum, Sorkhei, S{\"o}derberg \&\ Smith}}}
-\bibcite{misra2020self}{{109}{2020}{{Misra \&\ Maaten}}{{}}}
-\bibcite{mukherjee2019clustergan}{{110}{2019}{{Mukherjee et~al.}}{{Mukherjee, Asnani, Lin \&\ Kannan}}}
-\bibcite{mukhoti2020calibrating}{{111}{2020}{{Mukhoti et~al.}}{{Mukhoti, Kulharia, Sanyal, Golodetz, Torr \&\ Dokania}}}
-\bibcite{muller2019does}{{112}{2019}{{M{\"u}ller et~al.}}{{M{\"u}ller, Kornblith \&\ Hinton}}}
-\bibcite{noroozi2016unsupervised}{{113}{2016}{{Noroozi \&\ Favaro}}{{}}}
-\bibcite{parikh2014proximal}{{114}{2014}{{Parikh et~al.}}{{Parikh, Boyd et~al.}}}
-\bibcite{parzen1962estimation}{{115}{1962}{{Parzen}}{{}}}
-\bibcite{platt1999probabilistic}{{116}{1999}{{Platt et~al.}}{{}}}
-\bibcite{pop2018deep}{{117}{2018}{{Pop \&\ Fulop}}{{}}}
-\bibcite{prados2017spinal}{{118}{2017}{{Prados et~al.}}{{Prados, Ashburner, Blaiotta, Brosch, Carballido-Gamio, Cardoso, Conrad, Datta, D{\'a}vid, De~Leener et~al.}}}
-\bibcite{prechelt1998early}{{119}{1998}{{Prechelt}}{{}}}
-\bibcite{rasmus2015semi}{{120}{2015}{{Rasmus et~al.}}{{Rasmus, Berglund, Honkala, Valpola \&\ Raiko}}}
-\bibcite{ren2021survey}{{121}{2021}{{Ren et~al.}}{{Ren, Xiao, Chang, Huang, Li, Gupta, Chen \&\ Wang}}}
-\bibcite{roelofs2022mitigating}{{122}{2022}{{Roelofs et~al.}}{{Roelofs, Cain, Shlens \&\ Mozer}}}
-\bibcite{roy2001toward}{{123}{2001}{{Roy \&\ McCallum}}{{}}}
-\bibcite{sener2017active}{{124}{2017}{{Sener \&\ Savarese}}{{}}}
-\bibcite{settles2012active}{{125}{2012}{{Settles}}{{}}}
-\bibcite{settles2008analysis}{{126}{2008}{{Settles \&\ Craven}}{{}}}
-\bibcite{settles2008active2}{{127}{2008}{{Settles et~al.}}{{Settles, Craven \&\ Friedland}}}
-\bibcite{settles2007multiple}{{128}{2007}{{Settles et~al.}}{{Settles, Craven \&\ Ray}}}
-\bibcite{seung1992query}{{129}{1992}{{Seung et~al.}}{{Seung, Opper \&\ Sompolinsky}}}
-\bibcite{shannon1948mathematical}{{130}{1948}{{Shannon}}{{}}}
-\bibcite{shao2018deep}{{131}{2018}{{Shao et~al.}}{{Shao, Sun \&\ Zhang}}}
-\bibcite{shi2019active}{{132}{2019}{{Shi et~al.}}{{Shi, Dou, Xue, Qin, Chen \&\ Heng}}}
-\bibcite{shin1949mathematical}{{133}{1949}{{Shin \&\ Kim}}{{}}}
-\bibcite{shurrab2022self}{{134}{2022}{{Shurrab \&\ Duwairi}}{{}}}
-\bibcite{sirinukunwattana2016locality}{{135}{2016}{{Sirinukunwattana et~al.}}{{Sirinukunwattana, Raza, Tsang, Snead, Cree \&\ Rajpoot}}}
-\bibcite{smith2017cyclical}{{136}{2017}{{Smith}}{{}}}
-\bibcite{srinidhi2020deep}{{137}{2020}{{Srinidhi et~al.}}{{Srinidhi, Ciga \&\ Martel}}}
-\bibcite{srivastav2021improved}{{138}{2021}{{Srivastav et~al.}}{{Srivastav, Bajpai \&\ Srivastava}}}
-\bibcite{srivastava2014dropout}{{139}{2014}{{Srivastava et~al.}}{{Srivastava, Hinton, Krizhevsky, Sutskever \&\ Salakhutdinov}}}
-\bibcite{stacke2020measuring}{{140}{2020}{{Stacke et~al.}}{{Stacke, Eilertsen, Unger \&\ Lundstr{\"o}m}}}
-\bibcite{szegedy2016rethinking}{{141}{2016}{{Szegedy et~al.}}{{Szegedy, Vanhoucke, Ioffe, Shlens \&\ Wojna}}}
-\bibcite{tan2019efficient}{{142}{2019}{{Tan \&\ Le}}{{}}}
-\bibcite{thiagarajan2020improving}{{143}{2020}{{Thiagarajan et~al.}}{{Thiagarajan, Venkatesh, Rajan \&\ Sattigeri}}}
-\bibcite{tizhoosh2018artificial}{{144}{2018}{{Tizhoosh \&\ Pantanowitz}}{{}}}
-\bibcite{tschandl2019expert}{{145}{2019}{{Tschandl et~al.}}{{Tschandl, Rosendahl, Akay, Argenziano, Blum, Braun, Cabo, Gourhant, Kreusch, Lallas et~al.}}}
-\bibcite{tschandl2018ham10000}{{146}{2018}{{Tschandl et~al.}}{{Tschandl, Rosendahl \&\ Kittler}}}
-\bibcite{ulmer2020trust}{{147}{2020}{{Ulmer et~al.}}{{Ulmer, Meijerink \&\ Cin{\`a}}}}
-\bibcite{oord2016pixel}{{148}{2016}{{van~den Oord et~al.}}{{van~den Oord, Kalchbrenner \&\ Kavukcuoglu}}}
-\bibcite{oord2018representation}{{149}{2018}{{van~den Oord et~al.}}{{van~den Oord, Li \&\ Vinyals}}}
-\bibcite{veeling2018rotation}{{150}{2018}{{Veeling et~al.}}{{Veeling, Linmans, Winkens, Cohen \&\ Welling}}}
-\bibcite{wang2017cost}{{151}{2017}{{Wang et~al.}}{{Wang, Zhang, Li, Zhang \&\ Lin}}}
-\bibcite{wei2020recent}{{152}{2020}{{Wei \&\ Mahmood}}{{}}}
-\bibcite{weiss2016survey}{{153}{2016}{{Weiss et~al.}}{{Weiss, Khoshgoftaar \&\ Wang}}}
-\bibcite{wen2021characteristics}{{154}{2021}{{Wen et~al.}}{{Wen, Khan, Xu, Ibrahim, Smith, Caballero, Zepeda, de~Blas~Perez, Denniston, Liu et~al.}}}
-\bibcite{wiener2015agnostic}{{155}{2015}{{Wiener \&\ El-Yaniv}}{{}}}
-\bibcite{wu2022skin}{{156}{2022}{{Wu et~al.}}{{Wu, Chen, Zeng, Pan, Wang \&\ Zhao}}}
-\bibcite{wu2018unsupervised}{{157}{2018}{{Wu et~al.}}{{Wu, Xiong, Yu \&\ Lin}}}
-\bibcite{xie2017aggregated}{{158}{2017}{{Xie et~al.}}{{Xie, Girshick, Doll{\'a}r, Tu \&\ He}}}
-\bibcite{yang2019self}{{159}{2019}{{Yang et~al.}}{{Yang, Wu, Liang, Sun, Cheng, Rosin \&\ Wang}}}
-\bibcite{yi2019generative}{{160}{2019}{{Yi et~al.}}{{Yi, Walia \&\ Babyn}}}
-\bibcite{zeiler2012adadelta}{{161}{2012}{{Zeiler}}{{}}}
-\bibcite{zhao2019data}{{162}{2019}{{Zhao et~al.}}{{Zhao, Balakrishnan, Durand, Guttag \&\ Dalca}}}
-\bibcite{zhdanov2019diverse}{{163}{2019}{{Zhdanov}}{{}}}
-\bibcite{zhou2021preservational}{{164}{2021}{{Zhou et~al.}}{{Zhou, Lu, Yang, Han \&\ Yu}}}
-\bibcite{zhuang2019local}{{165}{2019}{{Zhuang et~al.}}{{Zhuang, Zhai \&\ Yamins}}}
-\@writefile{toc}{\contentsline {chapter}{Appendices}{114}{section*.74}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{115}{appendix.a.A}\protected@file@percent }
+\bibcite{ferrer2022analysis}{{39}{2022}{{Ferrer}}{{}}}
+\bibcite{folmsbee2021whole}{{40}{2021}{{Folmsbee et~al.}}{{Folmsbee, Brandwein-Weber \&\ Doyle}}}
+\bibcite{freeman1965elementary}{{41}{1965}{{Freeman}}{{}}}
+\bibcite{frenkel2021network}{{42}{2021}{{Frenkel \&\ Goldberger}}{{}}}
+\bibcite{fujisawa2019deep}{{43}{2019}{{Fujisawa et~al.}}{{Fujisawa, Otomo, Ogata, Nakamura, Fujita, Ishitsuka, Watanabe, Okiyama, Ohara \&\ Fujimoto}}}
+\bibcite{fumera2002support}{{44}{2002}{{Fumera \&\ Roli}}{{}}}
+\bibcite{Gal2016Uncertainty}{{45}{2016}{{Gal}}{{}}}
+\bibcite{gal2016dropout}{{46}{2016}{{Gal \&\ Ghahramani}}{{}}}
+\bibcite{gal2017deep}{{47}{2017}{{Gal et~al.}}{{Gal, Islam \&\ Ghahramani}}}
+\bibcite{gamper2019pannuke}{{48}{2019}{{Gamper et~al.}}{{Gamper, Alemi~Koohbanani, Benet, Khuram \&\ Rajpoot}}}
+\bibcite{gamper2020pannuke}{{49}{2020}{{Gamper et~al.}}{{Gamper, Koohbanani, Benes, Graham, Jahanifar, Khurram, Azam, Hewitt \&\ Rajpoot}}}
+\bibcite{gawlikowski2021survey}{{50}{2021}{{Gawlikowski et~al.}}{{Gawlikowski, Tassi, Ali, Lee, Humt, Feng, Kruspe, Triebel, Jung, Roscher et~al.}}}
+\bibcite{geifman2017selective}{{51}{2017}{{Geifman \&\ El-Yaniv}}{{}}}
+\bibcite{selective2019geifman}{{52}{2019{\em  a}}{{Geifman \&\ El-Yaniv}}{{}}}
+\bibcite{geifman2019selectivenet}{{53}{2019{\em  b}}{{Geifman \&\ El-Yaniv}}{{}}}
+\bibcite{gidaris2018unsupervised}{{54}{2018}{{Gidaris et~al.}}{{Gidaris, Singh \&\ Komodakis}}}
+\bibcite{glocker2022risk}{{55}{2022}{{Glocker et~al.}}{{Glocker, Jones, Bernhardt \&\ Winzeck}}}
+\bibcite{glorot2010understanding}{{56}{2010}{{Glorot \&\ Bengio}}{{}}}
+\bibcite{goodfellow2016deep}{{57}{2016}{{Goodfellow et~al.}}{{Goodfellow, Bengio \&\ Courville}}}
+\bibcite{goodfellow2014advances}{{58}{2014}{{Goodfellow et~al.}}{{Goodfellow, Pouget-Abadie, Mirza, Xu, Warde-Farley, Ozair, Courville \&\ Bengio}}}
+\bibcite{gorriz2017cost}{{59}{2017}{{Gorriz et~al.}}{{Gorriz, Carlier, Faure \&\ Giro-i Nieto}}}
+\bibcite{guan2021domain}{{60}{2021}{{Guan \&\ Liu}}{{}}}
+\bibcite{gulrajani2017improved}{{61}{2017}{{Gulrajani et~al.}}{{Gulrajani, Ahmed, Arjovsky, Dumoulin \&\ Courville}}}
+\bibcite{guo2017calibration}{{62}{2017}{{Guo et~al.}}{{Guo, Pleiss, Sun \&\ Weinberger}}}
+\bibcite{gutman2016skin}{{63}{2016}{{Gutman et~al.}}{{Gutman, Codella, Celebi, Helba, Marchetti, Mishra \&\ Halpern}}}
+\bibcite{gutmann2010noise}{{64}{2010}{{Gutmann \&\ Hyv{\"a}rinen}}{{}}}
+\bibcite{haenssle2018man}{{65}{2018}{{Haenssle et~al.}}{{Haenssle, Fink, Schneiderbauer, Toberer, Buhl, Blum, Kalloo, Hassen, Thomas, Enk et~al.}}}
+\bibcite{han2018classification}{{66}{2018}{{Han et~al.}}{{Han, Kim, Lim, Park, Park \&\ Chang}}}
+\bibcite{he2020momentum}{{67}{2020}{{He et~al.}}{{He, Fan, Wu, Xie \&\ Girshick}}}
+\bibcite{he2016deep}{{68}{2016}{{He et~al.}}{{He, Zhang, Ren \&\ Sun}}}
+\bibcite{hellman1970nearest}{{69}{1970}{{Hellman}}{{}}}
+\bibcite{henaff2019data}{{70}{2019}{{H\'enaff et~al.}}{{H\'enaff, Srinivas, Fauw, Razavi, Doersch, Eslami \&\ van~den Oord}}}
+\bibcite{hendrycks2018deep}{{71}{2018}{{Hendrycks et~al.}}{{Hendrycks, Mazeika \&\ Dietterich}}}
+\bibcite{hendrycks2019augmix}{{72}{2019}{{Hendrycks et~al.}}{{Hendrycks, Mu, Cubuk, Zoph, Gilmer \&\ Lakshminarayanan}}}
+\bibcite{hjelm2018learning}{{73}{2018}{{Hjelm et~al.}}{{Hjelm, Fedorov, Lavoie-Marchildon, Grewal, Bachman, Trischler \&\ Bengio}}}
+\bibcite{hou2016automatic}{{74}{2016}{{Hou et~al.}}{{Hou, Singh, Samaras, Kurc, Gao, Seidman \&\ Saltz}}}
+\bibcite{houlsby2011bayesian}{{75}{2011}{{Houlsby et~al.}}{{Houlsby, Husz{\'a}r, Ghahramani \&\ Lengyel}}}
+\bibcite{hu2018unsupervised}{{76}{2018}{{Hu et~al.}}{{Hu, Tang, Chang, Fan, Lai \&\ Xu}}}
+\bibcite{islam2021spatially}{{77}{2021}{{Islam \&\ Glocker}}{{}}}
+\bibcite{jin2021reducing}{{78}{2021}{{Jin et~al.}}{{Jin, An, Wang, Wen \&\ Wu}}}
+\bibcite{jones2022artificial}{{79}{2022}{{Jones et~al.}}{{Jones, Matin, van~der Schaar, Bhayankaram, Ranmuthu, Islam, Behiyat, Boscott, Calanzani, Emery et~al.}}}
+\bibcite{jospin2020hands}{{80}{2020}{{Jospin et~al.}}{{Jospin, Buntine, Boussaid, Laga \&\ Bennamoun}}}
+\bibcite{kaji2019overview}{{81}{2019}{{Kaji \&\ Kida}}{{}}}
+\bibcite{kampffmeyer2016semantic}{{82}{2016}{{Kampffmeyer et~al.}}{{Kampffmeyer, Salberg \&\ Jenssen}}}
+\bibcite{kelly2019key}{{83}{2019}{{Kelly et~al.}}{{Kelly, Karthikesalingam, Suleyman, Corrado \&\ King}}}
+\bibcite{kingma2014adam}{{84}{2014}{{Kingma \&\ Ba}}{{}}}
+\bibcite{kingma2013auto}{{85}{2013}{{Kingma \&\ Welling}}{{}}}
+\bibcite{kirsch2019batchbald}{{86}{2019}{{Kirsch et~al.}}{{Kirsch, Van~Amersfoort \&\ Gal}}}
+\bibcite{konyushkova2019geometry}{{87}{2019}{{Konyushkova et~al.}}{{Konyushkova, Sznitman \&\ Fua}}}
+\bibcite{kramer1991nonlinear}{{88}{1991}{{Kramer}}{{}}}
+\bibcite{kristiadi2020being}{{89}{2020}{{Kristiadi et~al.}}{{Kristiadi, Hein \&\ Hennig}}}
+\bibcite{krizhevsky2009learning}{{90}{2009}{{Krizhevsky \&\ Hinton}}{{}}}
+\bibcite{kullback1951information}{{91}{1951}{{Kullback \&\ Leibler}}{{}}}
+\bibcite{kurakin2016adversarial}{{92}{2016}{{Kurakin et~al.}}{{Kurakin, Goodfellow \&\ Bengio}}}
+\bibcite{kwon2020uncertainty}{{93}{2020}{{Kwon et~al.}}{{Kwon, Won, Kim \&\ Paik}}}
+\bibcite{lake2015human}{{94}{2015}{{Lake et~al.}}{{Lake, Salakhutdinov \&\ Tenenbaum}}}
+\bibcite{lecun1998gradient}{{95}{1998}{{LeCun et~al.}}{{LeCun, Bottou, Bengio \&\ Haffner}}}
+\bibcite{lee2013pseudo}{{96}{2013}{{Lee}}{{}}}
+\bibcite{lewis1995sequential}{{97}{1995}{{Lewis}}{{}}}
+\bibcite{liang2020improved}{{98}{2020}{{Liang et~al.}}{{Liang, Zhang, Wang \&\ Jacobs}}}
+\bibcite{lin2017focal}{{99}{2017}{{Lin et~al.}}{{Lin, Goyal, Girshick, He \&\ Doll{\'a}r}}}
+\bibcite{litjens20181399}{{100}{2018}{{Litjens et~al.}}{{Litjens, Bandi, Bejnordi, Geessink, Balkenhol, Bult, Halilovic, Hermsen, van~de Loo, Vogels, Manson, Stathonikos, Baidoshvili, van Diest, Wauters, van Dijk \&\ van~der Laak}}}
+\bibcite{litjens2017survey}{{101}{2017}{{Litjens et~al.}}{{Litjens, Kooi, Bejnordi, Setio, Ciompi, Ghafoorian, Van Der~Laak, Van~Ginneken \&\ S{\'a}nchez}}}
+\bibcite{liu1989limited}{{102}{1989}{{Liu \&\ Nocedal}}{{}}}
+\bibcite{liu2020semi}{{103}{2020}{{Liu et~al.}}{{Liu, Lei, Wan, Liu, Luo \&\ Feng}}}
+\bibcite{liu2021swin}{{104}{2021}{{Liu et~al.}}{{Liu, Lin, Cao, Hu, Wei, Zhang, Lin \&\ Guo}}}
+\bibcite{mackay1992bayesian}{{105}{1992}{{MacKay}}{{}}}
+\bibcite{mackowiak2018cereals}{{106}{2018}{{Mackowiak et~al.}}{{Mackowiak, Lenz, Ghori, Diego, Lange \&\ Rother}}}
+\bibcite{madabhushi2016image}{{107}{2016}{{Madabhushi \&\ Lee}}{{}}}
+\bibcite{makhzani2013k}{{108}{2013}{{Makhzani \&\ Frey}}{{}}}
+\bibcite{maron2019systematic}{{109}{2019}{{Maron et~al.}}{{Maron, Weichenthal, Utikal, Hekler, Berking, Hauschild, Enk, Haferkamp, Klode, Schadendorf et~al.}}}
+\bibcite{matsoukas2022makes}{{110}{2022}{{Matsoukas et~al.}}{{Matsoukas, Haslum, Sorkhei, S{\"o}derberg \&\ Smith}}}
+\bibcite{misra2020self}{{111}{2020}{{Misra \&\ Maaten}}{{}}}
+\bibcite{mukherjee2019clustergan}{{112}{2019}{{Mukherjee et~al.}}{{Mukherjee, Asnani, Lin \&\ Kannan}}}
+\bibcite{mukhoti2020calibrating}{{113}{2020}{{Mukhoti et~al.}}{{Mukhoti, Kulharia, Sanyal, Golodetz, Torr \&\ Dokania}}}
+\bibcite{muller2019does}{{114}{2019}{{M{\"u}ller et~al.}}{{M{\"u}ller, Kornblith \&\ Hinton}}}
+\bibcite{noroozi2016unsupervised}{{115}{2016}{{Noroozi \&\ Favaro}}{{}}}
+\bibcite{parikh2014proximal}{{116}{2014}{{Parikh et~al.}}{{Parikh, Boyd et~al.}}}
+\bibcite{parzen1962estimation}{{117}{1962}{{Parzen}}{{}}}
+\bibcite{platt1999probabilistic}{{118}{1999}{{Platt et~al.}}{{}}}
+\bibcite{pop2018deep}{{119}{2018}{{Pop \&\ Fulop}}{{}}}
+\bibcite{prados2017spinal}{{120}{2017}{{Prados et~al.}}{{Prados, Ashburner, Blaiotta, Brosch, Carballido-Gamio, Cardoso, Conrad, Datta, D{\'a}vid, De~Leener et~al.}}}
+\bibcite{prechelt1998early}{{121}{1998}{{Prechelt}}{{}}}
+\bibcite{rasmus2015semi}{{122}{2015}{{Rasmus et~al.}}{{Rasmus, Berglund, Honkala, Valpola \&\ Raiko}}}
+\bibcite{ren2021survey}{{123}{2021}{{Ren et~al.}}{{Ren, Xiao, Chang, Huang, Li, Gupta, Chen \&\ Wang}}}
+\bibcite{roelofs2022mitigating}{{124}{2022}{{Roelofs et~al.}}{{Roelofs, Cain, Shlens \&\ Mozer}}}
+\bibcite{roy2001toward}{{125}{2001}{{Roy \&\ McCallum}}{{}}}
+\bibcite{sener2017active}{{126}{2017}{{Sener \&\ Savarese}}{{}}}
+\bibcite{settles2012active}{{127}{2012}{{Settles}}{{}}}
+\bibcite{settles2008analysis}{{128}{2008}{{Settles \&\ Craven}}{{}}}
+\bibcite{settles2008active2}{{129}{2008}{{Settles et~al.}}{{Settles, Craven \&\ Friedland}}}
+\bibcite{settles2007multiple}{{130}{2007}{{Settles et~al.}}{{Settles, Craven \&\ Ray}}}
+\bibcite{seung1992query}{{131}{1992}{{Seung et~al.}}{{Seung, Opper \&\ Sompolinsky}}}
+\bibcite{shannon1948mathematical}{{132}{1948}{{Shannon}}{{}}}
+\bibcite{shao2018deep}{{133}{2018}{{Shao et~al.}}{{Shao, Sun \&\ Zhang}}}
+\bibcite{shi2019active}{{134}{2019}{{Shi et~al.}}{{Shi, Dou, Xue, Qin, Chen \&\ Heng}}}
+\bibcite{shin1949mathematical}{{135}{1949}{{Shin \&\ Kim}}{{}}}
+\bibcite{shurrab2022self}{{136}{2022}{{Shurrab \&\ Duwairi}}{{}}}
+\bibcite{sirinukunwattana2016locality}{{137}{2016}{{Sirinukunwattana et~al.}}{{Sirinukunwattana, Raza, Tsang, Snead, Cree \&\ Rajpoot}}}
+\bibcite{smith2017cyclical}{{138}{2017}{{Smith}}{{}}}
+\bibcite{srinidhi2020deep}{{139}{2020}{{Srinidhi et~al.}}{{Srinidhi, Ciga \&\ Martel}}}
+\bibcite{srivastav2021improved}{{140}{2021}{{Srivastav et~al.}}{{Srivastav, Bajpai \&\ Srivastava}}}
+\bibcite{srivastava2014dropout}{{141}{2014}{{Srivastava et~al.}}{{Srivastava, Hinton, Krizhevsky, Sutskever \&\ Salakhutdinov}}}
+\bibcite{stacke2020measuring}{{142}{2020}{{Stacke et~al.}}{{Stacke, Eilertsen, Unger \&\ Lundstr{\"o}m}}}
+\bibcite{szegedy2016rethinking}{{143}{2016}{{Szegedy et~al.}}{{Szegedy, Vanhoucke, Ioffe, Shlens \&\ Wojna}}}
+\bibcite{tan2019efficient}{{144}{2019}{{Tan \&\ Le}}{{}}}
+\bibcite{thiagarajan2020improving}{{145}{2020}{{Thiagarajan et~al.}}{{Thiagarajan, Venkatesh, Rajan \&\ Sattigeri}}}
+\bibcite{tizhoosh2018artificial}{{146}{2018}{{Tizhoosh \&\ Pantanowitz}}{{}}}
+\bibcite{tschandl2019expert}{{147}{2019}{{Tschandl et~al.}}{{Tschandl, Rosendahl, Akay, Argenziano, Blum, Braun, Cabo, Gourhant, Kreusch, Lallas et~al.}}}
+\bibcite{tschandl2018ham10000}{{148}{2018}{{Tschandl et~al.}}{{Tschandl, Rosendahl \&\ Kittler}}}
+\bibcite{ulmer2020trust}{{149}{2020}{{Ulmer et~al.}}{{Ulmer, Meijerink \&\ Cin{\`a}}}}
+\bibcite{oord2016pixel}{{150}{2016}{{van~den Oord et~al.}}{{van~den Oord, Kalchbrenner \&\ Kavukcuoglu}}}
+\bibcite{oord2018representation}{{151}{2018}{{van~den Oord et~al.}}{{van~den Oord, Li \&\ Vinyals}}}
+\bibcite{veeling2018rotation}{{152}{2018}{{Veeling et~al.}}{{Veeling, Linmans, Winkens, Cohen \&\ Welling}}}
+\bibcite{wang2016cost}{{153}{2016}{{Wang et~al.}}{{Wang, Zhang, Li, Zhang \&\ Lin}}}
+\bibcite{wang2017cost}{{154}{2017}{{Wang et~al.}}{{Wang, Zhang, Li, Zhang \&\ Lin}}}
+\bibcite{wei2020recent}{{155}{2020}{{Wei \&\ Mahmood}}{{}}}
+\bibcite{weiss2016survey}{{156}{2016}{{Weiss et~al.}}{{Weiss, Khoshgoftaar \&\ Wang}}}
+\bibcite{wen2021characteristics}{{157}{2021}{{Wen et~al.}}{{Wen, Khan, Xu, Ibrahim, Smith, Caballero, Zepeda, de~Blas~Perez, Denniston, Liu et~al.}}}
+\bibcite{wiener2015agnostic}{{158}{2015}{{Wiener \&\ El-Yaniv}}{{}}}
+\bibcite{wu2022skin}{{159}{2022}{{Wu et~al.}}{{Wu, Chen, Zeng, Pan, Wang \&\ Zhao}}}
+\bibcite{wu2018unsupervised}{{160}{2018}{{Wu et~al.}}{{Wu, Xiong, Yu \&\ Lin}}}
+\bibcite{xie2017aggregated}{{161}{2017}{{Xie et~al.}}{{Xie, Girshick, Doll{\'a}r, Tu \&\ He}}}
+\bibcite{yang2019self}{{162}{2019}{{Yang et~al.}}{{Yang, Wu, Liang, Sun, Cheng, Rosin \&\ Wang}}}
+\bibcite{yi2019generative}{{163}{2019}{{Yi et~al.}}{{Yi, Walia \&\ Babyn}}}
+\bibcite{zeiler2012adadelta}{{164}{2012}{{Zeiler}}{{}}}
+\bibcite{zhao2019data}{{165}{2019}{{Zhao et~al.}}{{Zhao, Balakrishnan, Durand, Guttag \&\ Dalca}}}
+\bibcite{zhdanov2019diverse}{{166}{2019}{{Zhdanov}}{{}}}
+\bibcite{zhou2021preservational}{{167}{2021}{{Zhou et~al.}}{{Zhou, Lu, Yang, Han \&\ Yu}}}
+\bibcite{zhuang2019local}{{168}{2019}{{Zhuang et~al.}}{{Zhuang, Zhai \&\ Yamins}}}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{117}{section*.79}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{118}{appendix.a.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{app:list_of_publications}{{A}{115}{List of Publications and Achievements}{appendix.a.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}First Authored Publications}{115}{section.a.A.1}\protected@file@percent }
-\newlabel{sec:first_authored_publications}{{A.1}{115}{First Authored Publications}{section.a.A.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Contributed Publications}{116}{section.a.A.2}\protected@file@percent }
-\newlabel{sec:contributed_publications}{{A.2}{116}{Contributed Publications}{section.a.A.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}Awards}{116}{section.a.A.3}\protected@file@percent }
-\newlabel{sec:awards}{{A.3}{116}{Awards}{section.a.A.3}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Selective Classification Results}{117}{appendix.a.B}\protected@file@percent }
+\newlabel{app:list_of_publications}{{A}{118}{List of Publications and Achievements}{appendix.a.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}First Authored Publications}{118}{section.a.A.1}\protected@file@percent }
+\newlabel{sec:first_authored_publications}{{A.1}{118}{First Authored Publications}{section.a.A.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Contributed Publications}{119}{section.a.A.2}\protected@file@percent }
+\newlabel{sec:contributed_publications}{{A.2}{119}{Contributed Publications}{section.a.A.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Awards}{119}{section.a.A.3}\protected@file@percent }
+\newlabel{sec:awards}{{A.3}{119}{Awards}{section.a.A.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Selective Classification Results}{120}{appendix.a.B}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{app:selective_classification_results}{{B}{117}{Selective Classification Results}{appendix.a.B}{}}
-\gdef \@abspage@last{131}
+\newlabel{app:selective_classification_results}{{B}{120}{Selective Classification Results}{appendix.a.B}{}}
+\gdef \@abspage@last{135}

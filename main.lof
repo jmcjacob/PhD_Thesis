@@ -19,16 +19,21 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Visual representation of the cost matrices for the classes of the ISIC 2019 dataset. Panel (a) depicts a symmetrical cost matrix, in which the costs of misclassification are equivalent. Conversely, panel (b) illustrates an asymmetrical cost matrix, where the costs of misclassification are differentiated based on various factors.\relax }}{58}{figure.caption.49}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Example images from the test data sets \(S_{in}\) and \(S_{unknown}\).\relax }}{63}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Results with experiments with SelectiveNet.\relax }}{73}{figure.caption.58}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Results with experiments with temperature scaling.\relax }}{74}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Results with experiments with Bayesian Neural Networks.\relax }}{75}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Results with experiments with measures of uncertainty.\relax }}{76}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Cost-coverage curves for SelectiveNets trained with different target coverages. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }}{67}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost-coverage curves using MC-Dropout. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }}{68}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Cost-coverage curves for different selective classification methods. From top to bottom: $S_{in}$, $S_{unknown}$ and $S_{combined}$.\relax }}{69}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Cost-coverage curves for SelectiveNet and EC-SelectiveNet. From top to bottom: $C_{1,0}=1$, $C_{1,0}=10$ and $C_{1,0}=50$.\relax }}{70}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Cost-coverage curves for cross-entropy training and EC-SelectiveNet combined with temperature scaling. From top to bottom: $C_{1,0}=1$, $C_{1,0}=10$ and $C_{1,0}=50$.\relax }}{71}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Results with experiments with SelectiveNet.\relax }}{76}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Results with experiments with temperature scaling.\relax }}{77}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Results with experiments with Bayesian Neural Networks.\relax }}{78}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Results with experiments with measures of uncertainty.\relax }}{79}{figure.caption.69}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the Tayside and Forth Valley datasets.\relax }}{81}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Example images from the SD-260 dataset\nobreakspace {}\citep {yang2019self}.\relax }}{85}{figure.caption.66}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{90}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{91}{figure.caption.71}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }}{94}{figure.caption.72}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Example images from the Tayside and Forth Valley datasets.\relax }}{84}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Example images from the SD-260 dataset\nobreakspace {}\citep {yang2019self}.\relax }}{88}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.\relax }}{93}{figure.caption.75}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Balanced accuracy of the models demonstrating the performance of dataset cross-generalisation between the Tayside and Forth Valley datasets.\relax }}{94}{figure.caption.76}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.\relax }}{97}{figure.caption.77}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

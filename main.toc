@@ -1,11 +1,11 @@
 \contentsline {chapter}{List of Figures}{v}{chapter*.1}%
-\contentsline {chapter}{List of Tables}{vii}{chapter*.2}%
-\contentsline {chapter}{List of Terms}{viii}{chapter*.4}%
-\contentsline {chapter}{List of Abbreviations}{ix}{chapter*.5}%
-\contentsline {chapter}{List of Symbols}{x}{chapter*.6}%
-\contentsline {chapter}{Acknowledgements}{xi}{chapter*.7}%
-\contentsline {chapter}{Declaration}{xii}{chapter*.8}%
-\contentsline {chapter}{Abstract}{xiii}{chapter*.10}%
+\contentsline {chapter}{List of Tables}{viii}{chapter*.2}%
+\contentsline {chapter}{List of Terms}{ix}{chapter*.4}%
+\contentsline {chapter}{List of Abbreviations}{x}{chapter*.5}%
+\contentsline {chapter}{List of Symbols}{xi}{chapter*.6}%
+\contentsline {chapter}{Acknowledgements}{xii}{chapter*.7}%
+\contentsline {chapter}{Declaration}{xiii}{chapter*.8}%
+\contentsline {chapter}{Abstract}{xiv}{chapter*.10}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction to Problem}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Research Contributions}{1}{section.1.2}%
@@ -85,44 +85,44 @@
 \contentsline {subsection}{\numberline {5.5.3}Training Parameters}{64}{subsection.5.5.3}%
 \contentsline {subsection}{\numberline {5.5.4}Results}{66}{subsection.5.5.4}%
 \contentsline {subsubsection}{SelectiveNet: Effect of Target Coverage}{66}{section*.52}%
-\contentsline {subsubsection}{Does SelectiveNet Training Help?}{66}{section*.53}%
-\contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{67}{section*.54}%
-\contentsline {subsubsection}{Asymmetric Costs}{67}{section*.55}%
-\contentsline {section}{\numberline {5.6}Multi class Experiments}{68}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Dataset Processing}{68}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{68}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Training Parameters}{70}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Results}{71}{subsection.5.6.4}%
-\contentsline {subsubsection}{SelectiveNet, EC-SelectiveNet and Target Coverage}{71}{section*.57}%
-\contentsline {subsubsection}{Effect of Temperature Scaling}{72}{section*.59}%
-\contentsline {subsubsection}{Methods Bayesian Neural Networks}{72}{section*.61}%
-\contentsline {subsubsection}{Measures of Uncertainty}{74}{section*.63}%
-\contentsline {section}{\numberline {5.7}Conclusion}{76}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Evaluating Dataset Generalisation}{78}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introduction}{78}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Datasets}{81}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Tayside Dataset}{81}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Forth Valley Dataset}{82}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Annotation Procedure}{82}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Generalisation Experiments}{84}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Datasets}{84}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Training Parameters}{84}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Experiment Setup}{86}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Results}{87}{subsection.6.3.4}%
-\contentsline {section}{\numberline {6.4}Conclusion}{90}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{95}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Pathway to Complete System}{95}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Summary of Contributions}{95}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Limitations}{95}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Future Work}{95}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Active Learning}{95}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{95}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{95}{subsection.7.4.3}%
-\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{96}{subsection.7.4.4}%
-\contentsline {chapter}{References}{97}{subsection.7.4.4}%
-\contentsline {chapter}{Appendices}{114}{section*.74}%
-\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{115}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}First Authored Publications}{115}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Contributed Publications}{116}{section.a.A.2}%
-\contentsline {section}{\numberline {A.3}Awards}{116}{section.a.A.3}%
-\contentsline {chapter}{\numberline {B}Selective Classification Results}{117}{appendix.a.B}%
+\contentsline {subsubsection}{Does SelectiveNet Training Help?}{66}{section*.54}%
+\contentsline {subsubsection}{MC-Dropout, Temperature Scaling, and EC-SelectiveNet}{67}{section*.56}%
+\contentsline {subsubsection}{Asymmetric Costs}{68}{section*.59}%
+\contentsline {section}{\numberline {5.6}Multi class Experiments}{70}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Dataset Processing}{71}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Experiment Setup}{72}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Training Parameters}{73}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Results}{75}{subsection.5.6.4}%
+\contentsline {subsubsection}{SelectiveNet, EC-SelectiveNet and Target Coverage}{75}{section*.62}%
+\contentsline {subsubsection}{Effect of Temperature Scaling}{75}{section*.64}%
+\contentsline {subsubsection}{Methods Bayesian Neural Networks}{76}{section*.66}%
+\contentsline {subsubsection}{Measures of Uncertainty}{78}{section*.68}%
+\contentsline {section}{\numberline {5.7}Conclusion}{79}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Evaluating Dataset Generalisation}{81}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{81}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Datasets}{84}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Tayside Dataset}{84}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Forth Valley Dataset}{85}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Annotation Procedure}{85}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Generalisation Experiments}{87}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Datasets}{87}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Training Parameters}{87}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Experiment Setup}{89}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Results}{90}{subsection.6.3.4}%
+\contentsline {section}{\numberline {6.4}Conclusion}{93}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusion and Discussion}{98}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Pathway to Complete System}{98}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Summary of Contributions}{98}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Limitations}{98}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Future Work}{98}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Active Learning}{98}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Unsupervised Learning}{98}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Selective Classification}{98}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}Asymmetrical Risks}{99}{subsection.7.4.4}%
+\contentsline {chapter}{References}{100}{subsection.7.4.4}%
+\contentsline {chapter}{Appendices}{117}{section*.79}%
+\contentsline {chapter}{\numberline {A}List of Publications and Achievements}{118}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}First Authored Publications}{118}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Contributed Publications}{119}{section.a.A.2}%
+\contentsline {section}{\numberline {A.3}Awards}{119}{section.a.A.3}%
+\contentsline {chapter}{\numberline {B}Selective Classification Results}{120}{appendix.a.B}%
