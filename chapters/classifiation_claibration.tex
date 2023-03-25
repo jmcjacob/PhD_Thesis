@@ -56,6 +56,7 @@ Focal loss is a loss function that was originally designed to improve the perfor
 
 
 \subsection{Post-Hoc Calibration}
+\label{subsec:post_hoc_calibration}
 Temperature scaling is a widely used post-hoc calibration method for modern neural networks, including in medical image analysis applications~\citep{guo2017calibration,liang2020improved}. It is a single-parameter variant of Platt logistic scaling~\citep{platt1999probabilistic} that applies a learned temperature parameter, $T > 0$, to rescale the output logits $z$ of a neural network before applying a softmax activation function to obtain probabilistic predictions $\hat{y}$ (see Equation~(\ref{eq:temperature_scaling})). When $T=1$, the standard softmax activation is recovered. As the temperature parameter is used to scale all of the logits, the output $\hat{y}$ has a monotonic relationship with the unscaled output, meaning that classification accuracy is unaffected by temperature scaling.
 
 \begin{equation}

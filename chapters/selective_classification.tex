@@ -58,10 +58,10 @@ For instance, in the binary classification of malignant (class 1) and benign (cl
 
 Optimising classifiers for a particular cost matrix may seem like a viable solution, however, it is not recommended due to the potential changes in the cost matrix after implementation. This would necessitate the frequent retraining of the classifiers, which can become a tedious and time-consuming process.
 
-Given a trained classifier that outputs a calibrated posterior distribution $P(x)$ over classes $T$ for an image $x$, the expected costs of classification can be utilised to make a decision on the image's classification~\citep{ferrer2022analysis}. In the binary classification scenario of benign ($t=0$) and malignant ($t=1$) classes, the expected cost of a benign classification is defined as $R_0 = C_{10} P(t=1|x)$, while the expected cost of a malignant classification is expressed as $R_1 = C_{01} P(t=0|x)$. The image $x$ is classified as malignant if $R_1 < R_0$, otherwise it is classified as benign. In the case of multiple classes, the expected cost for each class is calculated as the sum of costs incurred for each class assuming it to be the true class, and the class with the minimum expected cost is selected as the final decision (Equation \ref{eq:expected_cost_multi}).
+Given a trained classifier that outputs a calibrated posterior distribution $P(x)$ over classes $T$ for an image $x$, the expected costs of classification can be utilised to make a decision on the image's classification~\citep{ferrer2022analysis}. In the binary classification scenario of benign ($t=0$) and malignant ($t=1$) classes, the expected cost of a benign classification is defined as $R_0 = C_{10} P(t=1|x)$, while the expected cost of a malignant classification is expressed as $R_1 = C_{01} P(t=0|x)$. The image $x$ is classified as malignant if $R_1 < R_0$, otherwise it is classified as benign. In the case of multiple classes, the expected cost for each class is calculated as the sum of costs incurred for each class assuming it to be the true class, and the class $\hat{j}$ with the minimum expected cost is selected as the final decision (Equation~(\ref{eq:expected_cost_multi})).
 
 \begin{equation}
-	\hat{j} = \argmax_j\sum^T_{t=1}C_{tj}\cdotp(t|x)
+	\hat{j} = \argmax_j\sum^T_{t=1}C_{tj}P(t|x)
 	\label{eq:expected_cost_multi}
 \end{equation}
 
@@ -75,51 +75,57 @@ Given a trained classifier that outputs a calibrated posterior distribution $P(x
 The softmax response selection function $\sigma_{SR}(x)$ is computed by determining the maximum value of the prediction function $P(x)$ (Equation \ref{eq:softmax_response}). This assumes that the neural network model utilised has employed a softmax activation function to generate predictive probabilities. While this methodology is straightforward to implement and intuitive, it has limitations as the output probabilities from a softmax activation are not properly calibrated and do not reflect the uncertainty of the model, as demonstrated by~\citep{gal2016dropout}.
 
 \begin{equation}
-	\sigma_{SR}(x) = \max_{t} P(T|x)
+	\sigma_{SR}(x) = \argmax_j\sum^T_{t=1}P(t|x)
 	\label{eq:softmax_response}
 \end{equation}
 
-Temperature scaling is a method utilised for calibrating the output probabilities of a neural network model. This method was chosen due to its demonstrated effectiveness in calibrating predictive probabilities for medical images as well as its ease of implementation. The temperature scaling technique involves scaling the output logits of a neural network with a temperature value $temp > 0$, which is optimised on a validation set during the model's training process. The temperature value is determined from the training epoch that exhibits the lowest validation loss. This technique can be incorporated into a selection function by modifying the prediction function $P(x)$ to include the scaled logits $P_{TS}(x)$ and taking the maximum predicted probability (as shown in Equation \ref{eq:temperature_scaling}).
+Temperature scaling is a method utilised for calibrating the output probabilities of a neural network model (as discussed in Section~\ref{subsec:post_hoc_calibration}). This method was chosen due to its demonstrated effectiveness in calibrating predictive probabilities for medical images as well as its ease of implementation. The temperature scaling technique involves scaling the output logits of a neural network with a temperature value, which is optimised on a validation set during the model's training process. The temperature value is determined from the training epoch that exhibits the lowest validation loss. This technique can be incorporated into a selection function by modifying the prediction function $P(x)$ to include dividing the logits by a temperature value before applying a softmax activation (Equation~(\ref{eq:temperature_scaling})) resulting in $P_{TS}(x)$. Equation~(\ref{eq:selective_temperature_scaling}) shows how temperature scaled probabilities can be used for selective classification.
 
 \begin{equation}
-	\sigma_{TS}(x) = \max_t P_{TS}(T|x)
+	\sigma_{TS}(x) = \argmax_t\sum^T_{t=1}P_{TS}(t|x)
 	\label{eq:selective_temperature_scaling}
 \end{equation}
 
 \subsection{Bayesian Uncertainty}
 \label{subsec:selective_uncertainity}
-Bayesian neural networks represent a promising approach for improving the accuracy of probabilistic predictions and for more effectively estimating uncertainty. This is achieved through the representation of model parameters using distributions that are sampled from the forward propagation of the network.
+Bayesian neural networks represent a promising approach for improving the accuracy of probabilistic predictions and for more effectively estimating uncertainty. This is achieved through the representation of model parameters using distributions that can then be sampled from using forward propagation of the network.
 
-In this study, Bayesian neural networks are evaluated using two methods, namely Bayes by Backprop~\citep{blundell2015weight} and Laplace Approximation~\citep{mackay1992bayesian}, for training the network. The resulting Bayesian neural network can be sampled $M$ times and the average of the predictions (Equation \ref{eq:avg_baysian_neural_network}) can be used to produce more calibrated probabilities, as demonstrated by~\citep{jospin2020hands}. The uncertainty in the Bayesian neural network can be estimated through the variance of the predictive samples (Equation \ref{eq:var_baysian_neural_network}) and can be employed as a method of selection.
+In this study, Bayesian neural networks are evaluated using two methods, namely Bayes-by-Backprop~\citep{blundell2015weight} and Laplace Approximation~\citep{mackay1992bayesian}, for training the network. The resulting Bayesian neural network can be sampled $M$ times and the average of the predictions (Equation~(\ref{eq:avg_baysian_neural_network})) can be used to produce more calibrated probabilities, as demonstrated by~\citep{jospin2020hands}. The uncertainty in the Bayesian neural network can be estimated through the variance of the predictive samples (Equation~(\ref{eq:var_baysian_neural_network})) and can be employed as a method of selection.
 
 \begin{equation}
-	\sigma_{AVG}(x) = \max_t \frac{1}{M} \sum_m^M P_{w^m}(T|x)
+	\sigma_{AVG}(x)=\argmax_t\sum^T_{t=1}\frac{1}{M}\sum^M_{m=1}P(t|x;w_m)
 	\label{eq:avg_baysian_neural_network}
 \end{equation}
 
 \begin{equation}
-	\sigma_{VAR}(x) = \frac{\sum_m^M (P_{w^m}(T|x) - \mu)^2}{M - 1} \qquad \mu = \frac{1}{M} \sum_m^M P_{w^m}(T|x)
+	\begin{aligned}
+		&\sigma_{VAR}(x)=\argmax_t\sum^T_{t=1}\frac{\sum^M_{m=1}(P(t|x;w_m)-\mu)^2}{M-1}\\
+		&\qquad\qquad\qquad\mu=\sum^T_{t=1}\frac{1}{M}\sum^M_{m=1}P(t|x;w_m)
+	\end{aligned}
 	\label{eq:var_baysian_neural_network}
 \end{equation}
 
-Multiple methods exist for estimating the uncertainty of Bayesian neural networks, including variation ratios~\citep{freeman1965elementary}, which measure the spread of the distribution of sample predictions around the mode (Equation \ref{eq:variation_ratio}).
+Multiple methods exist for estimating the predictive uncertainty of Bayesian neural networks, including variation ratios~\citep{freeman1965elementary}, which measure the spread of the distribution of sample predictions around the mode (Equation~(\ref{eq:variation_ratio})).
 
 \begin{equation}
-	\sigma_{VR}(x) = 1 - \frac{P(T|x)}{M}    
+	\sigma_{VR}(x)=\argmax_t\sum^T_{t=1}\sum^M_{m=1}1-\frac{P(t|x;w_m)}{M}
 	\label{eq:variation_ratio}
 \end{equation}
 
-\noindent Predictive entropy~\citep{shannon1948mathematical}, which captures the average information content of the distribution of sample predictions (Equation \ref{eq:predictive_entropy}).
+\noindent Predictive entropy~\citep{shannon1948mathematical} captures the average information content of the distribution of sample predictions (Equation~(\ref{eq:predictive_entropy})).
    
 \begin{equation}
-	\sigma_{PE}(x) = -\sum^{T}_{t=1}\left(\frac{1}{M}\sum^{M}_{m=1}p_{w^m}(t|x)\right)log\left(\frac{1}{M}\sum^{M}_{m=1}p_{w^m}(t|x)\right)
+	\sigma_{PE}(x)=\argmax_t-\sum^T_{t=1}\left(\left(\frac{1}{M}\sum^M_{m=1}P(t|x;w_m) \right)\log\left(\frac{1}{M}\sum^M_{m=1}P(t|x;w_m) \right)\right)
 	\label{eq:predictive_entropy}
 \end{equation}
 
-\noindent Mutual information~\citep{houlsby2011bayesian}, which quantifies the relationship between the predictive samples and the posterior distribution over the parameters of the model (Equation \ref{eq:mutual_information}).
+\noindent Mutual information~\citep{houlsby2011bayesian} quantifies the relationship between the predictive samples and the posterior distribution over the parameters of the model (Equation~(\ref{eq:mutual_information})).
 
 \begin{equation}
-	\sigma_{MI}(x)=\sigma_{PE}(x)+\frac{1}{T}\sum^{T}_{t=1}\sum^{M}_{m=1}p_{w^m}(t|x)\log p_{w^m}(t|x)
+	\begin{aligned}
+		\sigma_{MI}(x)=&\argmax_t-\sum^T_{t=1}\left(\left(\frac{1}{M}\sum^M_{m=1}P(t|x;w_m) \right)\log\left(\frac{1}{M}\sum^M_{m=1}P(t|x;w_m) \right)\right)\\
+		&+\frac{1}{T}\sum^T_{t=1}\sum^M_{m=1}P(t|x;w_m)\log P(t|x;w_m)
+	\end{aligned}
 	\label{eq:mutual_information}
 \end{equation}
 
@@ -127,21 +133,21 @@ Multiple methods exist for estimating the uncertainty of Bayesian neural network
 \label{subsec:selectivenet}
 In the context of neural networks or Bayesian neural networks, data representations optimised for classification have been widely studied. However, \cite{geifman2019selectivenet} posits that data representations can also be optimised for scenarios where a portion of the data is anticipated to be rejected. To address this issue, the author introduces SelectiveNet, a modified training approach for neural networks that enables end-to-end optimisation for a specific target coverage.
 
-This is achieved by adding two heads to the model's encoder, in addition to the predictive head (denoted as $P(x)$). These heads consist of a selective head (denoted as $G(x)$) that outputs a selection score and an auxiliary head (denoted as $A(x)$) that provides predictions used within the loss function. The overall loss function used to optimise the entire model is based on selective risk and balances the predictive and selective heads against the auxiliary head to ensure that robust features for classification are learned while still optimising for target coverage.
+This is achieved by adding two heads to the model's encoder, in addition to the predictive head (denoted as $P(x)$). These heads consist of a selective head (denoted as $G(x)$) that outputs a selection score and an auxiliary head (denoted as $A(x)$) that provides predictions used within the loss function. The overall loss function used to optimise the entire model is based on selective risk and balances the predictive and selective heads against the auxiliary head to ensure that robust features for classification are learned while still optimising for target coverage. The SelectiveNet loss function (Equation~(\ref{eq:selective_loss})) is a combination of two functions ($L_{p,g}$ and $L_a$), weighted by a hyperparameter $\alpha$ to control the relative importance of coverage optimisation.
 
 \begin{equation}
 	L = \alpha L_{p, g} + (1 - \alpha)L_a
 	\label{eq:selective_loss}
 \end{equation}
 
-The SelectiveNet loss function (Equation~\ref{eq:selective_loss}) is a combination of two functions ($L_{p,g}$ and $L_a$), weighted by a hyperparameter $\alpha$ to control the relative importance of coverage optimisation. The first term uses both the predictive and selective heads (Equation~\ref{eq:selectivenet_loss}) and combines cross-entropy loss with coverage. The hyperparameter $t$ represents the target coverage for the model, while $\lambda$ regulates the significance of this target coverage. On the other hand, the auxiliary head uses a standard cross-entropy loss ($L_a$) to encourage the model to learn robust features from the training data. For selective classification, the output of the selective head (Equation~\ref{eq:selectivenet}) is utilised.
+The first term uses both the predictive and selective heads (Equation~(\ref{eq:selectivenet_loss})) and combines cross-entropy loss with coverage. 
 
 \begin{equation}
-	L_{p, g} = \frac{1}{N \phi(g)}\sum^{N}_{i=1}l(p(x_i), y_i) g(x_i) + \lambda\max(t - \phi(g|S), 0)^2
+	L_{p, g} = \frac{1}{N \phi(g)}\sum^{N}_{i=1}l(p(x_i), y_i) g(x_i) + \lambda\max(k - \phi(g|S), 0)^2
 	\label{eq:selectivenet_loss}
 \end{equation}
 
-\noindent For selective classification, the output of the selective head (Equation~\ref{eq:selectivenet}) is utilized.
+\noindent The hyperparameter $k$ represents the target coverage for the model, while $\lambda$ regulates the significance of this target coverage. On the other hand, the auxiliary head uses a standard cross-entropy loss ($L_a$) to encourage the model to learn robust features from the training data. For selective classification, the output of the selective head (Equation~(\ref{eq:selectivenet})) is utilised.
 
 \begin{equation}
 	\sigma_{SN}(x) = G(x)
@@ -150,19 +156,19 @@ The SelectiveNet loss function (Equation~\ref{eq:selective_loss}) is a combinati
 
 \subsection{Expected Cost SelectiveNet}
 \label{subsec:ec_selectivenet}
-Expected costs serve as a method for selection in both the Convolutional Neural Network and the SelectiveNet model, as evidenced by Equation \ref{eq:expected_cost_multi}. A new approach to selection is proposed, referred to as Expected Cost SelectiveNet, which is based on expected costs computed from the predictive head, instead of the selective head output utilised in SelectiveNet.
+Expected costs serve as a method for selection in both the CNN and the SelectiveNet model, as evidenced by Equation~(\ref{eq:expected_cost_multi}). A new approach to selection is proposed, referred to as Expected Cost SelectiveNet, which is based on expected costs computed from the predictive head, instead of the selective head output utilised in SelectiveNet.
 
-Despite the fact that SelectiveNet directly outputs a selection score, the proposed EC-SelectiveNet method utilises the expected costs computed from the predictive head for selection. The selective head is used during training to guide representation learning but, in contrast to the approach presented in \cite{selective2019geifman}, both the selective head and auxiliary head are discarded when inferenced.
+Despite the fact that SelectiveNet directly outputs a selection score, the proposed EC-SelectiveNet method utilises the expected costs computed from the predictive head for selection. The selective head is used during training to guide representation learning but, in contrast to the approach presented in \cite{selective2019geifman}, both the selective head and auxiliary head are discarded at test time.
 
 
 
-\section{Binary Experiments}
+\section{Binary Classification Experiments}
 \label{sec:selective_binary_experiment}
 This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion triage. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Selective_Dermatology}}.
 
 \subsection{Dataset Processing}
 \label{subsec:selective_binary_dataset}
-The ISIC Challenge 2019~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}, was employed in this study and consists of a total of 25,331 images spanning eight distinct classes, including melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. For the purposes of the experiments, two datasets were compiled from the ISIC 2019 data, referred to as $S_{in}$ and $S_{unknown}$.
+The ISIC Challenge 2019~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} was employed in this study and consists of a total of 25,331 images spanning eight distinct classes, including melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma. For the purposes of the experiments, two datasets were compiled from the ISIC 2019 data, referred to as $S_{in}$ and $S_{unknown}$.
 
 \begin{figure}[h]
 	\centering
@@ -186,7 +192,7 @@ $S_{in}$: These data encompassed the melanoma, melanocytic nevus, and basal cell
 
 $S_{unknown}$: These data consisted of 4,360 images from classes that were not present in $S_{in}$, including benign keratosis, dermatofibroma, actinic keratosis, and squamous cell carcinoma, and were assigned to either the malignant or benign class. The $S_{unknown}$ dataset was not utilised for training, but instead was employed to test the performance of selective classification on images from disease types not represented in the training data.
 
-The combination of the $S_{in}$ and $S_{unknown}$ test sets is referred to as the $S_{combined}$ dataset. Figure \ref{fig:isic_dataset_examples} provides illustrative examples from the ISIC 2019 dataset. In the current study, a random split strategy was employed to divide the dataset into three distinct sets: training, validation, and testing, in the ratio of 60:20:20. To ensure comparability across all images, normalization was performed utilizing the standard deviation and mean calculation for each colour channel of the images. Subsequently, each image underwent resizing to 256x256, and during the training phase, data augmentation was carried out by implementing randomized flips and rotations of 90 degrees.
+The combination of the $S_{in}$ and $S_{unknown}$ test sets is referred to as the $S_{combined}$ dataset. Figure \ref{fig:isic_dataset_examples} provides illustrative examples from the ISIC 2019 dataset. In the current study, a random split strategy was employed to divide the dataset into three distinct sets: training, validation, and testing. To ensure comparability across all images, normalisation was performed utilising the standard deviation and mean calculation for each colour channel of the images. Subsequently, each image underwent resizing to 256x256, and during the training phase, data augmentation was carried out by implementing randomised horizonal and vertical flips and rotations of multiples of 90\textdegree.
 
 \subsection{Experiment Setup}
 For the binary experiments, the training of eight models was conducted on the training split $S_{in}$, utilizing the validation set to identify the most optimal model from the training epochs. The performance of each selection method is then evaluation by using selection methods with the appropriate model. A detailed overview of the experimental setup is presented in Table~\ref{tab:binary-experiment-setup}. The evaluation of the selection methods on the trained models was carried out utilising a symmetrical cost matrix that is commonly used in such evaluations, where the cost of false positives and false negatives was set to $1.0$. To investigate the effect of adjusting the level of asymmetry, the cost of false positives was set to $10.0$ and $50.0$ while keeping the cost of false negatives fixed at $1.0$. The evaluation of the selection methods was conducted on three different datasets: $S_{in}$ was used to evaluate the in-distribution performance, $S_{unknown}$ was used to assess the generalization performance on unknown types of skin lesions, and $S_{combines}$ was used to evaluate the performance of the selection methods on the two types of data combined.
