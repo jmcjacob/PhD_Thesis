@@ -58,7 +58,7 @@ For instance, in the binary classification of malignant (class 1) and benign (cl
 
 Optimising classifiers for a particular cost matrix may seem like a viable solution, however, it is not recommended due to the potential changes in the cost matrix after implementation. This would necessitate the frequent retraining of the classifiers, which can become a tedious and time-consuming process.
 
-Given a trained classifier that outputs a calibrated posterior distribution $P(x)$ over classes $T$ for an image $x$, the expected costs of classification can be utilised to make a decision on the image's classification~\citep{ferrer2022analysis}. In the binary classification scenario of benign ($t=0$) and malignant ($t=1$) classes, the expected cost of a benign classification is defined as $R_0 = C_{10} P(t=1|x)$, while the expected cost of a malignant classification is expressed as $R_1 = C_{01} P(t=0|x)$. The image $x$ is classified as malignant if $R_1 < R_0$, otherwise it is classified as benign. In the case of multiple classes, the expected cost for each class is calculated as the sum of costs incurred for each class assuming it to be the true class, and the class $\hat{j}$ with the minimum expected cost is selected as the final decision (Equation~(\ref{eq:expected_cost_multi})).
+Given a trained classifier that outputs a calibrated posterior distribution $P(x, \theta)$ over classes $T$ for an image $x$ using the model parameters $\theta$, the expected costs of classification can be utilised to make a decision on the image's classification~\citep{ferrer2022analysis}. In the binary classification scenario of benign ($t=0$) and malignant ($t=1$) classes, the expected cost of a benign classification is defined as $R_0 = C_{10} P(t=1|x)$, while the expected cost of a malignant classification is expressed as $R_1 = C_{01} P(t=0|x)$. The image $x$ is classified as malignant if $R_1 < R_0$, otherwise it is classified as benign. In the case of multiple classes, the expected cost for each class is calculated as the sum of costs incurred for each class assuming it to be the true class, and the class $\hat{j}$ with the minimum expected cost is selected as the final decision (Equation~(\ref{eq:expected_cost_multi})).
 
 \begin{equation}
 	\hat{j} = \argmin_j\sum^T_{t=1}C_{tj}P(t|x,\theta)
@@ -72,23 +72,25 @@ Given a trained classifier that outputs a calibrated posterior distribution $P(x
 
 \subsection{Predictive Probabilities}
 \label{subsec:selective_predictive_probabilites}
-The softmax response selection function $\sigma_{SR}(x)$ is computed by determining the maximum value of the prediction function $P(x)$ (Equation \ref{eq:softmax_response}). This assumes that the neural network model utilised has employed a softmax activation function to generate predictive probabilities. While this methodology is straightforward to implement and intuitive, it has limitations as the output probabilities from a softmax activation are not properly calibrated and do not reflect the uncertainty of the model, as demonstrated by~\citep{gal2016dropout}.
+The softmax response selection function $\sigma_{SR}(x)$ is computed by determining the maximum value of the prediction function $P(x, \theta)$ with a symmetrical cost matrix. This assumes that the neural network model utilised has employed a softmax activation function to generate predictive probabilities. While this methodology is straightforward to implement and intuitive, it has limitations as the output probabilities from a softmax activation are not properly calibrated and do not reflect the uncertainty of the model, as demonstrated by~\cite{gal2016dropout}.
 
 \begin{equation}
 	\sigma_{SR}(x) = \max_tP(t|x,\theta)
 	\label{eq:softmax_response}
 \end{equation}
 
-Temperature scaling is a method utilised for calibrating the output probabilities of a neural network model (as discussed in Section~\ref{subsec:post_hoc_calibration}). This method was chosen due to its demonstrated effectiveness in calibrating predictive probabilities for medical images as well as its ease of implementation. The temperature scaling technique involves scaling the output logits of a neural network with a temperature value, which is optimised on a validation set during the model's training process. The temperature value is determined from the training epoch that exhibits the lowest validation loss. This technique can be incorporated into a selection function by modifying the prediction function $P(x)$ to include dividing the logits by a temperature value before applying a softmax activation (Equation~(\ref{eq:temperature_scaling})) resulting in $P_{TS}(x)$. Equation~(\ref{eq:selective_temperature_scaling}) shows how temperature scaled probabilities can be used for selective classification.
-
-\begin{equation}
-	\sigma_{TS}(x) = \max_tP_{TS}(t|x,\theta)
-	\label{eq:selective_temperature_scaling}
-\end{equation}
+\noindent In scenarios where costs are asymmetrical, the expected costs of a classification decision, as denoted by Equation~(\ref{eq:expected_cost_multi}), can be utilized to formulate a selective classification decision function $\sigma_{EC}(x)$ through the employment of the cost matrix $C$. 
 
 \begin{equation}
 	\sigma_{EC}(x) = \min_j\sum^T_{t=1}C_{tj}P(t|x,\theta)
 	\label{eq:expected_cost_scoring}
+\end{equation}
+
+Temperature scaling is a method utilised for calibrating the output probabilities of a neural network model (as discussed in Section~\ref{subsec:post_hoc_calibration}). This method was chosen due to its demonstrated effectiveness in calibrating predictive probabilities for medical images as well as its ease of implementation. The temperature scaling technique involves scaling the output logits of a neural network with a temperature value, which is optimised on a validation set during the model's training process. The temperature value is determined from the training epoch that exhibits the lowest validation loss. This technique can be incorporated into a selection function by modifying the prediction function $P(x, \theta)$ to include dividing the logits by a temperature value before applying a softmax activation (Equation~(\ref{eq:temperature_scaling})) resulting in $P_{TS}(x)$. Equation~(\ref{eq:selective_temperature_scaling}) shows how temperature scaled probabilities can be used for selective classification.
+
+\begin{equation}
+	\sigma_{TS}(x) = \max_tP_{TS}(t|x,\theta)
+	\label{eq:selective_temperature_scaling}
 \end{equation}
 
 \subsection{Bayesian Uncertainty}
@@ -136,7 +138,7 @@ Multiple methods exist for estimating the predictive uncertainty of Bayesian neu
 
 \subsection{SelectiveNet}
 \label{subsec:selectivenet}
-In the context of neural networks or Bayesian neural networks, data representations optimised for classification have been widely studied. However, \cite{geifman2019selectivenet} posits that data representations can also be optimised for scenarios where a portion of the data is anticipated to be rejected. To address this issue, the author introduces SelectiveNet, a modified training approach for neural networks that enables end-to-end optimisation for a specific target coverage.
+In the context of neural networks or Bayesian neural networks, data representations optimised for classification have been widely studied. However, \cite{geifman2019selectivenet} posit that data representations can also be optimised for scenarios where a portion of the data is anticipated to be rejected. To address this issue, they introduce SelectiveNet, a modified training approach for neural networks that enables end-to-end optimisation for a specific target coverage (the probability mass of the non-rejected images).
 
 This is achieved by adding two heads to the model's encoder, in addition to the predictive head (denoted as $P(x)$). These heads consist of a selective head (denoted as $G(x)$) that outputs a selection score and an auxiliary head (denoted as $A(x)$) that provides predictions used within the loss function. The overall loss function used to optimise the entire model is based on selective risk and balances the predictive and selective heads against the auxiliary head to ensure that robust features for classification are learned while still optimising for target coverage. The SelectiveNet loss function (Equation~(\ref{eq:selective_loss})) is a combination of two functions ($L_{p,g}$ and $L_a$), weighted by a hyperparameter $\alpha$ to control the relative importance of coverage optimisation.
 
@@ -145,14 +147,19 @@ This is achieved by adding two heads to the model's encoder, in addition to the 
 	\label{eq:selective_loss}
 \end{equation}
 
-The first term uses both the predictive and selective heads (Equation~(\ref{eq:selectivenet_loss})) and combines cross-entropy loss with coverage. 
+The first term uses both the predictive and selective heads (Equation~(\ref{eq:selectivenet_loss})) and combines cross-entropy loss $l$ with coverage $\phi$ (Equation~(\ref{eq:coverage})). 
 
 \begin{equation}
-	L_{p, g} = \frac{1}{N \phi(g)}\sum^{N}_{i=1}l(p(x_i), y_i) g(x_i) + \lambda\max(k - \phi(g|S), 0)^2
+	L_{p,g}=\frac{\sum^N_{n=1}l(p(x^n,\theta),y)g(x^n,\theta)}{\phi}+\lambda\cdot\max(0,k-\phi)^2
 	\label{eq:selectivenet_loss}
 \end{equation}
 
-\noindent The hyperparameter $k$ represents the target coverage for the model, while $\lambda$ regulates the significance of this target coverage. On the other hand, the auxiliary head uses a standard cross-entropy loss ($L_a$) to encourage the model to learn robust features from the training data. For selective classification, the output of the selective head (Equation~(\ref{eq:selectivenet})) is utilised.
+\begin{equation}
+	\phi = \frac{1}{N}\sum^N_{n=1}g(x^n,\theta)
+	\label{eq:coverage}
+\end{equation}
+
+\noindent For selective classification, the output of the selective head (Equation~(\ref{eq:selectivenet})) is utilised. The hyperparameter $k$ represents the target coverage for the model, while $\lambda$ regulates the significance of this target coverage. On the other hand, the auxiliary head uses a standard cross-entropy loss ($L_a$) to encourage the model to learn robust features from the training data. 
 
 \begin{equation}
 	\sigma_{SN}(x) = G(x)
@@ -209,15 +216,15 @@ For the binary experiments, the training of eight models was conducted on the tr
 	\begin{tabular}{|l|l|}
 		\hline
 		Model & Selection Method \\ \hline
-		Convolutional & Softmax Response \\
-		Neural Network & Temperature Scaled Softmax Response \\ \hline
-		SelectiveNet 0.7 & SelectiveNet \\
-		SelectiveNet 0.75 & EC-SelectiveNet \\
-		SelectiveNet 0.8 & Temperature Scaled EC-SelectiveNet \\
-		SelectiveNet 0.85 &  \\
-		SelectiveNet 0.9 &  \\
-		SelectiveNet $t=0.95$ &  \\
-		SelectiveNet 1.0 &  \\ \hline
+		CNN & Softmax Response \\
+		& Temperature Scaled Softmax Response \\ \hline
+		SelectiveNet $k=0.7$ & SelectiveNet \\
+		SelectiveNet $k=0.75$ & EC-SelectiveNet \\
+		SelectiveNet $k=0.8$ & Temperature Scaled EC-SelectiveNet \\
+		SelectiveNet $k=0.85$ &  \\
+		SelectiveNet $k=0.9$ &  \\
+		SelectiveNet $k=0.95$ &  \\
+		SelectiveNet $k=1.0$ &  \\ \hline
 		Monte Carlo Dropout & Average Softmax Response \\
 		& Average Prediction Variance \\ \hline
 	\end{tabular}
@@ -295,32 +302,32 @@ The effect of temperature scaling on selective classification is presented in Fi
 
 \section{Multi class Experiments}
 \label{sec:selective_multi_class_experiments}
-This section details the datasets, training parameters, experimental setup and results for the experiments with binary asymmetric selective classification for skin lesion classification. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Asymetric_Selective_Dermatology}}.
+This section details the datasets, training parameters, experimental setup and results for the experiments with multi-class asymmetric selective classification for skin lesion classification. The code and full results used within this section can be found on the project GitHub repository~\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Asymetric_Selective_Dermatology}}.
 
 \subsection{Dataset Processing}
 In this study, the ISIC Challenge 2019 dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} was employed. The data was processed using a similar methodology to the one described in Section~\ref{subsec:selective_binary_dataset}. A random splitting method was utilised to divide the dataset into three subsets: training, validation, and testing, in a 60:20:20 ratio. Prior to the training process, the images underwent normalisation, which involved computing the standard deviation and mean across each colour channel. Then, the images were square cropped by evenly trimming the horizontal sides and resized to 256x256. During the training phase, data augmentation was applied by randomly augmenting the images at each epoch. The augmentations consisted of 90-degree rotations and horizontal and vertical flips.
 
 \subsection{Experiment Setup}
-In the context of the multi-class set of experiments, it is imperative to note that all models and methods were subjected to repetition thrice, with the final results being an average of the outcomes from each run. In order to ensure a comprehensive evaluation, the training, validation, and testing splits were randomised for each of the three repetitions. A total of eleven models were trained, utilising the validation set to determine the most suitable model for the experiments. As demonstrated in Table~\ref{tab:multi-class-experiment-setup}, these trained models are used evaluate a diverse mix of selection methods, grouped based on suitability between the method and model.
+In the multi-class set of experiments, all models and methods were subjected to repetition thrice, with the final results being an average of the outcomes from each run. In order to ensure a comprehensive evaluation, the training, validation, and testing splits were randomised for each of the three repetitions. A total of eleven models were trained, utilising the validation set to determine the most suitable model. As demonstrated in Table~\ref{tab:multi-class-experiment-setup}, these trained models are used evaluate a diverse mix of selection methods, grouped based on suitability between the method and model.
 
 \begin{table}[h]
 	\centering
-	\caption{Multi-class experiment trained models and selection methods to be evaluated.}
+	\caption{Multi-class experiments; trained models and selection methods to be evaluated.}
 	\label{tab:multi-class-experiment-setup}
 	\begin{tabular}{|l|l|}
 		\hline
 		Model & Selection Method \\ \hline
-		Convolutional & Softmax Response \\
-		Neural Network & Expected Costs \\
+		CNN & Softmax Response \\
+		& Expected Costs \\
 		& Temperature Scaled Softmax Response \\
 		& Temperature Scaled Expected Costs \\ \hline
-		SelectiveNet $t=0.7$ & SelectiveNet \\
-		SelectiveNet $t=0.75$ & Softmax Response \\
-		SelectiveNet $t=0.8$ & Temperature Scaled Softmax Response \\
-		SelectiveNet $t=0.85$ & EC-SelectiveNet \\
-		SelectiveNet $t=0.9$ & Temperature Scaled Expected Costs \\
-		SelectiveNet $t=0.95$ &  \\
-		SelectiveNet $t=1.0$ &  \\ \hline
+		SelectiveNet $k=0.7$ & SelectiveNet \\
+		SelectiveNet $k=0.75$ & Softmax Response \\
+		SelectiveNet $k=0.8$ & Temperature Scaled Softmax Response \\
+		SelectiveNet $k=0.85$ & EC-SelectiveNet \\
+		SelectiveNet $k=0.9$ & Temperature Scaled Expected Costs \\
+		SelectiveNet $k=0.95$ &  \\
+		SelectiveNet $k=1.0$ &  \\ \hline
 		Monte Carlo Dropout & Average Softmax Response \\
 		Bayes By Backprop & Average Expected Costs \\
 		Laplace Approximation & Bayesian Sample Agreement \\
@@ -332,33 +339,28 @@ In the context of the multi-class set of experiments, it is imperative to note t
 	\end{tabular}
 \end{table}
 
-The efficacy of the selection methods employed with each of the models was evaluated using both a typical symmetrical cost matrix (Figure~\ref{fig:multiclasssymcosts}) and an asymmetrical cost matrix (Figure~\ref{fig:multiclassasymcosts}). The asymmetrical cost matrix was developed by a consultant-level dermatologist, taking into account the estimated clinical costs. However, it is important to acknowledge that in cases where multiple lesion classes are present, the cost matrix may become even more complex and thus, should be determined through consultation with relevant stakeholders such as general practitioners, patient representative groups, and health economists. It is imperative to emphasise that the values assigned to the asymmetric costs are context-dependent and should be arrived at through engagement with relevant experts, taking into consideration the specific clinical setting.
+The efficacy of the selection methods employed with each of the models was evaluated using both a typical symmetrical cost matrix (Figure~\ref{fig:multiclasssymcosts}) and an asymmetrical cost matrix (Figure~\ref{fig:multiclassasymcosts}). The asymmetrical cost matrix was developed by a consultant-level dermatologist, taking into account the estimated clinical costs. The values assigned to the asymmetric costs are context-dependent and should be arrived at through engagement with relevant experts, taking into consideration the specific clinical setting.
 
 \subsection{Training Parameters}
-The architecture of the convolutional neural networks and SelectiveNet in this study was consistent with the binary experiments outlined in Section~\ref{subsec:selective_binary_training}. The primary distinction between the two models lies in the number of output neurons in the output layer of the convolutional neural network and the predictive and auxiliary heads of the SelectiveNet architecture, which was increased to 8, resulting in a total of 65,102,296 parameters for the convolutional neural network model and 65,370,593 parameters for the SelectiveNet model.
+The architecture of the CNN and SelectiveNet in this study was consistent with the binary experiments outlined in Section~\ref{subsec:selective_binary_training}. The number of output neurons in the output layer of the CNN and the predictive and auxiliary heads of the SelectiveNet architecture, was increased to 8, resulting in a total of 65,102,296 weights for the CNN model and 65,370,593 weights for the SelectiveNet model.
 
-Additionally, the Bayes by Backprop model~\citep{Blundell2015Weight} utilised in this study was implemented as a convolutional neural network, with the final two fully connected layers replaced by fully connected Bayesian layers. In these layers, each parameter was represented by a distribution initialised with a mean and standard deviation randomly drawn from the ranges 0 to 0.1 and -7 to 0.1, respectively. The parameter priors were modelled using a scale mixture of two Gaussian distributions (Equation \ref{eq:scalemixture}) with standard deviation values of 0.1 and 0.4 and a $\pi$ weighting the two Gaussian distributions of 0.5.
+Additionally, the Bayes-by-Backprop model~\citep{blundell2015weight} utilised in this study was implemented as a CNN, with the final two fully connected layers replaced by fully connected Bayesian layers. In these layers, each weight was represented by a distribution initialised with a mean and standard deviation randomly drawn from the ranges 0 to 0.1 and -7 to 0.1, respectively. The weight priors $P(\theta)$ was modelled using a scale mixture of two Gaussian distributions (Equation~(\ref{eq:scalemixture})) where $J$ represented the number of weights in a model with standard deviation values ($\sigma_1$ and $\sigma_2$) of 0.1 and 0.4 and a $\pi$ weighting the two Gaussian distributions of 0.5. 
 
 \begin{equation}
-	P(w) = \prod_j\pi N(w_j|0, \sigma_1) + (1-\pi) N(w_j|0, \sigma_2)
+	P(\theta) = \prod^J_{j=1}\pi M(\theta_j|0,\sigma_1)+(1-\pi)M(\theta_j|0,\sigma_2)
 	\label{eq:scalemixture}
 \end{equation}
 
-The convolutional neural network and SelectiveNet models were trained with the same parameters as those presented in the binary experiments described in Section~\ref{subsec:selective_binary_training}. The Bayesian Neural Network model, which was trained using the Bayes by Backprop method~\citep{Blundell2015Weight}, employed variational inference to approximate the posterior distribution over weights, $q(w|\theta)$. The parameters for the distribution, $\theta$, were determined by minimising the KL-Divergence between the variational posterior and the true posterior. The true posterior was estimated through Monte Carlo sampling of the evidence lower bound, as expressed in Equation~\ref{eq:elbo}, where $D$ represents the dataset and $N$ denotes the number of Monte Carlo samples.
+The CNN and SelectiveNet models were trained with the same weights as those presented in the binary experiments described in Section~\ref{subsec:selective_binary_training}. The Bayesian Neural Network model, which was trained using the Bayes-by-Backprop method~\citep{blundell2015weight}, employed variational inference to approximate the posterior distribution over weights, $q(\theta)$. The weights for the distribution, $\theta$, were determined by minimising the KL-Divergence between the variational posterior and the true posterior. The true posterior was estimated through Monte Carlo sampling of the evidence lower bound, as expressed in Equation~(\ref{eq:elbo}), where $D$ represents the dataset and $M$ denotes the number of Monte Carlo samples.
+
+The loss function utilised for training the Bayesian Neural Network model was a combination of the ELBO and cross-entropy. The weight assigned to the ELBO component of the loss function was modulated based on the current mini-batch, as depicted in Equation \ref{eq:elbo_weighting}, where $N$ represents the number of mini-batches per epoch and $n$ denotes the current mini-batch. This weighting approach was employed such that the early mini-batches were more influenced by Bayesian complexity and later mini-batches focused more on learning from the training data. In the experiments, the Bayesian neural network model trained with the Bayes by Backprop method was trained using a weighted combination of ELBO and cross-entropy, with the ELBO estimated using three Monte Carlo samples during training. All other training settings were equivalent to those utilised for the training of the convolutional neural network model.
 
 \begin{equation}
-	\text{ELBO}(D, \theta) \approx \sum^N_{n=1}\log q(w^i|\theta)-\log p(w^i) - \log p(D|w^i)
-	\label{eq:elbo}
-\end{equation}
-
-The loss function utilised for training the Bayesian Neural Network model was a combination of the ELBO and cross-entropy. The weight assigned to the ELBO component of the loss function was modulated based on the current mini-batch, as depicted in Equation \ref{eq:elbo_weighting}, where $M$ represents the number of mini-batches per epoch and $m$ denotes the current mini-batch. This weighting approach was employed such that the early mini-batches were more influenced by Bayesian complexity and later mini-batches focused more on learning from the training data. In the experiments, the Bayesian neural network model trained with the Bayes by Backprop method was trained using a weighted combination of ELBO and cross-entropy, with the ELBO estimated using three Monte Carlo samples during training. All other training settings were equivalent to those utilised for the training of the convolutional neural network model.
-
-\begin{equation}
-	\pi_m = \frac{2^{M-m}}{2^M-1}
+	\pi_n = \frac{2^{N-n}}{2^N-1}
 	\label{eq:elbo_weighting}
 \end{equation}
 
-After training the Convolutional neural network model, it can be transformed into a Bayesian neural network using the Laplace approximation method~\citep{mackay1992bayesian}. The Laplace approximation is a technique for approximating the posterior of a model as a Gaussian distribution cantered around the parameters learned by the CNN. The curvature of the approximation is estimated through the use of approximations to the Hessian matrix~\citep{botev2017practical} at the maximum. In the experiments, Laplace approximation was applied to the last layer of the neural network due to hardware constraints, however, it has been demonstrated by~\cite{kristiadi2020being} that this approach can lead to improved calibration and estimation of predictive uncertainty. After performing the Laplace approximation, a predictive probability can be computed by averaging Monte Carlo samples.
+After training, a CNN model can be transformed into a Bayesian neural network using the Laplace approximation method~\citep{mackay1992bayesian}. The Laplace approximation is a technique for approximating the posterior of a model as a Gaussian distribution centred on the learned weights. The curvature of the approximation is estimated through the use of approximations to the Hessian matrix~\citep{botev2017practical} at the MAP. In the experiments, Laplace approximation was applied only to the last layer of the neural network due to hardware constraints, however, it has been demonstrated by~\cite{kristiadi2020being} that this approach can lead to improved calibration and estimation of predictive uncertainty. After performing the Laplace approximation, a predictive probability can be computed by averaging Monte Carlo samples.
 
 
 \subsection{Results}
