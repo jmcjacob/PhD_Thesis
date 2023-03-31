@@ -126,7 +126,7 @@ To facilitate deep learning experiments, the four skin lesion datasets used in t
 
 \subsection{Training Parameters}
 \label{subsec:generalisation_training}
-In this chapter, two methods for imgage classification using deep learning were employed. The first method was a convolutional neural network, specifically an EfficientNet architecture~\citep{tan2019efficient} with a compound coefficient of 7 and an additional fully connected layer of 512 neurons preceding the output layer. The second method was a SWIN-B transformer~\citep{liu2021swin}, a state-of-the-art visual transformer network for image classification.
+In this chapter, two methods for imgage classification using deep learning were employed. The first method was a convolutional neural network, specifically an EfficientNet architecture~\citep{tan2019efficientnet} with a compound coefficient of 7 and an additional fully connected layer of 512 neurons preceding the output layer. The second method was a SWIN-B transformer~\citep{liu2021swin}, a state-of-the-art visual transformer network for image classification.
 
 Subsequent training sessions were conducted for 40 epochs, with the model being saved each time the lowest validation loss was achieved. The weights were optimised using stochastic gradient descent with batches of 16 images and a triangular$^2$ cyclical scheduler~\citep{smith2017cyclical}, which alternated the learning rate between $10^{-5}$ and $10^{-2}$ and the momentum between 0.8 and 0.9. All images were pre-processed by cropping, resizing to 224 x 224 pixels, and normalising the pixel values between 0.0 and 1.0. Data augmentation was used to improve generalisation, specifically using a range of geometric and photometric transformations applied randomly when sampled.
 

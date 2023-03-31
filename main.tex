@@ -113,12 +113,15 @@
 	\newpage
 	\chapter*{Acknowledgements}
 	\addcontentsline{toc}{chapter}{Acknowledgements}
-	My extended thanks the following people for aiding in my Doctoral journey and whom without this work would not be possible:
+	I dedicate this thesis to all the people who have helped me along my PhD journey and would like to express my sincere gratitude to them.
 	
-	\begin{itemize}
-		\item Professor Stephen McKenna
-		\item Tasnim!
-	\end{itemize}
+	I want to thank my wife \textbf{Tasnim} first and foremost for her unwavering support, encouragement, and tolerance. Without her, I would not have been able to complete this. She has been my pillar and my motivation. She has always encouraged me to pursue my goals and has always had faith in me. She is an incredible blessing in my life.
+	
+	I also want to express my gratitude to my supervisor, \textbf{Professor Stephen McKenna}, for his advice and assistance over the years. He has taught me how to conduct amazing research and communicate clearly. He has been a great mentor and role model for me. He has also given me numerous chances to develop both personally and as a researcher. I have learned so much from him and I am honoured to be his student.
+	
+	Also, I want to express my gratitude to the entire \textbf{Computer Vision and Image Processing (CVIP)} group for their camaraderie and cooperation. They have developed a fun and engaging environment for research, and I have profited from their insightful comments and recommendations. It is a pleasure to work with such lovely people, so I'd also like to thank the \textbf{Dermatology research group} members for their kind remarks and ongoing collaboration.
+	
+	Last but not least, I want to express my gratitude to my family and friends for their unfaltering support and inspiration. They have always supported me through the highs and lows of this trip and have experienced both my joys and my frustrations alongside me. They have also given me the courage and assurance I needed to face and overcome the obstacles I encountered along the way.
 	
 	% Declaration
 	\newpage
@@ -143,8 +146,19 @@
 	\newpage
 	\chapter*{Abstract}
 	\addcontentsline{toc}{chapter}{Abstract}
-	\textit{Abstract will go here.}
-
+	Medical image analysis is a critical and challenging field that can be significantly enhanced using deep learning techniques. However, these models require large amounts of annotated data, which can be costly and time-consuming to obtain. Additionally, deep learning models often suffer from overconfidence and poor generalization, leading to incorrect diagnoses and negative clinical outcomes. The primary objective of this thesis is to address these challenges by proposing methods that reduce annotation costs and improve diagnostic accuracy using deep learning.
+	
+	The first contribution of this thesis is an active learning framework designed to increase annotation throughput for histopathology patches. Histopathology is the gold standard for cancer diagnosis, but it requires manual examination by pathologists, which is labour-intensive and prone to errors. To address this issue, this thesis proposes an active learning framework that selects regions for annotation composed of multiple patches, which is expected to increase annotation throughput. This framework is evaluated with various query strategies for nuclei classification using convolutional neural networks (CNN) trained on small patches containing single nuclei.
+	
+	This thesis purposes a multi-directional modification to the contrastive predictive coding (CPC) method for unsupervised representation learning for histopathology patches. Recent advancements in deep learning have had a significant impact on digital pathology however a significant challenge is the large amounts of annotated data needed. Unsupervised representation learning aims to learn meaningful and transferable features from unannotated data, which can be useful for downstream tasks such as classification. The proposed method uses an alternative mask to construct a latent context and a multi-directional PixelCNN autoregressor, to learn effective deep feature representations for improved classification accuracy in digital pathology compared to the standard implementation of CPC.
+	
+	The third contribution of this thesis is a study on calibration techniques evaluated on a multi-class dermatology and a binary histopathology dataset. Calibration is critical for medical image analysis, where overconfident or underconfident predictions can have serious consequences for patient care. The study applied the temperature scaling method and alternative calibration metrics to networks trained with one-hot encoding, cross-entropy loss, focal loss, and label smoothing. The findings suggest that temperature scaling of networks trained with focal loss and appropriate hyperparameters demonstrated strong performance in terms of both calibration and accuracy across both datasets.
+	
+	This thesis investigates asymmetrical misdiagnosis cost selective classification method for skin lesion images. Selective classification is a decision-making framework that allows a model to images when it is uncertain or unconfident, which can reduce the risk of misdiagnosis and improve patient safety. However, most existing selective classification methods assume that all types of misclassification have equal costs, which is not realistic in medical image analysis. This thesis evaluates various methods of uncertainty estimation with neural networks and probability calibration. Additionally, a modification to SelectiveNet, called EC-SelectiveNet, is proposed, which discards the selection head during testing and relies on expected costs to make decisions. The results demonstrate the advantages of training for full coverage, even when operating at lower coverage, and show that EC-SelectiveNet outperforms other selective classification methods, in both symmetric and asymmetric cost settings.
+	
+	The fifth contribution of this thesis is a study on dataset generalization for skin lesion image datasets. Dataset generalization is challenging for medical image analysis due to the heterogeneity and variability of data sources. This study utilises four diagnostic image datasets, including two locally sourced datasets from NHS Tayside and NHS Forth Valley and two publicly available datasets. The study emphasises the importance of assessing the generalisability of deep learning algorithms for macroscopic skin lesion images in real-world settings and highlights the potential benefits of utilising large public macroscopic datasets for pre-training and fine-tuning.
+	
+	
 	
 	% ----- Body -----
 	\newpage
@@ -190,8 +204,8 @@
 	\clearpage
 	\renewcommand{\bibname}{References}
 	\addcontentsline{toc}{chapter}{References}
-	\bibliography{refs/refs,refs/selective,refs/generalisation}
-	%\bibliography{refs/refs}
+	%\bibliography{refs/refs,refs/selective,refs/generalisation}
+	\bibliography{refs/refs}
 	
 	
 	% ----- Appendices -----
