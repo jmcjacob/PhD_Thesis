@@ -1,0 +1,22 @@
+Abstract
+ - Minor
+  - "allows a model to images when it is uncertain" -> "allows a model to reject images when it is uncertain"
+ 
+ 
+Chapter 1
+ - Major
+  - Changes "study" to "chapter" in multiple instances.
+  - TODO ADD MORE ON PROBLEM AREA AND DATASETS
+  - Section 1.2 Paragraph 5: specified what self-supervised representation learning is and how RotNet learns features that can be used for downstream tasks.
+  - Section 1.3 Paragraph 1: specified clearer when rejection happens.
+
+ - Minor
+  - Moved Figure 1.1 to bottom of the page
+  - Moved Figure 1.2 to top of the page
+
+
+Chapter 2
+ - Major
+  - 
+ - Minor
+  -
