@@ -19,4 +19,7 @@ Chapter 2
  - Major
   - 
  - Minor
-  -
+  - Moved publication details to end of introduction.
+  - Table 2.2 moved to the bottom of the page.
+  - Table 2.2 indicated best performing for each metric.
+  - Table 2.2 indicated if higher or lower is better for each metric.

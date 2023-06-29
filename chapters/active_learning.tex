@@ -1,7 +1,3 @@
-This work was presented at the European Congress on Digital Pathology 2019 and published as part of its proceedings ~\citep{carse2019active}.
-
-
-
 \section{Introduction}
 \label{sec:active_introduction}
 \subsection{Active Learning for Medical Image Analysis}
@@ -14,7 +10,11 @@ Active learning algorithms utilise query strategies to select data for annotatio
 \label{subsec:active_deep_learning}
 To save computation time, it is common practice in digital pathology to use patches from whole slide images when applying machine learning algorithms. These patches can be efficiently processed by deep learning algorithms like CNNs, and do not require the entire slide image to be annotated. However, using patch-based methods with patches for tasks such as nuclei detection and classification can be problematic when using active learning to query for annotation. This is because patches are more time-consuming and labour-intensive to annotate, and may lack sufficient spatial context for accurate annotation, even for expert pathologists.
 
-To improve annotation efficiency and reduce costs, this chapter proposes a modified active learning framework to improve annotator throughput by selecting large regions of whole-slide images to be annotated rather than annotating individual nuclei patches. This modified framework was tested using various active learning query strategies on a nuclei detection and classification task using the CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality}.
+To improve annotation efficiency and reduce costs, this chapter proposes a modified active learning framework to improve annotator throughput by selecting large tiles of whole-slide images to be annotated rather than annotating individual nuclei patches. This modified framework was tested using various active learning query strategies on a nuclei detection and classification task using the CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality}.
+
+% TODO - Clarify that tiles are larger than patches.
+
+This work was presented at the European Congress on Digital Pathology 2019 and published as part of its proceedings ~\citep{carse2019active}.
 
 
 
@@ -44,8 +44,10 @@ As the focus of this chapter is limited to deep learning algorithms, only a brie
 \subsubsection{Deep Learning Query Strategies}
 The application of active learning to deep learning algorithms has been met with various challenges~\citep{ren2021survey}. One such challenge is the increased data requirements of deep learning models, as they must concurrently learn both representative features and a classifier. Additionally, deep neural networks often experience issues related to confidence calibration, which can hinder the effectiveness of uncertainty-based active learning approaches due to the unreliable nature of softmax predictions as a measure of certainty. Within the field of deep active learning, two main categories can be identified: scoring query strategies, which select data for annotation based on a particular metric, and batch-aware query strategies, which select the optimal batch of data for annotation.
 
+% TODO - Add citation and explination about softmax and its unreliable nature.
+
 \subsubsection{Scoring Query Strategies}
-To address the need for more representative data annotations, \cite{wang2016cost} proposed the \textbf{Cost-Effective Active Learning (CEAL)} algorithm. This algorithm is an extension of the standard uncertainty-based active learning method, which selects data for annotation based on uncertainty in the model's prediction (epistemic uncertainty). CEAL integrates a process called pseudo-labelling~\citep{lee2013pseudo}, in which data with low uncertainty used their predicted labels to augment the annotated data, resulting in a more diverse training set that includes both difficult, uncertain samples that can aid in classifier improvement, as well as certain samples that contribute to the development of a more generalised feature representation. The name CEAL reflects the cost-effective nature of this active learning approach, as it allows for the incorporation of new annotations without the associated labelling costs. The effectiveness of CEAL was evaluated in comparison to supervised learning, random active learning, and Triple Criteria Active Learning (TCAL)~\citep{demir2014novel} on the Cross-Age Celebrity Dataset~\citep{chen2014cross}. The results showed that CEAL achieved convergence with supervised learning using only 60\% of the data, outperforming both TCAL and random query methods in terms of convergence speed.
+To address the need for more representative data annotations, \cite{wang2016cost} proposed the Cost-Effective Active Learning (CEAL) algorithm. This algorithm is an extension of the standard uncertainty-based active learning method, which selects data for annotation based on uncertainty in the model's prediction (epistemic uncertainty). CEAL integrates a process called pseudo-labelling~\citep{lee2013pseudo}, in which data with low uncertainty used their predicted labels to augment the annotated data, resulting in a more diverse training set that includes both difficult, uncertain samples that can aid in classifier improvement, as well as certain samples that contribute to the development of a more generalised feature representation. The name CEAL reflects the cost-effective nature of this active learning approach, as it allows for the incorporation of new annotations without the associated labelling costs. The effectiveness of CEAL was evaluated in comparison to supervised learning, random active learning, and Triple Criteria Active Learning (TCAL)~\citep{demir2014novel} on the Cross-Age Celebrity Dataset~\citep{chen2014cross}. The results showed that CEAL achieved convergence with supervised learning using only 60\% of the data, outperforming both TCAL and random query methods in terms of convergence speed.
 
 \cite{gal2016dropout} demonstrated that deep learning models employing softmax activation functions are unable to capture model uncertainty. To address this limitation, they introduced a method for approximating Bayesian inference using dropout in deep CNNs. Specifically, they applied dropout to each weight layer in the CNN during both training and testing and used the sample variance of the resulting prediction feedforward, which was repeated $B$ times, to estimate the model uncertainty. This process is depicted in Equation (\ref{eq:bayesian_cnn}), where $w$ represents the learned weights, $x$ denotes the input, and $\widehat{y}(b)$ is the CNN output obtained with dropout patten $b$ applied to each layer.
 
@@ -61,6 +63,7 @@ The Deep-Fool active learning method, proposed by \cite{ducoffe2018adversarial},
 \subsubsection{Batch-Aware Query Strategies}
 \cite{sener2017active} observed that when using CNNs, selecting a single piece of data can be detrimental to the training process due to its minimal statistical impact. They concluded that an active learning algorithm working with a CNN should choose an optimal batch of data for annotation. To achieve this, they treated the problem as a core-set selection problem, in which a small subset of data is selected to be representative of the entire dataset. This problem is equivalent to a k-center problem~\citep{farahani2009facility}, in which a set of $n$ points is chosen to cover all remaining data points while minimising the radius from each data point, as illustrated in Figure~\ref{fig:core-set}.
 
+% TODO - Replace figure with something better
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/core-set.png}
@@ -72,7 +75,7 @@ To compare their method to others, they conducted experiments with different sel
 
 \cite{kirsch2019batchbald} introduced BatchBALD, a batch-aware extension of BALD~\citep{gal2017deep}, which selects data points that exhibit high mutual information between model parameters and model output. To achieve this, the authors modify the definition of mutual information to incorporate both the general uncertainty of the model and the expected uncertainty for a specific set of model parameters. Submodularity is then utilised to identify the optimal set of data points that maximise mutual information. The authors demonstrate that BatchBALD outperforms BALD on multiple datasets, including MNIST~\citep{lecun1998gradient}, EMNIST~\citep{cohen2017emnist} and CINIC-10~\citep{darlow2018cinic}. However, the authors also acknowledge certain limitations of BatchBALD, including its reduced effectiveness on unbalanced datasets and the noise introduced using Monte Carlo dropout.
 
-\cite{zhdanov2019diverse} introduced Diverse mini-batch active learning (DBAL), which combines uncertainty and diversity sampling to identify an optimal batch of data. The data is first encoded and then clustered using K-means, with data points closest to the centre of each cluster being selected. To incorporate uncertainty, weighted K-means is utilised, where each data point is assigned a weight based on an uncertainty function (in this case, margin-based uncertainty, which the authors found to be particularly effective). To improve computational efficiency, they pre-filter the unlabelled data points by uncertainty and only cluster the remaining data points. Demonstrated that DBAL outperforms other baselines on multiple datasets, including MNIST~\citep{lecun1998gradient} and CIFAR-10~\citep{krizhevsky2009learning}.
+\cite{zhdanov2019diverse} introduced Diverse mini-batch active learning (DBAL), which combines uncertainty and diversity sampling to identify an optimal batch of data. The data is first encoded and then clustered using K-means, with data points closest to the centre of each cluster being selected. To incorporate uncertainty, weighted K-means is utilised, where each data point is assigned a weight based on an uncertainty function (in this case, margin-based uncertainty, which the authors found to be particularly effective). To improve computational efficiency, they pre-filter the unlabelled data points by uncertainty and only cluster the remaining data points. The authors demonstrated that DBAL outperforms other methods when tested on multiple datasets, including the MNIST~\citep{lecun1998gradient} and CIFAR-10~\citep{krizhevsky2009learning} datasets.
 
 \subsection{Application of Active Learning for Medicine}
 \label{subsec:active_applications}
@@ -86,15 +89,16 @@ Active learning is a widely researched methodology in the field of machine learn
 
 The Cost-Effective Region-based Active Learning for Semantic Segmentation (CEREALS) method reduces annotation costs by identifying informative image patches that have low annotation costs. The authors accomplished this by developing information maps and estimated annotation cost maps for each image, which were then fused to extract patches that maximise information while minimising annotation cost. The uncertainty for each pixel was calculated using vote entropy across Bayesian samples of the model, generated through the use of Monte Carlo dropout~\citep{gal2016dropout}. Annotation costs were approximated based on the number of clicks required to annotate the image. Evaluation of the CEREALS method on the Cityscapes dataset~\citep{cordts2016cityscapes} showed that it achieved high mean Intersection over Union (mIoU) scores while also requiring fewer annotator clicks when compared to other active learning methods. Building upon this approach, \cite{colling2020metabox+} proposed a similar method but modified the definition used to estimate the cost of annotating and demonstrated a reduced annotation cost compared to other algorithms that don’t take into account variable annotation costs.
 
+% TODO - Justify that the using clicks is a good way to measure the effort needed to annotate an image.
 
 
 \section{Annotator Efficient Active Learning for Histopathology}
 \label{sec:active_annotator_efficient}
 Annotation of medical images, particularly histopathology tasks, poses a significant challenge due to the cost and lack of expert annotators. For instance, tasks such as nuclei detection and classification necessitate annotators to meticulously select and categorise nuclei in whole slide images. A notable example of this can be observed in the annotation procedure for the CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality}, in which annotators had to examine 500x500 pixel patches extracted from 100 H\&E slides (0.55 $\mu$m/pixel, equivalent to 20x optical magnification) and assign each nucleus a classification of epithelial, inflammatory, fibroblast, or miscellaneous. The annotations were collected by experienced pathologists and graduate students supervised by the same pathologists, highlighting the costly nature of such annotation efforts, given the financial requirements for expert annotators. This illustrates the potential for applying active learning methods that incorporate considerations of annotation cost.
 
-\subsection{Region-Based Active Learning}
+\subsection{Tile-Based Active Learning}
 \label{subsec:active_region_based}
-Patch-based approaches are widely used in digital pathology and medical image analysis. However, applying active learning to these methods can be laborious, particularly in systems that utilise small patches. These patches can be challenging to annotate in isolation, even when provided with spatial visual context. To address this, this chapter proposes a region-based approach that requests annotations over larger regions containing multiple small patches. Working with larger regions reduces the burden on the annotator and can increase the annotation collection throughput. This modification enables a learning algorithm to be trained on small patches, while treating the data as larger regions only when querying the unannotated data to be annotated (Figure~\ref{fig:nuclei_example}).
+Patch-based approaches are widely used in digital pathology and medical image analysis. However, applying active learning to these methods can be laborious, particularly in systems that utilise small patches. These patches can be challenging to annotate in isolation, even when provided with spatial visual context. To address this, this chapter proposes a tile-based approach that requests annotations over larger tiles containing multiple small patches. Working with larger tiles reduces the burden on the annotator and can increase the annotation collection throughput. This modification enables a learning algorithm to be trained on small patches, while treating the data as larger tiles only when querying the unannotated data to be annotated (Figure~\ref{fig:nuclei_example}).
 
 \begin{figure}[h]
 	\centering
@@ -107,39 +111,42 @@ Patch-based approaches are widely used in digital pathology and medical image an
 	\begin{subfigure}{0.3\textwidth}
 		\includegraphics[width=\linewidth]{images/nuclei_example_3.png}
 	\end{subfigure}
-	\caption{Example regions that contain annotated nuclei to be extracted as patches and utilised for the purpose of training the model.}
+	\caption{Example tiles that contain annotated nuclei to be extracted as patches and utilised for the purpose of training the model.}
 	\label{fig:nuclei_example}
 \end{figure}
 
-The proposed query strategy involves a simple modification to an existing query strategy, as outlined in Algorithm~\ref{alg:regionbased}. In this algorithm, $S$ represents an existing query strategy, which is called at the end of each active learning iteration once a model has been trained on the current annotated data. The algorithm extracts all patches from each unannotated region and generates predictions for each patch, which are then averaged to obtain a prediction for the overall region. These region-level predictions can then be utilised within an active learning query strategy, such as entropy uncertainty sampling, to sample regions based on uncertainty values. This approach can also be applied to more complex query strategies, such as core-set sampling, by solving the K-centre problem for the region predictions rather than for individual data point feature representations.
+The proposed query strategy involves a simple modification to an existing query strategy, as outlined in Algorithm~\ref{alg:regionbased}. In this algorithm, $S$ represents an existing query strategy, which is called at the end of each active learning iteration once a model has been trained on the current annotated data. The algorithm extracts all patches from each unannotated tile and generates predictions for each patch, which are then averaged to obtain a prediction for the overall tile. These tile-level predictions can then be utilised within an active learning query strategy, such as entropy uncertainty sampling, to sample tiles based on uncertainty values. This approach can also be applied to more complex query strategies, such as core-set sampling, by solving the K-centre problem for the tile predictions rather than for individual data point feature representations.
+
+% TODO - Add active component to algorithm
+% TODO - Add block diagram of algorithm
 
 \begin{algorithm}[h]
-	\caption{Region-based active learning}
+	\caption{Tile-based active learning}
 	\label{alg:regionbased}
 	\SetKwInOut{Input}{Input}
 	\SetKwInOut{Output}{Output}
-	\SetKwProg{RegionQueryStrategy}{RegionQueryStrategy}{}{}
+	\SetKwProg{TileQueryStrategy}{TileQueryStrategy}{}{}
 	\Input{
 		$\theta :$ trained model,\\
 		$\delta :$ prediction algorithm,\\
 		$S :$ active learning query strategy,\\
 		$U :$ set of unannotated data,\\
 		$A :$ set of annotated data,\\
-		$Y :$ empty set of region averages
+		$Y :$ empty set of tile averages
 	}
 	\Output{
 		$U' :$ updated set of unannotated data,\\
 		$A' :$ updated set of annotated data
 	}
-	\RegionQueryStrategy{$\theta, \delta, S, U, A, Y$}
+	\TileQueryStrategy{$\theta, \delta, S, U, A, Y$}
 	{
-		\ForEach{region $r$ in $U$}{
-			$P \gets$ ExtractPatches($r$) \hfill extract patches from region\\
+		\ForEach{tile $r$ in $U$}{
+			$P \gets$ ExtractPatches($r$) \hfill extract patches from tile\\
 			$O \gets \delta(\theta, P)$ \hfill predictions on extracted patches\\
 			$O' \gets$ Average($O$) \hfill average the patch predictions\\
-			$Y \gets$ Append($Y, O'$) \hfill append region average to array\\
+			$Y \gets$ Append($Y, O'$) \hfill append tile average to array\\
 		}
-		$n \gets S(Y)$ \hfill selects region from list\\
+		$n \gets S(Y)$ \hfill selects tile from list\\
 		$U' \gets$ Remove($U, n$) \hfill removes selection from unannotated set\\
 		$A' \gets$ Append($A, n$) \hfill appends the selection to annotated set\\
 		\Return{$U', A'$}
@@ -150,11 +157,11 @@ The proposed query strategy involves a simple modification to an existing query 
 
 \section{Active Learning Experiments}
 \label{sec:active_experiments}
-This section describes the datasets, training parameters, experimental setup, and results for the experiments on nuclei classification using region-based active learning on whole slide image patches. The code and complete results for these experiments are available in the project GitHub repository\footnote{GitHub Repository: \url{github.com/jmcjacob/Patch-Active-Learning-Pathology}}.
+This section describes the datasets, training parameters, experimental setup, and results for the experiments on nuclei classification using tile-based active learning on whole slide image patches. The code and complete results for these experiments are available in the project GitHub repository\footnote{GitHub Repository: \url{github.com/jmcjacob/Patch-Active-Learning-Pathology}}.
 
 \subsection{Dataset}
 \label{subsec:active_dataset}
-The publicly available CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality} was used to evaluate the proposed region-based active learning approach, as it consists of a large number of annotated nuclei from large patches extracted from whole slide images, making it well-suited for this type of active learning. The dataset, which has also been utilised in multiple nuclei classification and detection studies, as well as active learning experiments~\citep{shao2018deep}, comprises 22,444 annotated nuclei from 100 500x500 pixel non-overlapping patches extracted from 10 H\&E whole-slide images of colorectal adenocarcinomas from 9 different patients. Each nucleus is annotated with its coordinates and corresponding classification (epithelial, inflammatory, fibroblast, or miscellaneous). The dataset includes 7,722 epithelial, 5,712 fibroblast, 6,971 inflammatory, and 2,039 miscellaneous annotated nuclei. 2,500 images were generated by dividing the patches into 100x100 pixel regions, from which each nucleus was extracted into a 30x30 patch for use in training the CNN model. During training, data augmentation was employed by randomly applying Gaussian blurring and horizontal and vertical flipping.
+The publicly available CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality} was used to evaluate the proposed tile-based active learning approach, as it consists of a large number of annotated nuclei from large patches extracted from whole slide images, making it well-suited for this type of active learning. The dataset, which has also been utilised in multiple nuclei classification and detection studies, as well as active learning experiments~\citep{shao2018deep}, comprises 22,444 annotated nuclei from 100 500x500 pixel non-overlapping patches extracted from 10 H\&E whole-slide images of colorectal adenocarcinomas from 9 different patients. Each nucleus is annotated with its coordinates and corresponding classification (epithelial, inflammatory, fibroblast, or miscellaneous). The dataset includes 7,722 epithelial, 5,712 fibroblast, 6,971 inflammatory, and 2,039 miscellaneous annotated nuclei. 2,500 images were generated by dividing the patches into 100x100 pixel tiles, from which each nucleus was extracted into a 30x30 patch for use in training the CNN model. During training, data augmentation was employed by randomly applying Gaussian blurring and horizontal and vertical flipping.
 
 \begin{figure}[t!]
 	\centering
@@ -176,7 +183,7 @@ The publicly available CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016loc
 This experiment employed a CNN inspired by the architecture used in the nuclei classification benchmark for the CRCHistoPhenotypes dataset~\citep{sirinukunwattana2016locality}. The network consisted of two convolutional layers, the first with 36 4x4 filters and the second with 48 3x3 filters, each followed by a 2x2 max pooling layer. The convolutional layers were followed by two fully connected layers with 1200 and 512 neurons, respectively. This architecture is summarised in Table~\ref{tab:active_learning_cnn}. Each hidden layer utilised Rectified Linear Unit (ReLU) activation functions, while the fully connected layers employed dropout regularisation~\citep{srivastava2014dropout} with a drop rate of 0.5. Dropout was utilised during training to enable the use of Monte Carlo sampling after training.
 
 \begin{table}[h]
-	\caption{The Convolutional Neural Network architecture employed for nuclei classification in the region-based active learning experiments.}
+	\caption{The Convolutional Neural Network architecture employed for nuclei classification in the tile-based active learning experiments.}
 	\label{tab:active_learning_cnn}
 	\centering
 	\begin{tabular}{|c|c|c}
@@ -207,48 +214,51 @@ During the active learning process, the training environment is continuously evo
 
 \subsection{Experiment Setup}
 \label{subsec:active_experiments}
-A series of experiments were conducted to evaluate the effectiveness of the proposed region-based active learning approach in conjunction with various query strategies. These strategies included several basic methods, which served as baselines, as well as deep learning-specific query algorithms. The baseline strategies included random querying, least confident uncertainty, margin uncertainty, and entropy uncertainty sampling. The deep learning-specific query strategies tested were K-Centre sampling (employing greedy approximation), core-set sampling~\citep{sener2017active}, and BALD using Monte Carlo dropout~\citep{gal2017deep}. These methods were selected due to their state-of-the-art status in the field of deep active learning. 
+A series of experiments were conducted to evaluate the effectiveness of the proposed tile-based active learning approach in conjunction with various query strategies. These strategies included several basic methods, which served as baselines, as well as deep learning-specific query algorithms. The baseline strategies included random querying, least confident uncertainty, margin uncertainty, and entropy uncertainty sampling. The deep learning-specific query strategies tested were K-Centre sampling (employing greedy approximation), core-set sampling~\citep{sener2017active}, and BALD using Monte Carlo dropout~\citep{gal2017deep}. These methods were selected due to their state-of-the-art status in the field of deep active learning. 
 
-In each experiment, all available data was initially treated as unannotated, and then two randomly selected regions were annotated to form an initial training dataset. During each active learning iteration, two additional regions were chosen from the pool of unannotated regions and added to the training dataset. A randomly initialised model (using uniform Xavier initialisation, as proposed by \cite{glorot2010understanding}) was then trained on the updated dataset. This process was repeated for 50 active learning iterations, resulting in a final training set of 102 regions out of 2,500 in each experiment. To account for random variations, each experimental condition was run five times, with different seeds used to generate random elements such as model weight initialisation and initial annotated patches.
+In each experiment, all available data was initially treated as unannotated, and then two randomly selected tiles were annotated to form an initial training dataset. During each active learning iteration, two additional tiles were chosen from the pool of unannotated tiles and added to the training dataset. A randomly initialised model (using uniform Xavier initialisation, as proposed by \cite{glorot2010understanding}) was then trained on the updated dataset. This process was repeated for 50 active learning iterations, resulting in a final training set of 102 tiles out of 2,500 in each experiment. To account for random variations, each experimental condition was run five times, with different seeds used to generate random elements such as model weight initialisation and initial annotated patches.
 
 \subsection{Results}
 \label{subsec:active_results}
+
+% TODO - Explain why results are only using Tile-based active learning and not patch based.
+
 The performance of the various query strategies was assessed by evaluating the trained models on a fixed test set after each active learning iteration. Table~\ref{tab:query_results} presents the mean test accuracy and cross-entropy loss over five runs, after 50 iterations, for each of the query strategies. As shown, only the K-Centre sampling approach yielded higher average accuracy than a random sampling baseline. The core-set sampling strategy produced results that were similar to those of the random sampling approach, while the other query strategies all performed worse.
 
-\begin{table}[h]
+\begin{table}[b]
 	\centering
-	\caption{Test results for each query strategy after 50 active iterations.}
+	\caption{Test results for each query strategy after 50 active iterations. For Accuracy and Mean Class Accuracy higher is better and Loss lower is better.}
 	\label{tab:query_results}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{c|ccccccc}
 			\begin{tabular}[c]{@{}c@{}}Query\\ Strategy\end{tabular} & Random & \begin{tabular}[c]{@{}c@{}}Least \\ Confident\end{tabular} & Margin & Entropy & K-Centre & Core-Set & BALD \\ \hline
-			Accuracy & 58.25 & 48.92 & 45.84 & 32.37 & 61.41 & 57.33 & 48.23 \\
-			\begin{tabular}[c]{@{}c@{}}Mean Class \\ Accuracy\end{tabular} & 53.50 & 47.36 & 42.40 & 41.07 & 54.39 & 52.50 & 46.14 \\
-			Loss & 1.154 & 1.243 & 1.268 & 1.39 & 1.123 & 1.157 & 1.247
+			Accuracy & 58.25 & 48.92 & 45.84 & 32.37 & \textbf{61.41} & 57.33 & 48.23 \\
+			\begin{tabular}[c]{@{}c@{}}Mean Class \\ Accuracy\end{tabular} & 53.50 & 47.36 & 42.40 & 41.07 & \textbf{54.39} & 52.50 & 46.14 \\
+			Loss & 1.154 & 1.243 & 1.268 & 1.39 & \textbf{1.123} & 1.157 & 1.247
 		\end{tabular}%
 	}
 \end{table}
 
-Figures~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_accuracy}, and \ref{fig:active_learning_loss} illustrate the test accuracy, mean class accuracy, and cross-entropy loss for models trained with annotated data selected using each of the query strategies after each active learning iteration, averaged over five runs. The figures also include the results for a model trained using all 1487 annotated training regions; a fully supervised CNN trained on the entire annotated dataset achieved an accuracy of 68.53\% and a cross-entropy loss of 1.111. In contrast, the model trained with the K-Centre query strategy achieved an accuracy of 61.41\% and a cross-entropy loss of 1.137, using only 7\% of the annotated data.
+Figures~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_accuracy}, and \ref{fig:active_learning_loss} illustrate the test accuracy, mean class accuracy, and cross-entropy loss for models trained with annotated data selected using each of the query strategies after each active learning iteration, averaged over five runs. The figures also include the results for a model trained using all 1487 annotated training tiles; a fully supervised CNN trained on the entire annotated dataset achieved an accuracy of 68.53\% and a cross-entropy loss of 1.111. In contrast, the model trained with the K-Centre query strategy achieved an accuracy of 61.41\% and a cross-entropy loss of 1.137, using only 7\% of the annotated data.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{images/active_learning_accuracy.png}
-	\caption{Average test accuracy of trained models using different amounts of annotated regions selected through various query strategies.}
+	\caption{Average test accuracy of trained models using different amounts of annotated tiles selected through various query strategies.}
 	\label{fig:active_learning_accuracy}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{images/active_learning_mean_class_accuracy.png}
-	\caption{Average test mean class accuracy of trained models using different amounts of annotated regions selected through various query strategies.}
+	\caption{Average test mean class accuracy of trained models using different amounts of annotated tiles selected through various query strategies.}
 	\label{fig:active_learning_mean_class_accuracy}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{images/active_learning_loss.png}
-	\caption{Average test loss of trained models using different amounts of annotated regions selected through various query strategies.}
+	\caption{Average test loss of trained models using different amounts of annotated tiles selected through various query strategies.}
 	\label{fig:active_learning_loss}
 \end{figure}
 
@@ -256,6 +266,9 @@ Figures~\ref{fig:active_learning_accuracy}, \ref{fig:active_learning_mean_class_
 
 \section{Conclusion}
 \label{sec:active_conclusion}
+
+% TODO - Draw more depth from the results, explain why different query methods performed differently.
+
 This chapter presents a method for mitigating the annotation burden in patch-based nuclei classification systems using deep active learning. The results reported in Section~\ref{subsec:active_results} indicate that traditional active learning approaches are less effective when applied to deep learning models, and that specialised active learning techniques for deep learning also fail to outperform random sampling baselines. This phenomenon, which has been previously noted in the literature on active learning for deep learning~\citep{ren2021survey}, highlights the need for more robust active learning methods in this domain.
 
 Reducing the cost of annotating data is crucial for enabling the development of deep learning systems for digital pathology and medical image analysis, particularly for organisations with limited resources. While active learning holds promise as a means of addressing this challenge, further research is required to achieve meaningful improvements on tasks such as those presented in this chapter. This has motivated the investigation of unsupervised learning techniques as a complementary approach for leveraging unannotated data, potentially in conjunction with active learning.
