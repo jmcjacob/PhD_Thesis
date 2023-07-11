@@ -6,7 +6,7 @@ There have been numerous reports in the literature on techniques aimed at improv
 
 Temperature scaling~\citep{guo2017calibration} is a widely used technique for calibrating modern neural networks, due in part to its post-hoc nature, ease of implementation, and demonstrated effectiveness. This method involves scaling output logits using a temperature parameter that is optimised on a validation set. The original implementation of temperature scaling utilised negative log-likelihood to optimise the temperature parameter. However, some researchers have proposed the use of other calibration metrics for this purpose, suggesting that this may lead to improved calibration~\citep{mukhoti2020calibrating,frenkel2021network} but omitting to provide empirical evidence to support. This chapter aims to evaluate this claim empirically, using density-based and maximum calibration error estimators as metrics for assessing the performance of temperature scaling with various optimisation approaches.
 
-Section~\ref{sec:calibration_measures} describes various measures of calibration have been proposed and studied in the literature. This chapter investigates the impact of using different metrics to optimise temperature in the context of deep learning classifiers for medical image analysis. The analysis includes networks trained using both traditional cross-entropy loss with one-hot encoded target labels, as well as more recently proposed methods such as focal loss and label smoothing.
+Section~\ref{sec:calibration_measures} describes various measures of calibration which have been proposed and studied in the literature. This chapter investigates the impact of using different metrics to optimise temperature in the context of deep learning classifiers for medical image analysis. The analysis includes networks trained using both traditional cross-entropy loss with one-hot encoded target labels, as well as more recently proposed methods such as focal loss and label smoothing.
 
 In this chapter, the effectiveness of various calibration methods is also compared to that of two Bayesian neural network approaches: one based on Bayes-by-Backprop and the other utilising a Laplace approximation method. These methods are described in detail in Section~\ref{sec:calibration_review}. The experimental design and details of the study are provided in Section~\ref{sec:calibration_experiments}. The results of the analysis, which includes evaluations on the ISIC 2019 multi-class dermatology dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} and the large Patch-Camelyon binary histopathology dataset, are presented in Section~\ref{subsec:calibration_results}. These results provide insight into the relative performance of the different methods in terms of both calibration and accuracy on two distinct medical image classification tasks.
 
@@ -26,6 +26,8 @@ Reliability diagrams are graphical representations that compare the predicted pr
 \end{figure}
 
 There are several metrics that can be used to assess the calibration of a machine learning model. One such measure is the expected calibration error (ECE)~\citep{guo2017calibration}, which quantifies the discrepancy between predictive confidence and classification accuracy (Equation~(\ref{eq:ece})). A commonly used estimator for ECE involves dividing the range of predicted probabilities into a set of equally spaced bins and computing the weighted average of the absolute differences between the accuracy of the predictions in each bin and the mean of the probabilities in that bin. Another metric, known as the maximum calibration error (MCE), is obtained by taking the maximum of the error across all bins (Equation~(\ref{eq:mce})). This measure can be particularly useful in high-stakes situations where the worst-case calibration is of particular concern.
+
+% TODO - Define symbols before referencing them.
 
 \begin{equation}
 	ECE=\sum_{m=1}^{M}\frac{\left|B_m\right|}{n}\left|\left(\frac{1}{\left|B_m\right|}\sum_{i\in B_m}1(\hat{y}_i=y_i)\right)-\left(\frac{1}{\left|B_m\right|}\sum_{i\in B_m}\hat{p}_i\right)\right|
@@ -89,7 +91,7 @@ Laplace approximation~\citep{mackay1992bayesian} is a method to produce Bayesian
 This section presents the details of the datasets, training parameters, experimental setup, and results. The code and complete results for these experiments can be found in the project GitHub repository\footnote{GitHub Repository: \url{github.com/UoD-CVIP/Medical_Calibration}}.
 
 \subsection{Datasets}
-Two datasets were used: the ISIC 2019 challenge dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} and the Patch Camelyon (PCam) dataset~\citep{veeling2018rotation}. The ISIC 2019 dataset consists of 25,331 dermoscopic skin lesion images belonging to eight diagnostic classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma (example images of each classification in Figure~\ref{fig:ISIC_examples}). The PCam dataset consists of 327,680 96x96 pixel image patches extracted from whole-slide images of H\&E-stained lymph node sections from the Camelyon16 dataset~\citep{bejnordi2017diagnostic} (example images in Figure~\ref{fig:pcam_examples}). The datasets were split into training, validation, and testing sets with proportions 6:2:2. The ISIC images were pre-processed by cropping their width to be equal to their height and resizing to $256 \times 256$ pixels. Both datasets were augmented through normalisation of each image channel, random horizontal and vertical flipping, and random rotation by multiples of 90\textdegree.
+Two datasets were used: the ISIC 2019 challenge dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000} and the Patch Camelyon (PCam) dataset~\citep{veeling2018rotation}. The ISIC 2019 dataset consists of 25,331 dermoscopic skin lesion images belonging to eight diagnostic classes: melanoma, melanocytic nevus, basal cell carcinoma, actinic keratosis, benign keratosis, dermatofibroma, vascular lesion, and squamous cell carcinoma (example images of each classification in Figure~\ref{fig:ISIC_examples}). The PCam dataset consists of 327,680 96x96 pixel image patches extracted from whole-slide images of H\&E-stained lymph node sections from the Camelyon16 dataset~\citep{bejnordi2017diagnostic} (example images in Figure~\ref{fig:pcam_examples}). The datasets were split into training, validation, and testing sets with proportions 6:2:2. As the ISIC 2019 images vary in size each image was pre-processed by cropping their width to be equal to their height and resizing to $256 \times 256$ pixels. Both datasets were augmented through normalisation of each image channel, random horizontal and vertical flipping, and random rotation by multiples of 90\textdegree.
 
 \begin{figure}[!h]
 	\centering
@@ -116,6 +118,11 @@ An EfficientNet encoder with a compound coefficient of 7, pre-trained on ImageNe
 
 \subsection{Results}
 \label{subsec:calibration_results}
+
+% TODO - Present this as a curve (as in the presentation).
+% TODO - Check for statistical significence
+% TODO - Split up table
+% TODO - Indicate if a metric should be higher or lower.
 
 \begin{table}[h!]
 	\centering
@@ -193,6 +200,10 @@ The Laplace approximation outperformed Bayes-by-Backprop on the ISIC 2019 datase
 
 \section{Conclusion}
 \label{sec:calibration_conclusion}
+
+% TODO - Discuss theoretical considerations
+% TODO - Suggest how to improve exisiting methods
+
 In this chapter, deep neural network calibration for medical image classification was investigated and added to the existing evidence on the effectiveness of various calibration methods on two different tasks and datasets. The results of this study demonstrate the need to consider the choice of calibration method for each specific task. On the ISIC2019 dataset, temperature scaling nearly always improved calibration, giving a marked improvement in calibration with cross-entropy loss and focal loss trained networks. In contrast, temperature scaling did not improve calibration when used with cross-entropy trained networks on the PCam dataset, but it did yield improved calibration when combined with focal loss.
 
 While it is reasonable to expect that the use of calibration measures to tune temperature on validation data would improve calibration measured in that way, the experimental results of this study showed that this is not always the case. In most situations, the calibration performance is not significantly impacted by the measure used for optimisation. Overall, focal loss combined with temperature scaling appeared to be a strong approach for achieving good calibration performance. Further research could more fully explore the effect of hyperparameters such as $\gamma$ in this context.

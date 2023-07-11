@@ -23,3 +23,20 @@ Chapter 2
   - Table 2.2 moved to the bottom of the page.
   - Table 2.2 indicated best performing for each metric.
   - Table 2.2 indicated if higher or lower is better for each metric.
+
+Chapter 3
+ - Major
+  - Defined the task for Deng 2009 on p40.
+  - 
+ - Minor
+  - Edited 3.2.2 RotNet to make more sense.
+  - Specified t in 3.3.1 paragraph 3
+  - Section 3.3.4 paragraph 2 changed wording.
+
+Chapter 4
+ - Major
+  - 
+ - Minor
+  - Fixed wording in section 4.1 paragrpgh 4
+  - Added ISIC image size information to section 4.4.1
+  - 
