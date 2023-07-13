@@ -8,9 +8,11 @@ It is important to note that the costs resulting from misclassification are typi
 
 In this chapter, methods for cost-sensitive and selective classification of skin lesions using binary and multi-class deep classification models are investigated. An experimental design that includes both binary (malignant vs benign) and multi-class classification tasks. The images utilised in this study were sourced from the ISIC 2019 dataset~\citep{codella2018skin,combalia2019bcn20000,tschandl2018ham10000}.
 
-To add selectivity to a machine learning model, selective classification can be utilised, where the classifier has the option to reject an image if it does not meet certain criteria. The goal of selective classification is to reduce the number of incorrect classifications and decrease the occurred costs of the predictions. In selective classification, a classifier decides whether to accept or reject an input then if accepted makes a prediction on the input. Sometimes the prediction is made first and is used to inform the rejection decision, for example using thresholding the prediction confidence. The threshold can be set based on the desired false positive rate or other performance metrics. If the confidence score of the classifier is below the threshold, the image is rejected and not assigned a class label.
+To add selectivity to a machine learning model, selective classification can be utilised, where the classifier has the option to reject an image if it does not meet certain criteria. The goal of selective classification is to reduce the number of incorrect classifications and decrease the occurred costs of the predictions. In selective classification, a classifier decides whether to accept or reject an input then if accepted makes a prediction on the input. Sometimes the prediction is made first and is used to inform the rejection decision, for example thresholding the prediction confidence. The threshold can be set based on the desired false positive rate or other performance metrics. If the confidence score of the classifier is below the threshold, the image is rejected and not assigned a class label.
 
 Asymmetrical misclassification costs are used in machine learning to address the issue of unequal consequences for different types of classification errors. In medical imaging, false negatives (e.g., misclassifying a malignant skin lesion as benign) can have more serious consequences than false positives (e.g., misclassifying a benign skin lesion as malignant). To address this issue, asymmetrical misclassification cost involves assigning different costs or weights to different types of misclassifications, so that false negatives are penalised more heavily than false positives. This approach allows the classifier to balance sensitivity and specificity in a way that is appropriate for the medical imaging application. By assigning a higher cost to false negatives, the classifier can be encouraged to prioritise sensitivity over specificity.
+
+% TODO - Explain the effect of calibration is the model prioritises flase negatives (prioritize sensitivity over specificity).
 
 \subsection{Summary of Work}
 \label{subsec:selective_summary_of_work}
@@ -59,6 +61,8 @@ For instance, in the binary classification of malignant (class 1) and benign (cl
 Optimising classifiers for a particular cost matrix may seem like a viable solution, however, it is not recommended due to the potential changes in the cost matrix after implementation. This would necessitate the frequent retraining of the classifiers, which can become a tedious and time-consuming process.
 
 Given a trained classifier that outputs a calibrated posterior distribution $P(x, \theta)$ over classes $T$ for an image $x$ using the model parameters $\theta$, the expected costs of classification can be utilised to make a decision on the image's classification~\citep{ferrer2022analysis}. In the binary classification scenario of benign ($t=0$) and malignant ($t=1$) classes, the expected cost of a benign classification is defined as $R_0 = C_{10} P(t=1|x)$, while the expected cost of a malignant classification is expressed as $R_1 = C_{01} P(t=0|x)$. The image $x$ is classified as malignant if $R_1 < R_0$, otherwise it is classified as benign. In the case of multiple classes, the expected cost for each class is calculated as the sum of costs incurred for each class assuming it to be the true class, and the class $\hat{j}$ with the minimum expected cost is selected as the final decision (Equation~(\ref{eq:expected_cost_multi})).
+
+% TODO - Ensure all symbols are explained for all of the equations.
 
 \begin{equation}
 	\hat{j} = \argmin_j\sum^T_{t=1}C_{tj}P(t|x,\theta)
@@ -247,6 +251,9 @@ The SelectiveNet model's performance is evaluated using a loss function that int
 The findings presented in this section are not exhaustive, and complete cost coverage curves for all models and methods of selective classification are available in Appendix~\ref{app:selective_classification_results}.
 
 \subsubsection{SelectiveNet: Effect of Target Coverage}
+
+% TODO - Expand on why a target coverage of 1.0 leads to better performance.
+
 In order to examine the impact of the SelectiveNet target-coverage parameter, $t$, on the selection decisions made by the SelectiveNet selection head, the cost-coverage curves were plotted for various values of $t$, ranging from $0.7$ to $1.0$ with increments of $0.05$, as depicted in Figure~\ref{fig:binary-selectivenet}. The curves were computed for $S_{in}$, $S_{unknown}$, and $S_{combined}$. According to the design objectives of the target coverage parameter, a lower value of $t$ would result in a more effective model at lower coverages. However, the results indicate that training with a value of $t=1.0$ resulted in the lowest test cost on $S_{in}$ for coverage values as low as $0.2$. The costs incurred on $S_{unknown}$ were higher, as expected, and the curves did not exhibit a clear ordering. Nevertheless, the model trained with $t=1.0$ demonstrated a notable reduction in cost as coverage decreased.
 
 \begin{figure}[!h]
@@ -258,6 +265,8 @@ In order to examine the impact of the SelectiveNet target-coverage parameter, $t
 
 \subsubsection{Does SelectiveNet Training Help?}
 The extent to which the target coverage $t$ is imposed is regulated by the weighting parameter $\lambda$. Despite being set to target full coverage ($t=1.0$), the model may, in exceptional circumstances during training, compromise coverage for cost. As a result, the results obtained by SelectiveNet with $t=1.0$ may differ from those obtained through training a network without selective and auxiliary heads. These networks were trained using cross-entropy loss and only retained the softmax predictive head, making selection decisions at test time based on the maximum softmax output. The corresponding cost-coverage curve is plotted in Figure~\ref{fig:binary-selectivenet} (labelled “softmax”). The results indicate that SelectiveNet trained with a target coverage of 1.0 performed better than a standard convolutional neural network with a softmax response for any coverage value above $0.4$.
+
+% TODO - Explain which exceptional circumstances the model may compromise coverage for cost
 
 \begin{figure}[!h]
 	\centering
@@ -276,6 +285,8 @@ The impact of MC-Dropout on selective classification was analysed by using the m
 	\label{fig:binary-datasets}
 \end{figure}
 
+
+% TODO - Why did temperature scaling have a minimal effect?
 
 The effect of temperature scaling on a softmax network was analysed and the results are shown in Figure~\ref{fig:binary-datasets}. The softmax network was trained using cross-entropy loss and temperature scaling was applied to improve calibration. However, the results indicated that temperature scaling had a minimal effect on the cost-coverage curves. Furthermore, Figure~\ref{fig:binary-datasets} displays the results obtained using EC-SelectiveNet, in which the selection head was omitted during testing. The results demonstrate that EC-SelectiveNet achieved a noticeable improvement on both the $S_{in}$ and $S_{unknown}$ datasets when compared to training a standard convolutional neural network model without the auxiliary heads.
 

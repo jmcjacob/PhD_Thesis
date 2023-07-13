@@ -40,3 +40,9 @@ Chapter 4
   - Fixed wording in section 4.1 paragrpgh 4
   - Added ISIC image size information to section 4.4.1
   - 
+
+Chapter 5
+ - Major
+  -
+ - Minor
+  - Removed unnessary "using" p62
