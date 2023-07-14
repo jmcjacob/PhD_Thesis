@@ -3,19 +3,21 @@ Abstract
   - "allows a model to images when it is uncertain" -> "allows a model to reject images when it is uncertain"
  
  
-Chapter 1
+Chapter 1 - Introduction
  - Major
   - Changes "study" to "chapter" in multiple instances.
   - TODO ADD MORE ON PROBLEM AREA AND DATASETS
   - Section 1.2 Paragraph 5: specified what self-supervised representation learning is and how RotNet learns features that can be used for downstream tasks.
   - Section 1.3 Paragraph 1: specified clearer when rejection happens.
+  - 
 
  - Minor
   - Moved Figure 1.1 to bottom of the page
   - Moved Figure 1.2 to top of the page
+  -
 
 
-Chapter 2
+Chapter 2 - Active Learning
  - Major
   - 
  - Minor
@@ -23,8 +25,10 @@ Chapter 2
   - Table 2.2 moved to the bottom of the page.
   - Table 2.2 indicated best performing for each metric.
   - Table 2.2 indicated if higher or lower is better for each metric.
+  -
 
-Chapter 3
+
+Chapter 3 - Unsupervised Learning
  - Major
   - Defined the task for Deng 2009 on p40.
   - 
@@ -32,8 +36,10 @@ Chapter 3
   - Edited 3.2.2 RotNet to make more sense.
   - Specified t in 3.3.1 paragraph 3
   - Section 3.3.4 paragraph 2 changed wording.
+  -
 
-Chapter 4
+
+Chapter 4 - Calibration
  - Major
   - 
  - Minor
@@ -41,8 +47,28 @@ Chapter 4
   - Added ISIC image size information to section 4.4.1
   - 
 
-Chapter 5
+
+Chapter 5 - Selective Classification
  - Major
   -
  - Minor
   - Removed unnessary "using" p62
+  - 
+
+
+Chapter 6 - Generalisation (Now Fine-tuning)
+ - Major
+  -
+ - Minor
+  - Change feild of view or focus p89
+  - This annotation process was developed p93
+  - imgage p95
+  - 
+
+
+Chapter 7 - Conclusion
+ - Major
+  - 
+ - Minor
+  - p108 added large and smaller
+  - p109 added with small local datasets to end of sentence.
