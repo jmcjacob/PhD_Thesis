@@ -59,7 +59,6 @@ The Deep-Fool active learning method, proposed by \cite{ducoffe2018adversarial},
 \subsubsection{Batch-Aware Query Strategies}
 \cite{sener2017active} observed that when using CNNs, selecting a single piece of data can be detrimental to the training process due to its minimal statistical impact. They concluded that an active learning algorithm working with a CNN should choose an optimal batch of data for annotation. To achieve this, they treated the problem as a core-set selection problem, in which a small subset of data is selected to be representative of the entire dataset. This problem is equivalent to a k-center problem~\citep{farahani2009facility}, in which a set of $n$ points is chosen to cover all remaining data points while minimising the radius from each data point, as illustrated in Figure~\ref{fig:core-set}.
 
-% TODO - Replace figure with something better
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/core-set.png}
@@ -83,9 +82,7 @@ The survey of deep active learning for medical image analysis by \cite{budd2021s
 \label{subsec:active_annotation_efficiency}
 Active learning is a widely researched methodology in the field of machine learning that emphasises the selective annotation of a subset of data, rather than annotating all available data, to improve the performance of machine learning algorithms while also reducing annotation costs. The traditional approach to active learning has been to assume that the costs of annotating all data are the same. However, recent research has indicated that this is not always the case in practice, with some data being more difficult to annotate than others~\citep{settles2008active}. In order to address this issue, various methods have been proposed to increase annotation efficiency, particularly in the context of deep learning algorithms. One such method is the cost-effective active learning approach tailored to multi-class semantic segmentation, known as CEREALS, which was proposed by \cite{mackowiak2018cereals}.
 
-The Cost-Effective Region-based Active Learning for Semantic Segmentation (CEREALS) method reduces annotation costs by identifying informative image patches that have low annotation costs. The authors accomplished this by developing information maps and estimated annotation cost maps for each image, which were then fused to extract patches that maximise information while minimising annotation cost. The uncertainty for each pixel was calculated using vote entropy across Bayesian samples of the model, generated through the use of Monte Carlo dropout~\citep{gal2016dropout}. Annotation costs were approximated based on the number of clicks required to annotate the image. Evaluation of the CEREALS method on the Cityscapes dataset~\citep{cordts2016cityscapes} showed that it achieved high mean Intersection over Union (mIoU) scores while also requiring fewer annotator clicks when compared to other active learning methods. Building upon this approach, \cite{colling2020metabox+} proposed a similar method but modified the definition used to estimate the cost of annotating and demonstrated a reduced annotation cost compared to other algorithms that don’t take into account variable annotation costs.
-
-% TODO - Justify that the using clicks is a good way to measure the effort needed to annotate an image.
+The Cost-Effective Region-based Active Learning for Semantic Segmentation (CEREALS) method reduces annotation costs by identifying informative image patches that have low annotation costs. The authors accomplished this by developing information maps and estimated annotation cost maps for each image, which were then fused to extract patches that maximise information while minimising annotation cost. The uncertainty for each pixel was calculated using vote entropy across Bayesian samples of the model, generated through the use of Monte Carlo dropout~\citep{gal2016dropout}. Based on how many clicks were necessary to annotate the image, the annotation costs were approximated. Although the approximation has limitations, the authors chose to use it because there were no other datasets with annotation costs available. Evaluation of the CEREALS method on the Cityscapes dataset~\citep{cordts2016cityscapes} showed that it achieved high mean Intersection over Union (mIoU) scores while also requiring fewer annotator clicks when compared to other active learning methods. Building upon this approach, \cite{colling2020metabox+} proposed a similar method but modified the definition used to estimate the cost of annotating and demonstrated a reduced annotation cost compared to other algorithms that don’t take into account variable annotation costs.
 
 
 \section{Annotator Efficient Active Learning for Histopathology}
@@ -113,7 +110,6 @@ Patch-based approaches are widely used in digital pathology and medical image an
 
 The proposed query strategy involves a simple modification to an existing query strategy, as outlined in Algorithm~\ref{alg:regionbased}. In this algorithm, $S$ represents an existing query strategy, which is called at the end of each active learning iteration once a model has been trained on the current annotated data. The algorithm extracts all patches from each unannotated tile and generates predictions for each patch, which are then averaged to obtain a prediction for the overall tile. These tile-level predictions can then be utilised within an active learning query strategy, such as entropy uncertainty sampling, to sample tiles based on uncertainty values. This approach can also be applied to more complex query strategies, such as core-set sampling, by solving the K-centre problem for the tile predictions rather than for individual data point feature representations.
 
-% TODO - Add active component to algorithm
 % TODO - Add block diagram of algorithm
 
 \begin{algorithm}[h]
@@ -144,7 +140,8 @@ The proposed query strategy involves a simple modification to an existing query 
 		}
 		$n \gets S(Y)$ \hfill selects tile from list\\
 		$U' \gets$ Remove($U, n$) \hfill removes selection from unannotated set\\
-		$A' \gets$ Append($A, n$) \hfill appends the selection to annotated set\\
+		$n' \gets$ Annotate($n$) \hfill annotator annotates the selected tile\\
+		$A' \gets$ Append($A, n'$) \hfill appends the selection to annotated set\\
 		\Return{$U', A'$}
 	}
 \end{algorithm}
