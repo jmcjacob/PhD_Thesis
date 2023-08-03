@@ -5,6 +5,7 @@ Abstract
  
 Chapter 1 - Introduction
  - Major
+  - Added 2 paragrpahs in Section 1.1 on the state of digital pathology and dermatology.
   - Changes "study" to "chapter" in multiple instances.
   - TODO ADD MORE ON PROBLEM AREA AND DATASETS
   - Section 1.2 Paragraph 5: specified what self-supervised representation learning is and how RotNet learns features that can be used for downstream tasks.
@@ -21,7 +22,8 @@ Chapter 2 - Active Learning
  - Major
   - Justified why clicks was used to measure annotation effort
   - Added an active component to Algorithm 1
-  -
+  - Section 2.4.3 Added explination on why tile-based active learning is used.
+  - Expanded 2.5 to add more depth and explain why certain results were achieved.
  - Minor
   - Moved publication details to end of introduction.
   - Table 2.2 moved to the bottom of the page.
