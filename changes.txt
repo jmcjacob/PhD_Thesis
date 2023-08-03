@@ -19,7 +19,9 @@ Chapter 1 - Introduction
 
 Chapter 2 - Active Learning
  - Major
-  - 
+  - Justified why clicks was used to measure annotation effort
+  - Added an active component to Algorithm 1
+  -
  - Minor
   - Moved publication details to end of introduction.
   - Table 2.2 moved to the bottom of the page.
