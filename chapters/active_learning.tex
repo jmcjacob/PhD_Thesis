@@ -108,9 +108,14 @@ Patch-based approaches are widely used in digital pathology and medical image an
 	\label{fig:nuclei_example}
 \end{figure}
 
-The proposed query strategy involves a simple modification to an existing query strategy, as outlined in Algorithm~\ref{alg:regionbased}. In this algorithm, $S$ represents an existing query strategy, which is called at the end of each active learning iteration once a model has been trained on the current annotated data. The algorithm extracts all patches from each unannotated tile and generates predictions for each patch, which are then averaged to obtain a prediction for the overall tile. These tile-level predictions can then be utilised within an active learning query strategy, such as entropy uncertainty sampling, to sample tiles based on uncertainty values. This approach can also be applied to more complex query strategies, such as core-set sampling, by solving the K-centre problem for the tile predictions rather than for individual data point feature representations.
+The proposed query strategy involves a simple modification to an existing query strategy, as outlined in Algorithm~\ref{alg:regionbased} and visualised in Figure~\ref{fig:block_diagram}. In this algorithm, $S$ represents an existing query strategy, which is called at the end of each active learning iteration once a model has been trained on the current annotated data. The algorithm extracts all patches from each unannotated tile and generates predictions for each patch, which are then averaged to obtain a prediction for the overall tile. These tile-level predictions can then be utilised within an active learning query strategy, such as entropy uncertainty sampling, to sample tiles based on uncertainty values. This approach can also be applied to more complex query strategies, such as core-set sampling, by solving the K-centre problem for the tile predictions rather than for individual data point feature representations.
 
-% TODO - Add block diagram of algorithm
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\linewidth]{images/block_diagram.png}
+	\caption{Block Diagram}
+	\label{fig:block_diagram}
+\end{figure}
 
 \begin{algorithm}[h]
 	\caption{Tile-based active learning}
