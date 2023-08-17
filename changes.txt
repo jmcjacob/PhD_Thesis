@@ -10,12 +10,10 @@ Chapter 1 - Introduction
   - TODO ADD MORE ON PROBLEM AREA AND DATASETS
   - Section 1.2 Paragraph 5: specified what self-supervised representation learning is and how RotNet learns features that can be used for downstream tasks.
   - Section 1.3 Paragraph 1: specified clearer when rejection happens.
-  - 
 
  - Minor
   - Moved Figure 1.1 to bottom of the page
   - Moved Figure 1.2 to top of the page
-  -
 
 
 Chapter 2 - Active Learning
@@ -24,18 +22,25 @@ Chapter 2 - Active Learning
   - Added an active component to Algorithm 1
   - Section 2.4.3 Added explination on why tile-based active learning is used.
   - Expanded 2.5 to add more depth and explain why certain results were achieved.
+  - Added block diagram of algorithm to page 22
+  
  - Minor
   - Moved publication details to end of introduction.
   - Table 2.2 moved to the bottom of the page.
   - Table 2.2 indicated best performing for each metric.
   - Table 2.2 indicated if higher or lower is better for each metric.
-  -
 
 
 Chapter 3 - Unsupervised Learning
  - Major
   - Defined the task for Deng 2009 on p40.
-  - 
+  - Added Figure 3.3 to Section 3.3.2 to better ilustrate CPC.
+  - Expanded Section 3.3.3 to give more description to PixelCNN and PixelRNN.
+  - Updated the caption of Figure 3.4 to be more informative on the modfication.
+  - Clarification on PCam Dataset in Section 3.4.1.
+  - Added clarification to why CPC were set in Section 3.4.3.
+  - Added clarification to Section 3.4.4 about how results from Chapter 2 and 3 can be directly compared.
+  
  - Minor
   - Edited 3.2.2 RotNet to make more sense.
   - Specified t in 3.3.1 paragraph 3
