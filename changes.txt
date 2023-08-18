@@ -40,6 +40,8 @@ Chapter 3 - Unsupervised Learning
   - Clarification on PCam Dataset in Section 3.4.1.
   - Added clarification to why CPC were set in Section 3.4.3.
   - Added clarification to Section 3.4.4 about how results from Chapter 2 and 3 can be directly compared.
+  - Added 95% confidence intervals from 100 bootstraps to Table 3.1.
+  - Added 95% tolerance intervals from 100 bootstraps to Figure 3.7.
   
  - Minor
   - Edited 3.2.2 RotNet to make more sense.

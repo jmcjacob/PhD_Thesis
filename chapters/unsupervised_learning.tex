@@ -2,8 +2,6 @@
 \label{sec:unsupervised_intro}
 The application of modern deep learning algorithms has demonstrated significant improvements in digital pathology tasks such as nuclei detection and disease classification~\citep{litjens2017survey}, as previously discussed in Section \ref{subsec:active_for_medical_image_analysis}. The ability to jointly learn deep representations and discriminative classifiers or regressors through end-to-end training allows for feature representations that are specifically tailored to a given task. However, this approach necessitates a significant amount of annotated data for adequate generalisation, which poses a major challenge for digital pathology~\citep{madabhushi2016image} and other medical image analysis domains. In an effort to address this challenge, we previously explored the use of active learning (Chapter \ref{ch:active_learning}), however, the limitations of this approach were highlighted in Section \ref{sec:active_conclusion} and subsequently led to a focus on unsupervised representation learning as a means to extract information from unannotated images. Unsupervised representation learning can be utilised to improve generalisation, decrease data dimensionality, improve computational performance, and initialise deep supervised learning models when access to annotated data is limited~\citep{bengio2013representation}.
 
-% TODO - Remove Diagnal arrows from figure.
-
 \begin{figure}
 	\begin{minipage}[b]{.4\linewidth}
 		\centering
@@ -245,7 +243,7 @@ The CPC models took an average of 33 hours to train using a single Nvidia GeForc
 
 \begin{table}[h]
 	\centering
-	\caption{Mean test accuracies of the CNN classifiers with different pre-training (standard deviation in parentheses).}
+	\caption{Mean test accuracies of the CNN classifiers with different pre-training (95\% confidence intervals in parentheses).}
 	\label{tab:cpc_cnn_results}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{r|rrrrr}
@@ -255,15 +253,15 @@ The CPC models took an average of 33 hours to train using a single Nvidia GeForc
 			\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Single\\Directional\\Infilling Mask\end{tabular}} &
 			\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Multi\\Directional\\Normal Mask\end{tabular}} &
 			\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Multi\\Directional\\Infilling Mask\end{tabular}} \\ \hline
-			10     & 0.500 (0.000) & 0.561 (0.043)          & 0.561 (0.094)          & 0.546 (0.065)          & \textbf{0.582 (0.096)} \\
-			32     & 0.563 (0.109) & 0.560 (0.045)          & \textbf{0.604 (0.043)} & 0.538 (0.082)          & 0.577 (0.086)          \\
-			100    & 0.641 (0.125) & 0.590 (0.018)          & 0.636 (0.082)          & 0.595 (0.078)          & \textbf{0.655 (0.081)} \\
-			316    & 0.694 (0.067) & 0.593 (0.109)          & \textbf{0.741 (0.014)} & 0.715 (0.039)          & 0.708 (0.062)          \\
-			1000   & 0.727 (0.013) & 0.758 (0.014)          & 0.740 (0.016)          & 0.760 (0.016)          & \textbf{0.773 (0.006)} \\
-			3162   & 0.750 (0.002) & 0.777 (0.028)          & 0.775 (0.012)          & 0.784 (0.006)          & \textbf{0.786 (0.014)} \\
-			10000  & 0.786 (0.006) & 0.787 (0.008)          & 0.776 (0.012)          & \textbf{0.792 (0.033)} & 0.781 (0.019)          \\
-			31624  & 0.779 (0.012) & 0.774 (0.004)          & 0.770 (0.009)          & \textbf{0.786 (0.005)} & 0.784 (0.009)          \\
-			100000 & 0.775 (0.007) & 0.774 (0.011)          & \textbf{0.786 (0.003)} & 0.785 (0.006)          & 0.784 (0.010)
+			10     & 0.500 (0.0000) & 0.558 (0.0042) & 0.557 (0.0083)          & 0.547 (0.0062)          & \textbf{0.590 (0.0094)} \\
+			32     & 0.563 (0.0106) & 0.563 (0.0044) & \textbf{0.603 (0.0040)} & 0.541 (0.0076)          & 0.580 (0.0077)          \\
+			100    & 0.653 (0.0103) & 0.592 (0.0016) & 0.629 (0.0080)          & 0.598 (0.0071)          & \textbf{0.657 (0.0082)} \\
+			316    & 0.692 (0.0058) & 0.589 (0.0095) & \textbf{0.740 (0.0013)} & 0.715 (0.0037)          & 0.709 (0.0057)          \\
+			1000   & 0.725 (0.0013) & 0.758 (0.0012) & 0.739 (0.0015)          & 0.760 (0.0014)          & \textbf{0.773 (0.0005)} \\
+			3162   & 0.750 (0.0002) & 0.775 (0.0027) & 0.774 (0.0011)          & 0.784 (0.0006)          & \textbf{0.785 (0.0014)} \\
+			10000  & 0.786 (0.0005) & 0.787 (0.0008) & 0.777 (0.0012)          & \textbf{0.792 (0.0033)} & 0.781 (0.0017)          \\
+			31624  & 0.781 (0.0011) & 0.774 (0.0003) & 0.770 (0.0008)          & \textbf{0.785 (0.0005)} & 0.784 (0.0008)          \\
+			100000 & 0.775 (0.0006) & 0.774 (0.0011) & \textbf{0.786 (0.0003)} & 0.784 (0.0006)          & 0.784 (0.0009)
 		\end{tabular}%
 	}
 \end{table}
@@ -271,14 +269,14 @@ The CPC models took an average of 33 hours to train using a single Nvidia GeForc
 \subsection{Results}
 \label{subsec:unsupervised_results}
 
-% TODO - Perform statistical analaysis on the results (bootstraping) and add them to tables and plots.
+% Make reference to the confidence intervals.
 
-The results obtained from the held-out testing set, consisting of 32,768 images, for the CNN classifiers initialised with various CPC encoders' weights and biases are presented in Figure~\ref{fig:cpc_cnn_results} and Table~\ref{tab:cpc_cnn_results}. In addition, a baseline approach was employed, which utilised CNN models with no pretraining, these baselines are not comparable to the results presented in Chapter~\ref{ch:active_learning} as the experiments were different tasks. The outcomes demonstrate that the CNNs trained with a small amount of annotated data exhibit higher accuracies when initialised with a multi-directional autoregressive model. However, the standard CPC encounters challenges in learning a representation that is suitable for initialising a CNN classifier, leading to lower accuracies in some instances compared to those initialised using random weights. The results suggest that the transfer learning approach utilising CPC pretraining is most effective when the number of annotated images is limited, as the benefit of using the CPC pretraining diminishes as the number of images increases. Moreover, Table~\ref{tab:cpc_cnn_results} depicts the ablation results obtained by employing two components: infilling style mask and a multi-directional autoregressive model. The findings indicate that using an infilling style mask is the most critical component as both models that include infilling style masks achieve the best results. However, the CPC model utilising a multi-directional autoregressive model and a normal mask performs optimally when larger subsets of the dataset are utilised.
+The results obtained from the held-out testing set, consisting of 32,768 images, for the CNN classifiers initialised with various CPC encoders' weights and biases. 100 bootstraps from the multiple runs were sampled and the mean accuracies and 95\% confidence intervals of the 100 bootstraps are presented in Table~\ref{tab:cpc_cnn_results} and the mean accuracies and 95\% tolerance intervals of the 100 bootstraps are presented in Figure~\ref{fig:cpc_cnn_results}. In addition, a baseline approach was employed, which utilised CNN models with no pretraining, these baselines are not comparable to the results presented in Chapter~\ref{ch:active_learning} as the experiments were different tasks. The outcomes demonstrate that the CNNs trained with a small amount of annotated data exhibit higher accuracies when initialised with a multi-directional autoregressive model. However, the standard CPC encounters challenges in learning a representation that is suitable for initialising a CNN classifier, leading to lower accuracies in some instances compared to those initialised using random weights. The results suggest that the transfer learning approach utilising CPC pretraining is most effective when the number of annotated images is limited, as the benefit of using the CPC pretraining diminishes as the number of images increases. Moreover, Table~\ref{tab:cpc_cnn_results} depicts the ablation results obtained by employing two components: infilling style mask and a multi-directional autoregressive model. The findings indicate that using an infilling style mask is the most critical component as both models that include infilling style masks achieve the best results. However, the CPC model utilising a multi-directional autoregressive model and a normal mask performs optimally when larger subsets of the dataset are utilised.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{images/cpc_cnn_results.png}
-	\caption{Mean class testing accuracies of the CNN classifiers trained using varying amounts of training examples, with standard errors.}
+	\caption{Mean class testing accuracies of the CNN classifiers trained using varying amounts of training examples, with 95\% tolerance intervals shown using error bars.}
 	\label{fig:cpc_cnn_results}
 \end{figure}
 
@@ -286,4 +284,7 @@ The results obtained from the held-out testing set, consisting of 32,768 images,
 
 \section{Conclusion}
 \label{sec:conclusion}
+
+% Discuss results more including confidence and tolerance intervals.
+
 The experimental results presented in Section~\ref{subsec:unsupervised_results} demonstrate that the original implementation of CPC~\citep{oord2018representation} does not perform well on patch-based digital pathology tasks. The proposed multi-directional modifications to the CPC, however, yielded better results and improved classification accuracies when annotated data were limited. These experiments illustrate that algorithms based on an assumption of image directionality, as is common in standard computer vision datasets such as CIFAR~\citep{krizhevsky2009learning} and ImageNet~\citep{deng2009imagenet}, may not perform well on images without such directionality. The results of this study suggest that the proposed multi-directional CPC method can be applied to other visual tasks where image orientation is unimportant, as is the case in multiple biomedical imaging settings.
