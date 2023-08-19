@@ -25,9 +25,7 @@ Reliability diagrams are graphical representations that compare the predicted pr
 	\label{fig:reliability_diagram}
 \end{figure}
 
-There are several metrics that can be used to assess the calibration of a machine learning model. One such measure is the expected calibration error (ECE)~\citep{guo2017calibration}, which quantifies the discrepancy between predictive confidence and classification accuracy (Equation~(\ref{eq:ece})). A commonly used estimator for ECE involves dividing the range of predicted probabilities into a set of equally spaced bins and computing the weighted average of the absolute differences between the accuracy of the predictions in each bin and the mean of the probabilities in that bin. Another metric, known as the maximum calibration error (MCE), is obtained by taking the maximum of the error across all bins (Equation~(\ref{eq:mce})). This measure can be particularly useful in high-stakes situations where the worst-case calibration is of particular concern.
-
-% TODO - Define symbols before referencing them.
+There are several metrics that can be used to assess the calibration of a machine learning model. One such measure is the expected calibration error (ECE)~\citep{guo2017calibration}, which quantifies over $n$ samples the discrepancy between predictive confidence ($\hat{p}_i$) and classification accuracy ($1(\hat{y}_i = y_i)$) over $M$ number of bins $B$ (Equation~(\ref{eq:ece})). A commonly used estimator for ECE involves dividing the range of predicted probabilities into a set of equally spaced bins and computing the weighted average of the absolute differences between the accuracy of the predictions in each bin and the mean of the probabilities in that bin. Another metric, known as the maximum calibration error (MCE), is obtained by taking the maximum of the error across all bins (Equation~(\ref{eq:mce})). This measure can be particularly useful in high-stakes situations where the worst-case calibration is of particular concern.
 
 \begin{equation}
 	ECE=\sum_{m=1}^{M}\frac{\left|B_m\right|}{n}\left|\left(\frac{1}{\left|B_m\right|}\sum_{i\in B_m}1(\hat{y}_i=y_i)\right)-\left(\frac{1}{\left|B_m\right|}\sum_{i\in B_m}\hat{p}_i\right)\right|
@@ -118,15 +116,9 @@ An EfficientNet encoder with a compound coefficient of 7, pre-trained on ImageNe
 
 \subsection{Results}
 \label{subsec:calibration_results}
-
-% TODO - Present this as a curve (as in the presentation).
-% TODO - Check for statistical significence
-% TODO - Split up table
-% TODO - Indicate if a metric should be higher or lower.
-
 \begin{table}[h!]
 	\centering
-	\caption{Calibration and accuracy results for ISIC 2019 and PCam datasets. ISIC 2019 results are means and standard deviations over three iterations. Each section reports results from a single model type; TS denotes temperature scaling.}
+	\caption{Calibration and accuracy results for ISIC 2019 and PCam datasets. ISIC 2019 results are means and standard deviations over three iterations. Each section reports results from a single model type; TS denotes temperature scaling. For KED-ECE, MCE and NLL lower is better. For ACC higher is better.}
 	\label{tab:calibration_results}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{l|cccc|m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}|}
@@ -182,6 +174,20 @@ The results for the ISIC 2019 and PCam datasets are presented in Table~\ref{tab:
 
 On the multi-class skin lesion classification task, temperature scaling consistently improved calibration. The largest improvement in mean KDE-ECE when using the baseline CNN model was from 0.046 to 0.012; other temperature scaling measures yielded similar results. Label smoothing achieved better accuracy, but the calibration was inferior to temperature scaling with one-hot labels. When temperature scaling was added to label smoothing, it tended to improve calibration, but it was not as effective as temperature scaling without label smoothing in this regard. Optimising for MCE was ineffective.
 
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{\linewidth}
+		\includegraphics[width=\linewidth]{images/ISIC_TS_Calibration.png}
+		\caption{ISIC 2019 Dataset}
+	\end{subfigure}
+	\begin{subfigure}{\linewidth}
+		\includegraphics[width=\linewidth]{images/PCAM_TS_Calibration.png}
+		\caption{Patch Camelyon Dataset}
+	\end{subfigure}
+	\caption{Calibration metrics of models calibrated using temperature scaling optimised on different calibration metrics (y axis). (a) ISIC 2019 results (b) Patch Camelyon results.}
+	\label{fig:TS_calibtation}
+\end{figure}
+
 Focal loss with a value of $\gamma = 2.0$ and temperature optimised for KDE-ECE achieved calibration and accuracy that were competitive with, or perhaps slightly better than, the cross-entropy model with temperature scaling. Both of the focal loss models showed behaviour similar to that reported in~\cite{mukhoti2020calibrating}, in that temperature optimisation for KDE-ECE resulted in better calibration with a significant impact on KDE-ECE compared to temperature optimisation for NLL.
 
 On the binary classification task using the PCam dataset, a different behaviour was observed when using temperature scaling. The baseline CNN model did not benefit from temperature scaling in terms of calibration, regardless of the calibration measure used to optimise the temperature.
@@ -200,10 +206,10 @@ The Laplace approximation outperformed Bayes-by-Backprop on the ISIC 2019 datase
 
 \section{Conclusion}
 \label{sec:calibration_conclusion}
+This chapter centres on the investigation and enhancement of deep neural network calibration for medical image classification. The primary objective of this study was to contribute to the existing body of knowledge by assessing the efficacy of diverse calibration methods across various tasks and datasets. The findings highlight the importance of carefully selecting a calibration approach that is appropriate for the task at hand.
 
-% TODO - Discuss theoretical considerations
-% TODO - Suggest how to improve exisiting methods
+The investigation encompassed two discrete datasets: the ISIC2019 dataset and the PCam dataset. Notably, the calibration enhancements rendered by temperature scaling consistently manifested within the confines of the ISIC2019 dataset. This augmentation was particularly conspicuous in instances where networks were trained employing either cross-entropy loss or focal loss. In stark contrast, the application of temperature scaling to networks trained with cross-entropy on the PCam dataset did not yield calibration improvements. However, a constructive calibration effect became evident upon the incorporation of temperature scaling in conjunction with focal loss. 
 
-In this chapter, deep neural network calibration for medical image classification was investigated and added to the existing evidence on the effectiveness of various calibration methods on two different tasks and datasets. The results of this study demonstrate the need to consider the choice of calibration method for each specific task. On the ISIC2019 dataset, temperature scaling nearly always improved calibration, giving a marked improvement in calibration with cross-entropy loss and focal loss trained networks. In contrast, temperature scaling did not improve calibration when used with cross-entropy trained networks on the PCam dataset, but it did yield improved calibration when combined with focal loss.
+Although an assumption may be held that the introduction of calibration measures to adjust temperature using validation data would be invariably improve calibration performance, the empirical results of this study contradicted this (as seen in Figure~\ref{fig:TS_calibtation}). The influence of optimisation measures on calibration performance was often marginal. Although the amalgamation of focal loss and temperature scaling surfaced as a robust strategy for cultivating desirable calibration outcomes. This could be attributed to the intricate interplay between the focused loss's concentration on intricate training examples and temperature scaling's capacity to exploit this concentration, thereby yielding heightened performance in binary classification instances. It is vital to highlight that this pattern may be more useful for binary classification, as multi-class scenarios increase the prediction space's complexity.
 
-While it is reasonable to expect that the use of calibration measures to tune temperature on validation data would improve calibration measured in that way, the experimental results of this study showed that this is not always the case. In most situations, the calibration performance is not significantly impacted by the measure used for optimisation. Overall, focal loss combined with temperature scaling appeared to be a strong approach for achieving good calibration performance. Further research could more fully explore the effect of hyperparameters such as $\gamma$ in this context.
+Subsequent study could explore deeper into the implications of hyperparameters, such as the focal loss parameter $\gamma$, in this context. Such research could lead to a better understanding of the significance of these hyperparameters in affecting calibration performance. Further to this, an avenue for inquiry lies in the exploration of alternative calibration methods. Ongoing developmental efforts are predominantly directed towards post-hoc calibration methods, favoured for their practicality and ease of implementation. For example, the potential advantages of employing an ensemble of temperature scaling techniques for the calibration of predictions related to specific classes~\citep{zhang2020mix}. Future work could investigate, calibration in proximity to decision boundaries presents opportunity for research to improve calibration outcomes.

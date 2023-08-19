@@ -23,6 +23,7 @@ Chapter 2 - Active Learning
   - Section 2.4.3 Added explination on why tile-based active learning is used.
   - Expanded 2.5 to add more depth and explain why certain results were achieved.
   - Added block diagram of algorithm to page 22
+  - Added more technical 
   
  - Minor
   - Moved publication details to end of introduction.
@@ -35,6 +36,8 @@ Chapter 3 - Unsupervised Learning
  - Major
   - Defined the task for Deng 2009 on p40.
   - Added Figure 3.3 to Section 3.3.2 to better ilustrate CPC.
+  - Added better explination of momentum contrast in Section 3.2.2.
+  - Added better explination of Pretext-Invariant Representations in Section 3.2.2.
   - Expanded Section 3.3.3 to give more description to PixelCNN and PixelRNN.
   - Updated the caption of Figure 3.4 to be more informative on the modfication.
   - Clarification on PCam Dataset in Section 3.4.1.
@@ -42,21 +45,26 @@ Chapter 3 - Unsupervised Learning
   - Added clarification to Section 3.4.4 about how results from Chapter 2 and 3 can be directly compared.
   - Added 95% confidence intervals from 100 bootstraps to Table 3.1.
   - Added 95% tolerance intervals from 100 bootstraps to Figure 3.7.
+  - Expanded 3.4.4 to add more disscussion on results.
+  - Expanded 3.5 to add more disscussion on results.
   
  - Minor
   - Edited 3.2.2 RotNet to make more sense.
   - Specified t in 3.3.1 paragraph 3
   - Section 3.3.4 paragraph 2 changed wording.
-  -
 
 
 Chapter 4 - Calibration
  - Major
-  - 
+  - Defined all symbols of Equation 4.1 before use.
+  - Added Figure 4.3 to visualise results.
+  - Expanded 4.5 to include dissucssion on why focal loss and temperature scaling works well together.
+  - Expanded 4.5 to include disscussion on future work and future research directions.
+
  - Minor
   - Fixed wording in section 4.1 paragrpgh 4
   - Added ISIC image size information to section 4.4.1
-  - 
+  - Added higher or lower indication to Table 4.1 caption.
 
 
 Chapter 5 - Selective Classification
