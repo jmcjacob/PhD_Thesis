@@ -92,36 +92,24 @@ In this chapter's experiments, images from two public domain skin lesion dataset
 	\label{fig:sd260_examples}
 \end{figure}
 
-To facilitate deep learning experiments, the four skin lesion datasets used in this chapter were intentionally restricted to a set of seven diagnostic categories. The specific seven categories were chosen based on their representation across the four datasets. For example, vascular lesions were excluded from the ISIC 2019 dataset, and classes such as angioma and solar lentigo were excluded from the Tayside dataset because they were not well represented in the other two datasets. The ISIC 2019, SD-260, Tayside, and Forth Valley data subsets used in the chapter contained 25078, 13814, 2218, and 1518 images, respectively (Table~\ref{tab:generalisation_datasets}).
+To facilitate deep learning experiments, the four skin lesion datasets used in this chapter were intentionally restricted to a set of seven diagnostic categories. The specific seven categories were chosen based on their representation across the four datasets. For example, vascular lesions were excluded from the ISIC 2019 dataset, and classes such as angioma and solar lentigo were excluded from the Tayside dataset because they were not well represented in the other two datasets. The ISIC 2019, SD-260, Tayside, and Forth Valley data subsets used in the chapter contained 25,078, 13,814, 2,213, and 1,510 images, respectively (Table~\ref{tab:generalisation_datasets}).
 
 \begin{table}[h]
 	\centering
 	\caption{Number of images per diagnosis in each dataset.}
 	\label{tab:generalisation_datasets}
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|ll|r|r|r|r|r|}
-			\hline
-			&                             & \textbf{ISIC 2019} & \textbf{SD-260} & \textbf{Tayside} & \textbf{Forth Valley} & \textit{\textbf{Total}} \\ \hline
-			\multicolumn{1}{|l|}{\textbf{Benign}} & Actinic keratosis (B52)     & 867                & 1434            & 414              & 144        &    \textit{2859}        \\
-			\multicolumn{1}{|l|}{}                & Dermatofibroma (X9002)      & 239                & 303             & 56               & 78         &    \textit{676}         \\
-			\multicolumn{1}{|l|}{}                & Naevus, melanocytic (X31z)  & 12875              & 1401            & 577              & 531        &    \textit{15384}       \\
-			\multicolumn{1}{|l|}{}                & Seborrhoeic keratosis (X01) & 2624               & 1133            & 538              & 290        &    \textit{4585}        \\ \hline
-			\multicolumn{1}{|l|}{\textbf{Malignant}} &
-			\begin{tabular}[c]{@{}l@{}}Melanoma (X41) / \\ Melanoma in situ (X40)\end{tabular} &
-			4522 &
-			7094 &
-			78 &
-			205 &
-			\textit{11899} \\
-			\multicolumn{1}{|l|}{} &
-			\begin{tabular}[c]{@{}l@{}}Squamous cell carcinoma (X12) / \\ Squamous cell carcinoma in situ (X11)\end{tabular} &
-			628 &
-			17 &
-			176 &
-			91 &
-			\textit{912} \\
-			\multicolumn{1}{|l|}{}                & Basal cell carcinoma (X20)  & 3323               & 2432            & 379              & 179            &   \textit{6313}    \\ \hline
-			\textit{\textbf{Total}}               & \textit{}                   & \textit{25078}     & \textit{13814}  & \textit{2218}    & \textit{1518}  &   \textit{42628}    \\ \hline
+		\begin{tabular}{ll|r|r|r|r|r|}
+			\cline{3-7}
+			&  & \multicolumn{1}{l|}{ISIC 2019} & \multicolumn{1}{l|}{SD-260} & \multicolumn{1}{l|}{Tayside} & \multicolumn{1}{l|}{Forth Valley} & \multicolumn{1}{l|}{\textit{\textbf{Total}}} \\ \hline
+			\multicolumn{1}{|l|}{\multirow{4}{*}{\textbf{Benign}}} & Actinic Keratosis (B52) & 867 & 1,434 & 414 & 143 & \textit{2,858} \\
+			\multicolumn{1}{|l|}{} & Dermatofibroma (X9002) & 239 & 303 & 56 & 77 & \textit{675} \\
+			\multicolumn{1}{|l|}{} & Naevus, Melanocytic (X31z) & 12,875 & 1,401 & 575 & 530 & \textit{15,381} \\
+			\multicolumn{1}{|l|}{} & Seborrhoeic Keratosis (X01) & 2,624 & 1,133 & 537 & 289 & \textit{4,583} \\ \hline
+			\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Malignant}}} & \begin{tabular}[c]{@{}l@{}}Melanoma (X41) /\\ Melanoma in situ \\ (X40)\end{tabular} & 4,522 & 7,094 & 78 & 204 & \textit{11,898} \\
+			\multicolumn{1}{|l|}{} & \begin{tabular}[c]{@{}l@{}}Squamous Cell Carcinoma (X12) /\\ Squamous Cell \\ Carcinoma in situ (X11)\end{tabular} & 628 & 17 & 175 & 89 & \textit{909} \\
+			\multicolumn{1}{|l|}{} & Basal Cell Carcinoma (X20) & 3,323 & 2,432 & 378 & 178 & \textit{6,311} \\ \hline
+			\multicolumn{2}{|l|}{\textit{\textbf{Total}}} & \textit{25,078} & \textit{13,814} & \textit{2,213} & \textit{1,510} & 42,615 \\ \hline
 		\end{tabular}%
 	}
 \end{table}
@@ -142,83 +130,83 @@ Subsequently, cross-dataset performance was evaluated by measuring the class-bal
 
 Finally, the effect of transfer learning between the dermatology datasets using an EfficientNet CNN and SWIM transformer models was evaluated. It is noted that all models in the experiments were pre-trained on ImageNet. Further pre-training was then performed on dermatology datasets. The effect of transfer between the large ISIC 2019 and SD-260 datasets was evaluated first. Secondly, the effect of transfer when the target domains (test data) were Tayside and Forth Valley data was investigated, utilising multi-dataset pre-training sequences, such as pre-training on SD-260 data and then training on Forth Valley training data, denoted “SD-260, Forth Valley” or pre-training on ISIC 2019 data, then on SD-260 data, and finally on Tayside training data, denoted “ISIC 2019, SD-260, Tayside”.
 
+Bootstrapping is used to evaluate model performance (100 bootstraps were sampled); mean class accuracy is obtained for each bootstrap, and the average mean class accuracy is presented together with the 95\% confidence and 95\% tolerance intervals (intervals within which 95\% of bootstrapped test results lie). To describe the sensitivity-specificity trade-offs obtained when categorising test pictures as benign or malignant, ROC curves were constructed.
+
 
 \subsection{Results}
 \label{subsec:generalisation_results}
 Table~\ref{tab:generalisation_results} presents the balanced class accuracies obtained using an EfficientNet CNN and SWIN transformer models when trained and tested on data from the four datasets. The diagonal entries, in bold, reflect the internal accuracies obtained when disjoint test and training sets from the same source dataset were used. The results of models trained using the comparably smaller NHS datasets and then tested against the larger datasets were excluded from these experiments. This omission is due to the result not being necessary for the primary objective of this work, which is to examine the results when the models are tested against the moderately sized NHS datasets.
 
-\begin{table}[h]
+\begin{table}[th]
 	\centering
-	\caption{Class-balanced accuracy when training and testing on the various datasets.}
+	\caption{Mean class accuracy test results for EfficientNet CNN and SWIN classifiers trained on each of the four datasets. Bootstrapped 95\% confidence intervals are in parentheses.}
 	\label{tab:generalisation_results}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{ll|rrrr|}
 			\cline{3-6}
-			&  & \multicolumn{4}{c|}{Testing Data} \\ \hline
-			\multicolumn{1}{|l|}{Model} & Training Data & \multicolumn{1}{l|}{ISIC 2019} & \multicolumn{1}{l|}{SD-260} & \multicolumn{1}{l|}{Tayside} & \multicolumn{1}{l|}{Forth Valley} \\ \hline
-			\multicolumn{1}{|l|}{\multirow{4}{*}{\textbf{CNN}}} & ISIC 20109 & \multicolumn{1}{r|}{\textbf{0}} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & SD-260 & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{\textbf{0}} & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & Tayside & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{\textbf{0}} & 0 \\
-			\multicolumn{1}{|l|}{} & Forth Valley & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{0} & \textbf{0} \\ \hline
-			\multicolumn{1}{|l|}{\multirow{4}{*}{\textbf{SWIN}}} & ISIC 2019 & \multicolumn{1}{r|}{\textbf{0}} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & SD-260 & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{\textbf{0}} & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & Tayside & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{\textbf{0}} & 0 \\
-			\multicolumn{1}{|l|}{} & Forth Valley & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{0} & \textbf{0} \\ \hline
+			&  & \multicolumn{4}{c|}{Testing Dataset} \\ \hline
+			\multicolumn{1}{|c|}{Model} & \multicolumn{1}{c|}{Training Dataset} & \multicolumn{1}{c|}{ISIC 2019} & \multicolumn{1}{c|}{SD-260} & \multicolumn{1}{c|}{Tayside} & \multicolumn{1}{c|}{Forth Valley} \\ \hline
+			\multicolumn{1}{|l|}{\multirow{4}{*}{\textbf{CNN}}} & ISIC 2019 & \multicolumn{1}{r|}{{$\boldsymbol{0.975\, (\pm0.0002)}$}} & \multicolumn{1}{r|}{$0.810\, (\pm0.0007)$} & \multicolumn{1}{r|}{$0.823\, (\pm0.0006)$} & $0.850\, (\pm0.0007)$ \\
+			\multicolumn{1}{|l|}{} & SD-260 & \multicolumn{1}{r|}{$0.875\, (\pm0.0004)$} & \multicolumn{1}{r|}{$\boldsymbol{0.957\, (\pm0.0005)}$} & \multicolumn{1}{r|}{$0.852\, (\pm0.0006)$} & $0.871\, (\pm0.0006)$ \\
+			\multicolumn{1}{|l|}{} & Tayside & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{$\boldsymbol{0.881\, (\pm0.0006)}$} & $0.857\, (\pm0.0002)$ \\
+			\multicolumn{1}{|l|}{} & Forth Valley & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{$0.846\, (\pm0.0002)$} & $\boldsymbol{0.891\, (\pm0.0007)}$ \\ \hline
+			\multicolumn{1}{|l|}{\multirow{4}{*}{\textbf{SWIN}}} & ISCI 2019 & \multicolumn{1}{r|}{$\boldsymbol{0.978\, (\pm0.0002)}$} & \multicolumn{1}{r|}{$0.788\, (\pm0.0006)$} & \multicolumn{1}{r|}{$0.812\, (\pm0.0005)$} & $0.853\, (\pm0.0008)$ \\
+			\multicolumn{1}{|l|}{} & SD-260 & \multicolumn{1}{r|}{$0.880\, (\pm0.0004)$} & \multicolumn{1}{r|}{$\boldsymbol{0.971\, (\pm0.0005)}$} & \multicolumn{1}{r|}{$0.859\, (\pm0.0006)$} & $0.870\, (\pm0.0007)$ \\
+			\multicolumn{1}{|l|}{} & Tayside & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{$\boldsymbol{0.876\, (\pm0.0007)}$} & $0.864\, (\pm0.0002)$ \\
+			\multicolumn{1}{|l|}{} & Forth Valley & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{$0.850\, (\pm0.0002)$} & $\boldsymbol{0.898\, (\pm0.0007)}$ \\ \hline
 		\end{tabular}%
 	}
 \end{table}
 
-Overall, in the absence of training data from the target domains, training on SD-260 data provided the best test accuracies on all test datasets. Models trained on ISIC data did not generalise well to the other datasets, while models trained on SD-260 data generalised slightly better but still poorly. Fine-tuning generalisation between the Tayside and Forth Valley datasets was better, with relatively small drops in test accuracy. Models trained on Tayside data achieved test results on Forth Valley data only 1.6\% and 2.5\% lower than test results on Tayside data.
+Overall, in the absence of training data from the target domains, training on SD-260 data provided the best test accuracies on all test datasets. Models trained on ISIC data did not generalise well to the other datasets, while models trained on SD-260 data generalised slightly better but still poorly. Fine-tuning generalisation between the Tayside and Forth Valley datasets was better, with relatively small drops in test accuracy. Models trained on Tayside data achieved test results on Forth Valley data only 2.4\% and 1.2\% lower than test results on Tayside data.
 
-Additionally, it was observed that models trained and tested on ISIC data did not benefit from pre-training on SD-260; ISIC test results with SD-260 pre-training were 97.7\% and 97.1\% for EfficientNet CNN and SWIN, respectively. Similarly, models trained and tested on SD-260 data did not benefit from pre-training on ISIC data. SD-260 test results with ISIC pre-training were 96.7\% and 97.7\% for EfficientNet CNN and SWIN, respectively.
+Additionally, it was observed that models trained and tested on ISIC data did not benefit from pre-training on SD-260; ISIC test results with SD-260 pre-training were 98.5\% and 98.5\% for EfficientNet CNN and SWIN, respectively. Similarly, models trained and tested on SD-260 data did not benefit from pre-training on ISIC data. SD-260 test results with ISIC pre-training were 97.2\% and 96.2\% for EfficientNet CNN and SWIN, respectively.
 
 This occurrence may be linked to the appearance of negative transfer, in which traits gained during the initial ISIC pre-training phase may have deleterious consequences when applied to the subsequent SD-260 training regimen. As indicated by the existing literature~\citep{wang2019characterizing}, negative transfer can be caused by a variety of causes, including inconsistencies in feature alignment, discordant patterning, instances of overfitting, and, most significantly, domain shift. In this specific context, the perceptible disparity in the relevance of knowledge gained from the ISIC domain versus its application to the SD-260 training domain may underpin the emergence of optimisation challenges, potentially culminating in entrapment within local minima configurations.
 
 Table~\ref{tab:generalisation_models} reports balanced class accuracies when EfficientNet CNN and SWIN transformers were tested on Tayside and Forth Valley data after various multi-dataset training sequences. In each case, pre-training on SD-260 data followed by fine-tuning on data from the target domain was found to be effective.
 
-% TODO - Statistical Significance tests.
-
-\begin{table}[h]
+\begin{table}[t]
 	\centering
-	\caption{Balanced class accuracy when EfficientNet CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences.}
+	\caption{Mean class accuracy for EfficientNet CNN and SWIN classifiers tested on Tayside and Forth Valley data having been trained with various multi-dataset training sequences. 95\% confidence intervals are in parentheses.}
 	\label{tab:generalisation_models}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{ll|rr|}
 			\cline{3-4}
-			&  & \multicolumn{2}{c|}{Testing Dataset} \\ \hline
-			\multicolumn{1}{|l|}{Model} & Training Dataset & \multicolumn{1}{l|}{Tayside} & \multicolumn{1}{l|}{Forth Valley} \\ \hline
-			\multicolumn{1}{|l|}{\multirow{8}{*}{\textbf{CNN}}} & SD-260, ISIC 2019 & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260 & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC 2019, Tayside & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & SD-260, Tayside & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC, SD-260, Tayside & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC 2019, Forth Valley & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & SD-260, Forth Valley & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC, SD-260, Forth Valley & \multicolumn{1}{r|}{0} & 0 \\ \hline
-			\multicolumn{1}{|l|}{\multirow{8}{*}{\textbf{SWIN}}} & SD-260, ISIC 2019 & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260 & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC 2019, Tayside & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & SD-260, Tayside & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC, SD-260, Tayside & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC 2019, Forth Valley & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & SD-260, Forth Valley & \multicolumn{1}{r|}{0} & 0 \\
-			\multicolumn{1}{|l|}{} & ISIC, SD-260, Forth Valley & \multicolumn{1}{r|}{0} & 0 \\ \hline
+			&  & \multicolumn{2}{l|}{Testing Datasets} \\ \hline
+			\multicolumn{1}{|l|}{Model} & Training Datasets & \multicolumn{1}{l|}{Tayside} & \multicolumn{1}{l|}{Forth Valley} \\ \hline
+			\multicolumn{1}{|l|}{\multirow{8}{*}{\textbf{CNN}}} & SD-260, ISIC 2019 & \multicolumn{1}{r|}{$0.827\,(\pm0.0007)$} & $0.847\,(\pm0.0007)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260 & \multicolumn{1}{r|}{$0.855\,(\pm0.0006)$} & $0.871\,(\pm0.0008)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, Tayside & \multicolumn{1}{r|}{$0.877\,(\pm0.0006)$} & $0.875\,(\pm0.0002)$ \\
+			\multicolumn{1}{|l|}{} & SD-260, Tayside & \multicolumn{1}{r|}{$\boldsymbol{0.885\,(\pm0.0006)}$} & $0.877\,(\pm0.0003)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260, Tayside & \multicolumn{1}{r|}{$0.880\,(\pm0.0006)$} & $0.869\,(\pm0.0002)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, Forth Valley & \multicolumn{1}{r|}{$0.851\,(\pm0.0002)$} & $0.904\,(\pm0.0007)$ \\
+			\multicolumn{1}{|l|}{} & SD-260, Forth Valley & \multicolumn{1}{r|}{$0.861\,(\pm0.0002)$} & $\boldsymbol{0.905\,(\pm0.0007)}$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260, Forth Valley & \multicolumn{1}{r|}{$0.850\,(\pm0.0002)$} & $0.896\,(\pm0.0007)$ \\ \hline
+			\multicolumn{1}{|l|}{\multirow{8}{*}{\textbf{SWIN}}} & SD-260, ISIC 2019 & \multicolumn{1}{r|}{$0.833\,(\pm0.0005)$} & $0.870\,(\pm0.0007)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260 & \multicolumn{1}{r|}{$0.856\,(\pm0.0006)$} & $0.874\,(\pm0.0008)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, Tayside & \multicolumn{1}{r|}{$0.881\,(\pm0.0006)$} & $0.878\,(\pm0.0002)$ \\
+			\multicolumn{1}{|l|}{} & SD-260, Tayside & \multicolumn{1}{r|}{$\boldsymbol{0.885\,(\pm0.0006)}$} & $0.882\,(\pm0.0002)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260, Tayside & \multicolumn{1}{r|}{$0.883\,(\pm0.0007)$} & $0.888\,(\pm0.0007)$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, Forth Valley & \multicolumn{1}{r|}{$0.856\,(\pm0.0002)$} & $0.905\,(\pm0.0007)$ \\
+			\multicolumn{1}{|l|}{} & SD-260, Forth Valley & \multicolumn{1}{r|}{$0.862\,(\pm0.0002)$} & $\boldsymbol{0.911\,(\pm0.0007)}$ \\
+			\multicolumn{1}{|l|}{} & ISIC 2019, SD-260, Forth Valley & \multicolumn{1}{r|}{$0.857\,(\pm0.0002)$} & $0.908\,(\pm0.0008)$ \\ \hline
 		\end{tabular}%
 	}
 \end{table}
 
-The results are also illustrated in Figure~\ref{fig:generalisation_models} which shows how test accuracies changed when different datasets were used for training and transfer learning. It was observed that training only on the large ISIC and SD-260 datasets gave relatively poor results, while training on a small dataset from the target domain, after pre-training only on ImageNet, performed better. The most accurate models were obtained by pre-training on the large dermatology datasets followed by further training on data from the target domain.
-
-\begin{figure}[!h]
+\begin{figure}[!th]
 	\centering
 	\captionsetup[subfigure]{singlelinecheck=false}
 	\begin{tabular}{c}
-		\subcaptionbox{\centering Testing on the Tayside dataset.}{\includegraphics[width=0.9\textwidth]{images/tayside_model.png}} \\
-		\subcaptionbox{\centering Testing on the Forth Valley dataset.}{\includegraphics[width=0.9\textwidth]{images/forth_valley_model.png}}
+		\subcaptionbox{\centering Testing on the Tayside dataset.}{\includegraphics[width=\textwidth]{images/tayside_model.png}} \\
+		\subcaptionbox{\centering Testing on the Forth Valley dataset.}{\includegraphics[width=\textwidth]{images/forth_valley_model.png}}
 	\end{tabular}
-	\caption{Balanced accuracy of models when tested on Tayside and Forth Valley datasets after various pre-training sequences. Bars are +/- one standard error computed from the variance over cross-validation folds.}
+	\caption{Mean class accuracy results for EfficientNet CNN (blue) and SWIN (orange) benign-malignant classifiers tested on (a) Tayside and (b) Forth Valley data. Bars indicate 95\% tolerance intervals computed using bootstrap. The plots on the left are from classifiers trained only on public domain datasets. The plots on the right are cross-validation results from classifiers pre-trained using public domain datasets and then fine-tuned using data from the target domain, i.e., Tayside and Forth Valley, respectively.}
 	\label{fig:generalisation_models}
 \end{figure}
+
+The results are also illustrated in Figure~\ref{fig:generalisation_models} which shows how test accuracies changed when different datasets were used for training and transfer learning. It was observed that training only on the large ISIC and SD-260 datasets gave relatively poor results, while training on a small dataset from the target domain, after pre-training only on ImageNet, performed better. The most accurate models were obtained by pre-training on the large dermatology datasets followed by further training on data from the target domain.
 
 Figure~\ref{fig:generalisation_testing} illustrates the extent to which models trained for the Tayside domain were able to generalise to the Forth Valley domain, and vice-versa. The solid curves plot the accuracies obtained when training on data from the test domain, with and without pre-training on the large public domain datasets. Dashed curves plot accuracies when training on data from the other test domain. The drops in accuracy when generalising between Tayside and Forth Valley dataset were 2-3\% using the SWIN transformer model.
 
@@ -226,34 +214,35 @@ Figure~\ref{fig:generalisation_testing} illustrates the extent to which models t
 	\centering
 	\captionsetup[subfigure]{singlelinecheck=false}
 	\begin{tabular}{c}
-		\subcaptionbox{\centering Testing on the Tayside dataset.}{\includegraphics[width=0.9\textwidth]{images/tayside_testing.png}} \\
-		\subcaptionbox{\centering Testing on the Forth Valley dataset.}{\includegraphics[width=0.9\textwidth]{images/forth_valley_testing.png}}
+		\subcaptionbox{\centering Testing on the Tayside dataset.}{\includegraphics[width=\textwidth]{images/tayside_testing.png}} \\
+		\subcaptionbox{\centering Testing on the Forth Valley dataset.}{\includegraphics[width=\textwidth]{images/forth_valley_testing.png}}
 	\end{tabular}
-	\caption{Balanced accuracy of the models demonstrating the performance of cross-dataset fine-tuning between the Tayside and Forth Valley datasets.}
+	\caption{Mean class accuracy results for EfficientNet CNN (blue) and SWIN (orange) benign-malignant classifiers tested on (a) Tayside and (b) Forth Valley data. Bars indicate 95\% tolerance intervals computed using bootstrap. The x-axis indicates the datasets used for pretraining and the image legend indicates the fine-tuning dataset. All classifiers were first pre-trained with ImageNet. Solid lines: fine-tuned on Tayside; Dashed lines: fine-tuned on Forth Valley.}
 	\label{fig:generalisation_testing}
 \end{figure}
 
+The 95\% confidence intervals shown in Tables \ref{tab:generalisation_results} and \ref{tab:generalisation_models} are always small, always encompassing a range less than $\pm,0.001$. This result indicates a higher level of statistical dependability in the estimated values of the parameters under consideration. It specifically suggests that the models under consideration have a remarkable amount of robustness, and the predictions they provide have a respectable level of resilience. In contrast, the visual representations shown in Figures \ref{fig:generalisation_models}, \ref{fig:generalisation_testing}, and \ref{fig:generalisation_roc} use 95\% tolerance intervals rather than confidence intervals since the latter were regarded too small. These tolerance intervals represent the upper and lower boundaries of the generated bootstrap samples' central 95\% distribution.
+
 Finally, binary classification performance in the form of ROC curves is reported in Figure~\ref{fig:generalisation_roc}. These curves were generated using models pre-trained on SD-260 prior to training on either Tayside or Forth Valley data. It was observed that the Forth Valley curves dominated the Tayside curves, and curves for models trained on the test domain dominated curves trained on the other domain. This occurrence is arguably due to the noticeably higher quality of the Forth Valley photos, as seen in Figure~\ref{fig:nhs_dataset_examples}, primarily in terms of properties such as lighting, spatial alignment, and proportional scale. As a result, the classification model can have a concentrated focus on the knowledge of the key lesion characteristics avoiding involvement with these variables.
 
-\begin{figure}[!h]
+\begin{figure}[h]
 	\centering
 	\captionsetup[subfigure]{singlelinecheck=false}
 	\begin{tabular}{c}
-		\subcaptionbox{\centering Testing on the Tayside dataset.}{\includegraphics[width=0.85\textwidth]{images/tayside_roc.png}} \\
-		\subcaptionbox{\centering Testing on the Forth Valley dataset.}{\includegraphics[width=0.85\textwidth]{images/forth_valley_roc.png}}
+		\subcaptionbox{\centering ROC curve for EfficientNet CNN classifiers.}{\includegraphics[width=0.8\textwidth]{images/cnn_roc.png}} \\
+		\subcaptionbox{\centering ROC curve for SWIN transformer classifiers.}{\includegraphics[width=0.8\textwidth]{images/swin_roc.png}}
 	\end{tabular}
-	\caption{ROC curves for EfficientNet CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.}
+	\caption{ROC curves for (a) CNN and (b) SWIN classifiers tested on Tayside (blue) and Forth Valley (orange) datasets. All curves were generated using classifiers pre-trained on SD-260 prior to fine-tuning on either Tayside data (solid lines) or Forth Valley data (dashed lines). Shaded areas indicate 95\% tolerance intervals computed using bootstrap.}
 	\label{fig:generalisation_roc}
 \end{figure}
-
 
 
 \section{Conclusion}
 \label{sec:generalisation_conclusion}
 It is well-established that deep learning classifiers benefit from large training sets. However, it is also known that test performance is negatively affected by variations in image acquisition, image quality, and the population being imaged. This presents challenges in the development of dermatology diagnostic systems that can be deployed in multiple sites, as such conditions can vary geographically and over time. Curation of large datasets can be costly at a local level, yet learning systems need to be attuned to local conditions.
 
-The results suggest that the SWIN transformer should be preferred over the EfficientNet convolutional neural network. The transformer obtained accuracies of 98\% on both ISIC 2019 and SD-260 test datasets, provided it was trained on data from the same domain. However, cross-domain fine-tuning (training on ISIC 2019 and testing on SD-260) led to a weaker 81\% accuracy. Training on SD-260 and testing on ISIC 2019 yielded a better 88\% accuracy, possibly due to the more varied nature of the SD-260 dataset (Table~\ref{tab:generalisation_results}).
+The results suggest that the SWIN transformer should be preferred over the EfficientNet convolutional neural network. The transformer obtained accuracies of 98\% and 97\% on the ISIC 2019 and SD-260 test datasets, provided it was trained on data from the same domain. However, cross-domain fine-tuning (training on ISIC 2019 and testing on SD-260) led to a weaker 79\% accuracy. Training on SD-260 and testing on ISIC 2019 yielded a better 88\% accuracy, possibly due to the more varied nature of the SD-260 dataset (Table~\ref{tab:generalisation_results}).
 
-The ISIC 2019 and SD-260 datasets are relatively large, though still not comparable to datasets used for deep learning in computer vision. The focus of this chapter was how to obtain good performance on challenging local data with limited availability of diagnostic labels. The two NHS datasets used to explore this question were sourced from Tayside and Forth Valley, the latter having images of more consistent and higher quality than the former. Transformers yielded accuracies of 87.5\% and 90.2\%, respectively, when trained and tested on data from these domains. This was better than results obtained by training on the larger SD-260 and ISIC 2019 datasets (Figure~\ref{fig:generalisation_models}), highlighting the benefit of training with data from the local target domain. It was found that by pre-training on SD-260 and then on data from the local target domain, further increases to 89.1\% and 91.4\% were obtained (Figure~\ref{fig:generalisation_testing}, solid blue lines).
+The ISIC 2019 and SD-260 datasets are relatively large, though still not comparable to datasets used for deep learning in computer vision. The focus of this chapter was how to obtain good performance on challenging local data with limited availability of diagnostic labels. The two NHS datasets used to explore this question were sourced from Tayside and Forth Valley, the latter having images of more consistent and higher quality than the former. Transformers yielded accuracies of 88\% and 90\%, respectively, when trained and tested on data from these domains. This was better than results obtained by training on the larger SD-260 and ISIC 2019 datasets (Figure~\ref{fig:generalisation_models}), highlighting the benefit of training with data from the local target domain. It was found that by pre-training on SD-260 and then on data from the local target domain, further increases to 89\% and 91\% were obtained (Figure~\ref{fig:generalisation_testing}, solid blue lines).
 
 Given their geographical proximity, Tayside and Forth Valley data are from similar populations, so one might expect good cross-domain fine-tuning generalisation between them. However, training on data from one (with appropriate pre-training for transfer) and testing on the other gave accuracies 2-3\% lower than testing on the same domain. This is likely due to differences in image acquisition. ROC curves were used to indicate sensitivity-specificity trade-offs (Figure~\ref{fig:generalisation_roc}). In a triage setting, relatively low specificity can be acceptable in return for very high sensitivity, especially for melanoma. A combination of pre-training on public macroscopic data, followed by tuning to local data, gave promising results. However, further improvements are needed for deployment in a real clinical pathway.
