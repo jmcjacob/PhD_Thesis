@@ -51,10 +51,7 @@ The Forth Valley dataset (collected by Dr. Colin Morton) was procured by medical
 
 \subsection{Annotation Procedure}
 \label{subsec:annotation_procedure}
-
-% TODO - Where did the 1/10000 figure come from.
-
-The datasets underwent a comprehensive annotation process that adhered to strict ethical guidelines and protocols for ensuring the quality and clinical usefulness of the images. This annotation procedure was developed by the Dermatology department at NHS Tayside. This included the removal of duplicate images and those that were not clinically relevant, as well as the de-identification and cropping of images to highlight any abnormalities. The images were then assigned a diagnostic label using the British Association of Dermatologists diagnostic index~\footnote{BAD Clinical Guidelines: \url{https://www.bad.org.uk/guidelines-and-standards/clinical-guidelines/}}, which corresponds to the International Classification of Diseases (version 11)~\footnote{ICD-11: \url{https://icd.who.int/dev11/l-derma/en}}. The assignment of these labels was conducted by two consultant-level dermatologists, registered on the UK General Medical Council specialist register of dermatologists~\footnote{UK GMC Medical Register: \url{https://www.gmc-uk.org/registration-and-licensing/the-medical-register/}}, and any discrepancies were resolved by a third consultant-level dermatologist. This decision was based on all available clinical information, including pathology reports from a consultant pathologist. The labels represent real sources of data, with diagnoses for malignancy being derived from pathology, and for benign lesions, based on the opinions of consultant dermatologists. The risk of serious misdiagnosis, such as mistaking malignant disease for benign disease, is less than 1 in 10,000, as per the audit experience of this group. The full annotation procedure is presented in detail for further reference.
+The datasets underwent a comprehensive annotation process that adhered to strict ethical guidelines and protocols for ensuring the quality and clinical usefulness of the images. This annotation procedure was developed by the Dermatology department at NHS Tayside. This included the removal of duplicate images and those that were not clinically relevant, as well as the de-identification and cropping of images to highlight any abnormalities. The images were then assigned a diagnostic label using the British Association of Dermatologists diagnostic index~\footnote{BAD Clinical Guidelines: \url{https://www.bad.org.uk/guidelines-and-standards/clinical-guidelines/}}, which corresponds to the International Classification of Diseases (version 11)~\footnote{ICD-11: \url{https://icd.who.int/dev11/l-derma/en}}. The assignment of these labels was conducted by two consultant-level dermatologists, registered on the UK General Medical Council specialist register of dermatologists~\footnote{UK GMC Medical Register: \url{https://www.gmc-uk.org/registration-and-licensing/the-medical-register/}}, and any discrepancies were resolved by a third consultant-level dermatologist. This decision was based on all available clinical information, including pathology reports from a consultant pathologist. The labels represent real sources of data, with diagnoses for malignancy being derived from pathology, and for benign lesions, based on the opinions of consultant dermatologists. . The full annotation procedure is presented in detail for further reference.
 
 \begin{enumerate}
 	\item Ensure the necessary Caldicott/Ethical approvals are in place. 
@@ -99,49 +96,45 @@ In this chapter's experiments, images from two public domain skin lesion dataset
 
 To facilitate deep learning experiments, the four skin lesion datasets used in this study were intentionally restricted to a set of seven diagnostic categories. The specific seven categories were chosen based on their representation across the four datasets. For example, vascular lesions were excluded from the ISIC 2019 dataset, and classes such as angioma and solar lentigo were excluded from the Tayside dataset because they were not well represented in the other two datasets. The ISIC 2019, SD-260, Tayside, and Forth Valley data subsets used in the study contained 25078, 13814, 2218, and 1518 images, respectively (Table~\ref{tab:generalisation_datasets}).
 
-% TODO - Add row total
-
 \begin{table}[h]
 	\centering
 	\caption{Number of images per diagnosis in each dataset.}
 	\label{tab:generalisation_datasets}
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|ll|l|l|l|l|}
+		\begin{tabular}{|ll|r|r|r|r|r|}
 			\hline
-			&                             & \textbf{ISIC 2019} & \textbf{SD-260} & \textbf{Tayside} & \textbf{Forth Valley} \\ \hline
-			\multicolumn{1}{|l|}{\textbf{Benign}} & Actinic keratosis (B52)     & 867                & 1434            & 414              & 144                   \\
-			\multicolumn{1}{|l|}{}                & Dermatofibroma (X9002)      & 239                & 303             & 56               & 78                    \\
-			\multicolumn{1}{|l|}{}                & Naevus, melanocytic (X31z)  & 12875              & 1401            & 577              & 531                   \\
-			\multicolumn{1}{|l|}{}                & Seborrhoeic keratosis (X01) & 2624               & 1133            & 538              & 290                   \\ \hline
+			&                             & \textbf{ISIC 2019} & \textbf{SD-260} & \textbf{Tayside} & \textbf{Forth Valley} & \textit{\textbf{Total}} \\ \hline
+			\multicolumn{1}{|l|}{\textbf{Benign}} & Actinic keratosis (B52)     & 867                & 1434            & 414              & 144        &    \textit{2859}        \\
+			\multicolumn{1}{|l|}{}                & Dermatofibroma (X9002)      & 239                & 303             & 56               & 78         &    \textit{676}         \\
+			\multicolumn{1}{|l|}{}                & Naevus, melanocytic (X31z)  & 12875              & 1401            & 577              & 531        &    \textit{15384}       \\
+			\multicolumn{1}{|l|}{}                & Seborrhoeic keratosis (X01) & 2624               & 1133            & 538              & 290        &    \textit{4585}        \\ \hline
 			\multicolumn{1}{|l|}{\textbf{Malignant}} &
 			\begin{tabular}[c]{@{}l@{}}Melanoma (X41) / \\ Melanoma in situ (X40)\end{tabular} &
 			4522 &
 			7094 &
 			78 &
-			205 \\
+			205 &
+			\textit{11899} \\
 			\multicolumn{1}{|l|}{} &
 			\begin{tabular}[c]{@{}l@{}}Squamous cell carcinoma (X12) / \\ Squamous cell carcinoma in situ (X11)\end{tabular} &
 			628 &
 			17 &
 			176 &
-			91 \\
-			\multicolumn{1}{|l|}{}                & Basal cell carcinoma (X20)  & 3323               & 2432            & 379              & 179                   \\ \hline
-			\textit{\textbf{Total}}               & \textit{}                   & \textit{25078}     & \textit{13814}  & \textit{2218}    & \textit{1518}         \\ \hline
+			91 &
+			\textit{912} \\
+			\multicolumn{1}{|l|}{}                & Basal cell carcinoma (X20)  & 3323               & 2432            & 379              & 179            &   \textit{6313}    \\ \hline
+			\textit{\textbf{Total}}               & \textit{}                   & \textit{25078}     & \textit{13814}  & \textit{2218}    & \textit{1518}  &   \textit{42628}    \\ \hline
 		\end{tabular}%
 	}
 \end{table}
 
-% TODO - Be more specific about the model used (CNN too vauge).
-
 \subsection{Training Parameters}
 \label{subsec:generalisation_training}
-In this chapter, two methods for image classification using deep learning were employed. The first method was a convolutional neural network, specifically an EfficientNet architecture~\citep{tan2019efficientnet} with a compound coefficient of 7 and an additional fully connected layer of 512 neurons preceding the output layer. The second method was a SWIN-B transformer~\citep{liu2021swin}, a state-of-the-art visual transformer network for image classification.
+In this chapter, two methods for image classification using deep learning were employed. The first method was a CNN, specifically an EfficientNet architecture~\citep{tan2019efficientnet} with a compound coefficient of 7 and an additional fully connected layer of 512 neurons preceding the output layer. The second method was a SWIN-B transformer~\citep{liu2021swin}, a state-of-the-art visual transformer network for image classification.
 
-% TODO - What are the geometric and photometric transformations.
+Subsequent training sessions were conducted for 40 epochs, with the model being saved each time the lowest validation loss was achieved. The weights were optimised using stochastic gradient descent with batches of 16 images and a triangular$^2$ cyclical scheduler~\citep{smith2017cyclical}, which alternated the learning rate between $10^{-5}$ and $10^{-2}$ and the momentum between 0.8 and 0.9. All images were pre-processed by cropping, resizing to 224 x 224 pixels, and normalising the pixel values between 0.0 and 1.0. To improve generalisation, data augmentation was used, specifically a variety of geometric and photometric changes applied at random when sampling. Horizontal and vertical flips, cropping and padding, affine transforms, Gaussian, average, and median blurring, sharpening, adding to channels, and multiplying channels by arbitrary amounts specifically.
 
-Subsequent training sessions were conducted for 40 epochs, with the model being saved each time the lowest validation loss was achieved. The weights were optimised using stochastic gradient descent with batches of 16 images and a triangular$^2$ cyclical scheduler~\citep{smith2017cyclical}, which alternated the learning rate between $10^{-5}$ and $10^{-2}$ and the momentum between 0.8 and 0.9. All images were pre-processed by cropping, resizing to 224 x 224 pixels, and normalising the pixel values between 0.0 and 1.0. Data augmentation was used to improve generalisation, specifically using a range of geometric and photometric transformations applied randomly when sampled.
-
-Given an image, the deep network models predicted class probabilities for each of the seven diagnostic classes. These probabilities were constrained, by definition, to sum to one. Three of the seven classes represented malignant lesions. By summing the probabilities of these three classes, the probability that the observed lesion is malignant, assuming the class probabilities computed were well-calibrated (Chapter \ref{ch:classification_claibration}). This was used to evaluate the ability of the CNN and SWIN transformer models to identify malignant lesions. Specifically, ROC curves were used to quantify the sensitivity-specificity trade-offs that can be obtained on the macroscopic image datasets. 
+Given an image, the deep network models predicted class probabilities for each of the seven diagnostic classes. These probabilities were constrained, by definition, to sum to one. Three of the seven classes represented malignant lesions. By summing the probabilities of these three classes, the probability that the observed lesion is malignant, assuming the class probabilities computed were well-calibrated (Chapter \ref{ch:classification_claibration}). This was used to evaluate the ability of the EfficientNet CNN and SWIN transformer models to identify malignant lesions. Specifically, ROC curves were used to quantify the sensitivity-specificity trade-offs that can be obtained on the macroscopic image datasets. 
 
 \subsection{Experiment Setup}
 \label{subsec:generalisation_experiment}
@@ -149,12 +142,12 @@ The ability of the models to classify lesion images from each dataset was first 
 
 Subsequently, cross-dataset performance was evaluated by measuring the class-balanced accuracy of each model when tested on data from datasets not used for training the model. Deep classifiers pre-trained with ImageNet~\citep{deng2009imagenet} were trained on data from each of the datasets and then tested on each of the datasets. The composition of the training sets was identical to those used in the internal data classification experiment.
 
-Finally, the effect of transfer learning between the dermatology datasets using CNN and SWIM transformer models was evaluated. It is noted that all models in the experiments were pre-trained on ImageNet. Further pre-training was then performed on dermatology datasets. The effect of transfer between the large ISIC 2019 and SD-260 datasets was evaluated first. Secondly, the effect of transfer when the target domains (test data) were Tayside and Forth Valley data was investigated, utilising multi-dataset pre-training sequences, such as pre-training on SD-260 data and then training on Forth Valley training data, denoted “SD-260, Forth Valley” or pre-training on ISIC 2019 data, then on SD-260 data, and finally on Tayside training data, denoted “ISIC 2019, SD-260, Tayside”.
+Finally, the effect of transfer learning between the dermatology datasets using an EfficientNet CNN and SWIM transformer models was evaluated. It is noted that all models in the experiments were pre-trained on ImageNet. Further pre-training was then performed on dermatology datasets. The effect of transfer between the large ISIC 2019 and SD-260 datasets was evaluated first. Secondly, the effect of transfer when the target domains (test data) were Tayside and Forth Valley data was investigated, utilising multi-dataset pre-training sequences, such as pre-training on SD-260 data and then training on Forth Valley training data, denoted “SD-260, Forth Valley” or pre-training on ISIC 2019 data, then on SD-260 data, and finally on Tayside training data, denoted “ISIC 2019, SD-260, Tayside”.
 
 
 \subsection{Results}
 \label{subsec:generalisation_results}
-Table~\ref{tab:generalisation_results} presents the balanced class accuracies obtained using CNN and SWIN transformer models when trained and tested on data from the four datasets. The diagonal entries, in bold, reflect the internal accuracies obtained when disjoint test and training sets from the same source dataset were used. The SWIN transformer achieved 98\% on each of the large public domain datasets, ISIC 2019 and SD-260. Accuracies on the smaller macroscopic NHS datasets were lower, as anticipated, with the SWIN transformer achieving 90.2\% and 87.5\% on Forth Valley and Tayside data, respectively.
+Table~\ref{tab:generalisation_results} presents the balanced class accuracies obtained using an EfficientNet CNN and SWIN transformer models when trained and tested on data from the four datasets. The diagonal entries, in bold, reflect the internal accuracies obtained when disjoint test and training sets from the same source dataset were used. The SWIN transformer achieved 98\% on each of the large public domain datasets, ISIC 2019 and SD-260. Accuracies on the smaller macroscopic NHS datasets were lower, as anticipated, with the SWIN transformer achieving 90.2\% and 87.5\% on Forth Valley and Tayside data, respectively.
 
 % TODO - Add test data header
 % TODO - Explain why there are gaps
@@ -183,15 +176,15 @@ Overall, in the absence of training data from the target domains, training on SD
 
 %TODO - Address this comment "You report that testing on SD260 while being trained on SD260 and pretrained on ISIC is not beneficial compared to just trained on SD260 and even slightly worse. Could this be because training on itself only slightly overfit and that pretraining with ISIC actually make the generalization better? How could you test this hypothesis? (Would have been good to also report accuracy on a merged ISIC/SD260 testing set, this might be better than the accuracy testing on itself)"
 
-Additionally, it was observed that models trained and tested on ISIC data did not benefit from pre-training on SD-260; ISIC test results with SD-260 pre-training were 97.7\% and 97.1\% for CNN and SWIN, respectively. Similarly, models trained and tested on SD-260 data did not benefit from pre-training on ISIC data. SD-260 test results with ISIC pre-training were 96.7\% and 97.7\% for CNN and SWIN, respectively.
+Additionally, it was observed that models trained and tested on ISIC data did not benefit from pre-training on SD-260; ISIC test results with SD-260 pre-training were 97.7\% and 97.1\% for EfficientNet CNN and SWIN, respectively. Similarly, models trained and tested on SD-260 data did not benefit from pre-training on ISIC data. SD-260 test results with ISIC pre-training were 96.7\% and 97.7\% for EfficientNet CNN and SWIN, respectively.
 
-Table~\ref{tab:generalisation_models} reports balanced class accuracies when CNN and SWIN transformers were tested on Tayside and Forth Valley data after various multi-dataset training sequences. In each case, pre-training on SD-260 data followed by fine-tuning on data from the target domain was found to be effective.
+Table~\ref{tab:generalisation_models} reports balanced class accuracies when EfficientNet CNN and SWIN transformers were tested on Tayside and Forth Valley data after various multi-dataset training sequences. In each case, pre-training on SD-260 data followed by fine-tuning on data from the target domain was found to be effective.
 
 % TODO - Statistical Significance tests.
 
 \begin{table}[h]
 	\centering
-	\caption{Balanced class accuracy when CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. }
+	\caption{Balanced class accuracy when EfficientNet CNN and SWIN transformers are tested on Tayside and Forth Valley data after various multi-dataset training sequences. }
 	\label{tab:generalisation_models}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{|l|l|l|l|}
@@ -254,7 +247,7 @@ Finally, binary classification performance in the form of ROC curves is reported
 		\subcaptionbox{\centering Testing on the Tayside dataset.}{\includegraphics[width=0.85\textwidth]{images/tayside_roc.png}} \\
 		\subcaptionbox{\centering Testing on the Forth Valley dataset.}{\includegraphics[width=0.85\textwidth]{images/forth_valley_roc.png}}
 	\end{tabular}
-	\caption{ROC curves for CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.}
+	\caption{ROC curves for EfficientNet CNNs and SWIN transformers pre-trained on SD-260 prior to training on either Tayside or Forth Valley data.}
 	\label{fig:generalisation_roc}
 \end{figure}
 
