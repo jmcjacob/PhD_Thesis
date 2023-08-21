@@ -249,7 +249,7 @@ The SelectiveNet model's performance is evaluated using a loss function that int
 The findings presented in this section are not exhaustive, and complete cost coverage curves for all models and methods of selective classification are available in Appendix~\ref{app:selective_classification_results}.
 
 \subsubsection{SelectiveNet: Effect of Target Coverage}
-In order to examine the impact of the SelectiveNet target-coverage parameter, $t$, on the selection decisions made by the SelectiveNet selection head, the cost-coverage curves were plotted for various values of $t$, ranging from $0.7$ to $1.0$ with increments of $0.05$, as depicted in Figure~\ref{fig:binary-selectivenet}. The curves were computed for $S_{in}$, $S_{unknown}$, and $S_{combined}$. According to the design objectives of the target coverage parameter, a lower value of $t$ would result in a more effective model at lower coverages. The findings, however, show that training with a $t=1.0$ value resulted in the lowest test cost on $S_in$ for coverage values as low as $0.2$. As expected, the expenses incurred on $S_unknown$ were larger, and the curves did not show a clear ordering. Nonetheless, the model trained with $t=1.0$ revealed a significant cost reduction as coverage declined. This could be because when the model is trained with a $t=1.0$, the resulting model is closer to the best performing standard model with softmax response.
+In order to examine the impact of the SelectiveNet target-coverage parameter, $t$, on the selection decisions made by the SelectiveNet selection head, the cost-coverage curves were plotted for various values of $t$, ranging from $0.7$ to $1.0$ with increments of $0.05$, as depicted in Figure~\ref{fig:binary-selectivenet}. The curves were computed for $S_{in}$, $S_{unknown}$, and $S_{combined}$. According to the design objectives of the target coverage parameter, a lower value of $t$ would result in a more effective model at lower coverages. The findings, however, show that training with a $t=1.0$ value resulted in the lowest test cost on $S_{in}$ for coverage values as low as $0.2$. As expected, the expenses incurred on $S_{unknown}$ were larger, and the curves did not show a clear ordering. Nonetheless, the model trained with $t=1.0$ revealed a significant cost reduction as coverage declined. This could be because when the model is trained with a $t=1.0$, the resulting model is closer to the best performing standard model with softmax response.
 
 \begin{figure}[!h]
 	\centering
@@ -287,6 +287,7 @@ The effect of temperature scaling on a softmax network was analysed and the resu
 	\label{fig:binary-ecselectivenet}
 \end{figure}
 
+\newpage
 \subsubsection{Asymmetric Costs}
 The results of comparing SelectiveNet with EC-SelectiveNet with a target coverage of $t=1.0$ are depicted in Figure~\ref{fig:binary-ecselectivenet}. In symmetric cost scenarios, the performance of both methods was comparable, with SelectiveNet exhibiting a slight advantage in terms of cost, yielding a reduction of approximately $0.015$ at intermediate coverage levels. However, when the cost matrix was asymmetric, EC-SelectiveNet demonstrated significant cost reductions of approximately $0.1$ at all coverages below approximately $0.8$.
 
