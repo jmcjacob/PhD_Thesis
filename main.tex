@@ -86,14 +86,17 @@
 	% Contents
 	\renewcommand{\contentsname}{Table of Contents}
 	\tableofcontents
+	\markboth{Table of Contents}{}
 	
 	\newpage
 	\addcontentsline{toc}{chapter}{List of Figures}
 	\listoffigures
+	\markboth{List of Figures}{}
 	
 	\newpage
 	\addcontentsline{toc}{chapter}{List of Tables}
 	\listoftables
+	\markboth{List of Tables}{}
 	
 	%\newpage
 	%\chapter*{List of Terms}
@@ -102,6 +105,7 @@
 	
 	\newpage
 	\chapter*{List of Abbreviations}
+	\markboth{List of Abbreviations}{}
 	\addcontentsline{toc}{chapter}{List of Abbreviations}
 	\input{appendices/acronyms}
 	
@@ -113,6 +117,7 @@
 	% Acknowledgements
 	\newpage
 	\chapter*{Acknowledgements}
+	\markboth{Acknowledgements}{}
 	\addcontentsline{toc}{chapter}{Acknowledgements}
 	I dedicate this thesis to all the people who have helped me along my PhD journey and would like to express my sincere gratitude to them.
 	
@@ -128,6 +133,7 @@
 	\newpage
 	\chapter*{Declaration}
 	\addcontentsline{toc}{chapter}{Declaration}
+	\markboth{Declaration}{}
 	I hereby declare that this thesis is my own work and that, to the best of my knowledge and belief, it contains no material previously published or produced by another party in fulfilment, partial or otherwise, of any other degree or diploma at another University or Institute of higher education, except where due acknowledgement is made in the text.
 	
 	\vspace{30pt}
@@ -147,6 +153,7 @@
 	\newpage
 	\chapter*{Abstract}
 	\addcontentsline{toc}{chapter}{Abstract}
+	\markboth{Abstract}{}
 	Medical image analysis is a critical and challenging field that can be significantly enhanced using deep learning techniques. However, these models require large amounts of annotated data, which can be costly and time-consuming to obtain. Additionally, deep learning models often suffer from overconfidence and poor generalisation, leading to incorrect diagnoses and negative clinical outcomes. The primary objective of this thesis is to address these challenges by proposing methods that reduce annotation costs and improve diagnostic accuracy using deep learning.
 	
 	The first contribution of this thesis is an active learning framework designed to increase annotation throughput for histopathology patches. Histopathology is the gold standard for cancer diagnosis, but it requires manual examination by pathologists, which is labour-intensive and prone to errors. To address this issue, this thesis proposes an active learning framework that selects regions for annotation composed of multiple patches, which is expected to increase annotation throughput. This framework is evaluated with various query strategies for nuclei classification using convolutional neural networks (CNN) trained on small patches containing single nuclei.
